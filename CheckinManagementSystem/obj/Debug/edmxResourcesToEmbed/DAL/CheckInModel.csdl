@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckInModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CheckExists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPrimary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenPreferences" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DanhMucRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoaiRecord">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiRecord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NhanSu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNhanSu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IdPhong" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NhanSuNhomQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNhomQuyen" Type="Int32" />
+    <Property Name="IdNhanSu" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NhanSuPhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPhanQuyen" Type="Int32" />
+    <Property Name="IdNhanSu" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NhomPhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPhanQuyen" Type="Int32" />
+    <Property Name="IdNhomQuyen" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NhomQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhomQuyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsUse" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Quyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenQuyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsUse" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNhanSu" Type="Int32" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
+    <Property Name="IdLoaiRecord" Type="Int32" />
+    <Property Name="InOut" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CheckInEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CheckExists" EntityType="Self.CheckExists" />
+    <EntitySet Name="DanhMucRole" EntityType="Self.DanhMucRole" />
+    <EntitySet Name="LoaiRecord" EntityType="Self.LoaiRecord" />
+    <EntitySet Name="NhanSu" EntityType="Self.NhanSu" />
+    <EntitySet Name="NhanSuNhomQuyen" EntityType="Self.NhanSuNhomQuyen" />
+    <EntitySet Name="NhanSuPhanQuyen" EntityType="Self.NhanSuPhanQuyen" />
+    <EntitySet Name="NhomPhanQuyen" EntityType="Self.NhomPhanQuyen" />
+    <EntitySet Name="NhomQuyen" EntityType="Self.NhomQuyen" />
+    <EntitySet Name="Phong" EntityType="Self.Phong" />
+    <EntitySet Name="Quyen" EntityType="Self.Quyen" />
+    <EntitySet Name="Record" EntityType="Self.Record" />
+  </EntityContainer>
+</Schema>

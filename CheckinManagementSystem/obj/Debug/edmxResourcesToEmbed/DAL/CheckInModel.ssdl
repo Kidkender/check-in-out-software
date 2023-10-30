@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CheckInModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CheckExists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPrimary" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenPreferences" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DanhMucRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenRole" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LoaiRecord">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiRecord" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NhanSu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNhanSu" Type="nvarchar" MaxLength="20" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="255" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdPhong" Type="int" />
+  </EntityType>
+  <EntityType Name="NhanSuNhomQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdNhomQuyen" Type="int" />
+    <Property Name="IdNhanSu" Type="int" />
+  </EntityType>
+  <EntityType Name="NhanSuPhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPhanQuyen" Type="int" />
+    <Property Name="IdNhanSu" Type="int" />
+  </EntityType>
+  <EntityType Name="NhomPhanQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPhanQuyen" Type="int" />
+    <Property Name="IdNhomQuyen" Type="int" />
+  </EntityType>
+  <EntityType Name="NhomQuyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNhomQuyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsUse" Type="bit" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhong" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Quyen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenQuyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsUse" Type="bit" />
+  </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdNhanSu" Type="int" />
+    <Property Name="ThoiGian" Type="datetime" />
+    <Property Name="IdLoaiRecord" Type="int" />
+    <Property Name="InOut" Type="int" />
+  </EntityType>
+  <EntityContainer Name="CheckInModelStoreContainer">
+    <EntitySet Name="CheckExists" EntityType="Self.CheckExists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMucRole" EntityType="Self.DanhMucRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiRecord" EntityType="Self.LoaiRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanSu" EntityType="Self.NhanSu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanSuNhomQuyen" EntityType="Self.NhanSuNhomQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanSuPhanQuyen" EntityType="Self.NhanSuPhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhomPhanQuyen" EntityType="Self.NhomPhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhomQuyen" EntityType="Self.NhomQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

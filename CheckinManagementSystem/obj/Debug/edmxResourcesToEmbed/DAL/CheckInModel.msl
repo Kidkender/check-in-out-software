@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CheckInModelStoreContainer" CdmEntityContainer="CheckInEntities">
+    <EntitySetMapping Name="CheckExists">
+      <EntityTypeMapping TypeName="CheckInModel.CheckExists">
+        <MappingFragment StoreEntitySet="CheckExists">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenPrimary" ColumnName="TenPrimary" />
+          <ScalarProperty Name="TenPreferences" ColumnName="TenPreferences" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucRole">
+      <EntityTypeMapping TypeName="CheckInModel.DanhMucRole">
+        <MappingFragment StoreEntitySet="DanhMucRole">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenRole" ColumnName="TenRole" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiRecord">
+      <EntityTypeMapping TypeName="CheckInModel.LoaiRecord">
+        <MappingFragment StoreEntitySet="LoaiRecord">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenLoaiRecord" ColumnName="TenLoaiRecord" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanSu">
+      <EntityTypeMapping TypeName="CheckInModel.NhanSu">
+        <MappingFragment StoreEntitySet="NhanSu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanSuNhomQuyen">
+      <EntityTypeMapping TypeName="CheckInModel.NhanSuNhomQuyen">
+        <MappingFragment StoreEntitySet="NhanSuNhomQuyen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdNhomQuyen" ColumnName="IdNhomQuyen" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanSuPhanQuyen">
+      <EntityTypeMapping TypeName="CheckInModel.NhanSuPhanQuyen">
+        <MappingFragment StoreEntitySet="NhanSuPhanQuyen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdPhanQuyen" ColumnName="IdPhanQuyen" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomPhanQuyen">
+      <EntityTypeMapping TypeName="CheckInModel.NhomPhanQuyen">
+        <MappingFragment StoreEntitySet="NhomPhanQuyen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdPhanQuyen" ColumnName="IdPhanQuyen" />
+          <ScalarProperty Name="IdNhomQuyen" ColumnName="IdNhomQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomQuyen">
+      <EntityTypeMapping TypeName="CheckInModel.NhomQuyen">
+        <MappingFragment StoreEntitySet="NhomQuyen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenNhomQuyen" ColumnName="TenNhomQuyen" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phong">
+      <EntityTypeMapping TypeName="CheckInModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quyen">
+      <EntityTypeMapping TypeName="CheckInModel.Quyen">
+        <MappingFragment StoreEntitySet="Quyen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Record">
+      <EntityTypeMapping TypeName="CheckInModel.Record">
+        <MappingFragment StoreEntitySet="Record">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
+          <ScalarProperty Name="InOut" ColumnName="InOut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
