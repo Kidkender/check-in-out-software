@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboLoaiRecord = new System.Windows.Forms.ComboBox();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -156,7 +156,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.cboLoaiRecord);
             this.panel4.Controls.Add(this.cboNhanSu);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(38, 69);
@@ -174,14 +174,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã NV + Họ và tên";
             // 
-            // comboBox2
+            // cboLoaiRecord
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(14, 158);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(807, 39);
-            this.comboBox2.TabIndex = 3;
+            this.cboLoaiRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiRecord.FormattingEnabled = true;
+            this.cboLoaiRecord.Location = new System.Drawing.Point(14, 158);
+            this.cboLoaiRecord.Name = "cboLoaiRecord";
+            this.cboLoaiRecord.Size = new System.Drawing.Size(807, 39);
+            this.cboLoaiRecord.TabIndex = 3;
+            this.cboLoaiRecord.TextUpdate += new System.EventHandler(this.cboLoaiRecord_TextUpdate);
             // 
             // cboNhanSu
             // 
@@ -265,7 +266,7 @@
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox cboLoaiRecord;
 		private System.Windows.Forms.ComboBox cboNhanSu;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;

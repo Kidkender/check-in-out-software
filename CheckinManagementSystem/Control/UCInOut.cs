@@ -15,7 +15,10 @@ namespace CheckinManagementSystem
     public partial class UCInOut : UserControl
     {
         NhanSuBLL _nhanSuBLL = new NhanSuBLL();
+        CheckInOutBLL _checkInOutBLL = new CheckInOutBLL();
+        RecordBLL _recordBLL = new RecordBLL();
         List<NhanSu> _data = null;
+        List<LoaiRecord> _dataLoaiRecord = null;
         private static UCInOut _instance;
         public static UCInOut Instance
         {
@@ -34,6 +37,7 @@ namespace CheckinManagementSystem
             #region Init control
 
             RefreshDataNhanSu();
+            RefreshDataLoaiRecord();
 
             #endregion
         }
@@ -47,6 +51,15 @@ namespace CheckinManagementSystem
             cboNhanSu.SelectedIndex = -1;
         }
 
+        private void RefreshDataLoaiRecord()
+        {
+            _dataLoaiRecord = _recordBLL.GetAllLoaiRecord();
+            cboLoaiRecord.DataSource = _data;
+            cboLoaiRecord.ValueMember = "ID";
+            cboLoaiRecord.DisplayMember = "TenLoaiRecord";
+            cboLoaiRecord.SelectedIndex = -1;
+        }
+
         #region Event
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,13 +70,14 @@ namespace CheckinManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
+            LoaiRecord loaiRecord = (LoaiRecord)cboLoaiRecord.SelectedItem;
             if (nhanSu == null)
             {
                 MessageBox.Show("Vui lòng chọn nhân sự điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (_nhanSuBLL.AddRecord(nhanSu.ID))
+                if (_checkInOutBLL.AddRecord(nhanSu.ID, loaiRecord?.ID))
                     MessageBox.Show("Điểm danh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Điểm danh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -100,9 +114,38 @@ namespace CheckinManagementSystem
                 cboNhanSu.DroppedDown = true;
                 Cursor.Current = Cursors.Default;
                 cboNhanSu.SelectedIndex = -1;
-              
+
                 cboNhanSu.Text = tempStr;
                 cboNhanSu.Select(cboNhanSu.Text.Length, 0);
+            }
+        }
+
+        private void cboLoaiRecord_TextUpdate(object sender, EventArgs e)
+        {
+            if (cboLoaiRecord.Text == string.Empty)
+            {
+                RefreshDataLoaiRecord();
+            }
+            else
+            {
+                string tempStr = cboLoaiRecord.Text;
+                List<LoaiRecord> data = _dataLoaiRecord.Where(t => t.TenLoaiRecord.ToLower().Contains(tempStr.ToLower())).ToList();
+
+                cboLoaiRecord.DataSource = null;
+                cboLoaiRecord.Items.Clear();
+                cboLoaiRecord.ValueMember = "ID";
+                cboLoaiRecord.DisplayMember = "TenLoaiRecord";
+
+                foreach (var temp in data)
+                {
+                    cboLoaiRecord.Items.Add(temp);
+                }
+                cboLoaiRecord.DroppedDown = true;
+                Cursor.Current = Cursors.Default;
+                cboLoaiRecord.SelectedIndex = -1;
+
+                cboLoaiRecord.Text = tempStr;
+                cboLoaiRecord.Select(cboLoaiRecord.Text.Length, 0);
             }
         }
     }

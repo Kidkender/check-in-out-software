@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\NhanSuBLL.cs" />
+    <Compile Include="BLL\RecordBLL.cs" />
     <Compile Include="DAL\CheckExists.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
