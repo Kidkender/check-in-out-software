@@ -187,23 +187,13 @@
             // 
             // cboLoaiRecord
             // 
-<<<<<<< HEAD
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(19, 194);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(1075, 47);
-            this.comboBox2.TabIndex = 3;
-=======
             this.cboLoaiRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoaiRecord.FormattingEnabled = true;
-            this.cboLoaiRecord.Location = new System.Drawing.Point(14, 158);
+            this.cboLoaiRecord.Location = new System.Drawing.Point(19, 196);
             this.cboLoaiRecord.Name = "cboLoaiRecord";
-            this.cboLoaiRecord.Size = new System.Drawing.Size(807, 39);
+            this.cboLoaiRecord.Size = new System.Drawing.Size(1075, 47);
             this.cboLoaiRecord.TabIndex = 3;
             this.cboLoaiRecord.TextUpdate += new System.EventHandler(this.cboLoaiRecord_TextUpdate);
->>>>>>> cb4400ad42de5cc6d1fdab3e84b6cd0ccd429927
             // 
             // cboNhanSu
             // 

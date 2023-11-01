@@ -57,7 +57,6 @@
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\NhanSuBLL.cs" />
-<<<<<<< HEAD
     <Compile Include="Control\UCAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,9 +81,7 @@
     <Compile Include="Control\UCPhong.Designer.cs">
       <DependentUpon>UCPhong.cs</DependentUpon>
     </Compile>
-=======
     <Compile Include="BLL\RecordBLL.cs" />
->>>>>>> cb4400ad42de5cc6d1fdab3e84b6cd0ccd429927
     <Compile Include="DAL\CheckExists.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
