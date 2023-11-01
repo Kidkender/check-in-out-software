@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace CheckinManagementSystem.BLL
 {
-    public class NhanSuBLL
+    public class RecordBLL
     {
         CheckInEntities _context = new CheckInEntities();
 
-        public List<NhanSu> GetAllNhanSu()
+        public List<Record> GetAllRecord()
         {
-            return _context.NhanSu.ToList();
+            return _context.Record.ToList();
+        }
+
+        public List<LoaiRecord> GetAllLoaiRecord()
+        {
+            return _context.LoaiRecord.ToList();
         }
     }
 }
