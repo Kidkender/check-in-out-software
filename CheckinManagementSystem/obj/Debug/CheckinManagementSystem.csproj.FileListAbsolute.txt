@@ -21,7 +21,6 @@ K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementS
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Home.resources
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Properties.Resources.resources
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.UCInOut.resources
-K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.UCInOutCA.resources
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.csproj.GenerateResource.cache
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.csproj.CoreCompileInputs.cache
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.exe
@@ -44,3 +43,15 @@ D:\Code\Code\check-in-out-software\CheckinManagementSystem\obj\Debug\CheckinMana
 D:\Code\Code\check-in-out-software\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.csproj.CopyComplete
 D:\Code\Code\check-in-out-software\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.exe
 D:\Code\Code\check-in-out-software\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.pdb
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\bin\Debug\EntityFramework.dll
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\bin\Debug\EntityFramework.xml
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.csproj.CopyComplete
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.UCHistory.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCAdmin.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCCICO.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCPhong.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCNhanSu.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.EditP.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.EditNS.resources

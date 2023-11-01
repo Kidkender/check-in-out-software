@@ -57,6 +57,30 @@
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\NhanSuBLL.cs" />
+    <Compile Include="Control\UCAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCAdmin.Designer.cs">
+      <DependentUpon>UCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UCCICO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCCICO.Designer.cs">
+      <DependentUpon>UCCICO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UCNhanSu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCNhanSu.Designer.cs">
+      <DependentUpon>UCNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UCPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCPhong.Designer.cs">
+      <DependentUpon>UCPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\CheckExists.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
@@ -105,6 +129,18 @@
     <Compile Include="DAL\Record.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form\EditNS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EditNS.Designer.cs">
+      <DependentUpon>EditNS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EditP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EditP.Designer.cs">
+      <DependentUpon>EditP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +161,30 @@
     <Compile Include="Control\UCInOut.Designer.cs">
       <DependentUpon>UCInOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\UCInOutCA.cs">
+    <Compile Include="Control\UCHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\UCInOutCA.Designer.cs">
-      <DependentUpon>UCInOutCA.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Control\UCAdmin.resx">
+      <DependentUpon>UCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCCICO.resx">
+      <DependentUpon>UCCICO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCHistory.resx">
+      <DependentUpon>UCHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCNhanSu.resx">
+      <DependentUpon>UCNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCPhong.resx">
+      <DependentUpon>UCPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EditNS.resx">
+      <DependentUpon>EditNS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EditP.resx">
+      <DependentUpon>EditP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,12 +199,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Control\UCInOut.resx">
       <DependentUpon>UCInOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\UCInOutCA.resx">
-      <DependentUpon>UCInOutCA.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\CheckInModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -190,6 +242,10 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\excel %282%29.png" />
+    <None Include="Resources\excel %281%29.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\1599859.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

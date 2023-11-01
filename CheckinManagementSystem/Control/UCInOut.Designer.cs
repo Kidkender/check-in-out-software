@@ -61,9 +61,10 @@
             this.panel1.Controls.Add(this.listView2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(915, 0);
+            this.panel1.Location = new System.Drawing.Point(1467, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 698);
+            this.panel1.Size = new System.Drawing.Size(454, 919);
             this.panel1.TabIndex = 0;
             // 
             // listView2
@@ -72,9 +73,10 @@
             this.columnHeader5,
             this.columnHeader6});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(26, 57);
+            this.listView2.Location = new System.Drawing.Point(30, 70);
+            this.listView2.Margin = new System.Windows.Forms.Padding(4);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(300, 626);
+            this.listView2.Size = new System.Drawing.Size(399, 845);
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -82,22 +84,25 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 19);
+            this.label4.Location = new System.Drawing.Point(172, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 25);
+            this.label4.Size = new System.Drawing.Size(136, 31);
             this.label4.TabIndex = 0;
             this.label4.Text = "NỘI QUY";
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(915, 698);
+            this.panel2.Size = new System.Drawing.Size(1467, 919);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -105,9 +110,10 @@
             // 
             this.panel5.Controls.Add(this.listView1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 421);
+            this.panel5.Location = new System.Drawing.Point(0, 487);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(915, 277);
+            this.panel5.Size = new System.Drawing.Size(1467, 432);
             this.panel5.TabIndex = 3;
             // 
             // listView1
@@ -118,9 +124,10 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(53, 24);
+            this.listView1.Location = new System.Drawing.Point(71, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(807, 238);
+            this.listView1.Size = new System.Drawing.Size(1481, 413);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -145,32 +152,36 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(170, 8);
+            this.label3.Location = new System.Drawing.Point(425, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(609, 49);
+            this.label3.Size = new System.Drawing.Size(764, 62);
             this.label3.TabIndex = 2;
             this.label3.Text = "CHECK IN/OUT ĐIỂM DANH";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.comboBox2);
             this.panel4.Controls.Add(this.cboNhanSu);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(38, 69);
+            this.panel4.Location = new System.Drawing.Point(249, 98);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(835, 248);
+            this.panel4.Size = new System.Drawing.Size(1113, 305);
             this.panel4.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 25);
+            this.label1.Size = new System.Drawing.Size(259, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã NV + Họ và tên";
             // 
@@ -178,9 +189,10 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(14, 158);
+            this.comboBox2.Location = new System.Drawing.Point(19, 194);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(807, 39);
+            this.comboBox2.Size = new System.Drawing.Size(1075, 47);
             this.comboBox2.TabIndex = 3;
             // 
             // cboNhanSu
@@ -188,9 +200,10 @@
             this.cboNhanSu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNhanSu.FormattingEnabled = true;
-            this.cboNhanSu.Location = new System.Drawing.Point(14, 55);
+            this.cboNhanSu.Location = new System.Drawing.Point(19, 68);
+            this.cboNhanSu.Margin = new System.Windows.Forms.Padding(4);
             this.cboNhanSu.Name = "cboNhanSu";
-            this.cboNhanSu.Size = new System.Drawing.Size(807, 39);
+            this.cboNhanSu.Size = new System.Drawing.Size(1075, 47);
             this.cboNhanSu.TabIndex = 2;
             this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
             // 
@@ -198,18 +211,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 120);
+            this.label2.Location = new System.Drawing.Point(12, 148);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.Size = new System.Drawing.Size(77, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Loại ";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(0, 359);
+            this.panel3.Location = new System.Drawing.Point(4, 411);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(915, 64);
+            this.panel3.Size = new System.Drawing.Size(1592, 99);
             this.panel3.TabIndex = 0;
             // 
             // button2
@@ -217,9 +232,10 @@
             this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(339, 9);
+            this.button2.Location = new System.Drawing.Point(663, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 47);
+            this.button2.Size = new System.Drawing.Size(259, 58);
             this.button2.TabIndex = 1;
             this.button2.Text = "Xác nhận";
             this.button2.UseVisualStyleBackColor = false;
@@ -235,15 +251,15 @@
             // 
             // UCInOut
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCInOut";
-            this.Size = new System.Drawing.Size(1257, 698);
+            this.Size = new System.Drawing.Size(1921, 919);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CheckinManagementSystem.Control;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,7 +11,9 @@ namespace CheckinManagementSystem
 		public Home()
 		{
 			InitializeComponent();
-		}
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.WindowState = FormWindowState.Maximized;
+        }
 
 		public static Home Instance
 		{
@@ -31,10 +34,10 @@ namespace CheckinManagementSystem
 
 		public ToolStripButton BtnInOutTime
 		{
-			get { return toolStripButton1; } set { toolStripButton1 = value; }
+			get { return toolSBtnHistory; } set { toolSBtnHistory = value; }
 		}
 
-		public ToolStripButton BtnInOutCa
+		public ToolStripButton BtnHistory
 		{
 			get { return toolStripButton2; }
 			set { toolStripButton2 = value; }
@@ -43,11 +46,11 @@ namespace CheckinManagementSystem
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			init();
-			toolStripButton1.ForeColor = Color.Red;
+			toolStripButton2.ForeColor = Color.Red;
 
 			UCInOut uc = new UCInOut();
 			uc.Dock = DockStyle.Fill;
-			panelContainer.Controls.Add(uc);
+            PnlContainer.Controls.Add(uc);
 		}
 
 		private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -62,45 +65,62 @@ namespace CheckinManagementSystem
 
 		private void BtnLogin_Click(object sender, EventArgs e)
 		{
-			Login login = new Login();
-			login.ShowDialog();
-		}
-
-		private void toolStripButton2_Click(object sender, EventArgs e)
-		{
-			init();
-			toolStripButton2.ForeColor = Color.Red;
-			if (!panelContainer.Controls.Contains(UCInOutCA.Instance))
+			if (!Login.Instance.check)
 			{
-				
-				UCInOutCA.Instance.Dock = DockStyle.Fill;
-				panelContainer.Controls.Add(UCInOutCA.Instance);
-				UCInOutCA.Instance.BringToFront();
-			}
-			else
-				UCInOutCA.Instance.BringToFront();
+                Login.Instance.ShowDialog(this);
+            }
 
-		}
+			if (Login.Instance.check)
+			{
+                if (!panelContainer.Controls.Contains(UCAdmin.Instance))
+                {
+                    UCAdmin.Instance.Dock = DockStyle.Fill;
+                    panelContainer.Controls.Add(UCAdmin.Instance);
+                    UCAdmin.Instance.BringToFront();
+                }
+                else
+                    UCAdmin.Instance.BringToFront();
+
+                init();
+                BtnLogin.ForeColor = Color.Red;
+				
+            }
+        }
 
 		private void init()
 		{
-			toolStripButton1.ForeColor = Color.DodgerBlue;
+			toolSBtnHistory.ForeColor = Color.DodgerBlue;
 			toolStripButton2.ForeColor = Color.DodgerBlue;
-		}
+            BtnLogin.ForeColor = Color.DodgerBlue;
+        }
 
 		private void toolStripButton1_Click(object sender, EventArgs e)
 		{
-			init();
-			toolStripButton1.ForeColor = Color.Red;
-			if (!panelContainer.Controls.Contains(UCInOut.Instance))
-			{
+            init();
+            toolSBtnHistory.ForeColor = Color.Red;
+            if (!panelContainer.Controls.Contains(UCHistory.Instance))
+            {
+                UCHistory.Instance.Dock = DockStyle.Fill;
+                panelContainer.Controls.Add(UCHistory.Instance);
+                UCHistory.Instance.BringToFront();
+            }
+            else
+                UCHistory.Instance.BringToFront();
+        }
 
-				UCInOut.Instance.Dock = DockStyle.Fill;
-				panelContainer.Controls.Add(UCInOut.Instance);
-				UCInOut.Instance.BringToFront();
-			}
-			else
-				UCInOut.Instance.BringToFront();
-		}
-	}
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            init();
+            toolStripButton2.ForeColor = Color.Red;
+            if (!panelContainer.Controls.Contains(UCInOut.Instance))
+            {
+
+                UCInOut.Instance.Dock = DockStyle.Fill;
+                panelContainer.Controls.Add(UCInOut.Instance);
+                UCInOut.Instance.BringToFront();
+            }
+            else
+                UCInOut.Instance.BringToFront();
+        }
+    }
 }
