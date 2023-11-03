@@ -40,7 +40,7 @@
             // 
             this.tbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTaiKhoan.Location = new System.Drawing.Point(87, 130);
-            this.tbTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.tbTaiKhoan.Name = "tbTaiKhoan";
             this.tbTaiKhoan.Size = new System.Drawing.Size(675, 46);
             this.tbTaiKhoan.TabIndex = 0;
@@ -48,8 +48,8 @@
             // tbMatKhau
             // 
             this.tbMatKhau.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMatKhau.Location = new System.Drawing.Point(87, 247);
-            this.tbMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMatKhau.Location = new System.Drawing.Point(87, 248);
+            this.tbMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.tbMatKhau.Name = "tbMatKhau";
             this.tbMatKhau.Size = new System.Drawing.Size(675, 46);
             this.tbMatKhau.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(311, 330);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 59);
             this.button1.TabIndex = 5;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbMatKhau);
             this.Controls.Add(this.tbTaiKhoan);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

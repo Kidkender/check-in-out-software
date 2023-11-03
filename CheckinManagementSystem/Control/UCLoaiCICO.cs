@@ -22,7 +22,9 @@ namespace CheckinManagementSystem.Control
 
         private void btnThem_Click(object sender, System.EventArgs e)
         {
-
+            EditloaiCICO ed = new EditloaiCICO(0);
+            ed.StartPosition = FormStartPosition.CenterParent;
+            ed.ShowDialog();
         }
     }
 }

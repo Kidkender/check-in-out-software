@@ -29,7 +29,9 @@ namespace CheckinManagementSystem.Control
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            EditRule ed = new EditRule(0);
+            ed.StartPosition = FormStartPosition.CenterParent;
+            ed.ShowDialog();
         }
     }
 }

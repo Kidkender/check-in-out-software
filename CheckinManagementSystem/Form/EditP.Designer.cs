@@ -42,9 +42,9 @@
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(12, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(128, 37);
+            this.lbTitle.Size = new System.Drawing.Size(335, 37);
             this.lbTitle.TabIndex = 0;
-            this.lbTitle.Text = "LABEL";
+            this.lbTitle.Text = "THÔNG TIN PHÒNG";
             // 
             // textBox1
             // 
