@@ -69,11 +69,23 @@
     <Compile Include="Control\UCCICO.Designer.cs">
       <DependentUpon>UCCICO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\UCLoaiCICO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCLoaiCICO.Designer.cs">
+      <DependentUpon>UCLoaiCICO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UCNhanSu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\UCNhanSu.Designer.cs">
       <DependentUpon>UCNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UCNoiQUy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCNoiQUy.Designer.cs">
+      <DependentUpon>UCNoiQUy.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\UCPhong.cs">
       <SubType>UserControl</SubType>
@@ -174,8 +186,14 @@
     <EmbeddedResource Include="Control\UCHistory.resx">
       <DependentUpon>UCHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCLoaiCICO.resx">
+      <DependentUpon>UCLoaiCICO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UCNhanSu.resx">
       <DependentUpon>UCNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCNoiQUy.resx">
+      <DependentUpon>UCNoiQUy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCPhong.resx">
       <DependentUpon>UCPhong.cs</DependentUpon>
@@ -243,6 +261,16 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\information.png" />
+    <None Include="Resources\key %281%29.png" />
+    <None Include="Resources\log-out.png" />
+    <None Include="Resources\turn-off.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\corpora.png" />
+    <None Include="Resources\schedule.png" />
+    <None Include="Resources\check-in.png" />
+    <None Include="Resources\division.png" />
+    <None Include="Resources\department.png" />
     <None Include="Resources\excel %282%29.png" />
     <None Include="Resources\excel %281%29.png" />
     <None Include="Resources\excel.png" />

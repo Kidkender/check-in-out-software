@@ -30,6 +30,7 @@ namespace CheckinManagementSystem.Control
         private void btnThem_Click(object sender, EventArgs e)
         {
             EditNS ed = new EditNS(0);
+            ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog();
         }
     }

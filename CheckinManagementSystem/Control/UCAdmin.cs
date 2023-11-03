@@ -32,6 +32,8 @@ namespace CheckinManagementSystem.Control
             btnCICO.BackColor = System.Drawing.Color.MistyRose;
             btnNhanSu.BackColor = System.Drawing.Color.MistyRose;
             btnPhong.BackColor = System.Drawing.Color.MistyRose;
+            BTNoiQuy.BackColor = System.Drawing.Color.MistyRose;
+            btnLoaiCICO.BackColor = System.Drawing.Color.MistyRose;
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -77,6 +79,36 @@ namespace CheckinManagementSystem.Control
             }
             else
                 UCCICO.Instance.BringToFront();
+        }
+
+        private void btnLoaiCICO_Click(object sender, EventArgs e)
+        {
+            Init();
+            btnLoaiCICO.BackColor = System.Drawing.Color.LightGray;
+
+            if (!panelContainer.Controls.Contains(UCLoaiCICO.Instance))
+            {
+                UCLoaiCICO.Instance.Dock = DockStyle.Fill;
+                panelContainer.Controls.Add(UCLoaiCICO.Instance);
+                UCLoaiCICO.Instance.BringToFront();
+            }
+            else
+                UCLoaiCICO.Instance.BringToFront();
+        }
+
+        private void BTNoiQuy_Click(object sender, EventArgs e)
+        {
+            Init();
+            BTNoiQuy.BackColor = System.Drawing.Color.LightGray;
+
+            if (!panelContainer.Controls.Contains(UCNoiQUy.Instance))
+            {
+                UCNoiQUy.Instance.Dock = DockStyle.Fill;
+                panelContainer.Controls.Add(UCNoiQUy.Instance);
+                UCNoiQUy.Instance.BringToFront();
+            }
+            else
+                UCNoiQUy.Instance.BringToFront();
         }
     }
 }

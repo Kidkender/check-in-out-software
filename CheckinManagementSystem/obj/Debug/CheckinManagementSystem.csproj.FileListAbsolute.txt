@@ -55,3 +55,5 @@ K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementS
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCNhanSu.resources
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.EditP.resources
 K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.EditNS.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCLoaiCICO.resources
+K:\K-Project\AppWindows\Git\CheckinManagementSystem\obj\Debug\CheckinManagementSystem.Control.UCNoiQUy.resources
