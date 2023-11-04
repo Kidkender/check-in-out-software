@@ -39,8 +39,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -53,6 +60,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
@@ -115,6 +123,9 @@
     <Compile Include="DAL\DanhMucRole.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\GetAllNhanSu_Result.cs">
+      <DependentUpon>CheckInModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\LoaiRecord.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
@@ -140,6 +151,15 @@
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Record.cs">
+      <DependentUpon>CheckInModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SP_GetAllDangKy_Result.cs">
+      <DependentUpon>CheckInModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SP_GetAllNhanSu_Result.cs">
+      <DependentUpon>CheckInModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SP_QuanLyCheckIn_Result.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Form\EditLoaiCICO.cs">
@@ -249,6 +269,10 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.NhanSu.datasource" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllDangKy_Result.datasource" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result.datasource" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -258,6 +282,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Word\formBaoCao.xlsx" />
+    <None Include="Word\formImport.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -279,6 +305,8 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\excel_export.png" />
+    <Content Include="Resources\excel_import.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\key %281%29.png" />
     <None Include="Resources\log-out.png" />

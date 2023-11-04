@@ -1,4 +1,5 @@
 ﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.Control;
 using CheckinManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,12 @@ namespace CheckinManagementSystem
 {
     public partial class UCInOut : UserControl
     {
+        #region Variable
+
         NhanSuBLL _nhanSuBLL = new NhanSuBLL();
         CheckInOutBLL _checkInOutBLL = new CheckInOutBLL();
         RecordBLL _recordBLL = new RecordBLL();
-        List<NhanSu> _data = null;
-        List<LoaiRecord> _dataLoaiRecord = null;
+
         private static UCInOut _instance;
         public static UCInOut Instance
         {
@@ -30,22 +32,35 @@ namespace CheckinManagementSystem
             }
         }
 
+        #endregion
+
+        #region Contructor
+
         public UCInOut()
         {
             InitializeComponent();
 
             #region Init control
 
-            RefreshDataNhanSu();
-            RefreshDataLoaiRecord();
+            RefreshAll();
 
             #endregion
         }
 
+        #endregion
+
+        #region Private
+
+        private void RefreshAll()
+        {
+            RefreshDataNhanSu();
+            RefreshDataLoaiRecord();
+            RefreshDataCheckOut();
+        }
+
         private void RefreshDataNhanSu()
         {
-            _data = _nhanSuBLL.GetAllNhanSu();
-            cboNhanSu.DataSource = _data;
+            cboNhanSu.DataSource = _nhanSuBLL.GetAllNhanSu();
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
@@ -53,43 +68,20 @@ namespace CheckinManagementSystem
 
         private void RefreshDataLoaiRecord()
         {
-            _dataLoaiRecord = _recordBLL.GetAllLoaiRecord();
-            cboLoaiRecord.DataSource = _data;
+            cboLoaiRecord.DataSource = _recordBLL.GetAllLoaiRecord();
             cboLoaiRecord.ValueMember = "ID";
             cboLoaiRecord.DisplayMember = "TenLoaiRecord";
             cboLoaiRecord.SelectedIndex = -1;
         }
 
-        #region Event
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RefreshDataCheckOut()
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            LoaiRecord loaiRecord = (LoaiRecord)cboLoaiRecord.SelectedItem;
-            if (nhanSu == null)
-            {
-                MessageBox.Show("Vui lòng chọn nhân sự điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                if (_checkInOutBLL.AddRecord(nhanSu.ID, loaiRecord?.ID))
-                    MessageBox.Show("Điểm danh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Điểm danh thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            grdCheckOut.DataSource = _recordBLL.GetAllDangKy();
         }
 
         #endregion
+
+        #region Event
 
         private void cboNhanSu_TextUpdate(object sender, EventArgs e)
         {
@@ -100,7 +92,7 @@ namespace CheckinManagementSystem
             else
             {
                 string tempStr = cboNhanSu.Text;
-                List<NhanSu> data = _data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
+                List<NhanSu> data = _nhanSuBLL.GetAllNhanSu().Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
 
                 cboNhanSu.DataSource = null;
                 cboNhanSu.Items.Clear();
@@ -129,7 +121,7 @@ namespace CheckinManagementSystem
             else
             {
                 string tempStr = cboLoaiRecord.Text;
-                List<LoaiRecord> data = _dataLoaiRecord.Where(t => t.TenLoaiRecord.ToLower().Contains(tempStr.ToLower())).ToList();
+                List<LoaiRecord> data = _recordBLL.GetAllLoaiRecord().Where(t => t.TenLoaiRecord.ToLower().Contains(tempStr.ToLower())).ToList();
 
                 cboLoaiRecord.DataSource = null;
                 cboLoaiRecord.Items.Clear();
@@ -148,5 +140,54 @@ namespace CheckinManagementSystem
                 cboLoaiRecord.Select(cboLoaiRecord.Text.Length, 0);
             }
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
+            LoaiRecord loaiRecord = (LoaiRecord)cboLoaiRecord.SelectedItem;
+            if (nhanSu == null)
+            {
+                MessageBox.Show("Vui lòng chọn nhân sự check!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (loaiRecord == null)
+            {
+                MessageBox.Show("Vui lòng chọn loại check!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (_checkInOutBLL.checkIsOut(nhanSu.ID, loaiRecord.ID))
+            {
+                MessageBox.Show("Nhân sự đã đăng ký checkout, vui lòng checkin vào trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (_checkInOutBLL.AddRecord(nhanSu.ID, loaiRecord?.ID))
+                {
+                    MessageBox.Show("Check thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshAll();
+                }
+                else
+                    MessageBox.Show("Check thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            RefreshAll();
+        }
+
+        private void grdCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
+            {
+                int IDRecord = (int)grdCheckOut["ID", e.RowIndex].Value;
+
+                if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
+                {
+                    MessageBox.Show("Check thành công");
+                    RefreshAll();
+                }
+            }
+        }
+
+        #endregion
     }
 }

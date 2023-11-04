@@ -114,7 +114,6 @@ namespace CheckinManagementSystem
             toolStripButton2.ForeColor = Color.Red;
             if (!panelContainer.Controls.Contains(UCInOut.Instance))
             {
-
                 UCInOut.Instance.Dock = DockStyle.Fill;
                 panelContainer.Controls.Add(UCInOut.Instance);
                 UCInOut.Instance.BringToFront();

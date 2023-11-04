@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.lbTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPhong = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,13 +50,13 @@
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN NHÂN SỰ";
             // 
-            // textBox1
+            // txtMa
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(21, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 45);
-            this.textBox1.TabIndex = 1;
+            this.txtMa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMa.Location = new System.Drawing.Point(21, 39);
+            this.txtMa.Name = "txtMa";
+            this.txtMa.Size = new System.Drawing.Size(435, 45);
+            this.txtMa.TabIndex = 1;
             // 
             // label5
             // 
@@ -84,11 +84,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboPhong);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtTen);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtMa);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(12, 81);
@@ -96,14 +96,14 @@
             this.panel1.Size = new System.Drawing.Size(957, 203);
             this.panel1.TabIndex = 4;
             // 
-            // comboBox1
+            // cboPhong
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(21, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(434, 44);
-            this.comboBox1.TabIndex = 7;
+            this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhong.FormattingEnabled = true;
+            this.cboPhong.Location = new System.Drawing.Point(21, 134);
+            this.cboPhong.Name = "cboPhong";
+            this.cboPhong.Size = new System.Drawing.Size(434, 44);
+            this.cboPhong.TabIndex = 7;
             // 
             // label6
             // 
@@ -115,13 +115,13 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Thuộc Phòng";
             // 
-            // textBox2
+            // txtTen
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(498, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(435, 45);
-            this.textBox2.TabIndex = 4;
+            this.txtTen.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(498, 39);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(435, 45);
+            this.txtTen.TabIndex = 4;
             // 
             // label4
             // 
@@ -156,13 +156,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPhong;
     }
 }

@@ -1,9 +1,12 @@
-﻿using CheckinManagementSystem.DAL;
+﻿using CheckinManagementSystem.Control;
+using CheckinManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 
 namespace CheckinManagementSystem.BLL
 {
@@ -11,22 +14,38 @@ namespace CheckinManagementSystem.BLL
     {
         CheckInEntities _context = new CheckInEntities();
 
-        public bool AddRecord(int? IdNhanSu, int? IdLoaiRecord)
+        public bool AddRecord(int? IdNhanSu, int? IdLoaiRecord, int? InOut = 0, int? IdRecord = null)
         {
             int result = 0;
-            if (IdNhanSu != null)
+            if (IdNhanSu != null || IdRecord != null)
             {
-                Record record = new Record()
+                Record record = _context.Record.FirstOrDefault(t => (t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)) || t.ID == IdRecord);
+
+                if (record != null)
                 {
-                    IdLoaiRecord = IdLoaiRecord ?? 0,
-                    IdNhanSu = IdNhanSu,
-                    ThoiGian = DateTime.Now,
-                    InOut = 0
-                };
-                _context.Record.Add(record);
+                    record.ThoiGianRa = DateTime.Now;
+                    record.InOut = InOut;
+                }
+                else
+                {
+                    record = new Record()
+                    {
+                        IdLoaiRecord = IdLoaiRecord ?? 0,
+                        IdNhanSu = IdNhanSu,
+                        ThoiGianVao = DateTime.Now,
+                        InOut = InOut
+                    };
+                    _context.Record.Add(record);
+                }
+
                 result = _context.SaveChanges();
             }
             return result > 0;
+        }
+
+        public bool checkIsOut(int? IdNhanSu, int? IdLoaiRecord)
+        {
+            return _context.Record.Where(t => IdLoaiRecord != 0 && t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && t.ThoiGianRa == null && EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)).Any();
         }
     }
 }

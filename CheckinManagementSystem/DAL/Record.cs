@@ -16,7 +16,8 @@ namespace CheckinManagementSystem.DAL
     {
         public int ID { get; set; }
         public Nullable<int> IdNhanSu { get; set; }
-        public Nullable<System.DateTime> ThoiGian { get; set; }
+        public Nullable<System.DateTime> ThoiGianVao { get; set; }
+        public Nullable<System.DateTime> ThoiGianRa { get; set; }
         public Nullable<int> IdLoaiRecord { get; set; }
         public Nullable<int> InOut { get; set; }
     }

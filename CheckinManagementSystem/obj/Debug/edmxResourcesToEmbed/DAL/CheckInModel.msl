@@ -22,6 +22,8 @@
     <EntitySetMapping Name="LoaiRecord">
       <EntityTypeMapping TypeName="CheckInModel.LoaiRecord">
         <MappingFragment StoreEntitySet="LoaiRecord">
+          <ScalarProperty Name="SoLan" ColumnName="SoLan" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenLoaiRecord" ColumnName="TenLoaiRecord" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
@@ -97,16 +99,76 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_QuanLyCheckIn" FunctionName="CheckInModel.Store.SP_QuanLyCheckIn">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CheckInModel.SP_QuanLyCheckIn_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="Re_AnSang" ColumnName="Re_AnSang" />
+          <ScalarProperty Name="Re_AnTrua" ColumnName="Re_AnTrua" />
+          <ScalarProperty Name="Re_AnToi" ColumnName="Re_AnToi" />
+          <ScalarProperty Name="Re_TieuTien" ColumnName="Re_TieuTien" />
+          <ScalarProperty Name="Re_DaiTien" ColumnName="Re_DaiTien" />
+          <ScalarProperty Name="Re_HutThuoc" ColumnName="Re_HutThuoc" />
+          <ScalarProperty Name="Re_DiKhac" ColumnName="Re_DiKhac" />
+          <ScalarProperty Name="Re_SoLanDiQua" ColumnName="Re_SoLanDiQua" />
+          <ScalarProperty Name="Re_SoPhutDiQua" ColumnName="Re_SoPhutDiQua" />
+          <ScalarProperty Name="Re_TongThoiGianSuDung" ColumnName="Re_TongThoiGianSuDung" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllDangKy" FunctionName="CheckInModel.Store.SP_GetAllDangKy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CheckInModel.SP_GetAllDangKy_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
+          <ScalarProperty Name="TenLoaiRecord" ColumnName="TenLoaiRecord" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="Record">
       <EntityTypeMapping TypeName="CheckInModel.Record">
         <MappingFragment StoreEntitySet="Record">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
-          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
-          <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
           <ScalarProperty Name="InOut" ColumnName="InOut" />
+          <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAllNhanSu" FunctionName="CheckInModel.Store.GetAllNhanSu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CheckInModel.GetAllNhanSu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllNhanSu" FunctionName="CheckInModel.Store.SP_GetAllNhanSu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CheckInModel.SP_GetAllNhanSu_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

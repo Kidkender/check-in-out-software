@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BTNoiQuy = new System.Windows.Forms.Button();
             this.btnLoaiCICO = new System.Windows.Forms.Button();
             this.btnCICO = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,26 +61,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 931);
             this.panel1.TabIndex = 0;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(469, 0);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1210, 931);
-            this.panelContainer.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label1.Location = new System.Drawing.Point(128, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 36);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Administrator";
             // 
             // button3
             // 
@@ -120,6 +100,18 @@
             this.button1.Size = new System.Drawing.Size(48, 41);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label1.Location = new System.Drawing.Point(128, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 36);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Administrator";
             // 
             // panel2
             // 
@@ -224,6 +216,15 @@
             this.btnPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPhong.UseVisualStyleBackColor = false;
             this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(469, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1210, 931);
+            this.panelContainer.TabIndex = 1;
             // 
             // UCAdmin
             // 

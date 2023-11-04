@@ -22,6 +22,8 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoaiRecord" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThoiGian" Type="int" />
+    <Property Name="SoLan" Type="int" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="NhanSu">
@@ -92,10 +94,20 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdNhanSu" Type="int" />
-    <Property Name="ThoiGian" Type="datetime" />
+    <Property Name="ThoiGianVao" Type="datetime" />
+    <Property Name="ThoiGianRa" Type="datetime" />
     <Property Name="IdLoaiRecord" Type="int" />
     <Property Name="InOut" Type="int" />
   </EntityType>
+  <Function Name="GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_QuanLyCheckIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDNhanVien" Type="int" Mode="In" />
+    <Parameter Name="IDPhong" Type="int" Mode="In" />
+    <Parameter Name="TuNgay" Type="datetime" Mode="In" />
+    <Parameter Name="DenNgay" Type="datetime" Mode="In" />
+  </Function>
   <EntityContainer Name="CheckInModelStoreContainer">
     <EntitySet Name="CheckExists" EntityType="Self.CheckExists" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DanhMucRole" EntityType="Self.DanhMucRole" Schema="dbo" store:Type="Tables" />

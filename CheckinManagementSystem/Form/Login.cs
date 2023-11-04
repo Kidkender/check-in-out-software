@@ -32,10 +32,12 @@ namespace CheckinManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if( tbTaiKhoan.Text == "user" && tbMatKhau.Text == "123")
+            if(tbTaiKhoan.Text == "user" && tbMatKhau.Text == "123")
 			{
                 this.Close();
                 this.check = true;
+                tbTaiKhoan.Text = "";
+                tbMatKhau.Text = "";
             }
             else
             {

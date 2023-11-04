@@ -17,5 +17,7 @@ namespace CheckinManagementSystem.DAL
         public int ID { get; set; }
         public string TenLoaiRecord { get; set; }
         public string MoTa { get; set; }
+        public Nullable<int> ThoiGian { get; set; }
+        public Nullable<int> SoLan { get; set; }
     }
 }
