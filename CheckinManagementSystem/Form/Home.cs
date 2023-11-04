@@ -53,6 +53,13 @@ namespace CheckinManagementSystem
             PnlContainer.Controls.Add(uc);
 		}
 
+		public void Refresh()
+		{
+            init();
+            toolStripButton2.ForeColor = Color.Red;
+            UCInOut.Instance.BringToFront();
+        }
+
 		private void toolStripLabel1_Click(object sender, EventArgs e)
 		{
 			

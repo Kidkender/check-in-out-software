@@ -28,37 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdNoiQuy = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.danhMucRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenRoleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNoiQuy)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucRoleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.grdNoiQuy);
             this.panel2.Location = new System.Drawing.Point(56, 233);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1360, 653);
             this.panel2.TabIndex = 8;
             // 
-            // dataGridView1
+            // grdNoiQuy
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1297, 609);
-            this.dataGridView1.TabIndex = 0;
+            this.grdNoiQuy.AllowUserToAddRows = false;
+            this.grdNoiQuy.AllowUserToDeleteRows = false;
+            this.grdNoiQuy.AutoGenerateColumns = false;
+            this.grdNoiQuy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdNoiQuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdNoiQuy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.tenRoleDataGridViewTextBoxColumn,
+            this.moTaDataGridViewTextBoxColumn,
+            this.Edit,
+            this.Delete});
+            this.grdNoiQuy.DataSource = this.danhMucRoleBindingSource;
+            this.grdNoiQuy.Location = new System.Drawing.Point(35, 23);
+            this.grdNoiQuy.Name = "grdNoiQuy";
+            this.grdNoiQuy.ReadOnly = true;
+            this.grdNoiQuy.RowHeadersWidth = 51;
+            this.grdNoiQuy.RowTemplate.Height = 24;
+            this.grdNoiQuy.Size = new System.Drawing.Size(1297, 609);
+            this.grdNoiQuy.TabIndex = 0;
+            this.grdNoiQuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNoiQuy_CellContentClick);
             // 
             // panel1
             // 
@@ -107,6 +128,7 @@
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // textBox1
             // 
@@ -123,9 +145,56 @@
             this.label1.ForeColor = System.Drawing.Color.Brown;
             this.label1.Location = new System.Drawing.Point(49, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 53);
+            this.label1.Size = new System.Drawing.Size(359, 42);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ NỘI QUY";
+            // 
+            // danhMucRoleBindingSource
+            // 
+            this.danhMucRoleBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.DanhMucRole);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // tenRoleDataGridViewTextBoxColumn
+            // 
+            this.tenRoleDataGridViewTextBoxColumn.DataPropertyName = "TenRole";
+            this.tenRoleDataGridViewTextBoxColumn.HeaderText = "Tên nội quy";
+            this.tenRoleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenRoleDataGridViewTextBoxColumn.Name = "tenRoleDataGridViewTextBoxColumn";
+            this.tenRoleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // moTaDataGridViewTextBoxColumn
+            // 
+            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
+            this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // UCNoiQUy
             // 
@@ -138,9 +207,10 @@
             this.Size = new System.Drawing.Size(1619, 858);
             this.Load += new System.EventHandler(this.UCNoiQUy_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNoiQuy)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucRoleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,12 +219,18 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdNoiQuy;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource danhMucRoleBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenRoleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

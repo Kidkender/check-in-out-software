@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\NhanSuBLL.cs" />
+    <Compile Include="BLL\NoiQuyBLL.cs" />
     <Compile Include="Control\UCAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +270,7 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.DanhMucRole.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.NhanSu.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllDangKy_Result.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result.datasource" />
