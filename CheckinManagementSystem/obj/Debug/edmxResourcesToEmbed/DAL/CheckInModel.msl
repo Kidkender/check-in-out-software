@@ -83,6 +83,8 @@
     <EntitySetMapping Name="Phong">
       <EntityTypeMapping TypeName="CheckInModel.Phong">
         <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
@@ -170,5 +172,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="NoiQuy">
+      <EntityTypeMapping TypeName="CheckInModel.NoiQuy">
+        <MappingFragment StoreEntitySet="NoiQuy">
+          <ScalarProperty Name="XuPhat" ColumnName="XuPhat" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

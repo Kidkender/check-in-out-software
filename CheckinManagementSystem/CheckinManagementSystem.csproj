@@ -49,6 +49,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -64,18 +65,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CheckInOutBLL.cs" />
+    <Compile Include="BLL\LoaiRecordBLL.cs" />
     <Compile Include="BLL\NhanSuBLL.cs" />
+    <Compile Include="BLL\NoiQuyBLL.cs" />
+    <Compile Include="BLL\PhongBLL.cs" />
     <Compile Include="Control\UCAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\UCAdmin.Designer.cs">
       <DependentUpon>UCAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\UCCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCCheck.Designer.cs">
+      <DependentUpon>UCCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UCCICO.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\UCCICO.Designer.cs">
       <DependentUpon>UCCICO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UCHistoryCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCHistoryCheck.Designer.cs">
+      <DependentUpon>UCHistoryCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\UCLoaiCICO.cs">
       <SubType>UserControl</SubType>
@@ -102,6 +118,12 @@
       <DependentUpon>UCPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\RecordBLL.cs" />
+    <Compile Include="Control\UCTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UCTest.Designer.cs">
+      <DependentUpon>UCTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\CheckExists.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
@@ -212,11 +234,17 @@
     <EmbeddedResource Include="Control\UCAdmin.resx">
       <DependentUpon>UCAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCCheck.resx">
+      <DependentUpon>UCCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\UCCICO.resx">
       <DependentUpon>UCCICO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCHistory.resx">
       <DependentUpon>UCHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCHistoryCheck.resx">
+      <DependentUpon>UCHistoryCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCLoaiCICO.resx">
       <DependentUpon>UCLoaiCICO.cs</DependentUpon>
@@ -229,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCPhong.resx">
       <DependentUpon>UCPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UCTest.resx">
+      <DependentUpon>UCTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditLoaiCICO.resx">
       <DependentUpon>EditLoaiCICO.cs</DependentUpon>
@@ -305,6 +336,7 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\3168315.png" />
     <Content Include="Resources\excel_export.png" />
     <Content Include="Resources\excel_import.png" />
     <None Include="Resources\information.png" />
