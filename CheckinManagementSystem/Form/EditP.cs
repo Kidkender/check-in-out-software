@@ -1,26 +1,29 @@
-﻿using System;
+﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.DAL;
+using System;
 using System.Windows.Forms;
 
 namespace CheckinManagementSystem
 {
 	public partial class EditP : Form
 	{
-        static EditP _obj;
+		PhongBLL _phongBLL = new PhongBLL();
+		static EditP _obj;
         public static EditP Instance
         {
             get
             {
                 if (_obj == null)
                 {
-                    _obj = new EditP(lbl);
+                    _obj = new EditP(lbl,p);
                 }
                 return _obj;
             }
         }
-        public EditP(int lbl)
+        public EditP(bool lbl, Phong phong = null)
 		{
 			InitializeComponent();
-            if(lbl <= 0)
+            if(lbl)
             {
                 lbTitle.Text = "THÊM PHÒNG";
             }
@@ -30,7 +33,8 @@ namespace CheckinManagementSystem
             }
         }
 
-        private static int lbl;
+        private static bool lbl;
+		private static Phong p;
 		public bool check = false;
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -78,6 +78,8 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenPhong" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThoiGianVao" Type="varchar" MaxLength="50" />
+    <Property Name="ThoiGianRa" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Quyen">
     <Key>

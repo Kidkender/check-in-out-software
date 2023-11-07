@@ -176,7 +176,7 @@ namespace CheckinManagementSystem
 
         private void grdCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
+            if (grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
             {
                 int IDRecord = (int)grdCheckOut["ID", e.RowIndex].Value;
 

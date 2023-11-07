@@ -83,6 +83,8 @@
     <EntitySetMapping Name="Phong">
       <EntityTypeMapping TypeName="CheckInModel.Phong">
         <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
