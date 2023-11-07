@@ -318,64 +318,6 @@
 			this.tableLayoutPanel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
 			this.ResumeLayout(false);
-            this.reDaiTienDataGridViewTextBoxColumn.HeaderText = "Đại tiện";
-            this.reDaiTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reDaiTienDataGridViewTextBoxColumn.Name = "reDaiTienDataGridViewTextBoxColumn";
-            this.reDaiTienDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reHutThuocDataGridViewTextBoxColumn
-            // 
-            this.reHutThuocDataGridViewTextBoxColumn.DataPropertyName = "Re_HutThuoc";
-            this.reHutThuocDataGridViewTextBoxColumn.HeaderText = "Hút thuốc";
-            this.reHutThuocDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reHutThuocDataGridViewTextBoxColumn.Name = "reHutThuocDataGridViewTextBoxColumn";
-            this.reHutThuocDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reDiKhacDataGridViewTextBoxColumn
-            // 
-            this.reDiKhacDataGridViewTextBoxColumn.DataPropertyName = "Re_DiKhac";
-            this.reDiKhacDataGridViewTextBoxColumn.HeaderText = "Khác";
-            this.reDiKhacDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reDiKhacDataGridViewTextBoxColumn.Name = "reDiKhacDataGridViewTextBoxColumn";
-            this.reDiKhacDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reSoLanDiQuaDataGridViewTextBoxColumn
-            // 
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoLanDiQua";
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.HeaderText = "Số lần đi quá quy định";
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.Name = "reSoLanDiQuaDataGridViewTextBoxColumn";
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // reSoPhutDiQuaDataGridViewTextBoxColumn
-            // 
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoPhutDiQua";
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.HeaderText = "Số phút đi quá quy định";
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Name = "reSoPhutDiQuaDataGridViewTextBoxColumn";
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sPQuanLyCheckInResultBindingSource
-            // 
-            this.sPQuanLyCheckInResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result);
-            // 
-            // UCCICO
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Name = "UCCICO";
-            this.Size = new System.Drawing.Size(1776, 970);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion

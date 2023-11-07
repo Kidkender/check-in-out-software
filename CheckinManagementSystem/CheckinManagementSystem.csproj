@@ -118,12 +118,6 @@
       <DependentUpon>UCPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\RecordBLL.cs" />
-    <Compile Include="Control\UCTest.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\UCTest.Designer.cs">
-      <DependentUpon>UCTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAL\CheckExists.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
@@ -257,9 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCPhong.resx">
       <DependentUpon>UCPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\UCTest.resx">
-      <DependentUpon>UCTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditLoaiCICO.resx">
       <DependentUpon>EditLoaiCICO.cs</DependentUpon>
