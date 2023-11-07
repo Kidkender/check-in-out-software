@@ -111,7 +111,6 @@
     <EntitySet Name="Record" EntityType="CheckInModel.Record" />
     <FunctionImport Name="GetAllNhanSu" ReturnType="Collection(CheckInModel.GetAllNhanSu_Result)" />
     <FunctionImport Name="SP_GetAllNhanSu" ReturnType="Collection(CheckInModel.SP_GetAllNhanSu_Result)" />
-    <EntitySet Name="NoiQuy" EntityType="CheckInModel.NoiQuy" />
   </EntityContainer>
   <ComplexType Name="SP_QuanLyCheckIn_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -167,12 +166,4 @@
     <Property Type="Int32" Name="IdPhong" Nullable="true" />
     <Property Type="String" Name="TenPhong" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <EntityType Name="NoiQuy">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NoiDung" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
-    <Property Name="XuPhat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>
