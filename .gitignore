@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
 /CheckinManagementSystem/obj/Debug/CheckinManagementSystem.csproj.AssemblyReference.cache
 /CheckinManagementSystem/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+=======
+
+*.vsidx
+.vs/CheckinManagementSystem/v17/.suo
+/.vs/CheckinManagementSystem/v17/.suo
+/CheckinManagementSystem/obj/Debug/CheckinManagementSystem.csproj.AssemblyReference.cache
+>>>>>>> origin/Mkhoa-dev

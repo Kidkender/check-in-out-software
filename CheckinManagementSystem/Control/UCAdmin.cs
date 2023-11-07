@@ -114,7 +114,6 @@ namespace CheckinManagementSystem.Control
         private void button1_Click(object sender, EventArgs e)
         {
             Login.Instance.check = false;
-            Home.Instance.Refresh();
         }
     }
 }
