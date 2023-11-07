@@ -38,6 +38,7 @@ namespace CheckinManagementSystem.DAL
         public virtual DbSet<Phong> Phong { get; set; }
         public virtual DbSet<Quyen> Quyen { get; set; }
         public virtual DbSet<Record> Record { get; set; }
+        //public virtual DbSet<NoiQuy> NoiQuy { get; set; }
     
         public virtual ObjectResult<SP_QuanLyCheckIn_Result> SP_QuanLyCheckIn(Nullable<int> iDNhanVien, Nullable<int> iDPhong, Nullable<System.DateTime> tuNgay, Nullable<System.DateTime> denNgay)
         {

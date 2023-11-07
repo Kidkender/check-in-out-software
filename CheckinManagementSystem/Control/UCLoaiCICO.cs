@@ -26,15 +26,5 @@ namespace CheckinManagementSystem.Control
             ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog();
         }
-
-		private void btnXuat_Click(object sender, System.EventArgs e)
-		{
-
-		}
-
-		private void btnTimKiem_Click(object sender, System.EventArgs e)
-		{
-
-		}
-	}
+    }
 }

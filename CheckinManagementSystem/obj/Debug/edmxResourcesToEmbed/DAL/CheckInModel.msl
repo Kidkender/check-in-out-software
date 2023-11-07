@@ -172,5 +172,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="NoiQuy">
+      <EntityTypeMapping TypeName="CheckInModel.NoiQuy">
+        <MappingFragment StoreEntitySet="NoiQuy">
+          <ScalarProperty Name="XuPhat" ColumnName="XuPhat" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

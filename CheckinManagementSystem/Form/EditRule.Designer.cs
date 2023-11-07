@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lbTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenRole = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.description = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,13 +48,13 @@
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN NỘI QUY";
             // 
-            // textBox1
+            // txtTenRole
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(21, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(912, 45);
-            this.textBox1.TabIndex = 1;
+            this.txtTenRole.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenRole.Location = new System.Drawing.Point(21, 39);
+            this.txtTenRole.Name = "txtTenRole";
+            this.txtTenRole.Size = new System.Drawing.Size(912, 45);
+            this.txtTenRole.TabIndex = 1;
             // 
             // label5
             // 
@@ -82,15 +82,24 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.description);
+            this.panel1.Controls.Add(this.txtMoTa);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtTenRole);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(957, 471);
             this.panel1.TabIndex = 4;
+            // 
+            // txtMoTa
+            // 
+            this.txtMoTa.AcceptsReturn = true;
+            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoTa.Location = new System.Drawing.Point(22, 138);
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(912, 45);
+            this.txtMoTa.TabIndex = 7;
             // 
             // label6
             // 
@@ -101,15 +110,6 @@
             this.label6.Size = new System.Drawing.Size(60, 23);
             this.label6.TabIndex = 6;
             this.label6.Text = "Mô tả";
-            // 
-            // description
-            // 
-            this.description.AcceptsReturn = true;
-            this.description.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.Location = new System.Drawing.Point(22, 138);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(912, 45);
-            this.description.TabIndex = 7;
             // 
             // EditRule
             // 
@@ -135,11 +135,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenRole;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox description;
+        private System.Windows.Forms.TextBox txtMoTa;
     }
 }

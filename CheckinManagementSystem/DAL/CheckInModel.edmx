@@ -76,6 +76,14 @@
           <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
           <Property Name="IsUse" Type="bit" />
         </EntityType>
+        <EntityType Name="NoiQuy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="2048" />
+          <Property Name="XuPhat" Type="nvarchar" MaxLength="256" />
+        </EntityType>
         <EntityType Name="Phong">
           <Key>
             <PropertyRef Name="ID" />
@@ -124,6 +132,7 @@
           <EntitySet Name="NhanSuPhanQuyen" EntityType="Self.NhanSuPhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhomPhanQuyen" EntityType="Self.NhomPhanQuyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhomQuyen" EntityType="Self.NhomQuyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NoiQuy" EntityType="Self.NoiQuy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
@@ -243,6 +252,7 @@
           <EntitySet Name="Record" EntityType="CheckInModel.Record" />
           <FunctionImport Name="GetAllNhanSu" ReturnType="Collection(CheckInModel.GetAllNhanSu_Result)" />
           <FunctionImport Name="SP_GetAllNhanSu" ReturnType="Collection(CheckInModel.SP_GetAllNhanSu_Result)" />
+          <EntitySet Name="NoiQuy" EntityType="CheckInModel.NoiQuy" />
         </EntityContainer>
         <ComplexType Name="SP_QuanLyCheckIn_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -298,6 +308,14 @@
           <Property Type="Int32" Name="IdPhong" Nullable="true" />
           <Property Type="String" Name="TenPhong" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="NoiQuy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoiDung" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="XuPhat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -475,6 +493,15 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="NoiQuy">
+            <EntityTypeMapping TypeName="CheckInModel.NoiQuy">
+              <MappingFragment StoreEntitySet="NoiQuy">
+                <ScalarProperty Name="XuPhat" ColumnName="XuPhat" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
