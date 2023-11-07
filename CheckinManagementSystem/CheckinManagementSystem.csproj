@@ -160,6 +160,9 @@
     <Compile Include="DAL\NhomQuyen.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\NoiQuy.cs">
+      <DependentUpon>CheckInModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Phong.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
@@ -292,6 +295,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.NhanSu.datasource" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.Phong.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllDangKy_Result.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result.datasource" />

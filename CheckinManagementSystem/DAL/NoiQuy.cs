@@ -12,12 +12,10 @@ namespace CheckinManagementSystem.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Phong
+    public partial class NoiQuy
     {
         public int ID { get; set; }
-        public string TenPhong { get; set; }
-        public string MoTa { get; set; }
-        public string ThoiGianVao { get; set; }
-        public string ThoiGianRa { get; set; }
+        public string NoiDung { get; set; }
+        public string XuPhat { get; set; }
     }
 }

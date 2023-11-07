@@ -45,7 +45,7 @@ namespace CheckinManagementSystem.BLL
                     ID = 0,
                     TenPhong = model.TenPhong,
                     ThoiGianVao = model.ThoiGianVao,
-                    ThoiGiaRa = model.ThoiGiaRa,
+                    ThoiGianRa = model.ThoiGianRa,
                     MoTa = model.MoTa
                 };
                 _context.Phong.Add(p);
@@ -53,7 +53,7 @@ namespace CheckinManagementSystem.BLL
             else
             {
                 p.MoTa = model.MoTa;
-                p.ThoiGiaRa = model.ThoiGiaRa;
+                p.ThoiGianRa = model.ThoiGianRa;
                 p.ThoiGianVao = model.ThoiGianVao;
                 p.TenPhong = model.TenPhong;
 
