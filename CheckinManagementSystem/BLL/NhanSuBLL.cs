@@ -38,26 +38,26 @@ namespace CheckinManagementSystem.BLL
             _context.SaveChanges();
         }
 
-        public int AddEditNhanSu(string HoTen, string maNhanSu, string TenPhong, int? IDNhanSu = null)
-        {
-            int result = 0;
-            var IdPhong = _context.Phong.FirstOrDefault(t => t.TenPhong == TenPhong)?.ID;
-            if (IdPhong != null)
+            public int AddEditNhanSu(string HoTen, string maNhanSu, string TenPhong, int? IDNhanSu = null)
             {
-                NhanSu ns = _context.NhanSu.FirstOrDefault(t => t.ID == IDNhanSu);
-                if (ns == null)
+                int result = 0;
+                var IdPhong = _context.Phong.FirstOrDefault(t => t.TenPhong == TenPhong)?.ID;
+                if (IdPhong != null)
                 {
-                    ns = new NhanSu();
-                    _context.NhanSu.Add(ns);
+                    NhanSu ns = _context.NhanSu.FirstOrDefault(t => t.ID == IDNhanSu);
+                    if (ns == null)
+                    {
+                        ns = new NhanSu();
+                        _context.NhanSu.Add(ns);
+                    }
+
+                    ns.HoTen = HoTen;
+                    ns.MaNhanSu = maNhanSu;
+                    ns.IdPhong = IdPhong;
+
+                    result = _context.SaveChanges();
                 }
-
-                ns.HoTen = HoTen;
-                ns.MaNhanSu = maNhanSu;
-                ns.IdPhong = IdPhong;
-
-                result = _context.SaveChanges();
+                return result;
             }
-            return result;
-        }
     }
 }

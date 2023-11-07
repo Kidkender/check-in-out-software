@@ -71,6 +71,14 @@
     <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
     <Property Name="IsUse" Type="bit" />
   </EntityType>
+  <EntityType Name="NoiQuy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="2048" />
+    <Property Name="XuPhat" Type="nvarchar" MaxLength="256" />
+  </EntityType>
   <EntityType Name="Phong">
     <Key>
       <PropertyRef Name="ID" />
@@ -78,6 +86,8 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenPhong" Type="nvarchar" MaxLength="50" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="255" />
+    <Property Name="ThoiGianVao" Type="varchar" MaxLength="50" />
+    <Property Name="ThoiGianRa" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Quyen">
     <Key>
@@ -117,6 +127,7 @@
     <EntitySet Name="NhanSuPhanQuyen" EntityType="Self.NhanSuPhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhomPhanQuyen" EntityType="Self.NhomPhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhomQuyen" EntityType="Self.NhomQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoiQuy" EntityType="Self.NoiQuy" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Quyen" EntityType="Self.Quyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />

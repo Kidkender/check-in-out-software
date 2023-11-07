@@ -17,5 +17,7 @@ namespace CheckinManagementSystem.DAL
         public int ID { get; set; }
         public string TenPhong { get; set; }
         public string MoTa { get; set; }
+        public string ThoiGianVao { get; set; }
+        public string ThoiGiaRa { get; set; }
     }
 }
