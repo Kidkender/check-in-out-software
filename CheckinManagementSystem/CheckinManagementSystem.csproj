@@ -294,7 +294,9 @@
       <DependentUpon>CheckInModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.LoaiRecord.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.NhanSu.datasource" />
+    <None Include="Properties\DataSources\CheckinManagementSystem.DAL.NoiQuy.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.Phong.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllDangKy_Result.datasource" />
     <None Include="Properties\DataSources\CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result.datasource" />

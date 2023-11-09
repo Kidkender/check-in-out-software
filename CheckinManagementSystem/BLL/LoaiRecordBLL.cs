@@ -22,6 +22,13 @@ namespace CheckinManagementSystem.BLL
             return _context.LoaiRecord.ToList();
         }
 
+        public List<LoaiRecord> GetAllLoaiRecord_Grid(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return _context.LoaiRecord.ToList();
+            return _context.LoaiRecord.Where(t => t.TenLoaiRecord.Trim().ToLower().Contains(text.ToLower().Trim())).ToList();
+        }
+
         public LoaiRecord GetLoaiRecordById(int? Id)
         {
             return _context.LoaiRecord.FirstOrDefault(t => t.ID == Id);
@@ -34,7 +41,7 @@ namespace CheckinManagementSystem.BLL
             _context.SaveChanges();
         }
 
-        public int AddEditLoaiRecord(LoaiRecord model)
+        public void AddEditLoaiRecord(LoaiRecord model)
         {
             int result = 0;
             LoaiRecord p = _context.LoaiRecord.FirstOrDefault(t => t.ID == model.ID);
@@ -52,16 +59,14 @@ namespace CheckinManagementSystem.BLL
             }
             else
             {
+                p.ID = model.ID;
                 p.MoTa = model.MoTa;
                 p.ThoiGian = model.ThoiGian;
                 p.SoLan = model.SoLan;
                 p.TenLoaiRecord = model.TenLoaiRecord;
-
-                _context.LoaiRecord.AddOrUpdate(p);
             }
 
             result = _context.SaveChanges();
-            return result;
         }
     }
 }

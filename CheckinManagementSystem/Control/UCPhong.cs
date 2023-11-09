@@ -27,6 +27,7 @@ namespace CheckinManagementSystem.Control
         public UCPhong()
         {
             InitializeComponent();
+			LoadData();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace CheckinManagementSystem.Control
 
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-            LoadData();
+            grdPhong.DataSource = _phongBLL.GetAllPhong_Grid(tbTimKiem.Text);
 		}
 
 		private void grdPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,6 +54,7 @@ namespace CheckinManagementSystem.Control
 			if (grdPhong.Columns[e.ColumnIndex].Name == "Delete")
 			{
 				_phongBLL.DeletePhongById(IdPhong);
+				LoadData();
 			}
 
 			if (grdPhong.Columns[e.ColumnIndex].Name == "Edit")

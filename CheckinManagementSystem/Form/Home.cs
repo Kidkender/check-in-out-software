@@ -32,18 +32,18 @@ namespace CheckinManagementSystem
 			set { panelContainer = value; }
 		}
 
-		public ToolStripButton BtnInOutTime
+		public ToolStripButton BtnHistory
 		{
 			get { return toolSBtnHistory; } set { toolSBtnHistory = value; }
 		}
 
-		public ToolStripButton BtnHistory
+		public ToolStripButton BtnInOutTime
 		{
 			get { return toolStripButton2; }
 			set { toolStripButton2 = value; }
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		public void Form1_Load(object sender, EventArgs e)
 		{
 			init();
 			toolStripButton2.ForeColor = Color.Red;

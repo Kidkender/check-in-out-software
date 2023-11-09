@@ -22,6 +22,22 @@ namespace CheckinManagementSystem.BLL
             return _context.Phong.ToList();
         }
 
+        public List<Phong> GetAllPhong_Grid(string text)
+        {
+            if(string.IsNullOrEmpty(text))
+                return _context.Phong.ToList();
+            return _context.Phong.Where(t=>t.TenPhong.Trim().ToLower().Contains(text.ToLower().Trim())).ToList();
+        }
+
+        public bool checkExists(string ten)
+        {
+            var check = _context.Phong.Where(t=> t.TenPhong.Trim().ToLower() == ten.Trim().ToLower()).FirstOrDefault();
+            if (check != null)
+                return true;
+            else
+            return false;
+        }
+
         public Phong GetPhongById(int? Id)
         {
             return _context.Phong.FirstOrDefault(t => t.ID == Id);
@@ -34,7 +50,7 @@ namespace CheckinManagementSystem.BLL
             _context.SaveChanges();
         }
 
-        public int AddEditPhong(Phong model)
+        public void AddEditPhong(Phong model)
         {
             int result = 0;
             Phong p = _context.Phong.FirstOrDefault(t => t.ID == model.ID);
@@ -61,7 +77,6 @@ namespace CheckinManagementSystem.BLL
             }
 
             result = _context.SaveChanges();
-            return result;
         }
     }
 }

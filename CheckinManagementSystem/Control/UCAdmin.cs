@@ -110,10 +110,13 @@ namespace CheckinManagementSystem.Control
             else
                 UCNoiQUy.Instance.BringToFront();
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             Login.Instance.check = false;
-        }
+			UCInOut uc = new UCInOut();
+			uc.Dock = DockStyle.Fill;
+		}
     }
 }
