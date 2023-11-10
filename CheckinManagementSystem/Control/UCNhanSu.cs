@@ -138,6 +138,7 @@ namespace CheckinManagementSystem.Control
             if (grdNhanSu.Columns[e.ColumnIndex].Name == "Delete")
             {
                 _nhansuBLL.DeleteNhanSuById(IdNhanSu);
+                LoadData();
             }
 
             if (grdNhanSu.Columns[e.ColumnIndex].Name == "Edit")

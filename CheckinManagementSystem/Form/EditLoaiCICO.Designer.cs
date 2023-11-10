@@ -132,13 +132,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Thời gian";
             // 
-            // EditloaiCICO
+            // ChangePassword
             // 
             this.ClientSize = new System.Drawing.Size(984, 306);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbTitle);
             this.ForeColor = System.Drawing.Color.Firebrick;
-            this.Name = "EditloaiCICO";
+            this.Name = "ChangePassword";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

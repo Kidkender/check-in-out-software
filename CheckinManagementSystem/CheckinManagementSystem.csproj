@@ -181,6 +181,12 @@
     <Compile Include="DAL\SP_QuanLyCheckIn_Result.cs">
       <DependentUpon>CheckInModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\EditLoaiCICO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UCPhong.resx">
       <DependentUpon>UCPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditLoaiCICO.resx">
       <DependentUpon>EditLoaiCICO.cs</DependentUpon>

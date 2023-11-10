@@ -45,11 +45,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.sPGetAllNhanSuResultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sPGetAllNhanSuResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanSuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdNhanSu)).BeginInit();
@@ -125,6 +125,7 @@
             this.grdNhanSu.RowTemplate.Height = 24;
             this.grdNhanSu.Size = new System.Drawing.Size(1423, 634);
             this.grdNhanSu.TabIndex = 1;
+            this.grdNhanSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNhanSu_CellContentClick);
             // 
             // tableLayoutPanel3
             // 
@@ -282,6 +283,24 @@
             this.label1.Text = "QUẢN LÝ NHÂN SỰ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Sửa";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Xóa";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
             // sPGetAllNhanSuResultBindingSource1
             // 
             this.sPGetAllNhanSuResultBindingSource1.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result);
@@ -293,24 +312,6 @@
             // nhanSuBindingSource
             // 
             this.nhanSuBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.NhanSu);
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Sửa";
-            this.Edit.UseColumnTextForButtonValue = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Xóa";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // UCNhanSu
             // 

@@ -1,12 +1,13 @@
-﻿using CheckinManagementSystem.BLL;
+﻿
+using CheckinManagementSystem.BLL;
 using CheckinManagementSystem.DAL;
 using System;
 using System.Windows.Forms;
 
 namespace CheckinManagementSystem
 {
-	public partial class EditloaiCICO : Form
-	{
+    public partial class EditloaiCICO : Form
+    {
         LoaiRecordBLL recordBLL = new LoaiRecordBLL();
         static EditloaiCICO _obj;
         public static EditloaiCICO Instance
@@ -15,15 +16,15 @@ namespace CheckinManagementSystem
             {
                 if (_obj == null)
                 {
-                    _obj = new EditloaiCICO(false,new LoaiRecord());
+                    _obj = new EditloaiCICO(false, new LoaiRecord());
                 }
                 return _obj;
             }
         }
         public EditloaiCICO(bool lbl, LoaiRecord loai = null)
-		{
-			InitializeComponent();
-            if(lbl)
+        {
+            InitializeComponent();
+            if (lbl)
             {
                 lbTitle.Text = "THÊM LOẠI CHECKIN/CHECKOUT";
                 this.lbl = lbl;
@@ -40,14 +41,14 @@ namespace CheckinManagementSystem
 
         private int Id;
         private bool lbl;
-		public bool check = false;
+        public bool check = false;
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             int sl = -1, tg = -1;
             if (lbl)
             {
-                if(tbTen.Text.Trim() == "")
+                if (tbTen.Text.Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập tên loại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -61,14 +62,15 @@ namespace CheckinManagementSystem
                 }
                 else if (tbSoLan.Text.Trim() != "" && tbThoigian.Text.Trim() != "")
                 {
-                    try { 
+                    try
+                    {
                         sl = int.Parse(tbSoLan.Text.Trim());
                         tg = int.Parse(tbThoigian.Text.Trim());
 
-                        if( sl <= 0 || tg <= 0)
+                        if (sl <= 0 || tg <= 0)
                         {
                             MessageBox.Show("Thời gian và số lần phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        } 
+                        }
                         else
                         {
                             LoaiRecord l = new LoaiRecord()
@@ -84,10 +86,11 @@ namespace CheckinManagementSystem
                             this.Close();
                         }
                     }
-                    catch {
+                    catch
+                    {
                         MessageBox.Show("Thời gian và số lần phải là định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                }    
+                }
             }
             else
             {
@@ -110,7 +113,7 @@ namespace CheckinManagementSystem
                         sl = int.Parse(tbSoLan.Text.Trim());
                         tg = int.Parse(tbThoigian.Text.Trim());
 
-                        if (sl < 0 || tg < 0)
+                        if (sl <= 0 || tg <= 0)
                         {
                             MessageBox.Show("Thời gian và số lần phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
@@ -134,8 +137,7 @@ namespace CheckinManagementSystem
                         MessageBox.Show("Thời gian và số lần phải là định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-            } 
-                
+            }
         }
     }
 }

@@ -118,5 +118,12 @@ namespace CheckinManagementSystem.Control
 			UCInOut uc = new UCInOut();
 			uc.Dock = DockStyle.Fill;
 		}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChangePassword ed = new ChangePassword();
+            ed.StartPosition = FormStartPosition.CenterParent;
+            ed.ShowDialog();
+        }
     }
 }
