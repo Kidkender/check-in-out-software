@@ -23,8 +23,8 @@ namespace CheckinManagementSystem
         public EditRule(bool lbl, NoiQuy noi = null)
 		{
 			InitializeComponent();
-            this.description.AutoSize = false;
-            this.description.Size = new System.Drawing.Size(912, 200);
+            this.tbMoTa.AutoSize = false;
+            this.tbMoTa.Size = new System.Drawing.Size(912, 200);
             if (lbl)
             {
                 this.lbl = lbl;
@@ -34,7 +34,7 @@ namespace CheckinManagementSystem
             {
                 Id = noi.ID;
                 tbNoiDung.Text = noi.NoiDung;
-                description.Text = noi.XuPhat;
+                tbMoTa.Text = noi.XuPhat;
                 lbTitle.Text = "CẬP NHẬT NỘI QUY";
             }
         }
@@ -51,7 +51,7 @@ namespace CheckinManagementSystem
                 {
                     MessageBox.Show("Vui lòng nhập nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if(description.Text == "")
+                else if(tbMoTa.Text == "")
                 {
                     MessageBox.Show("Vui lòng nhập xử phạt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }   
@@ -59,9 +59,8 @@ namespace CheckinManagementSystem
                 {
                     NoiQuy p = new NoiQuy()
                     {
-                        ID = 0,
                         NoiDung = tbNoiDung.Text,
-                        XuPhat = tbNoiDung.Text,
+                        XuPhat = tbMoTa.Text,
                     };
 
                     _bll.AddEditNoiQuy(p);
@@ -75,7 +74,7 @@ namespace CheckinManagementSystem
                 {
                     MessageBox.Show("Vui lòng nhập nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (description.Text == "")
+                else if (tbMoTa.Text == "")
                 {
                     MessageBox.Show("Vui lòng nhập xử phạt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -85,7 +84,7 @@ namespace CheckinManagementSystem
                     {
                         ID = Id,
                         NoiDung = tbNoiDung.Text,
-                        XuPhat = tbNoiDung.Text,
+                        XuPhat = tbMoTa.Text,
                     };
 
                     _bll.AddEditNoiQuy(p);

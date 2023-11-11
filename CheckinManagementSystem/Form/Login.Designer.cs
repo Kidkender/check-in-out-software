@@ -44,6 +44,7 @@
             this.tbTaiKhoan.Name = "tbTaiKhoan";
             this.tbTaiKhoan.Size = new System.Drawing.Size(675, 46);
             this.tbTaiKhoan.TabIndex = 0;
+            this.tbTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTaiKhoan_KeyDown);
             // 
             // tbMatKhau
             // 
@@ -54,6 +55,7 @@
             this.tbMatKhau.Size = new System.Drawing.Size(675, 46);
             this.tbMatKhau.TabIndex = 1;
             this.tbMatKhau.UseSystemPasswordChar = true;
+            this.tbMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbMatKhau_KeyDown);
             // 
             // label1
             // 

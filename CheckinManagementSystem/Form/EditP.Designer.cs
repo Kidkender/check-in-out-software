@@ -33,14 +33,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbGV = new System.Windows.Forms.TextBox();
-            this.tbPV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPR = new System.Windows.Forms.TextBox();
             this.tbHR = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbPV = new System.Windows.Forms.TextBox();
+            this.tbGV = new System.Windows.Forms.TextBox();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             this.btnSave.BackColor = System.Drawing.Color.Firebrick;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(211, 192);
+            this.btnSave.Location = new System.Drawing.Point(211, 448);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
             this.btnSave.TabIndex = 3;
@@ -88,6 +90,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtMoTa);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -101,40 +105,34 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(12, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 264);
+            this.panel1.Size = new System.Drawing.Size(550, 526);
             this.panel1.TabIndex = 4;
             // 
-            // tbGV
+            // label8
             // 
-            this.tbGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGV.Location = new System.Drawing.Point(22, 132);
-            this.tbGV.Name = "tbGV";
-            this.tbGV.Size = new System.Drawing.Size(76, 38);
-            this.tbGV.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(326, 362);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(112, 23);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Thời gian ra";
             // 
-            // tbPV
+            // label7
             // 
-            this.tbPV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPV.Location = new System.Drawing.Point(133, 132);
-            this.tbPV.Name = "tbPV";
-            this.tbPV.Size = new System.Drawing.Size(76, 38);
-            this.tbPV.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 32);
-            this.label4.TabIndex = 6;
-            this.label4.Text = ":";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 362);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 23);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Thời gian vào";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(412, 135);
+            this.label6.Location = new System.Drawing.Point(412, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 32);
             this.label6.TabIndex = 9;
@@ -143,7 +141,7 @@
             // tbPR
             // 
             this.tbPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPR.Location = new System.Drawing.Point(441, 132);
+            this.tbPR.Location = new System.Drawing.Point(441, 388);
             this.tbPR.Name = "tbPR";
             this.tbPR.Size = new System.Drawing.Size(76, 38);
             this.tbPR.TabIndex = 8;
@@ -151,34 +149,59 @@
             // tbHR
             // 
             this.tbHR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHR.Location = new System.Drawing.Point(330, 132);
+            this.tbHR.Location = new System.Drawing.Point(330, 388);
             this.tbHR.Name = "tbHR";
             this.tbHR.Size = new System.Drawing.Size(76, 38);
             this.tbHR.TabIndex = 7;
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 23);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Thời gian vào";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(104, 391);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 32);
+            this.label4.TabIndex = 6;
+            this.label4.Text = ":";
             // 
-            // label8
+            // tbPV
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(326, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 23);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Thời gian ra";
+            this.tbPV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPV.Location = new System.Drawing.Point(133, 388);
+            this.tbPV.Name = "tbPV";
+            this.tbPV.Size = new System.Drawing.Size(76, 38);
+            this.tbPV.TabIndex = 5;
+            // 
+            // tbGV
+            // 
+            this.tbGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGV.Location = new System.Drawing.Point(22, 388);
+            this.tbGV.Name = "tbGV";
+            this.tbGV.Size = new System.Drawing.Size(76, 38);
+            this.tbGV.TabIndex = 4;
+            // 
+            // txtMoTa
+            // 
+            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoTa.Location = new System.Drawing.Point(21, 132);
+            this.txtMoTa.Multiline = true;
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(503, 214);
+            this.txtMoTa.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(18, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 23);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Mô tả";
             // 
             // EditP
             // 
-            this.ClientSize = new System.Drawing.Size(574, 357);
+            this.ClientSize = new System.Drawing.Size(574, 619);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbTitle);
             this.ForeColor = System.Drawing.Color.Firebrick;
@@ -211,5 +234,7 @@
         private System.Windows.Forms.TextBox tbHR;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtMoTa;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -1,4 +1,5 @@
-﻿using CheckinManagementSystem.Control;
+﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,8 +12,9 @@ using System.Windows.Forms;
 
 namespace CheckinManagementSystem
 {
-	public partial class Login : Form
-	{
+    public partial class Login : Form
+    {
+        NhanSuBLL _nhanSuBLL = new NhanSuBLL();
         static Login _obj;
         public static Login Instance
         {
@@ -26,14 +28,29 @@ namespace CheckinManagementSystem
             }
         }
         public Login()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(tbTaiKhoan.Text == "user" && tbMatKhau.Text == "123")
-			{
+            LoginAdmin();
+        }
+
+        public bool check = false;
+
+        private void tbTaiKhoan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginAdmin();
+            }
+        }
+
+        private void LoginAdmin()
+        {
+            if (_nhanSuBLL.LoginAdmin(tbTaiKhoan.Text, tbMatKhau.Text))
+            {
                 this.Close();
                 this.check = true;
                 tbTaiKhoan.Text = "";
@@ -41,11 +58,16 @@ namespace CheckinManagementSystem
             }
             else
             {
-
+                MessageBox.Show("Đăng nhập không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
-		public bool check = false;
+        private void tbMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginAdmin();
+            }
+        }
     }
 }

@@ -22,3 +22,6 @@
 /CheckinManagementSystem/bin/Debug/CheckinManagementSystem.exe
 /CheckinManagementSystem/bin/Debug/CheckinManagementSystem.pdb
 /.vs/CheckinManagementSystem/v17/.suo
+/CheckinManagementSystem/bin/Release
+/CheckinManagementSystem/bin/Debug/CheckinManagementSystem.exe.config
+/CheckinManagementSystem/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

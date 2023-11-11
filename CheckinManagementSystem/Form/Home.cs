@@ -46,12 +46,17 @@ namespace CheckinManagementSystem
 		public void Form1_Load(object sender, EventArgs e)
 		{
 			init();
-			toolStripButton2.ForeColor = Color.Red;
+			toolStripButton1.ForeColor = Color.Red;
 
-			UCInOut uc = new UCInOut();
+			UCCheck uc = new UCCheck();
 			uc.Dock = DockStyle.Fill;
             PnlContainer.Controls.Add(uc);
 		}
+
+        public void RefreshFrom()
+        {
+            toolStripButton1.PerformClick();
+        }
 
 		private void toolStripLabel1_Click(object sender, EventArgs e)
 		{
@@ -83,7 +88,6 @@ namespace CheckinManagementSystem
 
                 init();
                 BtnLogin.ForeColor = Color.Red;
-				
             }
         }
 

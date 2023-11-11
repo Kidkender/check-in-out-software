@@ -6,25 +6,25 @@ using System.Windows.Forms;
 
 namespace CheckinManagementSystem
 {
-	public partial class EditP : Form
-	{
-		PhongBLL _phongBLL = new PhongBLL();
-		static EditP _obj;
+    public partial class EditP : Form
+    {
+        PhongBLL _phongBLL = new PhongBLL();
+        static EditP _obj;
         public static EditP Instance
         {
             get
             {
                 if (_obj == null)
                 {
-                    _obj = new EditP(false,p);
+                    _obj = new EditP(false, p);
                 }
                 return _obj;
             }
         }
         public EditP(bool lbl, Phong phong = null)
-		{
-			InitializeComponent();
-            if(lbl)
+        {
+            InitializeComponent();
+            if (lbl)
             {
                 lbTitle.Text = "THÊM PHÒNG";
             }
@@ -33,24 +33,31 @@ namespace CheckinManagementSystem
                 lbTitle.Text = "CẬP NHẬT PHÒNG";
                 Id = phong.ID;
                 tbTenPhong.Text = phong.TenPhong.ToString();
-                tbGV.Text = phong.ThoiGianVao.Split(':')[0].ToString();
-                tbPV.Text = phong.ThoiGianVao.Split(':')[1].ToString();
-                tbHR.Text = phong.ThoiGianRa.Split(':')[0].ToString();
-                tbPR.Text = phong.ThoiGianRa.Split(':')[1].ToString();
+                txtMoTa.Text = phong.MoTa.ToString();
+                if (phong.ThoiGianVao != null)
+                {
+                    tbGV.Text = phong.ThoiGianVao.Split(':')[0].ToString();
+                    tbPV.Text = phong.ThoiGianVao.Split(':')[1].ToString();
+                }
+                if (phong.ThoiGianRa != null)
+                {
+                    tbHR.Text = phong.ThoiGianRa.Split(':')[0].ToString();
+                    tbPR.Text = phong.ThoiGianRa.Split(':')[1].ToString();
+                }
             }
             this.lbl = lbl;
         }
 
         private int Id = 0;
         private bool lbl;
-		private static Phong p;
-		public bool check = false;
+        private static Phong p;
+        public bool check = false;
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             int gv = -1, pv = -1, hr = -1, pr = -1;
             //Thêm----------------------------------------------------------------------------------------------------------------------------
-            if(lbl)
+            if (lbl)
             {
                 if (tbTenPhong.Text.Trim() == "")
                 {
@@ -68,11 +75,11 @@ namespace CheckinManagementSystem
                 {
                     try
                     {
-                         gv = int.Parse(tbGV.Text.Trim());
-                         pv = int.Parse(tbPV.Text.Trim());
-                         hr = int.Parse(tbHR.Text.Trim());
-                         pr = int.Parse(tbPR.Text.Trim());
-                        
+                        gv = int.Parse(tbGV.Text.Trim());
+                        pv = int.Parse(tbPV.Text.Trim());
+                        hr = int.Parse(tbHR.Text.Trim());
+                        pr = int.Parse(tbPR.Text.Trim());
+
                         if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
                         {
                             MessageBox.Show("Giờ phải lớn hơn hoặc bằng 0 và bé hơn hoặc bằng 23", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -81,10 +88,10 @@ namespace CheckinManagementSystem
                         {
                             MessageBox.Show("Phút phải lớn hơn hoặc bằng 0 và bé hơn hoặc bằng 59", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-                        else if (gv*60+pv >= hr*60+pr)
+                        else if (gv * 60 + pv >= hr * 60 + pr)
                         {
                             MessageBox.Show("Giờ vào phải nhỏ hơn giờ ra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }    
+                        }
                         else
                         {
                             Phong p = new Phong()
@@ -100,10 +107,11 @@ namespace CheckinManagementSystem
                             this.Close();
                         }
                     }
-                    catch {
+                    catch
+                    {
                         MessageBox.Show("Thời gian không đúng định dạng! Phải là số!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                }    
+                }
             }
 
             //Chỉnh sửa --------------------------------------------------------------------------------------------------------------------------------------------
@@ -116,7 +124,7 @@ namespace CheckinManagementSystem
                 }
                 else if (tbTenPhong.Text.Trim().ToLower() != check.TenPhong.Trim().ToLower() && _phongBLL.checkExists(tbTenPhong.Text))
                 {
-                        MessageBox.Show("Tên phòng đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Tên phòng đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == "")
                 {
@@ -148,8 +156,8 @@ namespace CheckinManagementSystem
                             Phong p = new Phong()
                             {
                                 ID = Id,
-                                MoTa = "",
                                 TenPhong = tbTenPhong.Text,
+                                MoTa = txtMoTa.Text,
                                 ThoiGianRa = hr.ToString() + ":" + pr.ToString(),
                                 ThoiGianVao = gv.ToString() + ":" + pv.ToString(),
                             };

@@ -28,30 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CheckIn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.grdCheckOut = new System.Windows.Forms.DataGridView();
-            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView2 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.grdNoiQuy = new System.Windows.Forms.DataGridView();
+            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CheckIn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNoiQuy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,22 +110,7 @@
             this.cboNhanSu.Name = "cboNhanSu";
             this.cboNhanSu.Size = new System.Drawing.Size(993, 47);
             this.cboNhanSu.TabIndex = 2;
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLamMoi.BackColor = System.Drawing.Color.Red;
-            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLamMoi.Location = new System.Drawing.Point(672, 13);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(259, 54);
-            this.btnLamMoi.TabIndex = 1;
-            this.btnLamMoi.Text = "Đăng xuất";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
             // 
             // btnSubmit
             // 
@@ -145,32 +142,22 @@
             this.panel3.Size = new System.Drawing.Size(1198, 83);
             this.panel3.TabIndex = 5;
             // 
-            // CheckIn
+            // btnLamMoi
             // 
-            this.CheckIn.HeaderText = "CheckIn";
-            this.CheckIn.MinimumWidth = 6;
-            this.CheckIn.Name = "CheckIn";
-            this.CheckIn.ReadOnly = true;
-            this.CheckIn.Text = "CheckIn";
-            this.CheckIn.UseColumnTextForButtonValue = true;
-            // 
-            // IdLoaiRecord
-            // 
-            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
-            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
-            this.IdLoaiRecord.MinimumWidth = 6;
-            this.IdLoaiRecord.Name = "IdLoaiRecord";
-            this.IdLoaiRecord.ReadOnly = true;
-            this.IdLoaiRecord.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLamMoi.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLamMoi.Location = new System.Drawing.Point(703, 11);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(259, 58);
+            this.btnLamMoi.TabIndex = 2;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // grdCheckOut
             // 
@@ -179,6 +166,7 @@
             this.grdCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdCheckOut.AutoGenerateColumns = false;
             this.grdCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdCheckOut.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -194,33 +182,31 @@
             this.ID,
             this.IdNhanSu,
             this.IdLoaiRecord,
+            this.MaNhanSu,
+            this.hoTenDataGridViewTextBoxColumn,
+            this.tenLoaiRecordDataGridViewTextBoxColumn,
+            this.ThoiGianVao,
+            this.ThoiGianRa,
             this.CheckIn});
+            this.grdCheckOut.DataSource = this.sPGetAllDiemDanhResultBindingSource;
             this.grdCheckOut.EnableHeadersVisualStyles = false;
             this.grdCheckOut.Location = new System.Drawing.Point(3, 388);
             this.grdCheckOut.Name = "grdCheckOut";
             this.grdCheckOut.ReadOnly = true;
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdCheckOut.RowHeadersWidth = 51;
             this.grdCheckOut.RowTemplate.Height = 24;
             this.grdCheckOut.Size = new System.Drawing.Size(1200, 595);
             this.grdCheckOut.TabIndex = 6;
-            // 
-            // IdNhanSu
-            // 
-            this.IdNhanSu.DataPropertyName = "IdNhanSu";
-            this.IdNhanSu.HeaderText = "IdNhanSu";
-            this.IdNhanSu.MinimumWidth = 6;
-            this.IdNhanSu.Name = "IdNhanSu";
-            this.IdNhanSu.ReadOnly = true;
-            this.IdNhanSu.Visible = false;
+            this.grdCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheckOut_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -259,28 +245,12 @@
             this.label3.Text = "ĐIỂM DANH";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listView2
-            // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(1216, 4);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(397, 984);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.listView2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.grdNoiQuy, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -289,6 +259,132 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1617, 992);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // grdNoiQuy
+            // 
+            this.grdNoiQuy.AllowUserToAddRows = false;
+            this.grdNoiQuy.AllowUserToDeleteRows = false;
+            this.grdNoiQuy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdNoiQuy.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdNoiQuy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grdNoiQuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdNoiQuy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdNoiQuy.EnableHeadersVisualStyles = false;
+            this.grdNoiQuy.Location = new System.Drawing.Point(1215, 3);
+            this.grdNoiQuy.Name = "grdNoiQuy";
+            this.grdNoiQuy.ReadOnly = true;
+            this.grdNoiQuy.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdNoiQuy.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.grdNoiQuy.RowHeadersWidth = 51;
+            this.grdNoiQuy.RowTemplate.Height = 24;
+            this.grdNoiQuy.Size = new System.Drawing.Size(399, 986);
+            this.grdNoiQuy.TabIndex = 8;
+            // 
+            // sPGetAllDiemDanhResultBindingSource
+            // 
+            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
+            // 
+            // sPGetAllDangKyResultBindingSource
+            // 
+            this.sPGetAllDangKyResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDangKy_Result);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // IdNhanSu
+            // 
+            this.IdNhanSu.DataPropertyName = "IdNhanSu";
+            this.IdNhanSu.HeaderText = "IdNhanSu";
+            this.IdNhanSu.MinimumWidth = 6;
+            this.IdNhanSu.Name = "IdNhanSu";
+            this.IdNhanSu.ReadOnly = true;
+            this.IdNhanSu.Visible = false;
+            // 
+            // IdLoaiRecord
+            // 
+            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
+            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
+            this.IdLoaiRecord.MinimumWidth = 6;
+            this.IdLoaiRecord.Name = "IdLoaiRecord";
+            this.IdLoaiRecord.ReadOnly = true;
+            this.IdLoaiRecord.Visible = false;
+            // 
+            // MaNhanSu
+            // 
+            this.MaNhanSu.DataPropertyName = "MaNhanSu";
+            this.MaNhanSu.HeaderText = "Mã nhân sự";
+            this.MaNhanSu.MinimumWidth = 6;
+            this.MaNhanSu.Name = "MaNhanSu";
+            this.MaNhanSu.ReadOnly = true;
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Loại";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ThoiGianVao
+            // 
+            this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
+            this.ThoiGianVao.HeaderText = "Thời gian vào";
+            this.ThoiGianVao.MinimumWidth = 6;
+            this.ThoiGianVao.Name = "ThoiGianVao";
+            this.ThoiGianVao.ReadOnly = true;
+            // 
+            // ThoiGianRa
+            // 
+            this.ThoiGianRa.DataPropertyName = "ThoiGianRa";
+            this.ThoiGianRa.HeaderText = "Thời gian ra";
+            this.ThoiGianRa.MinimumWidth = 6;
+            this.ThoiGianRa.Name = "ThoiGianRa";
+            this.ThoiGianRa.ReadOnly = true;
+            this.ThoiGianRa.Visible = false;
+            // 
+            // CheckIn
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.CheckIn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CheckIn.HeaderText = "CheckIn";
+            this.CheckIn.MinimumWidth = 6;
+            this.CheckIn.Name = "CheckIn";
+            this.CheckIn.ReadOnly = true;
+            this.CheckIn.Text = "CheckIn";
+            this.CheckIn.UseColumnTextForButtonValue = true;
             // 
             // UCCheck
             // 
@@ -304,6 +400,9 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdNoiQuy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,19 +412,24 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cboNhanSu;
-        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewButtonColumn CheckIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdLoaiRecord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridView grdCheckOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdNhanSu;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.BindingSource sPGetAllDangKyResultBindingSource;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.BindingSource sPGetAllDiemDanhResultBindingSource;
+        private System.Windows.Forms.DataGridView grdNoiQuy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdLoaiRecord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiRecordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianVao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianRa;
+        private System.Windows.Forms.DataGridViewButtonColumn CheckIn;
     }
 }

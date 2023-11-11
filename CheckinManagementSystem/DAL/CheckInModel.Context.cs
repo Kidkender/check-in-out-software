@@ -40,11 +40,15 @@ namespace CheckinManagementSystem.DAL
         public virtual DbSet<Record> Record { get; set; }
         public virtual DbSet<NoiQuy> NoiQuy { get; set; }
     
-        public virtual ObjectResult<SP_QuanLyCheckIn_Result> SP_QuanLyCheckIn(Nullable<int> iDNhanVien, Nullable<int> iDPhong, Nullable<System.DateTime> tuNgay, Nullable<System.DateTime> denNgay)
+        public virtual ObjectResult<SP_QuanLyCheckIn_Result> SP_QuanLyCheckIn(string tuKhoa, Nullable<int> iDNhanSu, Nullable<int> iDPhong, Nullable<System.DateTime> tuNgay, Nullable<System.DateTime> denNgay)
         {
-            var iDNhanVienParameter = iDNhanVien.HasValue ?
-                new ObjectParameter("IDNhanVien", iDNhanVien) :
-                new ObjectParameter("IDNhanVien", typeof(int));
+            var tuKhoaParameter = tuKhoa != null ?
+                new ObjectParameter("TuKhoa", tuKhoa) :
+                new ObjectParameter("TuKhoa", typeof(string));
+    
+            var iDNhanSuParameter = iDNhanSu.HasValue ?
+                new ObjectParameter("IDNhanSu", iDNhanSu) :
+                new ObjectParameter("IDNhanSu", typeof(int));
     
             var iDPhongParameter = iDPhong.HasValue ?
                 new ObjectParameter("IDPhong", iDPhong) :
@@ -58,12 +62,16 @@ namespace CheckinManagementSystem.DAL
                 new ObjectParameter("DenNgay", denNgay) :
                 new ObjectParameter("DenNgay", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_QuanLyCheckIn_Result>("SP_QuanLyCheckIn", iDNhanVienParameter, iDPhongParameter, tuNgayParameter, denNgayParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_QuanLyCheckIn_Result>("SP_QuanLyCheckIn", tuKhoaParameter, iDNhanSuParameter, iDPhongParameter, tuNgayParameter, denNgayParameter);
         }
     
-        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy()
+        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy(Nullable<bool> status)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy");
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy", statusParameter);
         }
     
         public virtual ObjectResult<GetAllNhanSu_Result> GetAllNhanSu()
@@ -74,6 +82,11 @@ namespace CheckinManagementSystem.DAL
         public virtual ObjectResult<SP_GetAllNhanSu_Result> SP_GetAllNhanSu()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllNhanSu_Result>("SP_GetAllNhanSu");
+        }
+    
+        public virtual ObjectResult<SP_GetAllDiemDanh_Result> SP_GetAllDiemDanh()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDiemDanh_Result>("SP_GetAllDiemDanh");
         }
     }
 }

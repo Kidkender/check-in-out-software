@@ -43,7 +43,7 @@ namespace CheckinManagementSystem
 
         private void RefreshDataPhong()
         {
-            cboPhong.DataSource = _nhanSuBLL.GetAlPhong();
+            cboPhong.DataSource = _nhanSuBLL.GetAllPhong();
             cboPhong.ValueMember = "ID";
             cboPhong.DisplayMember = "TenPhong";
             cboPhong.SelectedIndex = -1;

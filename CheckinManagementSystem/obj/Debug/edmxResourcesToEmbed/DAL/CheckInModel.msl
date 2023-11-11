@@ -118,6 +118,8 @@
           <ScalarProperty Name="Re_SoLanDiQua" ColumnName="Re_SoLanDiQua" />
           <ScalarProperty Name="Re_SoPhutDiQua" ColumnName="Re_SoPhutDiQua" />
           <ScalarProperty Name="Re_TongThoiGianSuDung" ColumnName="Re_TongThoiGianSuDung" />
+          <ScalarProperty Name="Re_QuenCheckOut" ColumnName="Re_QuenCheckOut" />
+          <ScalarProperty Name="Re_TongSoLanDi" ColumnName="Re_TongSoLanDi" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -129,6 +131,10 @@
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
           <ScalarProperty Name="TenLoaiRecord" ColumnName="TenLoaiRecord" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -181,5 +187,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAllDiemDanh" FunctionName="CheckInModel.Store.SP_GetAllDiemDanh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CheckInModel.SP_GetAllDiemDanh_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdNhanSu" ColumnName="IdNhanSu" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
+          <ScalarProperty Name="TenLoaiRecord" ColumnName="TenLoaiRecord" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+          <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
+          <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
+          <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

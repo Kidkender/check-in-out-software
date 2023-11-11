@@ -77,7 +77,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ThoiGianVao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ThoiGianRa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
@@ -102,16 +102,20 @@
     <EntitySet Name="Phong" EntityType="Self.Phong" />
     <EntitySet Name="Quyen" EntityType="Self.Quyen" />
     <FunctionImport Name="SP_QuanLyCheckIn" ReturnType="Collection(CheckInModel.SP_QuanLyCheckIn_Result)">
-      <Parameter Name="IDNhanVien" Mode="In" Type="Int32" />
+      <Parameter Name="TuKhoa" Mode="In" Type="String" />
+      <Parameter Name="IDNhanSu" Mode="In" Type="Int32" />
       <Parameter Name="IDPhong" Mode="In" Type="Int32" />
       <Parameter Name="TuNgay" Mode="In" Type="DateTime" />
       <Parameter Name="DenNgay" Mode="In" Type="DateTime" />
     </FunctionImport>
-    <FunctionImport Name="SP_GetAllDangKy" ReturnType="Collection(CheckInModel.SP_GetAllDangKy_Result)" />
+    <FunctionImport Name="SP_GetAllDangKy" ReturnType="Collection(CheckInModel.SP_GetAllDangKy_Result)">
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
     <EntitySet Name="Record" EntityType="CheckInModel.Record" />
     <FunctionImport Name="GetAllNhanSu" ReturnType="Collection(CheckInModel.GetAllNhanSu_Result)" />
     <FunctionImport Name="SP_GetAllNhanSu" ReturnType="Collection(CheckInModel.SP_GetAllNhanSu_Result)" />
     <EntitySet Name="NoiQuy" EntityType="CheckInModel.NoiQuy" />
+    <FunctionImport Name="SP_GetAllDiemDanh" ReturnType="Collection(CheckInModel.SP_GetAllDiemDanh_Result)" />
   </EntityContainer>
   <ComplexType Name="SP_QuanLyCheckIn_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -128,6 +132,8 @@
     <Property Type="Int32" Name="Re_SoLanDiQua" Nullable="false" />
     <Property Type="Int32" Name="Re_SoPhutDiQua" Nullable="false" />
     <Property Type="Int32" Name="Re_TongThoiGianSuDung" Nullable="false" />
+    <Property Type="Int32" Name="Re_QuenCheckOut" Nullable="false" />
+    <Property Type="Int32" Name="Re_TongSoLanDi" Nullable="false" />
   </ComplexType>
   <ComplexType Name="SP_GetAllDangKy_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -135,6 +141,10 @@
     <Property Type="String" Name="HoTen" Nullable="true" MaxLength="255" />
     <Property Type="Int32" Name="IdLoaiRecord" Nullable="true" />
     <Property Type="String" Name="TenLoaiRecord" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ThoiGianVao" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ThoiGianRa" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdPhong" Nullable="true" />
+    <Property Type="String" Name="MaNhanSu" Nullable="true" MaxLength="20" />
   </ComplexType>
   <EntityType Name="Record">
     <Key>
@@ -173,6 +183,17 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NoiDung" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
-    <Property Name="XuPhat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="XuPhat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <ComplexType Name="SP_GetAllDiemDanh_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="IdNhanSu" Nullable="true" />
+    <Property Type="String" Name="HoTen" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="IdLoaiRecord" Nullable="true" />
+    <Property Type="String" Name="TenLoaiRecord" Nullable="false" MaxLength="9" />
+    <Property Type="DateTime" Name="ThoiGianVao" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ThoiGianRa" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IdPhong" Nullable="true" />
+    <Property Type="String" Name="MaNhanSu" Nullable="true" MaxLength="20" />
+  </ComplexType>
 </Schema>

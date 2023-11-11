@@ -36,7 +36,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -94,6 +93,7 @@
             // grdNoiQuy
             // 
             this.grdNoiQuy.AllowUserToAddRows = false;
+            this.grdNoiQuy.AllowUserToDeleteRows = false;
             this.grdNoiQuy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -118,6 +118,7 @@
             this.grdNoiQuy.EnableHeadersVisualStyles = false;
             this.grdNoiQuy.Location = new System.Drawing.Point(46, 3);
             this.grdNoiQuy.Name = "grdNoiQuy";
+            this.grdNoiQuy.ReadOnly = true;
             this.grdNoiQuy.RowHeadersWidth = 51;
             this.grdNoiQuy.RowTemplate.Height = 24;
             this.grdNoiQuy.Size = new System.Drawing.Size(1505, 632);
@@ -147,7 +148,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.btnXuat);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.tbTimKiem);
             this.panel1.Location = new System.Drawing.Point(46, 13);
@@ -169,19 +169,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXuat.BackColor = System.Drawing.SystemColors.Control;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXuat.Image = global::CheckinManagementSystem.Properties.Resources.excel__2_;
-            this.btnXuat.Location = new System.Drawing.Point(1283, 34);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(55, 46);
-            this.btnXuat.TabIndex = 2;
-            this.btnXuat.UseVisualStyleBackColor = false;
             // 
             // btnTimKiem
             // 
@@ -251,12 +238,13 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // noiDungDataGridViewTextBoxColumn
             // 
             this.noiDungDataGridViewTextBoxColumn.DataPropertyName = "NoiDung";
-            this.noiDungDataGridViewTextBoxColumn.HeaderText = "NoiDung";
+            this.noiDungDataGridViewTextBoxColumn.HeaderText = "Nội dung";
             this.noiDungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.noiDungDataGridViewTextBoxColumn.Name = "noiDungDataGridViewTextBoxColumn";
             this.noiDungDataGridViewTextBoxColumn.ReadOnly = true;
@@ -264,16 +252,18 @@
             // xuPhatDataGridViewTextBoxColumn
             // 
             this.xuPhatDataGridViewTextBoxColumn.DataPropertyName = "XuPhat";
-            this.xuPhatDataGridViewTextBoxColumn.HeaderText = "XuPhat";
+            this.xuPhatDataGridViewTextBoxColumn.HeaderText = "Mô tả";
             this.xuPhatDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.xuPhatDataGridViewTextBoxColumn.Name = "xuPhatDataGridViewTextBoxColumn";
             this.xuPhatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.xuPhatDataGridViewTextBoxColumn.Visible = false;
             // 
             // Edit
             // 
             this.Edit.HeaderText = "";
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Text = "Sửa";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
@@ -282,6 +272,7 @@
             this.Delete.HeaderText = "";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.Delete.Text = "Xóa";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
@@ -315,7 +306,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnThem;
-		private System.Windows.Forms.Button btnXuat;
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.TextBox tbTimKiem;
 		private System.Windows.Forms.DataGridView grdNoiQuy;

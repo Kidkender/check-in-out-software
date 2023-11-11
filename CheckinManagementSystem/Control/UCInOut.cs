@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace CheckinManagementSystem
         NhanSuBLL _nhanSuBLL = new NhanSuBLL();
         CheckInOutBLL _checkInOutBLL = new CheckInOutBLL();
         RecordBLL _recordBLL = new RecordBLL();
+        NoiQuyBLL _noiQuyBLL = new NoiQuyBLL();
 
         private static UCInOut _instance;
         public static UCInOut Instance
@@ -43,6 +45,13 @@ namespace CheckinManagementSystem
             #region Init control
 
             RefreshAll();
+            RefreshDataNoiQuy();
+            grdCheckOut.RowTemplate.Height = 40;
+            DataGridViewButtonColumn c = (DataGridViewButtonColumn)grdCheckOut.Columns["Checkin"];
+            c.FlatStyle = FlatStyle.Popup;
+            c.DefaultCellStyle.ForeColor = Color.White;
+            c.DefaultCellStyle.BackColor = Color.Red;
+            c.Width = 300;
 
             #endregion
         }
@@ -60,7 +69,9 @@ namespace CheckinManagementSystem
 
         private void RefreshDataNhanSu()
         {
-            cboNhanSu.DataSource = _nhanSuBLL.GetAllNhanSu();
+            var data = _nhanSuBLL.GetAllNhanSu();
+            data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
+            cboNhanSu.DataSource = data;
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
@@ -76,7 +87,20 @@ namespace CheckinManagementSystem
 
         private void RefreshDataCheckOut()
         {
-            grdCheckOut.DataSource = _recordBLL.GetAllDangKy();
+            grdCheckOut.DataSource = _recordBLL.GetAllDangKy().Where(t =>/* t.ThoiGianVao.Value.Date == DateTime.Now.Date*/ true).ToList();
+        }
+
+        private void RefreshDataNoiQuy()
+        {
+            grdNoiQuy.Columns.Add("NoiDung", "Nội Dung");
+            grdNoiQuy.Columns.Add("XuPhat", "Xử Phạt");
+            grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grdNoiQuy.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            grdNoiQuy.RowTemplate.MinimumHeight = 50;
+            foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().ToList())
+            {
+                grdNoiQuy.Rows.Add(noiQuy.NoiDung, noiQuy.XuPhat);
+            }
         }
 
         #endregion
@@ -92,7 +116,9 @@ namespace CheckinManagementSystem
             else
             {
                 string tempStr = cboNhanSu.Text;
-                List<NhanSu> data = _nhanSuBLL.GetAllNhanSu().Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
+                var data = _nhanSuBLL.GetAllNhanSu();
+                data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
+                data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
 
                 cboNhanSu.DataSource = null;
                 cboNhanSu.Items.Clear();
@@ -152,6 +178,10 @@ namespace CheckinManagementSystem
             else if (loaiRecord == null)
             {
                 MessageBox.Show("Vui lòng chọn loại check!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (!_recordBLL.GetAllDiemDanh().Where(t => t.IdNhanSu == nhanSu.ID && t.ThoiGianRa == null).Any())
+            {
+                MessageBox.Show("Nhân sự chưa được điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (_checkInOutBLL.checkIsOut(nhanSu.ID, loaiRecord.ID))
             {

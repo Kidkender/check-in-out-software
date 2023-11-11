@@ -11,7 +11,7 @@ namespace CheckinManagementSystem.DAL
 {
     using System;
     
-    public partial class SP_GetAllDangKy_Result
+    public partial class SP_GetAllDiemDanh_Result
     {
         public int ID { get; set; }
         public Nullable<int> IdNhanSu { get; set; }

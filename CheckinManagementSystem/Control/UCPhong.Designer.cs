@@ -38,7 +38,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -105,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.btnXuat);
+            this.panel1.Controls.Add(this.btnLamMoi);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.tbTimKiem);
             this.panel1.Location = new System.Drawing.Point(60, 3);
@@ -118,7 +118,7 @@
             this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(1237, 27);
+            this.btnThem.Location = new System.Drawing.Point(1254, 26);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(95, 47);
             this.btnThem.TabIndex = 3;
@@ -126,23 +126,25 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnXuat
+            // btnLamMoi
             // 
-            this.btnXuat.BackColor = System.Drawing.SystemColors.Control;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXuat.Image = global::CheckinManagementSystem.Properties.Resources.excel__2_;
-            this.btnXuat.Location = new System.Drawing.Point(1156, 27);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(55, 47);
-            this.btnXuat.TabIndex = 2;
-            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnLamMoi.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLamMoi.Location = new System.Drawing.Point(490, 23);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(124, 47);
+            this.btnLamMoi.TabIndex = 1;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTimKiem.Location = new System.Drawing.Point(344, 23);
+            this.btnTimKiem.Location = new System.Drawing.Point(360, 23);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(124, 47);
             this.btnTimKiem.TabIndex = 1;
@@ -190,6 +192,8 @@
             // 
             // grdPhong
             // 
+            this.grdPhong.AllowUserToAddRows = false;
+            this.grdPhong.AllowUserToDeleteRows = false;
             this.grdPhong.AutoGenerateColumns = false;
             this.grdPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -222,6 +226,7 @@
             this.grdPhong.EnableHeadersVisualStyles = false;
             this.grdPhong.Location = new System.Drawing.Point(0, 0);
             this.grdPhong.Name = "grdPhong";
+            this.grdPhong.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,6 +282,7 @@
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // tenPhongDataGridViewTextBoxColumn
@@ -285,6 +291,7 @@
             this.tenPhongDataGridViewTextBoxColumn.HeaderText = "Tên phòng";
             this.tenPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenPhongDataGridViewTextBoxColumn.Name = "tenPhongDataGridViewTextBoxColumn";
+            this.tenPhongDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // moTaDataGridViewTextBoxColumn
             // 
@@ -292,6 +299,8 @@
             this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
             this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moTaDataGridViewTextBoxColumn.Visible = false;
             // 
             // thoiGianVaoDataGridViewTextBoxColumn
             // 
@@ -299,6 +308,7 @@
             this.thoiGianVaoDataGridViewTextBoxColumn.HeaderText = "Thời gian vào";
             this.thoiGianVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thoiGianVaoDataGridViewTextBoxColumn.Name = "thoiGianVaoDataGridViewTextBoxColumn";
+            this.thoiGianVaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // thoiGianRaDataGridViewTextBoxColumn
             // 
@@ -306,6 +316,7 @@
             this.thoiGianRaDataGridViewTextBoxColumn.HeaderText = "Thời gian ra";
             this.thoiGianRaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thoiGianRaDataGridViewTextBoxColumn.Name = "thoiGianRaDataGridViewTextBoxColumn";
+            this.thoiGianRaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Edit
             // 
@@ -315,6 +326,7 @@
             this.Edit.HeaderText = "";
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Text = "Sửa";
             this.Edit.UseColumnTextForButtonValue = true;
@@ -328,6 +340,7 @@
             this.Delete.HeaderText = "";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.Delete.Text = "Xóa";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
@@ -357,7 +370,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox tbTimKiem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -367,6 +379,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource phongBindingSource;
+        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenPhongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;

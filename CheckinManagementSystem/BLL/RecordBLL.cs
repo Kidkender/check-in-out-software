@@ -20,18 +20,22 @@ namespace CheckinManagementSystem.BLL
         public List<LoaiRecord> GetAllLoaiRecord()
         {
             var data = _context.LoaiRecord.ToList();
-            data.Insert(0, new LoaiRecord() { ID = 0, TenLoaiRecord = "Điểm danh" });
             return data;
         }
 
-        public List<SP_GetAllDangKy_Result> GetAllDangKy()
+        public List<SP_GetAllDangKy_Result> GetAllDangKy(bool status = false)
         {
-            return _context.SP_GetAllDangKy().ToList();
+            return _context.SP_GetAllDangKy(status).ToList();
         }
 
-        public List<SP_QuanLyCheckIn_Result> GetAllHistory(int? iDNhanVien, int? iDPhong, DateTime? tuNgay, DateTime? denNgay)
+        public List<SP_GetAllDiemDanh_Result> GetAllDiemDanh()
         {
-            return _context.SP_QuanLyCheckIn(iDNhanVien, iDPhong, tuNgay, denNgay).ToList();
+            return _context.SP_GetAllDiemDanh().ToList();
+        }
+
+        public List<SP_QuanLyCheckIn_Result> GetAllHistory(string tuKhoa,int? iDNhanSu, int? iDPhong, DateTime? tuNgay, DateTime? denNgay)
+        {
+            return _context.SP_QuanLyCheckIn(tuKhoa, iDNhanSu, iDPhong, tuNgay, denNgay).ToList();
         }
     }
 }

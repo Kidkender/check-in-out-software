@@ -115,9 +115,9 @@ namespace CheckinManagementSystem.Control
         private void button1_Click(object sender, EventArgs e)
         {
             Login.Instance.check = false;
-			UCInOut uc = new UCInOut();
-			uc.Dock = DockStyle.Fill;
-		}
+            UCAdmin.Instance.SendToBack();
+            Home.Instance.RefreshFrom();
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

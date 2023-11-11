@@ -32,9 +32,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tbNLMK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbMKHT = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +53,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbNLMK);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tbMKHT);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(19, 85);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 388);
@@ -66,16 +62,17 @@
             // tbMKM
             // 
             this.tbMKM.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMKM.Location = new System.Drawing.Point(22, 139);
+            this.tbMKM.Location = new System.Drawing.Point(22, 61);
             this.tbMKM.Name = "tbMKM";
             this.tbMKM.Size = new System.Drawing.Size(435, 45);
             this.tbMKM.TabIndex = 7;
+            this.tbMKM.UseSystemPasswordChar = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 102);
+            this.label6.Location = new System.Drawing.Point(18, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 23);
             this.label6.TabIndex = 6;
@@ -84,28 +81,21 @@
             // tbNLMK
             // 
             this.tbNLMK.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNLMK.Location = new System.Drawing.Point(21, 240);
+            this.tbNLMK.Location = new System.Drawing.Point(21, 194);
             this.tbNLMK.Name = "tbNLMK";
             this.tbNLMK.Size = new System.Drawing.Size(435, 45);
             this.tbNLMK.TabIndex = 4;
+            this.tbNLMK.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 203);
+            this.label4.Location = new System.Drawing.Point(18, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nhập lại mật khẩu";
-            // 
-            // tbMKHT
-            // 
-            this.tbMKHT.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMKHT.Location = new System.Drawing.Point(21, 39);
-            this.tbMKHT.Name = "tbMKHT";
-            this.tbMKHT.Size = new System.Drawing.Size(435, 45);
-            this.tbMKHT.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -119,16 +109,6 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 23);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Mật khẩu hiện tại";
             // 
             // ChangePassword
             // 
@@ -150,8 +130,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbNLMK;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbMKHT;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label5;
     }
 }

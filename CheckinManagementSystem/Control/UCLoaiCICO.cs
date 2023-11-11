@@ -21,6 +21,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
+            grdLoaiCICO.RowTemplate.Height = 40;
         }
 
         private void LoadData()

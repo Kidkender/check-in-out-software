@@ -32,7 +32,6 @@ namespace CheckinManagementSystem
             else
             {
                 Id = loai.ID;
-                tbTen.Text = loai.TenLoaiRecord;
                 tbThoigian.Text = loai.ThoiGian.ToString();
                 tbSoLan.Text = loai.SoLan.ToString();
                 lbTitle.Text = "CẬP NHẬT LOẠI CHECKIN/CHECKOUT";
@@ -48,11 +47,7 @@ namespace CheckinManagementSystem
             int sl = -1, tg = -1;
             if (lbl)
             {
-                if (tbTen.Text.Trim() == "")
-                {
-                    MessageBox.Show("Vui lòng nhập tên loại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (tbSoLan.Text.Trim() == "")
+                if (tbSoLan.Text.Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -78,7 +73,6 @@ namespace CheckinManagementSystem
                                 ID = 0,
                                 MoTa = "",
                                 SoLan = sl,
-                                TenLoaiRecord = tbTen.Text.Trim(),
                                 ThoiGian = tg
                             };
 
@@ -94,11 +88,7 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (tbTen.Text.Trim() == "")
-                {
-                    MessageBox.Show("Vui lòng nhập tên loại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (tbSoLan.Text.Trim() == "")
+                if (tbSoLan.Text.Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -124,7 +114,6 @@ namespace CheckinManagementSystem
                                 ID = Id,
                                 MoTa = "",
                                 SoLan = sl,
-                                TenLoaiRecord = tbTen.Text.Trim(),
                                 ThoiGian = tg
                             };
 

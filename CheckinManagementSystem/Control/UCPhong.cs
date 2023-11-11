@@ -28,6 +28,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
 			LoadData();
+            grdPhong.RowTemplate.Height = 40;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -48,7 +49,13 @@ namespace CheckinManagementSystem.Control
             grdPhong.DataSource = _phongBLL.GetAllPhong_Grid(tbTimKiem.Text);
 		}
 
-		private void grdPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            tbTimKiem.Text = "";
+            grdPhong.DataSource = _phongBLL.GetAllPhong_Grid("");
+        }
+
+        private void grdPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int? IdPhong = (int)grdPhong["ID", e.RowIndex].Value;
 			if (grdPhong.Columns[e.ColumnIndex].Name == "Delete")

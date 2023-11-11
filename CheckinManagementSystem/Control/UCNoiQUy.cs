@@ -22,6 +22,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
+            grdNoiQuy.RowTemplate.Height = 40;
         }
 
         private void UCNoiQUy_Load(object sender, EventArgs e)

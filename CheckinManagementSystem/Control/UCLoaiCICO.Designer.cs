@@ -39,22 +39,20 @@
             this.grdLoaiCICO = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.loaiRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPGetAllNhanSuResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPGetAllNhanSuResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdLoaiCICO)).BeginInit();
@@ -104,6 +102,8 @@
             // 
             // grdLoaiCICO
             // 
+            this.grdLoaiCICO.AllowUserToAddRows = false;
+            this.grdLoaiCICO.AllowUserToDeleteRows = false;
             this.grdLoaiCICO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,6 +138,7 @@
             this.grdLoaiCICO.EnableHeadersVisualStyles = false;
             this.grdLoaiCICO.Location = new System.Drawing.Point(64, 3);
             this.grdLoaiCICO.Name = "grdLoaiCICO";
+            this.grdLoaiCICO.ReadOnly = true;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -173,39 +174,12 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Controls.Add(this.btnXuat);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.tbTimKiem);
             this.panel1.Location = new System.Drawing.Point(64, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1434, 100);
             this.panel1.TabIndex = 8;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(1237, 27);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(95, 47);
-            this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.BackColor = System.Drawing.SystemColors.Control;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXuat.Image = global::CheckinManagementSystem.Properties.Resources.excel__2_;
-            this.btnXuat.Location = new System.Drawing.Point(1156, 27);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(55, 47);
-            this.btnXuat.TabIndex = 2;
-            this.btnXuat.UseVisualStyleBackColor = false;
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnTimKiem
             // 
@@ -260,6 +234,60 @@
             this.label1.Text = "QUẢN LÝ LOẠI CHECKIN/CHECKOUT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // loaiRecordBindingSource
+            // 
+            this.loaiRecordBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.LoaiRecord);
+            // 
+            // sPGetAllNhanSuResultBindingSource
+            // 
+            this.sPGetAllNhanSuResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result);
+            // 
+            // phongBindingSource
+            // 
+            this.phongBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.Phong);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // tenLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Tên loại";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // moTaDataGridViewTextBoxColumn
+            // 
+            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
+            this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            this.moTaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moTaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // thoiGianDataGridViewTextBoxColumn
+            // 
+            this.thoiGianDataGridViewTextBoxColumn.DataPropertyName = "ThoiGian";
+            this.thoiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.thoiGianDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thoiGianDataGridViewTextBoxColumn.Name = "thoiGianDataGridViewTextBoxColumn";
+            this.thoiGianDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // soLanDataGridViewTextBoxColumn
+            // 
+            this.soLanDataGridViewTextBoxColumn.DataPropertyName = "SoLan";
+            this.soLanDataGridViewTextBoxColumn.HeaderText = "Số lần";
+            this.soLanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soLanDataGridViewTextBoxColumn.Name = "soLanDataGridViewTextBoxColumn";
+            this.soLanDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Edit
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -268,6 +296,7 @@
             this.Edit.HeaderText = "";
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Text = "Sửa";
             this.Edit.UseColumnTextForButtonValue = true;
@@ -280,57 +309,11 @@
             this.Delete.HeaderText = "";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Text = "Xóa";
             this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // tenLoaiRecordDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Tên loại";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
-            // 
-            // moTaDataGridViewTextBoxColumn
-            // 
-            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "MoTa";
-            this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
-            this.moTaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
-            // 
-            // thoiGianDataGridViewTextBoxColumn
-            // 
-            this.thoiGianDataGridViewTextBoxColumn.DataPropertyName = "ThoiGian";
-            this.thoiGianDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.thoiGianDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thoiGianDataGridViewTextBoxColumn.Name = "thoiGianDataGridViewTextBoxColumn";
-            // 
-            // soLanDataGridViewTextBoxColumn
-            // 
-            this.soLanDataGridViewTextBoxColumn.DataPropertyName = "SoLan";
-            this.soLanDataGridViewTextBoxColumn.HeaderText = "Số lần";
-            this.soLanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soLanDataGridViewTextBoxColumn.Name = "soLanDataGridViewTextBoxColumn";
-            // 
-            // loaiRecordBindingSource
-            // 
-            this.loaiRecordBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.LoaiRecord);
-            // 
-            // sPGetAllNhanSuResultBindingSource
-            // 
-            this.sPGetAllNhanSuResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result);
-            // 
-            // phongBindingSource
-            // 
-            this.phongBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.Phong);
+            this.Delete.Visible = false;
             // 
             // UCLoaiCICO
             // 
@@ -362,8 +345,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox tbTimKiem;
         private System.Windows.Forms.DataGridView grdLoaiCICO;

@@ -19,7 +19,7 @@ namespace CheckinManagementSystem.BLL
             int result = 0;
             if (IdNhanSu != null || IdRecord != null)
             {
-                Record record = _context.Record.FirstOrDefault(t => (t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)) || t.ID == IdRecord);
+                Record record = _context.Record.FirstOrDefault(t => (t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord /*&& EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)*/) || t.ID == IdRecord);
 
                 if (record != null)
                 {
@@ -45,7 +45,7 @@ namespace CheckinManagementSystem.BLL
 
         public bool checkIsOut(int? IdNhanSu, int? IdLoaiRecord)
         {
-            return _context.Record.Where(t => IdLoaiRecord != 0 && t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && t.ThoiGianRa == null && EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)).Any();
+            return _context.Record.Where(t => IdLoaiRecord != 0 && t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && t.ThoiGianRa == null /*&& EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)*/).Any();
         }
     }
 }

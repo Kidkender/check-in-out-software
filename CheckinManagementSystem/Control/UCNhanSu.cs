@@ -1,4 +1,5 @@
 ﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,11 +31,21 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
+            grdNhanSu.RowTemplate.Height = 40;
         }
 
         public void LoadData()
         {
             grdNhanSu.DataSource = _nhansuBLL.GetAllNhanSu_Grid();
+            RefreshDataPhong();
+        }
+
+        private void RefreshDataPhong()
+        {
+            cboPhong.DataSource = _nhansuBLL.GetAllPhong();
+            cboPhong.ValueMember = "ID";
+            cboPhong.DisplayMember = "TenPhong";
+            cboPhong.SelectedIndex = -1;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -43,11 +54,6 @@ namespace CheckinManagementSystem.Control
             ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog();
             LoadData();
-        }
-
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -94,8 +100,8 @@ namespace CheckinManagementSystem.Control
                         // Đọc dữ liệu từ cột D (tên phòng)
                         string tenPhong = ((Excel.Range)worksheet.Cells[currentRow, 4]).Value;
 
-                        
-                        result = result + _nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null);
+
+                        result = result + _nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null, true);
                         currentRow++;
                     }
                     if (result > 0)
@@ -106,6 +112,8 @@ namespace CheckinManagementSystem.Control
                     {
                         MessageBox.Show("Import thất bại");
                     }
+
+                    LoadData();
 
                     // Đóng tệp Excel
                     workbook.Close(false);
@@ -127,11 +135,6 @@ namespace CheckinManagementSystem.Control
             }
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
         private void grdNhanSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int? IdNhanSu = (int)grdNhanSu["ID", e.RowIndex].Value;
@@ -148,6 +151,48 @@ namespace CheckinManagementSystem.Control
                 ed.ShowDialog();
                 LoadData();
             }
+        }
+
+        private void cboPhong_TextUpdate(object sender, EventArgs e)
+        {
+            if (cboPhong.Text == string.Empty)
+            {
+                RefreshDataPhong();
+            }
+            else
+            {
+                string tempStr = cboPhong.Text;
+                List<Phong> data = _nhansuBLL.GetAllPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
+
+                cboPhong.DataSource = null;
+                cboPhong.Items.Clear();
+                cboPhong.ValueMember = "ID";
+                cboPhong.DisplayMember = "TenPhong";
+
+                foreach (var temp in data)
+                {
+                    cboPhong.Items.Add(temp);
+                }
+                cboPhong.DroppedDown = true;
+                cboPhong.MaxDropDownItems = 5;
+                Cursor.Current = Cursors.Default;
+                cboPhong.SelectedIndex = -1;
+
+                cboPhong.Text = tempStr;
+                cboPhong.Select(cboPhong.Text.Length, 0);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTuKhoa.Text = "";
+            LoadData();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtTuKhoa.Text;
+            grdNhanSu.DataSource = _nhansuBLL.GetAllNhanSu_Grid().Where(t => t.HoTen.ToLower().Contains(tuKhoa.ToLower()) || t.MaNhanSu.ToLower().Contains(tuKhoa.ToLower())).ToList();
         }
     }
 }

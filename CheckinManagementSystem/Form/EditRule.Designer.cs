@@ -33,7 +33,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.description = new System.Windows.Forms.TextBox();
+            this.tbMoTa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.description);
+            this.panel1.Controls.Add(this.tbMoTa);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbNoiDung);
             this.panel1.Controls.Add(this.btnSave);
@@ -92,14 +92,15 @@
             this.panel1.Size = new System.Drawing.Size(957, 471);
             this.panel1.TabIndex = 4;
             // 
-            // description
+            // tbMoTa
             // 
-            this.description.AcceptsReturn = true;
-            this.description.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.Location = new System.Drawing.Point(22, 138);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(912, 45);
-            this.description.TabIndex = 7;
+            this.tbMoTa.AcceptsReturn = true;
+            this.tbMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMoTa.Location = new System.Drawing.Point(22, 138);
+            this.tbMoTa.Multiline = true;
+            this.tbMoTa.Name = "tbMoTa";
+            this.tbMoTa.Size = new System.Drawing.Size(912, 236);
+            this.tbMoTa.TabIndex = 7;
             // 
             // label6
             // 
@@ -107,9 +108,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(18, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 23);
+            this.label6.Size = new System.Drawing.Size(60, 23);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Xử phạt";
+            this.label6.Text = "Mô tả";
             // 
             // EditRule
             // 
@@ -140,6 +141,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox description;
+        private System.Windows.Forms.TextBox tbMoTa;
     }
 }
