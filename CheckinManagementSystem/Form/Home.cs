@@ -46,9 +46,10 @@ namespace CheckinManagementSystem
 		public void Form1_Load(object sender, EventArgs e)
 		{
 			init();
-			toolStripButton1.ForeColor = Color.Red;
+			toolStripButton1.ForeColor = Color.White;
+            toolStripButton1.BackColor = Color.IndianRed;
 
-			UCCheck uc = new UCCheck();
+            UCCheck uc = new UCCheck();
 			uc.Dock = DockStyle.Fill;
             PnlContainer.Controls.Add(uc);
 		}
@@ -87,7 +88,8 @@ namespace CheckinManagementSystem
                     UCAdmin.Instance.BringToFront();
 
                 init();
-                BtnLogin.ForeColor = Color.Red;
+                BtnLogin.ForeColor = Color.White;
+                BtnHistory.BackColor = Color.IndianRed;
             }
         }
 
@@ -98,16 +100,27 @@ namespace CheckinManagementSystem
                
             }    
             toolSBtnHistory.ForeColor = Color.DodgerBlue;
-			toolStripButton2.ForeColor = Color.DodgerBlue;
+            toolSBtnHistory.BackColor = Color.White;
+
+            toolStripButton2.ForeColor = Color.DodgerBlue;
+            toolStripButton2.BackColor = Color.White;
+
             BtnLogin.ForeColor = Color.DodgerBlue;
+            BtnHistory.BackColor = Color.White;
+
             toolStripButton1.ForeColor = Color.DodgerBlue;
+            toolStripButton1.BackColor = Color.White;
+
             toolStripButton3.ForeColor = Color.DodgerBlue;
+            toolStripButton3.BackColor = Color.White;
         }
 
 		private void toolStripButton1_Click(object sender, EventArgs e)
 		{
             init();
-            toolSBtnHistory.ForeColor = Color.Red;
+            toolSBtnHistory.ForeColor = Color.White;
+            toolSBtnHistory.BackColor = Color.IndianRed;
+
             if (!panelContainer.Controls.Contains(UCHistory.Instance))
             {
                 UCHistory.Instance.Dock = DockStyle.Fill;
@@ -121,7 +134,9 @@ namespace CheckinManagementSystem
         private void toolStripButton2_Click_1(object sender, EventArgs e)
         {
             init();
-            toolStripButton2.ForeColor = Color.Red;
+            toolStripButton2.ForeColor = Color.White;
+            toolStripButton2.BackColor = Color.IndianRed;
+
             if (!panelContainer.Controls.Contains(UCInOut.Instance))
             {
                 UCInOut.Instance.Dock = DockStyle.Fill;
@@ -135,7 +150,9 @@ namespace CheckinManagementSystem
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
             init();
-            toolStripButton1.ForeColor = Color.Red;
+            toolStripButton1.ForeColor = Color.White;
+            toolStripButton1.BackColor = Color.IndianRed;
+
             if (!panelContainer.Controls.Contains(UCCheck.Instance))
             {
                 UCCheck.Instance.Dock = DockStyle.Fill;
@@ -149,7 +166,9 @@ namespace CheckinManagementSystem
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             init();
-            toolStripButton3.ForeColor = Color.Red;
+            toolStripButton3.ForeColor = Color.White;
+            toolStripButton3.BackColor = Color.IndianRed;
+
             if (!panelContainer.Controls.Contains(UCHistoryCheck.Instance))
             {
                 UCHistoryCheck.Instance.Dock = DockStyle.Fill;
