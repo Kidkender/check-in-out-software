@@ -57,6 +57,9 @@ namespace CheckinManagementSystem
         public void RefreshFrom()
         {
             toolStripButton1.PerformClick();
+            init();
+            toolStripButton1.ForeColor = Color.White;
+            toolStripButton1.BackColor = Color.IndianRed;
         }
 
 		private void toolStripLabel1_Click(object sender, EventArgs e)
@@ -89,7 +92,7 @@ namespace CheckinManagementSystem
 
                 init();
                 BtnLogin.ForeColor = Color.White;
-                BtnHistory.BackColor = Color.IndianRed;
+                BtnLogin.BackColor = Color.IndianRed;
             }
         }
 
@@ -99,6 +102,7 @@ namespace CheckinManagementSystem
             { 
                
             }    
+
             toolSBtnHistory.ForeColor = Color.DodgerBlue;
             toolSBtnHistory.BackColor = Color.White;
 
@@ -106,7 +110,7 @@ namespace CheckinManagementSystem
             toolStripButton2.BackColor = Color.White;
 
             BtnLogin.ForeColor = Color.DodgerBlue;
-            BtnHistory.BackColor = Color.White;
+            BtnLogin.BackColor = Color.White;
 
             toolStripButton1.ForeColor = Color.DodgerBlue;
             toolStripButton1.BackColor = Color.White;
