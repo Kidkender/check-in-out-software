@@ -84,7 +84,7 @@ namespace CheckinManagementSystem.Control
 
                     int startRow = 4;
                     int currentRow = startRow;
-                    int result = 0;
+                    List<string> result = new List<string>();
                     while (true)
                     {
                         // Đọc dữ liệu từ cột A (STT)
@@ -101,16 +101,17 @@ namespace CheckinManagementSystem.Control
                         string tenPhong = ((Excel.Range)worksheet.Cells[currentRow, 4]).Value;
 
 
-                        result = result + _nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null, true);
+                        result.Add(_nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null));
                         currentRow++;
                     }
-                    if (result > 0)
+                    result = result.Where(t => !string.IsNullOrEmpty(t)).ToList();
+                    if (result.Count > 0)
                     {
-                        MessageBox.Show("Import thành công");
+                        MessageBox.Show($"Import thất bại!\nMã nhân sự {string.Join(", ", result)} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Import thất bại");
+                        MessageBox.Show($"Import thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     LoadData();
@@ -137,19 +138,22 @@ namespace CheckinManagementSystem.Control
 
         private void grdNhanSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int? IdNhanSu = (int)grdNhanSu["ID", e.RowIndex].Value;
-            if (grdNhanSu.Columns[e.ColumnIndex].Name == "Delete")
+            if (e.RowIndex >= 0)
             {
-                _nhansuBLL.DeleteNhanSuById(IdNhanSu);
-                LoadData();
-            }
+                int? IdNhanSu = (int)grdNhanSu["ID", e.RowIndex].Value;
+                if (grdNhanSu.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    _nhansuBLL.DeleteNhanSuById(IdNhanSu);
+                    LoadData();
+                }
 
-            if (grdNhanSu.Columns[e.ColumnIndex].Name == "Edit")
-            {
-                EditNS ed = new EditNS(false, _nhansuBLL.GetNhanSuById(IdNhanSu));
-                ed.StartPosition = FormStartPosition.CenterParent;
-                ed.ShowDialog();
-                LoadData();
+                if (grdNhanSu.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    EditNS ed = new EditNS(false, _nhansuBLL.GetNhanSuById(IdNhanSu));
+                    ed.StartPosition = FormStartPosition.CenterParent;
+                    ed.ShowDialog();
+                    LoadData();
+                }
             }
         }
 

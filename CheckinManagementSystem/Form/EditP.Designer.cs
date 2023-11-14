@@ -33,6 +33,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMoTa = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbPV = new System.Windows.Forms.TextBox();
             this.tbGV = new System.Windows.Forms.TextBox();
-            this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.tbTenPhong.Location = new System.Drawing.Point(21, 39);
             this.tbTenPhong.Name = "tbTenPhong";
             this.tbTenPhong.Size = new System.Drawing.Size(503, 45);
-            this.tbTenPhong.TabIndex = 1;
+            this.tbTenPhong.TabIndex = 0;
             // 
             // label5
             // 
@@ -82,7 +82,7 @@
             this.btnSave.Location = new System.Drawing.Point(211, 448);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -107,6 +107,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 526);
             this.panel1.TabIndex = 4;
+            // 
+            // txtMoTa
+            // 
+            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoTa.Location = new System.Drawing.Point(21, 132);
+            this.txtMoTa.Multiline = true;
+            this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.Size = new System.Drawing.Size(503, 214);
+            this.txtMoTa.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(18, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 23);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Mô tả";
             // 
             // label8
             // 
@@ -144,7 +163,7 @@
             this.tbPR.Location = new System.Drawing.Point(441, 388);
             this.tbPR.Name = "tbPR";
             this.tbPR.Size = new System.Drawing.Size(76, 38);
-            this.tbPR.TabIndex = 8;
+            this.tbPR.TabIndex = 5;
             // 
             // tbHR
             // 
@@ -152,7 +171,7 @@
             this.tbHR.Location = new System.Drawing.Point(330, 388);
             this.tbHR.Name = "tbHR";
             this.tbHR.Size = new System.Drawing.Size(76, 38);
-            this.tbHR.TabIndex = 7;
+            this.tbHR.TabIndex = 4;
             // 
             // label4
             // 
@@ -170,7 +189,7 @@
             this.tbPV.Location = new System.Drawing.Point(133, 388);
             this.tbPV.Name = "tbPV";
             this.tbPV.Size = new System.Drawing.Size(76, 38);
-            this.tbPV.TabIndex = 5;
+            this.tbPV.TabIndex = 3;
             // 
             // tbGV
             // 
@@ -178,26 +197,7 @@
             this.tbGV.Location = new System.Drawing.Point(22, 388);
             this.tbGV.Name = "tbGV";
             this.tbGV.Size = new System.Drawing.Size(76, 38);
-            this.tbGV.TabIndex = 4;
-            // 
-            // txtMoTa
-            // 
-            this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTa.Location = new System.Drawing.Point(21, 132);
-            this.txtMoTa.Multiline = true;
-            this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(503, 214);
-            this.txtMoTa.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 102);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 23);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Mô tả";
+            this.tbGV.TabIndex = 2;
             // 
             // EditP
             // 

@@ -47,14 +47,14 @@ namespace CheckinManagementSystem.BLL
             _context.SaveChanges();
         }
 
-        public int AddEditNhanSu(string HoTen, string maNhanSu, string TenPhong, int? IDNhanSu = null, bool isImport = false)
+        public string AddEditNhanSu(string HoTen, string maNhanSu, string TenPhong, int? IDNhanSu = null)
         {
             _context = new CheckInEntities();
             int result = 0;
             var IdPhong = _context.Phong.FirstOrDefault(t => t.TenPhong == TenPhong)?.ID;
-            if (_context.NhanSu.Any(t => t.MaNhanSu == maNhanSu) && isImport)
+            if (_context.NhanSu.Any(t => t.MaNhanSu == maNhanSu && t.ID != IDNhanSu))
             {
-                return 0;
+                return maNhanSu;
             }
             if (IdPhong != null)
             {
@@ -69,9 +69,9 @@ namespace CheckinManagementSystem.BLL
                 ns.MaNhanSu = maNhanSu;
                 ns.IdPhong = IdPhong;
 
-                result = _context.SaveChanges();
+                _context.SaveChanges();
             }
-            return result;
+            return "";
         }
 
         public void SetPassWordAdmin(string PassWordAdmin)

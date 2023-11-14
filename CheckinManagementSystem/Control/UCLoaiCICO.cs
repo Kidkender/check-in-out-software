@@ -37,31 +37,34 @@ namespace CheckinManagementSystem.Control
             LoadData();
         }
 
-		private void btnXuat_Click(object sender, System.EventArgs e)
-		{
+        private void btnXuat_Click(object sender, System.EventArgs e)
+        {
 
-		}
+        }
 
-		private void btnTimKiem_Click(object sender, System.EventArgs e)
-		{
+        private void btnTimKiem_Click(object sender, System.EventArgs e)
+        {
             grdLoaiCICO.DataSource = loai.GetAllLoaiRecord_Grid(tbTimKiem.Text);
         }
 
         private void grdLoaiCICO_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int? Id = (int)grdLoaiCICO["ID", e.RowIndex].Value;
-            if (grdLoaiCICO.Columns[e.ColumnIndex].Name == "Delete")
+            if (e.RowIndex >= 0)
             {
-                loai.DeleteLoaiRecordById(Id);
-                LoadData();
-            }
+                int? Id = (int)grdLoaiCICO["ID", e.RowIndex].Value;
+                if (grdLoaiCICO.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    loai.DeleteLoaiRecordById(Id);
+                    LoadData();
+                }
 
-            if (grdLoaiCICO.Columns[e.ColumnIndex].Name == "Edit")
-            {
-                EditloaiCICO ed = new EditloaiCICO(false, loai.GetLoaiRecordById(Id));
-                ed.StartPosition = FormStartPosition.CenterParent;
-                ed.ShowDialog();
-                LoadData();
+                if (grdLoaiCICO.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    EditloaiCICO ed = new EditloaiCICO(false, loai.GetLoaiRecordById(Id));
+                    ed.StartPosition = FormStartPosition.CenterParent;
+                    ed.ShowDialog();
+                    LoadData();
+                }
             }
         }
     }

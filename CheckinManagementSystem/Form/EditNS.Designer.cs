@@ -56,7 +56,7 @@
             this.txtMa.Location = new System.Drawing.Point(21, 39);
             this.txtMa.Name = "txtMa";
             this.txtMa.Size = new System.Drawing.Size(435, 45);
-            this.txtMa.TabIndex = 1;
+            this.txtMa.TabIndex = 0;
             // 
             // label5
             // 
@@ -103,7 +103,7 @@
             this.cboPhong.Location = new System.Drawing.Point(21, 134);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(434, 44);
-            this.cboPhong.TabIndex = 7;
+            this.cboPhong.TabIndex = 2;
             // 
             // label6
             // 
@@ -121,7 +121,7 @@
             this.txtTen.Location = new System.Drawing.Point(498, 39);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(435, 45);
-            this.txtTen.TabIndex = 4;
+            this.txtTen.TabIndex = 1;
             // 
             // label4
             // 

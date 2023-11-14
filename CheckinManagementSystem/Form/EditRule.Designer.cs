@@ -54,7 +54,7 @@
             this.tbNoiDung.Location = new System.Drawing.Point(21, 39);
             this.tbNoiDung.Name = "tbNoiDung";
             this.tbNoiDung.Size = new System.Drawing.Size(912, 45);
-            this.tbNoiDung.TabIndex = 1;
+            this.tbNoiDung.TabIndex = 0;
             // 
             // label5
             // 
@@ -74,7 +74,7 @@
             this.btnSave.Location = new System.Drawing.Point(780, 391);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -100,7 +100,7 @@
             this.tbMoTa.Multiline = true;
             this.tbMoTa.Name = "tbMoTa";
             this.tbMoTa.Size = new System.Drawing.Size(912, 236);
-            this.tbMoTa.TabIndex = 7;
+            this.tbMoTa.TabIndex = 1;
             // 
             // label6
             // 

@@ -102,7 +102,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 59);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

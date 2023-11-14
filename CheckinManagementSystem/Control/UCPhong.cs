@@ -13,8 +13,8 @@ namespace CheckinManagementSystem.Control
 {
     public partial class UCPhong : UserControl
     {
-		PhongBLL _phongBLL = new PhongBLL();
-		private static UCPhong _instance;
+        PhongBLL _phongBLL = new PhongBLL();
+        private static UCPhong _instance;
         public static UCPhong Instance
         {
             get
@@ -27,7 +27,7 @@ namespace CheckinManagementSystem.Control
         public UCPhong()
         {
             InitializeComponent();
-			LoadData();
+            LoadData();
             grdPhong.RowTemplate.Height = 40;
         }
 
@@ -36,18 +36,18 @@ namespace CheckinManagementSystem.Control
             EditP ed = new EditP(true);
             ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog(this);
-			LoadData();
-		}
+            LoadData();
+        }
 
-		public void LoadData()
-		{
-			grdPhong.DataSource = _phongBLL.GetAllPhong_Grid();
-		}
+        public void LoadData()
+        {
+            grdPhong.DataSource = _phongBLL.GetAllPhong_Grid();
+        }
 
-		private void btnTimKiem_Click(object sender, EventArgs e)
-		{
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
             grdPhong.DataSource = _phongBLL.GetAllPhong_Grid(tbTimKiem.Text);
-		}
+        }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -56,21 +56,24 @@ namespace CheckinManagementSystem.Control
         }
 
         private void grdPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			int? IdPhong = (int)grdPhong["ID", e.RowIndex].Value;
-			if (grdPhong.Columns[e.ColumnIndex].Name == "Delete")
-			{
-				_phongBLL.DeletePhongById(IdPhong);
-				LoadData();
-			}
+        {
+            if (e.RowIndex >= 0)
+            {
+                int? IdPhong = (int)grdPhong["ID", e.RowIndex].Value;
+                if (grdPhong.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    _phongBLL.DeletePhongById(IdPhong);
+                    LoadData();
+                }
 
-			if (grdPhong.Columns[e.ColumnIndex].Name == "Edit")
-			{
-				EditP ed = new EditP(false, _phongBLL.GetPhongById(IdPhong));
-				ed.StartPosition = FormStartPosition.CenterParent;
-				ed.ShowDialog();
-				LoadData();
-			}
-		}
-	}
+                if (grdPhong.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    EditP ed = new EditP(false, _phongBLL.GetPhongById(IdPhong));
+                    ed.StartPosition = FormStartPosition.CenterParent;
+                    ed.ShowDialog();
+                    LoadData();
+                }
+            }
+        }
+    }
 }

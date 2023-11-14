@@ -37,6 +37,7 @@ namespace CheckinManagementSystem
                     txtTen.Text = ns.HoTen;
                     txtMa.Text = ns.MaNhanSu;
                     cboPhong.SelectedValue = ns.IdPhong;
+                    _ns = ns;
                 }
             }
         }
@@ -51,6 +52,7 @@ namespace CheckinManagementSystem
 
         private static bool lbl;
         private static NhanSu ns;
+        private NhanSu _ns;
         public bool check = false;
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -73,9 +75,16 @@ namespace CheckinManagementSystem
             }
             else
             {
-                _nhanSuBLL.AddEditNhanSu(ten, maNhanSu, phong.TenPhong, ns?.ID);
+                string result = _nhanSuBLL.AddEditNhanSu(ten, maNhanSu, phong.TenPhong, _ns?.ID);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show($"Mã nhân sự {result} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    this.Close();
+                }
             }
-            this.Close();
         }
     }
 }

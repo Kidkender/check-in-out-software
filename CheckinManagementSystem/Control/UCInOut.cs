@@ -206,14 +206,17 @@ namespace CheckinManagementSystem
 
         private void grdCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
+            if (e.RowIndex >= 0)
             {
-                int IDRecord = (int)grdCheckOut["ID", e.RowIndex].Value;
-
-                if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
+                if (grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
                 {
-                    MessageBox.Show("Check thành công");
-                    RefreshAll();
+                    int IDRecord = (int)grdCheckOut["ID", e.RowIndex].Value;
+
+                    if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
+                    {
+                        MessageBox.Show("Check thành công");
+                        RefreshAll();
+                    }
                 }
             }
         }

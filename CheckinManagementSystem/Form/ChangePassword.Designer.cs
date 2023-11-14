@@ -65,7 +65,7 @@
             this.tbMKM.Location = new System.Drawing.Point(22, 61);
             this.tbMKM.Name = "tbMKM";
             this.tbMKM.Size = new System.Drawing.Size(435, 45);
-            this.tbMKM.TabIndex = 7;
+            this.tbMKM.TabIndex = 0;
             this.tbMKM.UseSystemPasswordChar = true;
             // 
             // label6
@@ -84,7 +84,7 @@
             this.tbNLMK.Location = new System.Drawing.Point(21, 194);
             this.tbNLMK.Name = "tbNLMK";
             this.tbNLMK.Size = new System.Drawing.Size(435, 45);
-            this.tbNLMK.TabIndex = 4;
+            this.tbNLMK.TabIndex = 1;
             this.tbNLMK.UseSystemPasswordChar = true;
             // 
             // label4
@@ -105,7 +105,7 @@
             this.btnSave.Location = new System.Drawing.Point(303, 313);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

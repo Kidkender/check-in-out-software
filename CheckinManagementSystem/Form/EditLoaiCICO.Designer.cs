@@ -56,7 +56,7 @@
             this.btnSave.Location = new System.Drawing.Point(390, 122);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -80,7 +80,7 @@
             this.tbSoLan.Location = new System.Drawing.Point(484, 39);
             this.tbSoLan.Name = "tbSoLan";
             this.tbSoLan.Size = new System.Drawing.Size(435, 45);
-            this.tbSoLan.TabIndex = 7;
+            this.tbSoLan.TabIndex = 1;
             // 
             // label6
             // 
@@ -98,7 +98,7 @@
             this.tbThoigian.Location = new System.Drawing.Point(22, 39);
             this.tbThoigian.Name = "tbThoigian";
             this.tbThoigian.Size = new System.Drawing.Size(435, 45);
-            this.tbThoigian.TabIndex = 4;
+            this.tbThoigian.TabIndex = 0;
             // 
             // label4
             // 

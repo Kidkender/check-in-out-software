@@ -50,19 +50,22 @@ namespace CheckinManagementSystem.Control
 
         private void grdNoiQuy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int? Id = (int)grdNoiQuy["ID", e.RowIndex].Value;
-            if (grdNoiQuy.Columns[e.ColumnIndex].Name == "Delete")
+            if (e.RowIndex >= 0)
             {
-                _bll.DeleteNoiQuyById(Id);
-                LoadData();
-            }
+                int? Id = (int)grdNoiQuy["ID", e.RowIndex].Value;
+                if (grdNoiQuy.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    _bll.DeleteNoiQuyById(Id);
+                    LoadData();
+                }
 
-            if (grdNoiQuy.Columns[e.ColumnIndex].Name == "Edit")
-            {
-                EditRule ed = new EditRule(false, _bll.GetNoiQuyById(Id));
-                ed.StartPosition = FormStartPosition.CenterParent;
-                ed.ShowDialog();
-                LoadData();
+                if (grdNoiQuy.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    EditRule ed = new EditRule(false, _bll.GetNoiQuyById(Id));
+                    ed.StartPosition = FormStartPosition.CenterParent;
+                    ed.ShowDialog();
+                    LoadData();
+                }
             }
         }
     }
