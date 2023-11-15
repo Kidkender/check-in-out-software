@@ -23,6 +23,7 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdNoiQuy.RowTemplate.Height = 40;
+            grdNoiQuy.CellFormatting += grdNoiQuy_CellFormatting;
         }
 
         private void UCNoiQUy_Load(object sender, EventArgs e)
@@ -66,6 +67,29 @@ namespace CheckinManagementSystem.Control
                     ed.ShowDialog();
                     LoadData();
                 }
+            }
+        }
+
+        private void grdNoiQuy_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (grdNoiQuy.Columns[e.ColumnIndex].Name == "LoaiNoiQuy" && e.Value != null)
+            {
+                int loaiNoiQuyValue = (int)e.Value;
+
+                // Chuyển đổi giá trị thành văn bản tương ứng
+                switch (loaiNoiQuyValue)
+                {
+                    case 0:
+                        e.Value = "Điểm danh";
+                        break;
+                    case 1:
+                        e.Value = "Checkin giữa giờ";
+                        break;
+                        // Thêm các trường hợp khác nếu cần thiết
+                }
+
+                // Đặt lại định dạng để hiển thị văn bản thay vì giá trị số
+                e.FormattingApplied = true;
             }
         }
     }

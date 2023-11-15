@@ -83,6 +83,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NoiDung" Type="nvarchar" MaxLength="2048" />
           <Property Name="XuPhat" Type="ntext" />
+          <Property Name="LoaiNoiQuy" Type="int" />
         </EntityType>
         <EntityType Name="Phong">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="ThoiGianRa" Type="datetime" />
           <Property Name="IdLoaiRecord" Type="int" />
           <Property Name="InOut" Type="int" />
+          <Property Name="GhiChu" Type="ntext" />
         </EntityType>
         <Function Name="GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_GetAllDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -290,6 +292,8 @@
           <Property Type="DateTime" Name="ThoiGianRa" Nullable="true" Precision="23" />
           <Property Type="Int32" Name="IdPhong" Nullable="true" />
           <Property Type="String" Name="MaNhanSu" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="ThoiGianSuDung" Nullable="true" />
+          <Property Type="String" Name="GhiChu" Nullable="true" MaxLength="Max" />
         </ComplexType>
         <EntityType Name="Record">
           <Key>
@@ -301,6 +305,7 @@
           <Property Name="ThoiGianRa" Type="DateTime" Precision="3" />
           <Property Name="IdLoaiRecord" Type="Int32" />
           <Property Name="InOut" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <ComplexType Name="GetAllNhanSu_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -329,6 +334,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NoiDung" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
           <Property Name="XuPhat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiNoiQuy" Type="Int32" />
         </EntityType>
         <ComplexType Name="SP_GetAllDiemDanh_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -481,12 +487,15 @@
                 <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
                 <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
                 <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+                <ScalarProperty Name="ThoiGianSuDung" ColumnName="ThoiGianSuDung" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <EntitySetMapping Name="Record">
             <EntityTypeMapping TypeName="CheckInModel.Record">
               <MappingFragment StoreEntitySet="Record">
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
                 <ScalarProperty Name="InOut" ColumnName="InOut" />
                 <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
                 <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
@@ -527,6 +536,7 @@
           <EntitySetMapping Name="NoiQuy">
             <EntityTypeMapping TypeName="CheckInModel.NoiQuy">
               <MappingFragment StoreEntitySet="NoiQuy">
+                <ScalarProperty Name="LoaiNoiQuy" ColumnName="LoaiNoiQuy" />
                 <ScalarProperty Name="XuPhat" ColumnName="XuPhat" />
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

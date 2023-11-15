@@ -56,6 +56,7 @@ namespace CheckinManagementSystem.BLL
             }
             p.NoiDung = model.NoiDung;
             p.XuPhat = model.XuPhat;
+            p.LoaiNoiQuy = model.LoaiNoiQuy;
 
             result = _context.SaveChanges();
         }

@@ -196,6 +196,12 @@
     <Compile Include="Form\EditLoaiCICO.Designer.cs">
       <DependentUpon>EditLoaiCICO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\EditGhiChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EditGhiChu.Designer.cs">
+      <DependentUpon>EditGhiChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\EditRule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditLoaiCICO.resx">
       <DependentUpon>EditLoaiCICO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EditGhiChu.resx">
+      <DependentUpon>EditGhiChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditRule.resx">
       <DependentUpon>EditRule.cs</DependentUpon>

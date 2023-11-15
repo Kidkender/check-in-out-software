@@ -92,12 +92,11 @@ namespace CheckinManagementSystem
 
         private void RefreshDataNoiQuy()
         {
-            grdNoiQuy.Columns.Add("NoiDung", "Nội Dung");
-            grdNoiQuy.Columns.Add("XuPhat", "Xử Phạt");
+            grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
+            grdNoiQuy.Columns.Add("XuPhat", "Nội dung");
             grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            grdNoiQuy.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             grdNoiQuy.RowTemplate.MinimumHeight = 50;
-            foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().ToList())
+            foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().Where(t => t.LoaiNoiQuy == 1).ToList())
             {
                 grdNoiQuy.Rows.Add(noiQuy.NoiDung, noiQuy.XuPhat);
             }
@@ -118,7 +117,7 @@ namespace CheckinManagementSystem
                 string tempStr = cboNhanSu.Text;
                 var data = _nhanSuBLL.GetAllNhanSu();
                 data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
-                data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
+                data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 
                 cboNhanSu.DataSource = null;
                 cboNhanSu.Items.Clear();

@@ -52,7 +52,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(12, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(335, 37);
+            this.lbTitle.Size = new System.Drawing.Size(277, 31);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN PHÒNG";
             // 
@@ -61,7 +61,7 @@
             this.tbTenPhong.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenPhong.Location = new System.Drawing.Point(21, 39);
             this.tbTenPhong.Name = "tbTenPhong";
-            this.tbTenPhong.Size = new System.Drawing.Size(503, 45);
+            this.tbTenPhong.Size = new System.Drawing.Size(503, 38);
             this.tbTenPhong.TabIndex = 0;
             // 
             // label5
@@ -70,7 +70,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 23);
+            this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "Tên Phòng";
             // 
@@ -123,7 +123,7 @@
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(18, 102);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 23);
+            this.label9.Size = new System.Drawing.Size(50, 19);
             this.label9.TabIndex = 13;
             this.label9.Text = "Mô tả";
             // 
@@ -133,7 +133,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(326, 362);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 23);
+            this.label8.Size = new System.Drawing.Size(90, 19);
             this.label8.TabIndex = 11;
             this.label8.Text = "Thời gian ra";
             // 
@@ -143,7 +143,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(18, 362);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 23);
+            this.label7.Size = new System.Drawing.Size(100, 19);
             this.label7.TabIndex = 10;
             this.label7.Text = "Thời gian vào";
             // 
@@ -153,7 +153,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(412, 391);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 32);
+            this.label6.Size = new System.Drawing.Size(19, 26);
             this.label6.TabIndex = 9;
             this.label6.Text = ":";
             // 
@@ -162,7 +162,7 @@
             this.tbPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPR.Location = new System.Drawing.Point(441, 388);
             this.tbPR.Name = "tbPR";
-            this.tbPR.Size = new System.Drawing.Size(76, 38);
+            this.tbPR.Size = new System.Drawing.Size(76, 32);
             this.tbPR.TabIndex = 5;
             // 
             // tbHR
@@ -170,7 +170,7 @@
             this.tbHR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHR.Location = new System.Drawing.Point(330, 388);
             this.tbHR.Name = "tbHR";
-            this.tbHR.Size = new System.Drawing.Size(76, 38);
+            this.tbHR.Size = new System.Drawing.Size(76, 32);
             this.tbHR.TabIndex = 4;
             // 
             // label4
@@ -179,7 +179,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(104, 391);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 32);
+            this.label4.Size = new System.Drawing.Size(19, 26);
             this.label4.TabIndex = 6;
             this.label4.Text = ":";
             // 
@@ -188,7 +188,7 @@
             this.tbPV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPV.Location = new System.Drawing.Point(133, 388);
             this.tbPV.Name = "tbPV";
-            this.tbPV.Size = new System.Drawing.Size(76, 38);
+            this.tbPV.Size = new System.Drawing.Size(76, 32);
             this.tbPV.TabIndex = 3;
             // 
             // tbGV
@@ -196,7 +196,7 @@
             this.tbGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbGV.Location = new System.Drawing.Point(22, 388);
             this.tbGV.Name = "tbGV";
-            this.tbGV.Size = new System.Drawing.Size(76, 38);
+            this.tbGV.Size = new System.Drawing.Size(76, 32);
             this.tbGV.TabIndex = 2;
             // 
             // EditP

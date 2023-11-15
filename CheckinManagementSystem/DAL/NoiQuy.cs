@@ -17,5 +17,6 @@ namespace CheckinManagementSystem.DAL
         public int ID { get; set; }
         public string NoiDung { get; set; }
         public string XuPhat { get; set; }
+        public Nullable<int> LoaiNoiQuy { get; set; }
     }
 }

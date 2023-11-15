@@ -55,7 +55,9 @@ namespace CheckinManagementSystem.Control
 
         private void RefreshDataNhanSu()
         {
-            cboNhanSu.DataSource = _nhanSuBLL.GetAllNhanSu();
+            var data = _nhanSuBLL.GetAllNhanSu();
+            data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
+            cboNhanSu.DataSource = data;
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
@@ -95,7 +97,9 @@ namespace CheckinManagementSystem.Control
             else
             {
                 string tempStr = cboNhanSu.Text;
-                List<NhanSu> data = _nhanSuBLL.GetAllNhanSu().Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower())).ToList();
+                var data = _nhanSuBLL.GetAllNhanSu();
+                data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
+                data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 
                 cboNhanSu.DataSource = null;
                 cboNhanSu.Items.Clear();

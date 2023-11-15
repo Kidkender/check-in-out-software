@@ -135,12 +135,15 @@
           <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
           <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
           <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="ThoiGianSuDung" ColumnName="ThoiGianSuDung" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
     <EntitySetMapping Name="Record">
       <EntityTypeMapping TypeName="CheckInModel.Record">
         <MappingFragment StoreEntitySet="Record">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="InOut" ColumnName="InOut" />
           <ScalarProperty Name="IdLoaiRecord" ColumnName="IdLoaiRecord" />
           <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
@@ -181,6 +184,7 @@
     <EntitySetMapping Name="NoiQuy">
       <EntityTypeMapping TypeName="CheckInModel.NoiQuy">
         <MappingFragment StoreEntitySet="NoiQuy">
+          <ScalarProperty Name="LoaiNoiQuy" ColumnName="LoaiNoiQuy" />
           <ScalarProperty Name="XuPhat" ColumnName="XuPhat" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="ID" ColumnName="ID" />

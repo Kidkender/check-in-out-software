@@ -78,6 +78,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NoiDung" Type="nvarchar" MaxLength="2048" />
     <Property Name="XuPhat" Type="ntext" />
+    <Property Name="LoaiNoiQuy" Type="int" />
   </EntityType>
   <EntityType Name="Phong">
     <Key>
@@ -108,6 +109,7 @@
     <Property Name="ThoiGianRa" Type="datetime" />
     <Property Name="IdLoaiRecord" Type="int" />
     <Property Name="InOut" Type="int" />
+    <Property Name="GhiChu" Type="ntext" />
   </EntityType>
   <Function Name="GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_GetAllDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

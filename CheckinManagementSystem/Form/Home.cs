@@ -133,6 +133,8 @@ namespace CheckinManagementSystem
             }
             else
                 UCHistory.Instance.BringToFront();
+
+            UCHistory.Instance.SetVisibleGrid(Login.Instance.check);
         }
 
         private void toolStripButton2_Click_1(object sender, EventArgs e)

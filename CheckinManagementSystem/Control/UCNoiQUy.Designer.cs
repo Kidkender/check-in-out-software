@@ -43,6 +43,7 @@
             this.noiQuyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noiDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiNoiQuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xuPhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -64,12 +65,13 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.207459F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.73427F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.05827F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1610, 858);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1208, 697);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -82,12 +84,13 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.202F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.054863F));
             this.tableLayoutPanel4.Controls.Add(this.grdNoiQuy, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 217);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 175);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 638F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1604, 638);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 520F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1204, 520);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // grdNoiQuy
@@ -111,17 +114,19 @@
             this.grdNoiQuy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.noiDungDataGridViewTextBoxColumn,
+            this.LoaiNoiQuy,
             this.xuPhatDataGridViewTextBoxColumn,
             this.Edit,
             this.Delete});
             this.grdNoiQuy.DataSource = this.noiQuyBindingSource;
             this.grdNoiQuy.EnableHeadersVisualStyles = false;
-            this.grdNoiQuy.Location = new System.Drawing.Point(46, 3);
+            this.grdNoiQuy.Location = new System.Drawing.Point(35, 2);
+            this.grdNoiQuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdNoiQuy.Name = "grdNoiQuy";
             this.grdNoiQuy.ReadOnly = true;
             this.grdNoiQuy.RowHeadersWidth = 51;
             this.grdNoiQuy.RowTemplate.Height = 24;
-            this.grdNoiQuy.Size = new System.Drawing.Size(1505, 632);
+            this.grdNoiQuy.Size = new System.Drawing.Size(1130, 516);
             this.grdNoiQuy.TabIndex = 14;
             this.grdNoiQuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNoiQuy_CellContentClick);
             // 
@@ -135,12 +140,13 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.202F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.054863F));
             this.tableLayoutPanel3.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 82);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 66);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1604, 129);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1204, 105);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel1
@@ -150,9 +156,10 @@
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.tbTimKiem);
-            this.panel1.Location = new System.Drawing.Point(46, 13);
+            this.panel1.Location = new System.Drawing.Point(35, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1505, 103);
+            this.panel1.Size = new System.Drawing.Size(1130, 84);
             this.panel1.TabIndex = 13;
             // 
             // btnThem
@@ -162,9 +169,10 @@
             this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(1360, 30);
+            this.btnThem.Location = new System.Drawing.Point(1021, 24);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(119, 52);
+            this.btnThem.Size = new System.Drawing.Size(89, 42);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -177,9 +185,10 @@
             this.btnTimKiem.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTimKiem.Location = new System.Drawing.Point(345, 28);
+            this.btnTimKiem.Location = new System.Drawing.Point(259, 23);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(124, 45);
+            this.btnTimKiem.Size = new System.Drawing.Size(93, 37);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -190,9 +199,10 @@
             this.tbTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tbTimKiem.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiem.Location = new System.Drawing.Point(17, 30);
+            this.tbTimKiem.Location = new System.Drawing.Point(13, 24);
+            this.tbTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbTimKiem.Name = "tbTimKiem";
-            this.tbTimKiem.Size = new System.Drawing.Size(303, 45);
+            this.tbTimKiem.Size = new System.Drawing.Size(228, 38);
             this.tbTimKiem.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -205,12 +215,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.202F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.054863F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1604, 73);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1204, 60);
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -221,9 +232,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(46, 0);
+            this.label1.Location = new System.Drawing.Point(35, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 73);
+            this.label1.Size = new System.Drawing.Size(293, 60);
             this.label1.TabIndex = 12;
             this.label1.Text = "QUẢN LÝ NỘI QUY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,6 +260,13 @@
             this.noiDungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.noiDungDataGridViewTextBoxColumn.Name = "noiDungDataGridViewTextBoxColumn";
             this.noiDungDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // LoaiNoiQuy
+            // 
+            this.LoaiNoiQuy.DataPropertyName = "LoaiNoiQuy";
+            this.LoaiNoiQuy.HeaderText = "Loại nội quy";
+            this.LoaiNoiQuy.Name = "LoaiNoiQuy";
+            this.LoaiNoiQuy.ReadOnly = true;
             // 
             // xuPhatDataGridViewTextBoxColumn
             // 
@@ -278,11 +297,12 @@
             // 
             // UCNoiQUy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCNoiQUy";
-            this.Size = new System.Drawing.Size(1610, 858);
+            this.Size = new System.Drawing.Size(1208, 697);
             this.Load += new System.EventHandler(this.UCNoiQUy_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -312,6 +332,7 @@
         private System.Windows.Forms.BindingSource noiQuyBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn noiDungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiNoiQuy;
         private System.Windows.Forms.DataGridViewTextBoxColumn xuPhatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;

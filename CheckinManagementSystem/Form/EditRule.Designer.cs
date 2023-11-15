@@ -33,7 +33,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboLoaiNoiQuy = new System.Windows.Forms.ComboBox();
             this.tbMoTa = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +46,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(12, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(358, 37);
+            this.lbTitle.Size = new System.Drawing.Size(296, 31);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN NỘI QUY";
             // 
@@ -53,7 +55,7 @@
             this.tbNoiDung.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNoiDung.Location = new System.Drawing.Point(21, 39);
             this.tbNoiDung.Name = "tbNoiDung";
-            this.tbNoiDung.Size = new System.Drawing.Size(912, 45);
+            this.tbNoiDung.Size = new System.Drawing.Size(912, 38);
             this.tbNoiDung.TabIndex = 0;
             // 
             // label5
@@ -62,16 +64,16 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 23);
+            this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Nội quy";
+            this.label5.Text = "Xử phạt";
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Firebrick;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(780, 391);
+            this.btnSave.Location = new System.Drawing.Point(780, 496);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
             this.btnSave.TabIndex = 2;
@@ -82,15 +84,26 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cboLoaiNoiQuy);
             this.panel1.Controls.Add(this.tbMoTa);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tbNoiDung);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(12, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(957, 471);
+            this.panel1.Size = new System.Drawing.Size(957, 568);
             this.panel1.TabIndex = 4;
+            // 
+            // cboLoaiNoiQuy
+            // 
+            this.cboLoaiNoiQuy.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiNoiQuy.FormattingEnabled = true;
+            this.cboLoaiNoiQuy.Location = new System.Drawing.Point(21, 439);
+            this.cboLoaiNoiQuy.Name = "cboLoaiNoiQuy";
+            this.cboLoaiNoiQuy.Size = new System.Drawing.Size(911, 39);
+            this.cboLoaiNoiQuy.TabIndex = 7;
             // 
             // tbMoTa
             // 
@@ -102,24 +115,33 @@
             this.tbMoTa.Size = new System.Drawing.Size(912, 236);
             this.tbMoTa.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 404);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Loại nội quy";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 102);
+            this.label6.Location = new System.Drawing.Point(18, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 23);
+            this.label6.Size = new System.Drawing.Size(69, 19);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Mô tả";
+            this.label6.Text = "Nội dung";
             // 
             // EditRule
             // 
-            this.ClientSize = new System.Drawing.Size(984, 582);
+            this.ClientSize = new System.Drawing.Size(984, 654);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbTitle);
             this.ForeColor = System.Drawing.Color.Firebrick;
             this.Name = "EditRule";
-            this.Load += new System.EventHandler(this.EditRule_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -142,5 +164,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbMoTa;
+        private System.Windows.Forms.ComboBox cboLoaiNoiQuy;
+        private System.Windows.Forms.Label label4;
     }
 }
