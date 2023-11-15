@@ -49,6 +49,10 @@ namespace CheckinManagementSystem.Control
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
             Phong p = (Phong)cboPhong.SelectedItem;
             grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
+            foreach (DataGridViewColumn col in grdHistory.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         private void RefreshAll()

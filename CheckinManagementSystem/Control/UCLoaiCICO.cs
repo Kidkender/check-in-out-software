@@ -22,6 +22,10 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdLoaiCICO.RowTemplate.Height = 40;
+            foreach (DataGridViewColumn col in grdLoaiCICO.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         private void LoadData()

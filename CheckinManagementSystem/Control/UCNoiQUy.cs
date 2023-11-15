@@ -24,6 +24,10 @@ namespace CheckinManagementSystem.Control
             LoadData();
             grdNoiQuy.RowTemplate.Height = 40;
             grdNoiQuy.CellFormatting += grdNoiQuy_CellFormatting;
+            foreach (DataGridViewColumn col in grdNoiQuy.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         private void UCNoiQUy_Load(object sender, EventArgs e)

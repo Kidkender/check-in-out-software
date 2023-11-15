@@ -29,6 +29,10 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdPhong.RowTemplate.Height = 40;
+            foreach (DataGridViewColumn col in grdPhong.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

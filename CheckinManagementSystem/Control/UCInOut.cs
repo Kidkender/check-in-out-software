@@ -53,6 +53,16 @@ namespace CheckinManagementSystem
             c.DefaultCellStyle.BackColor = Color.Red;
             c.Width = 300;
 
+            foreach (DataGridViewColumn col in grdCheckOut.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            foreach (DataGridViewColumn col in grdNoiQuy.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
             #endregion
         }
 

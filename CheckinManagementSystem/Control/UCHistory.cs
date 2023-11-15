@@ -72,6 +72,10 @@ namespace CheckinManagementSystem
             RefreshAll();
             grdCheckOut.RowTemplate.Height = 40;
             grdCheckOut.Columns["GhiChu"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            foreach (DataGridViewColumn col in grdCheckOut.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         #endregion

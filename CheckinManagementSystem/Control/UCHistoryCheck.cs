@@ -40,6 +40,10 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             RefreshAll();
             grdCheckOut.RowTemplate.Height = 40;
+            foreach (DataGridViewColumn col in grdCheckOut.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         #endregion

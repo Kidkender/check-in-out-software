@@ -32,6 +32,10 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdNhanSu.RowTemplate.Height = 40;
+            foreach (DataGridViewColumn col in grdNhanSu.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         public void LoadData()
