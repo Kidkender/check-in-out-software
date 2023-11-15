@@ -141,5 +141,11 @@ namespace CheckinManagementSystem.Control
             else
                 UCAdminCheck.Instance.BringToFront();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdminSetPhong form = new AdminSetPhong();
+            form.ShowDialog();
+        }
     }
 }

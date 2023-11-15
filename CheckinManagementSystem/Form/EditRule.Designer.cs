@@ -46,7 +46,7 @@
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(12, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(296, 31);
+            this.lbTitle.Size = new System.Drawing.Size(358, 37);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "THÔNG TIN NỘI QUY";
             // 
@@ -55,7 +55,7 @@
             this.tbNoiDung.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNoiDung.Location = new System.Drawing.Point(21, 39);
             this.tbNoiDung.Name = "tbNoiDung";
-            this.tbNoiDung.Size = new System.Drawing.Size(912, 38);
+            this.tbNoiDung.Size = new System.Drawing.Size(912, 45);
             this.tbNoiDung.TabIndex = 0;
             // 
             // label5
@@ -64,7 +64,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
+            this.label5.Size = new System.Drawing.Size(77, 23);
             this.label5.TabIndex = 2;
             this.label5.Text = "Xử phạt";
             // 
@@ -76,7 +76,7 @@
             this.btnSave.Location = new System.Drawing.Point(780, 496);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(153, 57);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -102,8 +102,8 @@
             this.cboLoaiNoiQuy.FormattingEnabled = true;
             this.cboLoaiNoiQuy.Location = new System.Drawing.Point(21, 439);
             this.cboLoaiNoiQuy.Name = "cboLoaiNoiQuy";
-            this.cboLoaiNoiQuy.Size = new System.Drawing.Size(911, 39);
-            this.cboLoaiNoiQuy.TabIndex = 7;
+            this.cboLoaiNoiQuy.Size = new System.Drawing.Size(911, 47);
+            this.cboLoaiNoiQuy.TabIndex = 2;
             // 
             // tbMoTa
             // 
@@ -121,7 +121,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 404);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 19);
+            this.label4.Size = new System.Drawing.Size(113, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Loại nội quy";
             // 
@@ -131,7 +131,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(18, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.Size = new System.Drawing.Size(84, 23);
             this.label6.TabIndex = 6;
             this.label6.Text = "Nội dung";
             // 

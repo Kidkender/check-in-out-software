@@ -91,7 +91,7 @@ namespace CheckinManagementSystem
 
         private void RefreshDataNhanSu()
         {
-            var data = _nhanSuBLL.GetAllNhanSu();
+            var data = getDataNhanSu();
             data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
             cboNhanSu.DataSource = data;
             cboNhanSu.ValueMember = "ID";
@@ -109,7 +109,8 @@ namespace CheckinManagementSystem
 
         private void RefreshDataCheckOut()
         {
-            grdCheckOut.DataSource = _recordBLL.GetAllDangKy().Where(t =>/* t.ThoiGianVao.Value.Date == DateTime.Now.Date*/ true).ToList();
+            string idPhong = Properties.Settings.Default.IDPhong;
+            grdCheckOut.DataSource = _recordBLL.GetAllDangKy().Where(t =>/* t.ThoiGianVao.Value.Date == DateTime.Now.Date*/ true && t.IdPhong == int.Parse(idPhong)).ToList();
         }
 
         private void RefreshDataNoiQuy()
@@ -122,6 +123,12 @@ namespace CheckinManagementSystem
             {
                 grdNoiQuy.Rows.Add(noiQuy.NoiDung, noiQuy.XuPhat);
             }
+        }
+
+        private List<NhanSu> getDataNhanSu()
+        {
+            string idPhong = Properties.Settings.Default.IDPhong;
+            return _nhanSuBLL.GetAllNhanSu().Where(t => t.IdPhong == int.Parse(idPhong)).ToList();
         }
 
         #endregion
@@ -146,7 +153,7 @@ namespace CheckinManagementSystem
             else
             {
                 string tempStr = cboNhanSu.Text;
-                var data = _nhanSuBLL.GetAllNhanSu();
+                var data = getDataNhanSu();
                 data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
                 data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 

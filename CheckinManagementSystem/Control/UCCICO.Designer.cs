@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.grdHistory = new System.Windows.Forms.DataGridView();
-            this.sPQuanLyCheckInResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -62,18 +64,17 @@
             this.reDaiTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reHutThuocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reDiKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reSoLanDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reTongThoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reSoPhutDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPQuanLyCheckInResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -120,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdHistory.AutoGenerateColumns = false;
-            this.grdHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,26 +149,48 @@
             this.reSoPhutDiQuaDataGridViewTextBoxColumn,
             this.Re_QuenCheckOut});
             this.grdHistory.DataSource = this.sPQuanLyCheckInResultBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdHistory.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdHistory.EnableHeadersVisualStyles = false;
             this.grdHistory.Location = new System.Drawing.Point(61, 3);
             this.grdHistory.Name = "grdHistory";
             this.grdHistory.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdHistory.RowHeadersWidth = 51;
             this.grdHistory.RowTemplate.Height = 24;
             this.grdHistory.Size = new System.Drawing.Size(1884, 756);
             this.grdHistory.TabIndex = 1;
             // 
-            // sPQuanLyCheckInResultBindingSource
+            // Re_TongSoLanDi
             // 
-            this.sPQuanLyCheckInResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result);
+            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
+            this.Re_TongSoLanDi.HeaderText = "Số lần đi";
+            this.Re_TongSoLanDi.MinimumWidth = 6;
+            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
+            this.Re_TongSoLanDi.ReadOnly = true;
+            this.Re_TongSoLanDi.Width = 107;
+            // 
+            // Re_QuenCheckOut
+            // 
+            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
+            this.Re_QuenCheckOut.HeaderText = "Số lần không check";
+            this.Re_QuenCheckOut.MinimumWidth = 6;
+            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
+            this.Re_QuenCheckOut.ReadOnly = true;
+            this.Re_QuenCheckOut.Width = 228;
             // 
             // tableLayoutPanel3
             // 
@@ -380,6 +403,7 @@
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 65;
             // 
             // hoTenDataGridViewTextBoxColumn
             // 
@@ -388,6 +412,7 @@
             this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
             this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoTenDataGridViewTextBoxColumn.Width = 103;
             // 
             // maNhanSuDataGridViewTextBoxColumn
             // 
@@ -396,6 +421,7 @@
             this.maNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
             this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maNhanSuDataGridViewTextBoxColumn.Width = 128;
             // 
             // tenPhongDataGridViewTextBoxColumn
             // 
@@ -404,6 +430,7 @@
             this.tenPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tenPhongDataGridViewTextBoxColumn.Name = "tenPhongDataGridViewTextBoxColumn";
             this.tenPhongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenPhongDataGridViewTextBoxColumn.Width = 146;
             // 
             // reAnSangDataGridViewTextBoxColumn
             // 
@@ -412,6 +439,7 @@
             this.reAnSangDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reAnSangDataGridViewTextBoxColumn.Name = "reAnSangDataGridViewTextBoxColumn";
             this.reAnSangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnSangDataGridViewTextBoxColumn.Width = 118;
             // 
             // reAnTruaDataGridViewTextBoxColumn
             // 
@@ -420,6 +448,7 @@
             this.reAnTruaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reAnTruaDataGridViewTextBoxColumn.Name = "reAnTruaDataGridViewTextBoxColumn";
             this.reAnTruaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnTruaDataGridViewTextBoxColumn.Width = 107;
             // 
             // reAnToiDataGridViewTextBoxColumn
             // 
@@ -428,6 +457,7 @@
             this.reAnToiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reAnToiDataGridViewTextBoxColumn.Name = "reAnToiDataGridViewTextBoxColumn";
             this.reAnToiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnToiDataGridViewTextBoxColumn.Width = 71;
             // 
             // reTieuTienDataGridViewTextBoxColumn
             // 
@@ -436,6 +466,7 @@
             this.reTieuTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reTieuTienDataGridViewTextBoxColumn.Name = "reTieuTienDataGridViewTextBoxColumn";
             this.reTieuTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reTieuTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // reDaiTienDataGridViewTextBoxColumn
             // 
@@ -444,6 +475,7 @@
             this.reDaiTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reDaiTienDataGridViewTextBoxColumn.Name = "reDaiTienDataGridViewTextBoxColumn";
             this.reDaiTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reDaiTienDataGridViewTextBoxColumn.Width = 113;
             // 
             // reHutThuocDataGridViewTextBoxColumn
             // 
@@ -452,6 +484,7 @@
             this.reHutThuocDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reHutThuocDataGridViewTextBoxColumn.Name = "reHutThuocDataGridViewTextBoxColumn";
             this.reHutThuocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reHutThuocDataGridViewTextBoxColumn.Width = 130;
             // 
             // reDiKhacDataGridViewTextBoxColumn
             // 
@@ -460,14 +493,7 @@
             this.reDiKhacDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reDiKhacDataGridViewTextBoxColumn.Name = "reDiKhacDataGridViewTextBoxColumn";
             this.reDiKhacDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Re_TongSoLanDi
-            // 
-            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
-            this.Re_TongSoLanDi.HeaderText = "Số lần đi";
-            this.Re_TongSoLanDi.MinimumWidth = 6;
-            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
-            this.Re_TongSoLanDi.ReadOnly = true;
+            this.reDiKhacDataGridViewTextBoxColumn.Width = 96;
             // 
             // reSoLanDiQuaDataGridViewTextBoxColumn
             // 
@@ -476,6 +502,7 @@
             this.reSoLanDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reSoLanDiQuaDataGridViewTextBoxColumn.Name = "reSoLanDiQuaDataGridViewTextBoxColumn";
             this.reSoLanDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.Width = 130;
             // 
             // reTongThoiGianSuDungDataGridViewTextBoxColumn
             // 
@@ -484,6 +511,7 @@
             this.reTongThoiGianSuDungDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Name = "reTongThoiGianSuDungDataGridViewTextBoxColumn";
             this.reTongThoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Width = 119;
             // 
             // reSoPhutDiQuaDataGridViewTextBoxColumn
             // 
@@ -492,14 +520,11 @@
             this.reSoPhutDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.reSoPhutDiQuaDataGridViewTextBoxColumn.Name = "reSoPhutDiQuaDataGridViewTextBoxColumn";
             this.reSoPhutDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Width = 143;
             // 
-            // Re_QuenCheckOut
+            // sPQuanLyCheckInResultBindingSource
             // 
-            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
-            this.Re_QuenCheckOut.HeaderText = "Số lần không check";
-            this.Re_QuenCheckOut.MinimumWidth = 6;
-            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
-            this.Re_QuenCheckOut.ReadOnly = true;
+            this.sPQuanLyCheckInResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result);
             // 
             // UCCICO
             // 
@@ -511,12 +536,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

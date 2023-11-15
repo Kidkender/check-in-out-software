@@ -41,15 +41,6 @@ namespace CheckinManagementSystem.Control
         private void UCCICO_Load(object sender, EventArgs e)
         {
             grdHistory.RowTemplate.Height = 40;
-            RefreshAll();
-        }
-
-        public void LoadData()
-        {
-            NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            Phong p = (Phong)cboPhong.SelectedItem;
-            grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
-
             grdHistory.RowPrePaint += grdHistory_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
             sttColumn.Name = "STT";
@@ -62,7 +53,21 @@ namespace CheckinManagementSystem.Control
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
+            RefreshAll();
         }
+
+        #region Method
+
+        public void LoadData()
+        {
+            NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
+            Phong p = (Phong)cboPhong.SelectedItem;
+            grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
+        }
+
+        #endregion
+
+        #region Event
 
         private void RefreshAll()
         {
@@ -267,5 +272,7 @@ namespace CheckinManagementSystem.Control
                 row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
             }
         }
+
+        #endregion
     }
 }
