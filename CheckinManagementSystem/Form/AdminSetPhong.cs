@@ -1,4 +1,5 @@
 ﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.Control;
 using CheckinManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,10 @@ namespace CheckinManagementSystem
             {
                 Properties.Settings.Default.IDPhong = p.ID.ToString();
                 MessageBox.Show("Thiết lập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UCCheck.Instance.RefreshAll();
+                UCInOut.Instance.RefreshAll();
+                UCHistory.Instance.RefreshAll();
+                UCHistoryCheck.Instance.RefreshAll();
             }
             Close();
         }

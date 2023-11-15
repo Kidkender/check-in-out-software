@@ -121,7 +121,7 @@ namespace CheckinManagementSystem.Control
                 {
                     // Mở tệp Excel
                     string directory = AppDomain.CurrentDomain.BaseDirectory;
-                    workbook = excelApp.Workbooks.Open("D:\\Code\\C#\\check-in-out-software\\CheckinManagementSystem\\Word\\formBaoCao.xlsx");
+                    workbook = excelApp.Workbooks.Open(directory + "\\Word\\formBaoCao.xlsx");
 
                     // Chọn trang tính cụ thể (thay "Sheet1" bằng tên trang tính bạn muốn)
                     worksheet = (Excel.Worksheet)workbook.Sheets["Sheet1"];

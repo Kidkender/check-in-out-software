@@ -81,7 +81,7 @@ namespace CheckinManagementSystem.Control
 
         #region Private
 
-        private void RefreshAll()
+        public void RefreshAll()
         {
             RefreshDataNhanSu();
             RefreshDataDiemDanh();

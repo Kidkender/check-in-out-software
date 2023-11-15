@@ -578,7 +578,7 @@ namespace CheckinManagementSystem
 
         }
 
-        private void RefreshAll()
+        public void RefreshAll()
         {
             RefreshDataNhanSu();
             RefreshDataDiemDanh();
