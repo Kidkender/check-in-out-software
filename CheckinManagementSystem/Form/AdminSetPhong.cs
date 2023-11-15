@@ -45,6 +45,7 @@ namespace CheckinManagementSystem
             else
             {
                 Properties.Settings.Default.IDPhong = p.ID.ToString();
+                Properties.Settings.Default.Save();
                 MessageBox.Show("Thiết lập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UCCheck.Instance.RefreshAll();
                 UCInOut.Instance.RefreshAll();
