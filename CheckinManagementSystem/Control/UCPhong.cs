@@ -29,9 +29,32 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdPhong.RowTemplate.Height = 40;
+
+            grdPhong.RowPrePaint += grdPhong_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdPhong.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdPhong.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
+
+        public void LoadData()
+        {
+            grdPhong.DataSource = _phongBLL.GetAllPhong_Grid();
+        }
+
+        private void grdPhong_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdPhong.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
             }
         }
 
@@ -41,11 +64,6 @@ namespace CheckinManagementSystem.Control
             ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog(this);
             LoadData();
-        }
-
-        public void LoadData()
-        {
-            grdPhong.DataSource = _phongBLL.GetAllPhong_Grid();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

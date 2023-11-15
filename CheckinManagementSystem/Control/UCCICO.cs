@@ -49,6 +49,15 @@ namespace CheckinManagementSystem.Control
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
             Phong p = (Phong)cboPhong.SelectedItem;
             grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
+
+            grdHistory.RowPrePaint += grdHistory_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdHistory.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdHistory.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -106,6 +115,7 @@ namespace CheckinManagementSystem.Control
                 try
                 {
                     // Mở tệp Excel
+                    string directory = AppDomain.CurrentDomain.BaseDirectory;
                     workbook = excelApp.Workbooks.Open("D:\\Code\\C#\\check-in-out-software\\CheckinManagementSystem\\Word\\formBaoCao.xlsx");
 
                     // Chọn trang tính cụ thể (thay "Sheet1" bằng tên trang tính bạn muốn)
@@ -247,6 +257,15 @@ namespace CheckinManagementSystem.Control
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             RefreshAll();
+        }
+
+        private void grdHistory_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdHistory.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
         }
     }
 }

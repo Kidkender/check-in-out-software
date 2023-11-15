@@ -32,6 +32,15 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdNhanSu.RowTemplate.Height = 40;
+
+            grdNhanSu.RowPrePaint += grdNhanSu_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdNhanSu.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdNhanSu.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -50,6 +59,15 @@ namespace CheckinManagementSystem.Control
             cboPhong.ValueMember = "ID";
             cboPhong.DisplayMember = "TenPhong";
             cboPhong.SelectedIndex = -1;
+        }
+
+        private void grdNhanSu_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdNhanSu.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

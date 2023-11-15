@@ -24,6 +24,15 @@ namespace CheckinManagementSystem.Control
             LoadData();
             grdNoiQuy.RowTemplate.Height = 40;
             grdNoiQuy.CellFormatting += grdNoiQuy_CellFormatting;
+
+            grdNoiQuy.RowPrePaint += grdNoiQuy_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdNoiQuy.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdNoiQuy.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -38,6 +47,15 @@ namespace CheckinManagementSystem.Control
         private void LoadData()
         {
             grdNoiQuy.DataSource = _bll.GetAllNoiQuy_Grid();
+        }
+
+        private void grdNoiQuy_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdNoiQuy.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
