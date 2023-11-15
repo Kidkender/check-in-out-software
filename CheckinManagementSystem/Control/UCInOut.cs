@@ -56,6 +56,10 @@ namespace CheckinManagementSystem
             foreach (DataGridViewColumn col in grdCheckOut.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                if (col.ValueType == typeof(DateTime?))
+                {
+                    col.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss";
+                }
             }
 
             foreach (DataGridViewColumn col in grdNoiQuy.Columns)
