@@ -40,12 +40,14 @@
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.btnCheck);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnDangXuat);
@@ -132,7 +134,7 @@
             this.BTNoiQuy.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.BTNoiQuy.Image = global::CheckinManagementSystem.Properties.Resources.corpora;
             this.BTNoiQuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNoiQuy.Location = new System.Drawing.Point(0, 604);
+            this.BTNoiQuy.Location = new System.Drawing.Point(0, 686);
             this.BTNoiQuy.Name = "BTNoiQuy";
             this.BTNoiQuy.Size = new System.Drawing.Size(469, 76);
             this.BTNoiQuy.TabIndex = 4;
@@ -227,6 +229,24 @@
             this.panelContainer.Size = new System.Drawing.Size(1210, 931);
             this.panelContainer.TabIndex = 1;
             // 
+            // btnCheck
+            // 
+            this.btnCheck.BackColor = System.Drawing.Color.MistyRose;
+            this.btnCheck.FlatAppearance.BorderSize = 0;
+            this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnCheck.Image = global::CheckinManagementSystem.Properties.Resources.schedule;
+            this.btnCheck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCheck.Location = new System.Drawing.Point(0, 604);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(469, 76);
+            this.btnCheck.TabIndex = 10;
+            this.btnCheck.Text = "Quản lý điểm danh";
+            this.btnCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
             // UCAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -255,5 +275,6 @@
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCheck;
     }
 }

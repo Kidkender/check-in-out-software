@@ -34,6 +34,7 @@ namespace CheckinManagementSystem.Control
             btnPhong.BackColor = System.Drawing.Color.MistyRose;
             BTNoiQuy.BackColor = System.Drawing.Color.MistyRose;
             btnLoaiCICO.BackColor = System.Drawing.Color.MistyRose;
+            btnCheck.BackColor = System.Drawing.Color.MistyRose;
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -124,6 +125,21 @@ namespace CheckinManagementSystem.Control
             ChangePassword ed = new ChangePassword();
             ed.StartPosition = FormStartPosition.CenterParent;
             ed.ShowDialog();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            Init();
+            btnCheck.BackColor = System.Drawing.Color.LightGray;
+
+            if (!panelContainer.Controls.Contains(UCAdminCheck.Instance))
+            {
+                UCAdminCheck.Instance.Dock = DockStyle.Fill;
+                panelContainer.Controls.Add(UCAdminCheck.Instance);
+                UCAdminCheck.Instance.BringToFront();
+            }
+            else
+                UCAdminCheck.Instance.BringToFront();
         }
     }
 }
