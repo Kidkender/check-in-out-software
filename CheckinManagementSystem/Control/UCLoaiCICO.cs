@@ -22,6 +22,15 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             LoadData();
             grdLoaiCICO.RowTemplate.Height = 40;
+
+            grdLoaiCICO.RowPrePaint += grdLoaiCICO_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdLoaiCICO.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdLoaiCICO.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -31,6 +40,15 @@ namespace CheckinManagementSystem.Control
         private void LoadData()
         {
             grdLoaiCICO.DataSource = loai.GetAllLoaiRecord_Grid();
+        }
+
+        private void grdLoaiCICO_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdLoaiCICO.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
         }
 
         private void btnThem_Click(object sender, System.EventArgs e)

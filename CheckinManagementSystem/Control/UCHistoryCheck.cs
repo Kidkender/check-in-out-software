@@ -40,6 +40,15 @@ namespace CheckinManagementSystem.Control
             InitializeComponent();
             RefreshAll();
             grdCheckOut.RowTemplate.Height = 40;
+
+            grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdCheckOut.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdCheckOut.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -88,6 +97,15 @@ namespace CheckinManagementSystem.Control
         #endregion
 
         #region Event
+
+        private void grdCheckOut_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdCheckOut.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {

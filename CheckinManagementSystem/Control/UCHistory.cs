@@ -72,6 +72,15 @@ namespace CheckinManagementSystem
             RefreshAll();
             grdCheckOut.RowTemplate.Height = 40;
             grdCheckOut.Columns["GhiChu"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
+            DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
+            sttColumn.Name = "STT";
+            sttColumn.HeaderText = "STT";
+            grdCheckOut.Columns.Insert(0, sttColumn);
+            sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            sttColumn.Width = 50;
+
             foreach (DataGridViewColumn col in grdCheckOut.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -587,6 +596,15 @@ namespace CheckinManagementSystem
         #endregion
 
         #region Event
+
+        private void grdCheckOut_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = grdCheckOut.Rows[e.RowIndex];
+                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+            }
+        }
 
         private void grdCheckOut_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
