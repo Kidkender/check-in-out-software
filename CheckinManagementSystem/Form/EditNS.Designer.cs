@@ -104,6 +104,7 @@
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(434, 44);
             this.cboPhong.TabIndex = 2;
+            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
             // 
             // label6
             // 

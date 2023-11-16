@@ -60,5 +60,10 @@ namespace CheckinManagementSystem
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
+        private void cboPhong_Click(object sender, EventArgs e)
+        {
+            cboPhong.DroppedDown = true;
+        }
     }
 }

@@ -40,11 +40,8 @@
             this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,12 +50,15 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -197,22 +197,6 @@
             this.MaNhanSu.Name = "MaNhanSu";
             this.MaNhanSu.ReadOnly = true;
             // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenLoaiRecordDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Loại";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // ThoiGianVao
             // 
             this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
@@ -228,10 +212,6 @@
             this.ThoiGianRa.MinimumWidth = 6;
             this.ThoiGianRa.Name = "ThoiGianRa";
             this.ThoiGianRa.ReadOnly = true;
-            // 
-            // sPGetAllDiemDanhResultBindingSource
-            // 
-            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -278,6 +258,7 @@
             // 
             // cboPhong
             // 
+            this.cboPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhong.FormattingEnabled = true;
             this.cboPhong.Location = new System.Drawing.Point(389, 47);
@@ -285,6 +266,7 @@
             this.cboPhong.Size = new System.Drawing.Size(302, 39);
             this.cboPhong.TabIndex = 7;
             this.cboPhong.TextUpdate += new System.EventHandler(this.cboPhong_TextUpdate);
+            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
             // 
             // btnLamMoi
             // 
@@ -325,6 +307,7 @@
             // 
             // cboNhanSu
             // 
+            this.cboNhanSu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNhanSu.FormattingEnabled = true;
             this.cboNhanSu.Location = new System.Drawing.Point(63, 47);
@@ -332,6 +315,27 @@
             this.cboNhanSu.Size = new System.Drawing.Size(302, 39);
             this.cboNhanSu.TabIndex = 0;
             this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
+            this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "Họ tên";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Loại";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sPGetAllDiemDanhResultBindingSource
+            // 
+            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
             // 
             // UCHistoryCheck
             // 
@@ -344,10 +348,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

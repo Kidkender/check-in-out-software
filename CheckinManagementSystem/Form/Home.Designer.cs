@@ -35,8 +35,6 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolSBtnHistory = new System.Windows.Forms.ToolStripButton();
             this.BtnLogin = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
@@ -50,14 +48,12 @@
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolSBtnHistory,
-            this.BtnLogin,
-            this.toolStripButton4,
-            this.toolStripComboBox1});
+            this.BtnLogin});
             this.navbar.Location = new System.Drawing.Point(3, 2);
             this.navbar.Name = "navbar";
             this.navbar.Padding = new System.Windows.Forms.Padding(1, 1, 1, 0);
             this.navbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.navbar.Size = new System.Drawing.Size(2095, 95);
+            this.navbar.Size = new System.Drawing.Size(1676, 76);
             this.navbar.TabIndex = 0;
             this.navbar.Text = "navbar";
             // 
@@ -71,7 +67,7 @@
             this.toolStripButton1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Padding = new System.Windows.Forms.Padding(1);
-            this.toolStripButton1.Size = new System.Drawing.Size(202, 86);
+            this.toolStripButton1.Size = new System.Drawing.Size(202, 67);
             this.toolStripButton1.Text = "Điểm danh";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
@@ -100,7 +96,7 @@
             this.toolStripButton3.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Padding = new System.Windows.Forms.Padding(1);
-            this.toolStripButton3.Size = new System.Drawing.Size(213, 86);
+            this.toolStripButton3.Size = new System.Drawing.Size(213, 67);
             this.toolStripButton3.Text = "Lịch sử ĐD";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -114,7 +110,7 @@
             this.toolSBtnHistory.Margin = new System.Windows.Forms.Padding(4);
             this.toolSBtnHistory.Name = "toolSBtnHistory";
             this.toolSBtnHistory.Padding = new System.Windows.Forms.Padding(1);
-            this.toolSBtnHistory.Size = new System.Drawing.Size(251, 86);
+            this.toolSBtnHistory.Size = new System.Drawing.Size(251, 67);
             this.toolSBtnHistory.Text = "Lịch sử CICO";
             this.toolSBtnHistory.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -127,35 +123,18 @@
             this.BtnLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(156, 86);
+            this.BtnLogin.Size = new System.Drawing.Size(156, 67);
             this.BtnLogin.Text = "Quản trị";
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 91);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 94);
-            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.SystemColors.Control;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(4, 121);
+            this.panelContainer.Location = new System.Drawing.Point(3, 78);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(2095, 1009);
+            this.panelContainer.Size = new System.Drawing.Size(1676, 826);
             this.panelContainer.TabIndex = 1;
             // 
             // Home
@@ -185,12 +164,10 @@
 		private System.Windows.Forms.ToolStrip navbar;
 		private System.Windows.Forms.ToolStripButton toolSBtnHistory;
 		private System.Windows.Forms.ToolStripButton BtnLogin;
-		private System.Windows.Forms.ToolStripButton toolStripButton4;
 		private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
     }
 }
 

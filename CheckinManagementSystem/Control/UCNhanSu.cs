@@ -218,7 +218,27 @@ namespace CheckinManagementSystem.Control
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tuKhoa = txtTuKhoa.Text;
-            grdNhanSu.DataSource = _nhansuBLL.GetAllNhanSu_Grid().Where(t => t.HoTen.ToLower().Contains(tuKhoa.ToLower()) || t.MaNhanSu.ToLower().Contains(tuKhoa.ToLower())).ToList();
+            int idP = 0;
+
+            if(cboPhong.SelectedValue != null)
+                idP =  int.Parse(cboPhong.SelectedValue.ToString());
+
+            var search = _nhansuBLL.GetAllNhanSu_Grid().Where(t => t.HoTen.ToLower().Contains(tuKhoa.ToLower()) || t.MaNhanSu.ToLower().Contains(tuKhoa.ToLower())).ToList();
+            
+            if(idP!=0)
+                search = search.Where(t => t.IdPhong ==  idP).ToList();
+
+            grdNhanSu.DataSource = search;
+        }
+
+        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboPhong_Click(object sender, EventArgs e)
+        {
+            cboPhong.DroppedDown = true;
         }
     }
 }

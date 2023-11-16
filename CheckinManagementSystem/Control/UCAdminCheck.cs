@@ -230,13 +230,14 @@ namespace CheckinManagementSystem.Control
                 {
                     cboNhanSu.Items.Add(temp);
                 }
-                cboNhanSu.DroppedDown = true;
+                
                 Cursor.Current = Cursors.Default;
                 cboNhanSu.SelectedIndex = -1;
 
                 cboNhanSu.Text = tempStr;
                 cboNhanSu.Select(cboNhanSu.Text.Length, 0);
             }
+            cboNhanSu.DroppedDown = true;
         }
 
         private void cboPhong_TextUpdate(object sender, EventArgs e)
@@ -259,7 +260,7 @@ namespace CheckinManagementSystem.Control
                 {
                     cboPhong.Items.Add(temp);
                 }
-                cboPhong.DroppedDown = true;
+                
                 cboPhong.MaxDropDownItems = 5;
                 Cursor.Current = Cursors.Default;
                 cboPhong.SelectedIndex = -1;
@@ -267,6 +268,7 @@ namespace CheckinManagementSystem.Control
                 cboPhong.Text = tempStr;
                 cboPhong.Select(cboPhong.Text.Length, 0);
             }
+            cboPhong.DroppedDown = true;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)

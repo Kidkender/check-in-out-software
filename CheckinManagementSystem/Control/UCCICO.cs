@@ -274,5 +274,15 @@ namespace CheckinManagementSystem.Control
         }
 
         #endregion
+
+        private void cboPhong_Click(object sender, EventArgs e)
+        {
+            cboPhong.DroppedDown = true;
+        }
+
+        private void cboNhanSu_Click(object sender, EventArgs e)
+        {
+            cboNhanSu.DroppedDown = true;
+        }
     }
 }

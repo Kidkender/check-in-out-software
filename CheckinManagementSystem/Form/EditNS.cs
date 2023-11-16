@@ -86,5 +86,10 @@ namespace CheckinManagementSystem
                 }
             }
         }
+
+        private void cboPhong_Click(object sender, EventArgs e)
+        {
+            cboPhong.DroppedDown = true;
+        }
     }
 }

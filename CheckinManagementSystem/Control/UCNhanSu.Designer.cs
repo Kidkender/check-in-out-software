@@ -330,13 +330,16 @@
             // 
             // cboPhong
             // 
+            this.cboPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboPhong.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPhong.FormattingEnabled = true;
             this.cboPhong.Location = new System.Drawing.Point(374, 53);
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(270, 45);
             this.cboPhong.TabIndex = 4;
+            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.cboPhong_SelectedIndexChanged);
             this.cboPhong.TextUpdate += new System.EventHandler(this.cboPhong_TextUpdate);
+            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
             // 
             // btnThem
             // 

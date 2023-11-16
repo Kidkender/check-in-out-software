@@ -105,6 +105,7 @@
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(733, 46);
             this.cboPhong.TabIndex = 3;
+            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
             // 
             // AdminSetPhong
             // 
