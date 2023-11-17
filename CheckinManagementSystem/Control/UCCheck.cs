@@ -109,6 +109,7 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.DataSource = data;
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
+            cboNhanSu.Text = "";
             cboNhanSu.SelectedIndex = -1;
         }
 
@@ -166,15 +167,7 @@ namespace CheckinManagementSystem.Control
                 data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
                 data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboNhanSu.DataSource = null;
-                cboNhanSu.Items.Clear();
-                cboNhanSu.ValueMember = "ID";
-                cboNhanSu.DisplayMember = "HoTen";
-
-                foreach (var temp in data)
-                {
-                    cboNhanSu.Items.Add(temp);
-                }
+                cboNhanSu.DataSource = data;
                 cboNhanSu.DroppedDown = true;
                 Cursor.Current = Cursors.Default;
                 cboNhanSu.SelectedIndex = -1;
@@ -210,11 +203,27 @@ namespace CheckinManagementSystem.Control
             }
         }
 
-        #endregion
-
         private void cboNhanSu_Click(object sender, EventArgs e)
         {
             cboNhanSu.DroppedDown = true;
         }
+
+        private void cboNhanSu_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboNhanSu.Items.Count == 0)
+            {
+                RefreshDataNhanSu();
+            }
+            else
+            {
+                if(cboNhanSu.Text.Length > 0)
+                {
+                    var lst = cboNhanSu.DataSource as List<NhanSu>;
+                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                }
+            }
+        }
+
+        #endregion
     }
 }

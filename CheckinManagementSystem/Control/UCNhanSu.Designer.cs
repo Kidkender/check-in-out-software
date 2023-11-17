@@ -337,8 +337,9 @@
             this.cboPhong.Name = "cboPhong";
             this.cboPhong.Size = new System.Drawing.Size(270, 45);
             this.cboPhong.TabIndex = 4;
-            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.cboPhong_SelectedIndexChanged);
+            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
             this.cboPhong.TextUpdate += new System.EventHandler(this.cboPhong_TextUpdate);
+            this.cboPhong.DropDownClosed += new System.EventHandler(this.cboPhong_DropDownClosed);
             this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
             // 
             // btnThem

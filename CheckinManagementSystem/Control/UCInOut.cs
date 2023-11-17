@@ -98,6 +98,7 @@ namespace CheckinManagementSystem
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
+            cboNhanSu.Text = "";
         }
 
         private void RefreshDataLoaiRecord()
@@ -106,6 +107,7 @@ namespace CheckinManagementSystem
             cboLoaiRecord.ValueMember = "ID";
             cboLoaiRecord.DisplayMember = "TenLoaiRecord";
             cboLoaiRecord.SelectedIndex = -1;
+            cboLoaiRecord.Text = "";
         }
 
         private void RefreshDataCheckOut()
@@ -161,15 +163,9 @@ namespace CheckinManagementSystem
                 data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
                 data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboNhanSu.DataSource = null;
-                cboNhanSu.Items.Clear();
+                cboNhanSu.DataSource = data;
                 cboNhanSu.ValueMember = "ID";
                 cboNhanSu.DisplayMember = "HoTen";
-
-                foreach (var temp in data)
-                {
-                    cboNhanSu.Items.Add(temp);
-                }
                 cboNhanSu.DroppedDown = true;
                 Cursor.Current = Cursors.Default;
                 cboNhanSu.SelectedIndex = -1;
@@ -190,15 +186,9 @@ namespace CheckinManagementSystem
                 string tempStr = cboLoaiRecord.Text;
                 List<LoaiRecord> data = _recordBLL.GetAllLoaiRecord().Where(t => t.TenLoaiRecord.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboLoaiRecord.DataSource = null;
-                cboLoaiRecord.Items.Clear();
+                cboLoaiRecord.DataSource = data;
                 cboLoaiRecord.ValueMember = "ID";
                 cboLoaiRecord.DisplayMember = "TenLoaiRecord";
-
-                foreach (var temp in data)
-                {
-                    cboLoaiRecord.Items.Add(temp);
-                }
                 cboLoaiRecord.DroppedDown = true;
                 Cursor.Current = Cursors.Default;
                 cboLoaiRecord.SelectedIndex = -1;
@@ -272,6 +262,38 @@ namespace CheckinManagementSystem
         private void cboLoaiRecord_Click(object sender, EventArgs e)
         {
             cboLoaiRecord.DroppedDown = true;
+        }
+
+        private void cboNhanSu_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboNhanSu.Items.Count == 0)
+            {
+                RefreshDataNhanSu();
+            }
+            else
+            {
+                if (cboNhanSu.Text.Length > 0)
+                {
+                    var lst = cboNhanSu.DataSource as List<NhanSu>;
+                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                }
+            }
+        }
+
+        private void cboLoaiRecord_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboLoaiRecord.Items.Count == 0)
+            {
+                RefreshDataLoaiRecord();
+            }
+            else
+            {
+                if (cboLoaiRecord.Text.Length > 0)
+                {
+                    var lst = cboLoaiRecord.DataSource as List<LoaiRecord>;
+                    cboLoaiRecord.Text = lst[cboLoaiRecord.SelectedIndex].TenLoaiRecord;
+                }
+            }
         }
     }
 }

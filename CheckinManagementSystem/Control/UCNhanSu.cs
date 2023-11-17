@@ -59,6 +59,7 @@ namespace CheckinManagementSystem.Control
             cboPhong.ValueMember = "ID";
             cboPhong.DisplayMember = "TenPhong";
             cboPhong.SelectedIndex = -1;
+            cboPhong.Text = "";
         }
 
         private void grdNhanSu_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -190,15 +191,9 @@ namespace CheckinManagementSystem.Control
                 string tempStr = cboPhong.Text;
                 List<Phong> data = _nhansuBLL.GetAllPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboPhong.DataSource = null;
-                cboPhong.Items.Clear();
+                cboPhong.DataSource = data;
                 cboPhong.ValueMember = "ID";
                 cboPhong.DisplayMember = "TenPhong";
-
-                foreach (var temp in data)
-                {
-                    cboPhong.Items.Add(temp);
-                }
                 cboPhong.DroppedDown = true;
                 cboPhong.MaxDropDownItems = 5;
                 Cursor.Current = Cursors.Default;
@@ -231,14 +226,32 @@ namespace CheckinManagementSystem.Control
             grdNhanSu.DataSource = search;
         }
 
-        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cboPhong_Click(object sender, EventArgs e)
         {
             cboPhong.DroppedDown = true;
+        }
+
+        public void combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            if (combobox.SelectedIndex == -1)
+                return;
+        }
+
+        private void cboPhong_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboPhong.Items.Count == 0)
+            {
+                RefreshDataPhong();
+            }
+            else
+            {
+                if (cboPhong.Text.Length > 0)
+                {
+                    var lst = cboPhong.DataSource as List<Phong>;
+                    cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                }
+            }
         }
     }
 }

@@ -78,6 +78,7 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.ValueMember = "ID";
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
+            cboNhanSu.Text = "";
         }
 
         private void RefreshDataPhong()
@@ -86,13 +87,14 @@ namespace CheckinManagementSystem.Control
             cboPhong.ValueMember = "ID";
             cboPhong.DisplayMember = "TenPhong";
             cboPhong.SelectedIndex = -1;
+            cboPhong.Text = "";
         }
 
         private void RefreshDataDiemDanh(int? IDNhanSu = null, int? IDPhong = null)
         {
             string idPhong = Properties.Settings.Default.IDPhong;
             var data = _recordBLL.GetAllDiemDanh().Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
-                                                        && (IDPhong == null || t.IdPhong == IDPhong) 
+                                                        && (IDPhong == null || t.IdPhong == IDPhong)
                                                         && t.ThoiGianRa.HasValue
                                                         && t.IdPhong == int.Parse(idPhong)).ToList();
             grdCheckOut.DataSource = data;
@@ -113,6 +115,13 @@ namespace CheckinManagementSystem.Control
         #endregion
 
         #region Event
+
+        public void combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            if (combobox.SelectedIndex == -1)
+                return;
+        }
 
         private void grdCheckOut_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
@@ -143,15 +152,9 @@ namespace CheckinManagementSystem.Control
                 data.ForEach(t => t.HoTen = t.MaNhanSu + " - " + t.HoTen);
                 data = data.Where(t => t.HoTen.ToLower().Contains(tempStr.ToLower()) || t.MaNhanSu.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboNhanSu.DataSource = null;
-                cboNhanSu.Items.Clear();
+                cboNhanSu.DataSource = data;
                 cboNhanSu.ValueMember = "ID";
                 cboNhanSu.DisplayMember = "HoTen";
-
-                foreach (var temp in data)
-                {
-                    cboNhanSu.Items.Add(temp);
-                }
                 cboNhanSu.DroppedDown = true;
                 cboNhanSu.MaxDropDownItems = 5;
                 Cursor.Current = Cursors.Default;
@@ -173,15 +176,9 @@ namespace CheckinManagementSystem.Control
                 string tempStr = cboPhong.Text;
                 List<Phong> data = getDataPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
 
-                cboPhong.DataSource = null;
-                cboPhong.Items.Clear();
+                cboPhong.DataSource = data;
                 cboPhong.ValueMember = "ID";
                 cboPhong.DisplayMember = "TenPhong";
-
-                foreach (var temp in data)
-                {
-                    cboPhong.Items.Add(temp);
-                }
                 cboPhong.DroppedDown = true;
                 cboPhong.MaxDropDownItems = 5;
                 Cursor.Current = Cursors.Default;
@@ -207,6 +204,38 @@ namespace CheckinManagementSystem.Control
         private void cboPhong_Click(object sender, EventArgs e)
         {
             cboPhong.DroppedDown = true;
+        }
+
+        private void cboNhanSu_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboNhanSu.Items.Count == 0)
+            {
+                RefreshDataNhanSu();
+            }
+            else
+            {
+                if (cboNhanSu.Text.Length > 0)
+                {
+                    var lst = cboNhanSu.DataSource as List<NhanSu>;
+                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                }
+            }
+        }
+
+        private void cboPhong_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cboPhong.Items.Count == 0)
+            {
+                RefreshDataPhong();
+            }
+            else
+            {
+                if (cboPhong.Text.Length > 0)
+                {
+                    var lst = cboPhong.DataSource as List<Phong>;
+                    cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                }
+            }
         }
     }
 }
