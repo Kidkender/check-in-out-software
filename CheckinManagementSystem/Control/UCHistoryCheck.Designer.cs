@@ -36,12 +36,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grdCheckOut = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,9 +44,16 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
+            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianLamViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
@@ -134,7 +135,8 @@
             this.hoTenDataGridViewTextBoxColumn,
             this.tenLoaiRecordDataGridViewTextBoxColumn,
             this.ThoiGianVao,
-            this.ThoiGianRa});
+            this.ThoiGianRa,
+            this.ThoiGianLamViec});
             this.grdCheckOut.DataSource = this.sPGetAllDiemDanhResultBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -161,57 +163,6 @@
             this.grdCheckOut.RowTemplate.Height = 24;
             this.grdCheckOut.Size = new System.Drawing.Size(1119, 686);
             this.grdCheckOut.TabIndex = 7;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // IdNhanSu
-            // 
-            this.IdNhanSu.DataPropertyName = "IdNhanSu";
-            this.IdNhanSu.HeaderText = "IdNhanSu";
-            this.IdNhanSu.MinimumWidth = 6;
-            this.IdNhanSu.Name = "IdNhanSu";
-            this.IdNhanSu.ReadOnly = true;
-            this.IdNhanSu.Visible = false;
-            // 
-            // IdLoaiRecord
-            // 
-            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
-            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
-            this.IdLoaiRecord.MinimumWidth = 6;
-            this.IdLoaiRecord.Name = "IdLoaiRecord";
-            this.IdLoaiRecord.ReadOnly = true;
-            this.IdLoaiRecord.Visible = false;
-            // 
-            // MaNhanSu
-            // 
-            this.MaNhanSu.DataPropertyName = "MaNhanSu";
-            this.MaNhanSu.HeaderText = "Mã nhân sự";
-            this.MaNhanSu.MinimumWidth = 6;
-            this.MaNhanSu.Name = "MaNhanSu";
-            this.MaNhanSu.ReadOnly = true;
-            // 
-            // ThoiGianVao
-            // 
-            this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
-            this.ThoiGianVao.HeaderText = "Thời gian vào";
-            this.ThoiGianVao.MinimumWidth = 6;
-            this.ThoiGianVao.Name = "ThoiGianVao";
-            this.ThoiGianVao.ReadOnly = true;
-            // 
-            // ThoiGianRa
-            // 
-            this.ThoiGianRa.DataPropertyName = "ThoiGianRa";
-            this.ThoiGianRa.HeaderText = "Thời gian ra";
-            this.ThoiGianRa.MinimumWidth = 6;
-            this.ThoiGianRa.Name = "ThoiGianRa";
-            this.ThoiGianRa.ReadOnly = true;
             // 
             // tableLayoutPanel3
             // 
@@ -317,6 +268,45 @@
             this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
             this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
             // 
+            // sPGetAllDiemDanhResultBindingSource
+            // 
+            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // IdNhanSu
+            // 
+            this.IdNhanSu.DataPropertyName = "IdNhanSu";
+            this.IdNhanSu.HeaderText = "IdNhanSu";
+            this.IdNhanSu.MinimumWidth = 6;
+            this.IdNhanSu.Name = "IdNhanSu";
+            this.IdNhanSu.ReadOnly = true;
+            this.IdNhanSu.Visible = false;
+            // 
+            // IdLoaiRecord
+            // 
+            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
+            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
+            this.IdLoaiRecord.MinimumWidth = 6;
+            this.IdLoaiRecord.Name = "IdLoaiRecord";
+            this.IdLoaiRecord.ReadOnly = true;
+            this.IdLoaiRecord.Visible = false;
+            // 
+            // MaNhanSu
+            // 
+            this.MaNhanSu.DataPropertyName = "MaNhanSu";
+            this.MaNhanSu.HeaderText = "Mã nhân sự";
+            this.MaNhanSu.MinimumWidth = 6;
+            this.MaNhanSu.Name = "MaNhanSu";
+            this.MaNhanSu.ReadOnly = true;
+            // 
             // hoTenDataGridViewTextBoxColumn
             // 
             this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
@@ -333,9 +323,29 @@
             this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
             this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // sPGetAllDiemDanhResultBindingSource
+            // ThoiGianVao
             // 
-            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
+            this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
+            this.ThoiGianVao.HeaderText = "Thời gian vào";
+            this.ThoiGianVao.MinimumWidth = 6;
+            this.ThoiGianVao.Name = "ThoiGianVao";
+            this.ThoiGianVao.ReadOnly = true;
+            // 
+            // ThoiGianRa
+            // 
+            this.ThoiGianRa.DataPropertyName = "ThoiGianRa";
+            this.ThoiGianRa.HeaderText = "Thời gian ra";
+            this.ThoiGianRa.MinimumWidth = 6;
+            this.ThoiGianRa.Name = "ThoiGianRa";
+            this.ThoiGianRa.ReadOnly = true;
+            // 
+            // ThoiGianLamViec
+            // 
+            this.ThoiGianLamViec.DataPropertyName = "ThoiGianLamViec";
+            this.ThoiGianLamViec.HeaderText = "Thời gian làm việc";
+            this.ThoiGianLamViec.MinimumWidth = 6;
+            this.ThoiGianLamViec.Name = "ThoiGianLamViec";
+            this.ThoiGianLamViec.ReadOnly = true;
             // 
             // UCHistoryCheck
             // 
@@ -379,5 +389,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiRecordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianVao;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianRa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianLamViec;
     }
 }

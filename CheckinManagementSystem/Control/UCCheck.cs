@@ -43,6 +43,11 @@ namespace CheckinManagementSystem.Control
 
             #region Init control
 
+            grdNoiQuy.Columns.Add("XuPhat", "Nội quy");
+            grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
+            grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grdNoiQuy.RowTemplate.MinimumHeight = 50;
+
             RefreshAll();
             RefreshDataNoiQuy();
             grdCheckOut.RowTemplate.Height = 40;
@@ -85,14 +90,12 @@ namespace CheckinManagementSystem.Control
         {
             RefreshDataNhanSu();
             RefreshDataDiemDanh();
+            RefreshDataNoiQuy();
         }
 
         private void RefreshDataNoiQuy()
         {
-            grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
-            grdNoiQuy.Columns.Add("XuPhat", "Nội dung");
-            grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            grdNoiQuy.RowTemplate.MinimumHeight = 50;
+            grdNoiQuy.Rows.Clear();
             foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().Where(t => t.LoaiNoiQuy == 0).ToList())
             {
                 grdNoiQuy.Rows.Add(noiQuy.NoiDung, noiQuy.XuPhat);

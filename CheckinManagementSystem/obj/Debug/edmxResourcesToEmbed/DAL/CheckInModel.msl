@@ -203,6 +203,7 @@
           <ScalarProperty Name="ThoiGianRa" ColumnName="ThoiGianRa" />
           <ScalarProperty Name="IdPhong" ColumnName="IdPhong" />
           <ScalarProperty Name="MaNhanSu" ColumnName="MaNhanSu" />
+          <ScalarProperty Name="ThoiGianLamViec" ColumnName="ThoiGianLamViec" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

@@ -199,5 +199,6 @@
     <Property Type="DateTime" Name="ThoiGianRa" Nullable="true" Precision="23" />
     <Property Type="Int32" Name="IdPhong" Nullable="true" />
     <Property Type="String" Name="MaNhanSu" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="ThoiGianLamViec" Nullable="true" />
   </ComplexType>
 </Schema>
