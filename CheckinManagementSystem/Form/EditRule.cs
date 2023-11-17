@@ -1,4 +1,5 @@
 ﻿using CheckinManagementSystem.BLL;
+using CheckinManagementSystem.Control;
 using CheckinManagementSystem.DAL;
 using System;
 using System.Collections.Generic;
@@ -76,6 +77,8 @@ namespace CheckinManagementSystem
 
                     _bll.AddEditNoiQuy(p);
                     this.Close();
+                    UCInOut.Instance.RefreshAll();
+                    UCCheck.Instance.RefreshAll();
                 }
             }
             else
@@ -105,6 +108,8 @@ namespace CheckinManagementSystem
 
                     _bll.AddEditNoiQuy(p);
                     this.Close();
+                    UCInOut.Instance.RefreshAll();
+                    UCCheck.Instance.RefreshAll();
                 }
             }    
         }

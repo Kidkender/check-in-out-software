@@ -68,6 +68,7 @@
             this.txtGhiChu.Location = new System.Drawing.Point(0, 0);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtGhiChu.Size = new System.Drawing.Size(731, 249);
             this.txtGhiChu.TabIndex = 0;
             // 

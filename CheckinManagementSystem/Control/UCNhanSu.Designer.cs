@@ -299,7 +299,7 @@
             this.btnImport.BackgroundImage = global::CheckinManagementSystem.Properties.Resources.excel_import;
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnImport.Location = new System.Drawing.Point(1166, 57);
+            this.btnImport.Location = new System.Drawing.Point(1099, 51);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(55, 47);
             this.btnImport.TabIndex = 7;
@@ -346,9 +346,9 @@
             this.btnThem.BackColor = System.Drawing.Color.DarkGreen;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThem.Location = new System.Drawing.Point(1237, 57);
+            this.btnThem.Location = new System.Drawing.Point(954, 53);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(95, 47);
+            this.btnThem.Size = new System.Drawing.Size(128, 45);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
