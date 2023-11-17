@@ -108,5 +108,10 @@ namespace CheckinManagementSystem
                 }
             }    
         }
+
+        private void cboLoaiNoiQuy_Click(object sender, EventArgs e)
+        {
+            cboLoaiNoiQuy.DroppedDown = true;
+        }
     }
 }

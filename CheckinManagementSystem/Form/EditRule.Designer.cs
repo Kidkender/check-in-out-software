@@ -104,6 +104,7 @@
             this.cboLoaiNoiQuy.Name = "cboLoaiNoiQuy";
             this.cboLoaiNoiQuy.Size = new System.Drawing.Size(911, 47);
             this.cboLoaiNoiQuy.TabIndex = 2;
+            this.cboLoaiNoiQuy.Click += new System.EventHandler(this.cboLoaiNoiQuy_Click);
             // 
             // tbMoTa
             // 
