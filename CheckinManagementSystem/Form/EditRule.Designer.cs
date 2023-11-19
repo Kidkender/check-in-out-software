@@ -53,7 +53,7 @@
             // tbNoiDung
             // 
             this.tbNoiDung.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNoiDung.Location = new System.Drawing.Point(22, 313);
+            this.tbNoiDung.Location = new System.Drawing.Point(21, 329);
             this.tbNoiDung.Name = "tbNoiDung";
             this.tbNoiDung.Size = new System.Drawing.Size(912, 45);
             this.tbNoiDung.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 287);
+            this.label5.Location = new System.Drawing.Point(17, 303);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 23);
             this.label5.TabIndex = 2;

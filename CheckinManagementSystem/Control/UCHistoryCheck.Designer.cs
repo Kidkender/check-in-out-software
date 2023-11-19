@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grdCheckOut = new System.Windows.Forms.DataGridView();
-            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
+            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +60,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,35 +141,31 @@
             this.ThoiGianRa,
             this.ThoiGianLamViec});
             this.grdCheckOut.DataSource = this.sPGetAllDiemDanhResultBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdCheckOut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdCheckOut.DefaultCellStyle = dataGridViewCellStyle5;
             this.grdCheckOut.EnableHeadersVisualStyles = false;
             this.grdCheckOut.Location = new System.Drawing.Point(160, 3);
             this.grdCheckOut.Name = "grdCheckOut";
             this.grdCheckOut.ReadOnly = true;
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdCheckOut.RowHeadersWidth = 51;
             this.grdCheckOut.RowTemplate.Height = 24;
             this.grdCheckOut.Size = new System.Drawing.Size(1119, 686);
             this.grdCheckOut.TabIndex = 7;
-            // 
-            // sPGetAllDiemDanhResultBindingSource
-            // 
-            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -277,6 +275,10 @@
             this.cboNhanSu.DropDownClosed += new System.EventHandler(this.cboNhanSu_DropDownClosed);
             this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
             // 
+            // sPGetAllDiemDanhResultBindingSource
+            // 
+            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
+            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -332,6 +334,8 @@
             // ThoiGianVao
             // 
             this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianVao.DefaultCellStyle = dataGridViewCellStyle2;
             this.ThoiGianVao.HeaderText = "Thời gian vào";
             this.ThoiGianVao.MinimumWidth = 6;
             this.ThoiGianVao.Name = "ThoiGianVao";
@@ -340,6 +344,8 @@
             // ThoiGianRa
             // 
             this.ThoiGianRa.DataPropertyName = "ThoiGianRa";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianRa.DefaultCellStyle = dataGridViewCellStyle3;
             this.ThoiGianRa.HeaderText = "Thời gian ra";
             this.ThoiGianRa.MinimumWidth = 6;
             this.ThoiGianRa.Name = "ThoiGianRa";
@@ -349,8 +355,8 @@
             // 
             this.ThoiGianLamViec.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ThoiGianLamViec.DataPropertyName = "ThoiGianLamViec";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ThoiGianLamViec.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianLamViec.DefaultCellStyle = dataGridViewCellStyle4;
             this.ThoiGianLamViec.HeaderText = "Thời gian làm việc";
             this.ThoiGianLamViec.MinimumWidth = 6;
             this.ThoiGianLamViec.Name = "ThoiGianLamViec";
@@ -368,10 +374,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

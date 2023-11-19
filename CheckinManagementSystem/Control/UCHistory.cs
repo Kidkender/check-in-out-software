@@ -33,6 +33,9 @@ namespace CheckinManagementSystem
         private BindingSource sPGetAllDangKyResultBindingSource;
         private Label label4;
         private ComboBox cboPhong;
+        private Label label5;
+        private DateTimePicker txtDenNgay;
+        private DateTimePicker txtTuNgay;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn IdNhanSu;
         private DataGridViewTextBoxColumn IdLoaiRecord;
@@ -115,24 +118,16 @@ namespace CheckinManagementSystem
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grdCheckOut = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -143,6 +138,20 @@ namespace CheckinManagementSystem
             this.cboLoaiRecord = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDenNgay = new System.Windows.Forms.DateTimePicker();
+            this.txtTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,7 +159,7 @@ namespace CheckinManagementSystem
             this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoiGianVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoiGianRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
@@ -184,25 +193,25 @@ namespace CheckinManagementSystem
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.950311F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.78261F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.26708F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.198758F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.52795F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.27329F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1527, 805);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.9589F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.53214F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.50895F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.090072F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.63642F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.339251F));
             this.tableLayoutPanel2.Controls.Add(this.grdCheckOut, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 186);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 194);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1521, 616);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1521, 608);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // grdCheckOut
@@ -245,32 +254,207 @@ namespace CheckinManagementSystem
             this.thoiGianRaDataGridViewTextBoxColumn,
             this.Edit});
             this.grdCheckOut.DataSource = this.sPGetAllDangKyResultBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdCheckOut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdCheckOut.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdCheckOut.EnableHeadersVisualStyles = false;
-            this.grdCheckOut.Location = new System.Drawing.Point(169, 3);
+            this.grdCheckOut.Location = new System.Drawing.Point(49, 3);
             this.grdCheckOut.Name = "grdCheckOut";
             this.grdCheckOut.ReadOnly = true;
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.grdCheckOut.RowHeadersWidth = 51;
             this.grdCheckOut.RowTemplate.Height = 24;
-            this.grdCheckOut.Size = new System.Drawing.Size(1188, 610);
+            this.grdCheckOut.Size = new System.Drawing.Size(1402, 602);
             this.grdCheckOut.TabIndex = 7;
             this.grdCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheckOut_CellContentClick);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.024326F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.57068F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.339251F));
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 69);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1521, 119);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtDenNgay);
+            this.panel1.Controls.Add(this.txtTuNgay);
+            this.panel1.Controls.Add(this.btnLamMoi);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.cboPhong);
+            this.panel1.Controls.Add(this.cboLoaiRecord);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.cboNhanSu);
+            this.panel1.Location = new System.Drawing.Point(49, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1402, 107);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLamMoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(1271, 47);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(126, 45);
+            this.btnLamMoi.TabIndex = 8;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1139, 47);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(126, 45);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Brown;
+            this.label4.Location = new System.Drawing.Point(539, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Phòng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Brown;
+            this.label3.Location = new System.Drawing.Point(265, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(216, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Loại Checkin/Checkout";
+            // 
+            // cboPhong
+            // 
+            this.cboPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPhong.FormattingEnabled = true;
+            this.cboPhong.Location = new System.Drawing.Point(544, 50);
+            this.cboPhong.Name = "cboPhong";
+            this.cboPhong.Size = new System.Drawing.Size(211, 39);
+            this.cboPhong.TabIndex = 2;
+            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
+            this.cboPhong.TextUpdate += new System.EventHandler(this.cboPhong_TextUpdate);
+            this.cboPhong.DropDownClosed += new System.EventHandler(this.cboPhong_DropDownClosed);
+            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
+            // 
+            // cboLoaiRecord
+            // 
+            this.cboLoaiRecord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboLoaiRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiRecord.FormattingEnabled = true;
+            this.cboLoaiRecord.Location = new System.Drawing.Point(270, 50);
+            this.cboLoaiRecord.Name = "cboLoaiRecord";
+            this.cboLoaiRecord.Size = new System.Drawing.Size(258, 39);
+            this.cboLoaiRecord.TabIndex = 2;
+            this.cboLoaiRecord.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
+            this.cboLoaiRecord.TextUpdate += new System.EventHandler(this.cboLoaiRecord_TextUpdate);
+            this.cboLoaiRecord.DropDownClosed += new System.EventHandler(this.cboLoaiRecord_DropDownClosed);
+            this.cboLoaiRecord.Click += new System.EventHandler(this.cboLoaiRecord_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Brown;
+            this.label2.Location = new System.Drawing.Point(17, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nhân viên";
+            // 
+            // cboNhanSu
+            // 
+            this.cboNhanSu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboNhanSu.FormattingEnabled = true;
+            this.cboNhanSu.Location = new System.Drawing.Point(22, 50);
+            this.cboNhanSu.Name = "cboNhanSu";
+            this.cboNhanSu.Size = new System.Drawing.Size(233, 39);
+            this.cboNhanSu.TabIndex = 0;
+            this.cboNhanSu.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
+            this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
+            this.cboNhanSu.DropDownClosed += new System.EventHandler(this.cboNhanSu_DropDownClosed);
+            this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Brown;
+            this.label5.Location = new System.Drawing.Point(771, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Ngày";
+            // 
+            // txtDenNgay
+            // 
+            this.txtDenNgay.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDenNgay.CustomFormat = "";
+            this.txtDenNgay.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDenNgay.Location = new System.Drawing.Point(946, 50);
+            this.txtDenNgay.Name = "txtDenNgay";
+            this.txtDenNgay.Size = new System.Drawing.Size(177, 42);
+            this.txtDenNgay.TabIndex = 11;
+            // 
+            // txtTuNgay
+            // 
+            this.txtTuNgay.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuNgay.CustomFormat = "";
+            this.txtTuNgay.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtTuNgay.Location = new System.Drawing.Point(771, 50);
+            this.txtTuNgay.Name = "txtTuNgay";
+            this.txtTuNgay.Size = new System.Drawing.Size(169, 42);
+            this.txtTuNgay.TabIndex = 12;
+            // 
+            // sPGetAllDangKyResultBindingSource
+            // 
+            this.sPGetAllDangKyResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDangKy_Result);
             // 
             // ID
             // 
@@ -309,7 +493,7 @@ namespace CheckinManagementSystem
             this.MaNhanSu.MinimumWidth = 6;
             this.MaNhanSu.Name = "MaNhanSu";
             this.MaNhanSu.ReadOnly = true;
-            this.MaNhanSu.Width = 146;
+            this.MaNhanSu.Width = 190;
             // 
             // HoTen
             // 
@@ -318,7 +502,7 @@ namespace CheckinManagementSystem
             this.HoTen.MinimumWidth = 6;
             this.HoTen.Name = "HoTen";
             this.HoTen.ReadOnly = true;
-            this.HoTen.Width = 116;
+            this.HoTen.Width = 126;
             // 
             // TenLoaiRecord
             // 
@@ -327,29 +511,35 @@ namespace CheckinManagementSystem
             this.TenLoaiRecord.MinimumWidth = 6;
             this.TenLoaiRecord.Name = "TenLoaiRecord";
             this.TenLoaiRecord.ReadOnly = true;
-            this.TenLoaiRecord.Width = 161;
+            this.TenLoaiRecord.Width = 204;
             // 
             // ThoiGianVao
             // 
             this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianVao.DefaultCellStyle = dataGridViewCellStyle2;
             this.ThoiGianVao.HeaderText = "Thời gian ra";
             this.ThoiGianVao.MinimumWidth = 6;
             this.ThoiGianVao.Name = "ThoiGianVao";
             this.ThoiGianVao.ReadOnly = true;
-            this.ThoiGianVao.Width = 154;
+            this.ThoiGianVao.Width = 193;
             // 
             // ThoiGianRa
             // 
             this.ThoiGianRa.DataPropertyName = "ThoiGianRa";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianRa.DefaultCellStyle = dataGridViewCellStyle3;
             this.ThoiGianRa.HeaderText = "Thời gian vào";
             this.ThoiGianRa.MinimumWidth = 6;
             this.ThoiGianRa.Name = "ThoiGianRa";
             this.ThoiGianRa.ReadOnly = true;
-            this.ThoiGianRa.Width = 154;
+            this.ThoiGianRa.Width = 214;
             // 
             // ThoiGianSuDung
             // 
             this.ThoiGianSuDung.DataPropertyName = "ThoiGianSuDung";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianSuDung.DefaultCellStyle = dataGridViewCellStyle4;
             this.ThoiGianSuDung.HeaderText = "Thời gian sử dụng";
             this.ThoiGianSuDung.MinimumWidth = 6;
             this.ThoiGianSuDung.Name = "ThoiGianSuDung";
@@ -364,158 +554,6 @@ namespace CheckinManagementSystem
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.ReadOnly = true;
             this.GhiChu.Width = 129;
-            // 
-            // Edit
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Edit.HeaderText = "";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit ghi chú";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 6;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 67);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1521, 113);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnLamMoi);
-            this.panel1.Controls.Add(this.btnSearch);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cboPhong);
-            this.panel1.Controls.Add(this.cboLoaiRecord);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cboNhanSu);
-            this.panel1.Location = new System.Drawing.Point(155, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1210, 107);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLamMoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(1064, 44);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(126, 45);
-            this.btnLamMoi.TabIndex = 8;
-            this.btnLamMoi.Text = "Làm mới";
-            this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(920, 44);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(126, 45);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Brown;
-            this.label4.Location = new System.Drawing.Point(621, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Phòng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Brown;
-            this.label3.Location = new System.Drawing.Point(331, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Loại Checkin/Checkout";
-            // 
-            // cboPhong
-            // 
-            this.cboPhong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPhong.FormattingEnabled = true;
-            this.cboPhong.Location = new System.Drawing.Point(626, 47);
-            this.cboPhong.Name = "cboPhong";
-            this.cboPhong.Size = new System.Drawing.Size(272, 39);
-            this.cboPhong.TabIndex = 2;
-            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
-            this.cboPhong.TextUpdate += new System.EventHandler(this.cboPhong_TextUpdate);
-            this.cboPhong.DropDownClosed += new System.EventHandler(this.cboPhong_DropDownClosed);
-            this.cboPhong.Click += new System.EventHandler(this.cboPhong_Click);
-            // 
-            // cboLoaiRecord
-            // 
-            this.cboLoaiRecord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboLoaiRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLoaiRecord.FormattingEnabled = true;
-            this.cboLoaiRecord.Location = new System.Drawing.Point(336, 47);
-            this.cboLoaiRecord.Name = "cboLoaiRecord";
-            this.cboLoaiRecord.Size = new System.Drawing.Size(272, 39);
-            this.cboLoaiRecord.TabIndex = 2;
-            this.cboLoaiRecord.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
-            this.cboLoaiRecord.TextUpdate += new System.EventHandler(this.cboLoaiRecord_TextUpdate);
-            this.cboLoaiRecord.DropDownClosed += new System.EventHandler(this.cboLoaiRecord_DropDownClosed);
-            this.cboLoaiRecord.Click += new System.EventHandler(this.cboLoaiRecord_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Brown;
-            this.label2.Location = new System.Drawing.Point(58, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nhân viên";
-            // 
-            // cboNhanSu
-            // 
-            this.cboNhanSu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboNhanSu.FormattingEnabled = true;
-            this.cboNhanSu.Location = new System.Drawing.Point(63, 47);
-            this.cboNhanSu.Name = "cboNhanSu";
-            this.cboNhanSu.Size = new System.Drawing.Size(242, 39);
-            this.cboNhanSu.TabIndex = 0;
-            this.cboNhanSu.SelectedIndexChanged += new System.EventHandler(this.combobox_SelectedIndexChanged);
-            this.cboNhanSu.TextUpdate += new System.EventHandler(this.cboNhanSu_TextUpdate);
-            this.cboNhanSu.DropDownClosed += new System.EventHandler(this.cboNhanSu_DropDownClosed);
-            this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -587,9 +625,22 @@ namespace CheckinManagementSystem
             this.thoiGianRaDataGridViewTextBoxColumn.Visible = false;
             this.thoiGianRaDataGridViewTextBoxColumn.Width = 196;
             // 
-            // sPGetAllDangKyResultBindingSource
+            // Edit
             // 
-            this.sPGetAllDangKyResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDangKy_Result);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Edit.HeaderText = "";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit ghi chú";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 6;
             // 
             // UCHistory
             // 
