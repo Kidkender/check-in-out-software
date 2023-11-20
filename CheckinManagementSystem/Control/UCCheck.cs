@@ -95,6 +95,7 @@ namespace CheckinManagementSystem.Control
             grdNoiQuy.Columns.Add("XuPhat", "Nội quy");
             grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
             grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grdNoiQuy.Columns["NoiDung"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grdNoiQuy.RowTemplate.MinimumHeight = 50;
             foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().Where(t => t.LoaiNoiQuy == 0).ToList())
             {

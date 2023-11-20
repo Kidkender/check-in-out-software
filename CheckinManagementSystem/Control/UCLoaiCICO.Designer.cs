@@ -37,13 +37,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.grdLoaiCICO = new System.Windows.Forms.DataGridView();
+            this.loaiRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.loaiRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sPGetAllNhanSuResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +56,10 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdLoaiCICO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiRecordBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGetAllNhanSuResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +152,10 @@
             this.grdLoaiCICO.TabIndex = 1;
             this.grdLoaiCICO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLoaiCICO_CellContentClick);
             // 
+            // loaiRecordBindingSource
+            // 
+            this.loaiRecordBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.LoaiRecord);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -234,10 +238,6 @@
             this.label1.Text = "QUẢN LÝ LOẠI CHECKIN/CHECKOUT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // loaiRecordBindingSource
-            // 
-            this.loaiRecordBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.LoaiRecord);
-            // 
             // sPGetAllNhanSuResultBindingSource
             // 
             this.sPGetAllNhanSuResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllNhanSu_Result);
@@ -287,6 +287,7 @@
             this.soLanDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.soLanDataGridViewTextBoxColumn.Name = "soLanDataGridViewTextBoxColumn";
             this.soLanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soLanDataGridViewTextBoxColumn.Visible = false;
             // 
             // Edit
             // 
@@ -325,12 +326,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdLoaiCICO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiRecordBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPGetAllNhanSuResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).EndInit();
             this.ResumeLayout(false);

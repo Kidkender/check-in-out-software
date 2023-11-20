@@ -29,5 +29,6 @@ namespace CheckinManagementSystem.DAL
         public int Re_TongThoiGianSuDung { get; set; }
         public int Re_QuenCheckOut { get; set; }
         public int Re_TongSoLanDi { get; set; }
+        public int Re_SoLanGhiChu { get; set; }
     }
 }

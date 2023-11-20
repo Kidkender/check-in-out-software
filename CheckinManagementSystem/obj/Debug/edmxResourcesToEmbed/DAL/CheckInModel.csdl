@@ -134,6 +134,7 @@
     <Property Type="Int32" Name="Re_TongThoiGianSuDung" Nullable="false" />
     <Property Type="Int32" Name="Re_QuenCheckOut" Nullable="false" />
     <Property Type="Int32" Name="Re_TongSoLanDi" Nullable="false" />
+    <Property Type="Int32" Name="Re_SoLanGhiChu" Nullable="false" />
   </ComplexType>
   <ComplexType Name="SP_GetAllDangKy_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />

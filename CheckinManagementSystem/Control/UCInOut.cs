@@ -123,6 +123,7 @@ namespace CheckinManagementSystem
             grdNoiQuy.Columns.Add("XuPhat", "Nội quy");
             grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
             grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grdNoiQuy.Columns["NoiDung"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grdNoiQuy.RowTemplate.MinimumHeight = 50;
 
             foreach (NoiQuy noiQuy in _noiQuyBLL.GetAllNoiQuy().Where(t => t.LoaiNoiQuy == 1).ToList())
@@ -214,7 +215,7 @@ namespace CheckinManagementSystem
             {
                 MessageBox.Show("Nhân sự chưa được điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            else if (_checkInOutBLL.checkIsOut(nhanSu.ID, loaiRecord.ID))
+            else if (_checkInOutBLL.checkIsOut(nhanSu.ID))
             {
                 MessageBox.Show("Nhân sự đã đăng ký checkout, vui lòng checkin vào trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

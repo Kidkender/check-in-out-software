@@ -33,7 +33,6 @@ namespace CheckinManagementSystem
             {
                 Id = loai.ID;
                 tbThoigian.Text = loai.ThoiGian.ToString();
-                tbSoLan.Text = loai.SoLan.ToString();
                 lbTitle.Text = "CẬP NHẬT LOẠI CHECKIN/CHECKOUT";
             }
         }
@@ -47,19 +46,18 @@ namespace CheckinManagementSystem
             int sl = -1, tg = -1;
             if (lbl)
             {
-                if (tbSoLan.Text.Trim() == "")
-                {
-                    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (tbThoigian.Text.Trim() == "")
+                //if (tbSoLan.Text.Trim() == "")
+                //{
+                //    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                if (tbThoigian.Text.Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập thời gian cho phép!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbSoLan.Text.Trim() != "" && tbThoigian.Text.Trim() != "")
+                else
                 {
                     try
                     {
-                        sl = int.Parse(tbSoLan.Text.Trim());
                         tg = int.Parse(tbThoigian.Text.Trim());
 
                         if (sl <= 0 || tg <= 0)
@@ -72,7 +70,6 @@ namespace CheckinManagementSystem
                             {
                                 ID = 0,
                                 MoTa = "",
-                                SoLan = sl,
                                 ThoiGian = tg
                             };
 
@@ -88,19 +85,18 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (tbSoLan.Text.Trim() == "")
-                {
-                    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (tbThoigian.Text.Trim() == "")
+                //if (tbSoLan.Text.Trim() == "")
+                //{
+                //    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+                if (tbThoigian.Text.Trim() == "")
                 {
                     MessageBox.Show("Vui lòng nhập thời gian cho phép!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbSoLan.Text.Trim() != "" && tbThoigian.Text.Trim() != "")
+                else
                 {
                     try
                     {
-                        sl = int.Parse(tbSoLan.Text.Trim());
                         tg = int.Parse(tbThoigian.Text.Trim());
 
                         if (sl <= 0 || tg <= 0)
@@ -113,7 +109,6 @@ namespace CheckinManagementSystem
                             {
                                 ID = Id,
                                 MoTa = "",
-                                SoLan = sl,
                                 ThoiGian = tg
                             };
 

@@ -148,7 +148,7 @@ namespace CheckinManagementSystem.Control
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi: " + ex.Message);
+                    MessageBox.Show($"Lỗi trong lúc import!\n{ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 finally
                 {

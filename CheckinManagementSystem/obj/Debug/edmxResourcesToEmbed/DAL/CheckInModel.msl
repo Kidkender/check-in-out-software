@@ -120,6 +120,7 @@
           <ScalarProperty Name="Re_TongThoiGianSuDung" ColumnName="Re_TongThoiGianSuDung" />
           <ScalarProperty Name="Re_QuenCheckOut" ColumnName="Re_QuenCheckOut" />
           <ScalarProperty Name="Re_TongSoLanDi" ColumnName="Re_TongSoLanDi" />
+          <ScalarProperty Name="Re_SoLanGhiChu" ColumnName="Re_SoLanGhiChu" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

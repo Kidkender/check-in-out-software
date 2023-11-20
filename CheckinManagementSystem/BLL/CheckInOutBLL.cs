@@ -43,9 +43,9 @@ namespace CheckinManagementSystem.BLL
             return result > 0;
         }
 
-        public bool checkIsOut(int? IdNhanSu, int? IdLoaiRecord)
+        public bool checkIsOut(int? IdNhanSu)
         {
-            return _context.Record.Where(t => IdLoaiRecord != 0 && t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == IdLoaiRecord && t.ThoiGianRa == null /*&& EntityFunctions.TruncateTime(t.ThoiGianVao) == EntityFunctions.TruncateTime(DateTime.Now)*/).Any();
+            return _context.Record.Any(t => t.IdLoaiRecord != 0 && t.IdNhanSu == IdNhanSu && t.ThoiGianRa == null && t.ThoiGianVao.HasValue);
         }
     }
 }

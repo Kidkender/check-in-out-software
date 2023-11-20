@@ -662,6 +662,8 @@ namespace CheckinManagementSystem
 
         public void RefreshAll()
         {
+            txtDenNgay.Value = DateTime.Now;
+            txtTuNgay.Value = DateTime.Now.AddDays(-30);
             RefreshDataNhanSu();
             RefreshDataDiemDanh();
             RefreshDataPhong();
@@ -705,7 +707,9 @@ namespace CheckinManagementSystem
                                                                && (IDPhong == null || t.IdPhong == IDPhong)
                                                                && t.ThoiGianRa.HasValue
                                                                && t.IdLoaiRecord != 0
-                                                               && t.IdPhong == int.Parse(idPhong)).ToList();
+                                                               && t.IdPhong == int.Parse(idPhong)
+                                                               && t.ThoiGianVao.Value.Date >= txtTuNgay.Value.Date
+                                                               && t.ThoiGianVao.Value.Date <= txtDenNgay.Value.Date).ToList();
             grdCheckOut.DataSource = data;
         }
 

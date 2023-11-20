@@ -156,12 +156,13 @@ namespace CheckinManagementSystem.Control
                     int startRow = 4;
                     foreach (var rowData in data)
                     {
-                        SetValueCell(worksheet.Cells[startRow, 1], startRow - 3, XlHAlign.xlHAlignCenter, false);
-                        SetValueCell(worksheet.Cells[startRow, 2], rowData.MaNhanSu, XlHAlign.xlHAlignLeft, false);
-                        SetValueCell(worksheet.Cells[startRow, 3], rowData.HoTen, XlHAlign.xlHAlignLeft, false);
-                        SetValueCell(worksheet.Cells[startRow, 4], rowData.ThoiGianVao.Value.ToString("dd/MM/yyyy HH:mm:ss"), XlHAlign.xlHAlignCenter, false);
-                        SetValueCell(worksheet.Cells[startRow, 5], rowData.ThoiGianRa.Value.ToString("dd/MM/yyyy HH:mm:ss"), XlHAlign.xlHAlignCenter, false);
-                        SetValueCell(worksheet.Cells[startRow, 6], rowData.ThoiGianLamViec.Replace(".", ","), XlHAlign.xlHAlignCenter, false);
+                        int col = 1;
+                        SetValueCell(worksheet.Cells[startRow, col++], startRow - 3, XlHAlign.xlHAlignCenter, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.MaNhanSu, XlHAlign.xlHAlignLeft, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.HoTen, XlHAlign.xlHAlignLeft, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.ThoiGianVao.Value.ToString("dd/MM/yyyy HH:mm:ss"), XlHAlign.xlHAlignCenter, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.ThoiGianRa.Value.ToString("dd/MM/yyyy HH:mm:ss"), XlHAlign.xlHAlignCenter, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.ThoiGianLamViec.Replace(".", ","), XlHAlign.xlHAlignCenter, false);
                         startRow++;
                     }
 

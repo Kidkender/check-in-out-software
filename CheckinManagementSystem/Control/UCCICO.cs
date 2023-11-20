@@ -133,19 +133,22 @@ namespace CheckinManagementSystem.Control
                     int startRow = 4;
                     foreach (var rowData in data)
                     {
-                        SetValueCell(worksheet.Cells[startRow, 1], startRow - 3, XlHAlign.xlHAlignCenter, false);
-                        SetValueCell(worksheet.Cells[startRow, 2], rowData.HoTen, XlHAlign.xlHAlignLeft, false);
-                        SetValueCell(worksheet.Cells[startRow, 3], rowData.TenPhong, XlHAlign.xlHAlignLeft, false);
-                        SetValueCell(worksheet.Cells[startRow, 4], rowData.Re_DaiTien, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 5], rowData.Re_TieuTien, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 6], rowData.Re_HutThuoc, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 7], rowData.Re_DiKhac, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 8], rowData.Re_AnSang + rowData.Re_AnToi + rowData.Re_AnTrua, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 9], rowData.Re_TongThoiGianSuDung, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 10], rowData.Re_SoPhutDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoPhutDiQua > 0);
-                        SetValueCell(worksheet.Cells[startRow, 11], rowData.Re_TongSoLanDi, XlHAlign.xlHAlignRight, false);
-                        SetValueCell(worksheet.Cells[startRow, 12], rowData.Re_SoLanDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoLanDiQua > 0);
-                        SetValueCell(worksheet.Cells[startRow, 13], rowData.Re_QuenCheckOut, XlHAlign.xlHAlignRight, rowData.Re_QuenCheckOut > 0);
+                        int col = 1;
+                        SetValueCell(worksheet.Cells[startRow, col++], startRow - 3, XlHAlign.xlHAlignCenter, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.MaNhanSu, XlHAlign.xlHAlignLeft, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.HoTen, XlHAlign.xlHAlignLeft, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.TenPhong, XlHAlign.xlHAlignLeft, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_DaiTien, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_TieuTien, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_HutThuoc, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_DiKhac, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_AnSang + rowData.Re_AnToi + rowData.Re_AnTrua, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_TongThoiGianSuDung, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoPhutDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoPhutDiQua > 0);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_TongSoLanDi, XlHAlign.xlHAlignRight, false);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoLanDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoLanDiQua > 0);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_QuenCheckOut, XlHAlign.xlHAlignRight, rowData.Re_QuenCheckOut > 0);
+                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoLanGhiChu, XlHAlign.xlHAlignRight, rowData.Re_SoLanGhiChu > 0);
                         startRow++;
                     }
 
@@ -159,7 +162,7 @@ namespace CheckinManagementSystem.Control
                     Marshal.ReleaseComObject(worksheet);
                     Marshal.ReleaseComObject(workbook);
 
-                    DialogResult result = MessageBox.Show("Bạn muốn mở file vừa xuất ko?", "Thông báo", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Bạn muốn mở file vừa xuất ko?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
