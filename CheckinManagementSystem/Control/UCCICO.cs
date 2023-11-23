@@ -43,8 +43,8 @@ namespace CheckinManagementSystem.Control
             grdHistory.RowTemplate.Height = 40;
             grdHistory.RowPrePaint += grdHistory_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdHistory.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -108,7 +108,7 @@ namespace CheckinManagementSystem.Control
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel Files|*.xlsx";
-            saveFileDialog.Title = "Chọn nơi lưu tệp Excel";
+            saveFileDialog.Title = "选择 Excel 文件的保存位置";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -125,7 +125,7 @@ namespace CheckinManagementSystem.Control
                 {
                     // Mở tệp Excel
                     string directory = AppDomain.CurrentDomain.BaseDirectory;
-                    workbook = excelApp.Workbooks.Open(directory + "\\Word\\formBaoCao.xlsx");
+                    workbook = excelApp.Workbooks.Open(directory + "\\Word\\报告.xlsx");
 
                     // Chọn trang tính cụ thể (thay "Sheet1" bằng tên trang tính bạn muốn)
                     worksheet = (Excel.Worksheet)workbook.Sheets["Sheet1"];
@@ -162,7 +162,7 @@ namespace CheckinManagementSystem.Control
                     Marshal.ReleaseComObject(worksheet);
                     Marshal.ReleaseComObject(workbook);
 
-                    DialogResult result = MessageBox.Show("Bạn muốn mở file vừa xuất ko?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("您想打开刚刚导出的文件吗？", "通知", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
@@ -172,7 +172,7 @@ namespace CheckinManagementSystem.Control
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Lỗi: " + ex.Message);
+                    Console.WriteLine("故障: " + ex.Message);
                 }
                 finally
                 {
@@ -264,7 +264,7 @@ namespace CheckinManagementSystem.Control
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdHistory.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 

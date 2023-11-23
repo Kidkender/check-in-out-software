@@ -63,16 +63,6 @@ namespace CheckinManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1599859 {
-            get {
-                object obj = ResourceManager.GetObject("1599859", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _3168315 {
             get {
                 object obj = ResourceManager.GetObject("3168315", resourceCulture);
@@ -107,6 +97,16 @@ namespace CheckinManagementSystem.Properties {
             get {
                 object obj = ResourceManager.GetObject("department", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] DFKai_SB_Regular {
+            get {
+                object obj = ResourceManager.GetObject("DFKai_SB_Regular", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -177,6 +177,16 @@ namespace CheckinManagementSystem.Properties {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] kaiu {
+            get {
+                object obj = ResourceManager.GetObject("kaiu", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

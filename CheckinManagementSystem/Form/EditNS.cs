@@ -27,11 +27,11 @@ namespace CheckinManagementSystem
             RefreshDataPhong();
             if (lbl)
             {
-                lbTitle.Text = "THÊM NHÂN SỰ";
+                lbTitle.Text = "添加员工";
             }
             else
             {
-                lbTitle.Text = "CẬP NHẬT NHÂN SỰ";
+                lbTitle.Text = "更新员工";
                 if (ns != null)
                 {
                     txtTen.Text = ns.HoTen;
@@ -63,22 +63,22 @@ namespace CheckinManagementSystem
 
             if (maNhanSu == "")
             {
-                MessageBox.Show("Vui lòng nhập mã nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请输入ID号，姓名，办公室！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (ten == null)
             {
-                MessageBox.Show("Vui lòng nhập tên nhân nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请输入姓名 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (phong == null)
             {
-                MessageBox.Show("Chọn loại phòng nhân sự!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请选择办公室 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 string result = _nhanSuBLL.AddEditNhanSu(ten, maNhanSu, phong.TenPhong, _ns?.ID);
                 if (!string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show($"Mã nhân sự {result} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"ID号 {result} 已存在!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

@@ -35,8 +35,8 @@ namespace CheckinManagementSystem.Control
 
             grdNhanSu.RowPrePaint += grdNhanSu_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdNhanSu.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -67,7 +67,7 @@ namespace CheckinManagementSystem.Control
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdNhanSu.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 
@@ -83,15 +83,15 @@ namespace CheckinManagementSystem.Control
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel Files|*.xlsx";
-            saveFileDialog.Title = "Chọn nơi lưu tệp Excel";
+            saveFileDialog.Title = "选择 Excel 文件的保存位置";
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             // Đặt tiêu đề của hộp thoại
-            openFileDialog.Title = "Chọn tệp";
+            openFileDialog.Title = "选择文件";
 
             // Thiết lập bộ lọc tệp (ví dụ: chỉ cho phép chọn tệp Excel)
-            openFileDialog.Filter = "Tệp Excel|*.xlsx;*.xls";
+            openFileDialog.Filter = "Excel 文件|*.xlsx;*.xls";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -130,11 +130,11 @@ namespace CheckinManagementSystem.Control
                     result = result.Where(t => !string.IsNullOrEmpty(t)).ToList();
                     if (result.Count > 0)
                     {
-                        MessageBox.Show($"Import thất bại!\nMã nhân sự {string.Join(", ", result)} đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"导入失败 ！\nID号{string.Join(", ", result)}已存在!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show($"Import thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"导入成功 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     LoadData();
@@ -148,7 +148,7 @@ namespace CheckinManagementSystem.Control
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi trong lúc import!\n{ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"导入时有错误 ！\n{ex}", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 finally
                 {

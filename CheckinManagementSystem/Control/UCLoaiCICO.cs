@@ -25,8 +25,8 @@ namespace CheckinManagementSystem.Control
 
             grdLoaiCICO.RowPrePaint += grdLoaiCICO_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdLoaiCICO.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -47,7 +47,7 @@ namespace CheckinManagementSystem.Control
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdLoaiCICO.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 

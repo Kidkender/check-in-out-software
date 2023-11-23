@@ -34,7 +34,7 @@ namespace CheckinManagementSystem
         {
             if(tbMKM.Text != tbNLMK.Text)
             {
-                MessageBox.Show("Mật khẩu không giống nhau", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("密码不相同 !", "警报", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else

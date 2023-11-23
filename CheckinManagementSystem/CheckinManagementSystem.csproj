@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo-Checkin-App.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -365,6 +368,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\kaiu.ttf" />
+    <EmbeddedResource Include="Resources\DFKai-SB Regular.ttf" />
     <None Include="Word\formBaoCao_DiemDanh.xlsx" />
     <None Include="Word\formBaoCao.xlsx" />
     <None Include="Word\formImport.xlsx" />
@@ -390,6 +395,7 @@
       <LastGenOutput>CheckInModel.cs</LastGenOutput>
     </Content>
     <None Include="Resources\3168315.png" />
+    <Content Include="Logo-Checkin-App.ico" />
     <Content Include="Resources\excel_export.png" />
     <Content Include="Resources\excel_import.png" />
     <None Include="Resources\information.png" />
@@ -405,7 +411,6 @@
     <None Include="Resources\excel %282%29.png" />
     <None Include="Resources\excel %281%29.png" />
     <None Include="Resources\excel.png" />
-    <None Include="Resources\1599859.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

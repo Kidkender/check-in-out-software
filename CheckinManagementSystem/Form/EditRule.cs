@@ -27,21 +27,21 @@ namespace CheckinManagementSystem
 			InitializeComponent();
             this.tbMoTa.AutoSize = false;
             this.tbMoTa.Size = new System.Drawing.Size(912, 200);
-            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(0, "Điểm danh"));
-            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(1, "Checkin giữa giờ"));
+            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(0, "上下班"));
+            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(1, "工间"));
             cboLoaiNoiQuy.DisplayMember = "Value";
             cboLoaiNoiQuy.SelectedIndex = 0;
             if (lbl)
             {
                 this.lbl = lbl;
-                lbTitle.Text = "THÊM NỘI QUY";
+                lbTitle.Text = "添加规定";
             }
             else
             {
                 Id = noi.ID;
                 tbNoiDung.Text = noi.NoiDung;
                 tbMoTa.Text = noi.XuPhat;
-                lbTitle.Text = "CẬP NHẬT NỘI QUY";
+                lbTitle.Text = "更新规定";
                 cboLoaiNoiQuy.SelectedIndex = noi.LoaiNoiQuy.GetValueOrDefault(0);
             }
         }
@@ -56,15 +56,15 @@ namespace CheckinManagementSystem
             {
                 if(tbNoiDung.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入规定 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if(tbMoTa.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập xử phạt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入扣分 ！", "T通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (cboLoaiNoiQuy.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Vui lòng chọn loại nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请选择规定类型 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -86,15 +86,15 @@ namespace CheckinManagementSystem
 
                 if (tbNoiDung.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入规定 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (tbMoTa.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập xử phạt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入扣分 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (cboLoaiNoiQuy.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Vui lòng chọn loại nội quy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请选择规定类型 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {

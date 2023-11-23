@@ -26,14 +26,14 @@ namespace CheckinManagementSystem
             InitializeComponent();
             if (lbl)
             {
-                lbTitle.Text = "THÊM LOẠI CHECKIN/CHECKOUT";
+                lbTitle.Text = "添加打卡类型";
                 this.lbl = lbl;
             }
             else
             {
                 Id = loai.ID;
                 tbThoigian.Text = loai.ThoiGian.ToString();
-                lbTitle.Text = "CẬP NHẬT LOẠI CHECKIN/CHECKOUT";
+                lbTitle.Text = "更新签到类型";
             }
         }
 
@@ -52,7 +52,7 @@ namespace CheckinManagementSystem
                 //}
                 if (tbThoigian.Text.Trim() == "")
                 {
-                    MessageBox.Show("Vui lòng nhập thời gian cho phép!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入可用时间!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace CheckinManagementSystem
 
                         if (sl <= 0 || tg <= 0)
                         {
-                            MessageBox.Show("Thời gian và số lần phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("时间和次数必须大于0!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -79,7 +79,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("Thời gian và số lần phải là định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
@@ -91,7 +91,7 @@ namespace CheckinManagementSystem
                 //}
                 if (tbThoigian.Text.Trim() == "")
                 {
-                    MessageBox.Show("Vui lòng nhập thời gian cho phép!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("请输入可用时间!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace CheckinManagementSystem
 
                         if (sl <= 0 || tg <= 0)
                         {
-                            MessageBox.Show("Thời gian và số lần phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("时间和次数必须大于0!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -118,7 +118,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("Thời gian và số lần phải là định dạng số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }

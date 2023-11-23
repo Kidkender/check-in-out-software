@@ -55,8 +55,8 @@ namespace CheckinManagementSystem
 
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdCheckOut.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -120,8 +120,8 @@ namespace CheckinManagementSystem
         {
             grdNoiQuy.Rows.Clear();
             grdNoiQuy.Columns.Clear();
-            grdNoiQuy.Columns.Add("XuPhat", "Nội quy");
-            grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
+            grdNoiQuy.Columns.Add("XuPhat", "规定");
+            grdNoiQuy.Columns.Add("NoiDung", "扣分");
             grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             grdNoiQuy.Columns["NoiDung"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grdNoiQuy.RowTemplate.MinimumHeight = 50;
@@ -147,7 +147,7 @@ namespace CheckinManagementSystem
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdCheckOut.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 
@@ -205,29 +205,29 @@ namespace CheckinManagementSystem
             LoaiRecord loaiRecord = (LoaiRecord)cboLoaiRecord.SelectedItem;
             if (nhanSu == null)
             {
-                MessageBox.Show("Vui lòng chọn nhân sự check!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请输入ID号 - 姓名 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (loaiRecord == null)
             {
-                MessageBox.Show("Vui lòng chọn loại check!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请选择理由出去 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (!_recordBLL.GetAllDiemDanh().Where(t => t.IdNhanSu == nhanSu.ID && t.ThoiGianRa == null).Any())
             {
-                MessageBox.Show("Nhân sự chưa được điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("员工还没上班 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (_checkInOutBLL.checkIsOut(nhanSu.ID))
             {
-                MessageBox.Show("Nhân sự đã đăng ký checkout, vui lòng checkin vào trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("员工已打卡出去，请先进入！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 if (_checkInOutBLL.AddRecord(nhanSu.ID, loaiRecord?.ID))
                 {
-                    MessageBox.Show("Check thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("操作成功！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshAll();
                 }
                 else
-                    MessageBox.Show("Check thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("操作失败 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -246,7 +246,7 @@ namespace CheckinManagementSystem
 
                     if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
                     {
-                        MessageBox.Show("Check thành công");
+                        MessageBox.Show("操作成功！");
                         RefreshAll();
                     }
                 }

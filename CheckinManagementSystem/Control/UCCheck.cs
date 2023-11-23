@@ -54,8 +54,8 @@ namespace CheckinManagementSystem.Control
 
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdCheckOut.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -92,8 +92,8 @@ namespace CheckinManagementSystem.Control
         {
             grdNoiQuy.Rows.Clear();
             grdNoiQuy.Columns.Clear();
-            grdNoiQuy.Columns.Add("XuPhat", "Nội quy");
-            grdNoiQuy.Columns.Add("NoiDung", "Xử phạt");
+            grdNoiQuy.Columns.Add("XuPhat", "规定");
+            grdNoiQuy.Columns.Add("NoiDung", "扣分");
             grdNoiQuy.Columns["XuPhat"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             grdNoiQuy.Columns["NoiDung"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grdNoiQuy.RowTemplate.MinimumHeight = 50;
@@ -134,19 +134,22 @@ namespace CheckinManagementSystem.Control
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            if (_recordBLL.GetAllDiemDanh().Where(t => /*t.ThoiGianVao.Value.Date == DateTime.Now.Date &&*/ t.IdNhanSu == nhanSu?.ID && t.ThoiGianRa == null).Any())
+            if(nhanSu == null)
+				MessageBox.Show("请选择员工 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+			if (_recordBLL.GetAllDiemDanh().Where(t => /*t.ThoiGianVao.Value.Date == DateTime.Now.Date &&*/ t.IdNhanSu == nhanSu?.ID && t.ThoiGianRa == null).Any())
             {
-                MessageBox.Show("Nhân sự đã được điểm danh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("员工已上班！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 if (_checkInOutBLL.AddRecord(nhanSu.ID, 0))
                 {
-                    MessageBox.Show("Điểm danh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("操作成功！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshAll();
                 }
                 else
-                    MessageBox.Show("Check thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("操作失败!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -188,7 +191,7 @@ namespace CheckinManagementSystem.Control
 
                     if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
                     {
-                        MessageBox.Show("Check thành công");
+                        MessageBox.Show("操作成功！");
                         RefreshAll();
                     }
                 }
@@ -200,7 +203,7 @@ namespace CheckinManagementSystem.Control
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdCheckOut.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 

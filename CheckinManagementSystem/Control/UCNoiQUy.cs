@@ -27,8 +27,8 @@ namespace CheckinManagementSystem.Control
 
             grdNoiQuy.RowPrePaint += grdNoiQuy_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
-            sttColumn.Name = "STT";
-            sttColumn.HeaderText = "STT";
+            sttColumn.Name = "序号";
+            sttColumn.HeaderText = "序号";
             grdNoiQuy.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             sttColumn.Width = 50;
@@ -54,7 +54,7 @@ namespace CheckinManagementSystem.Control
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = grdNoiQuy.Rows[e.RowIndex];
-                row.Cells["STT"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
             }
         }
 
@@ -102,10 +102,10 @@ namespace CheckinManagementSystem.Control
                 switch (loaiNoiQuyValue)
                 {
                     case 0:
-                        e.Value = "Điểm danh";
+                        e.Value = "上班";
                         break;
                     case 1:
-                        e.Value = "Checkin giữa giờ";
+                        e.Value = "工间";
                         break;
                         // Thêm các trường hợp khác nếu cần thiết
                 }
