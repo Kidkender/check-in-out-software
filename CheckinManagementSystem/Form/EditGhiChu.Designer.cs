@@ -96,7 +96,7 @@
 			// 
 			this.btnOK.BackColor = System.Drawing.Color.Firebrick;
 			this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
-			this.btnOK.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnOK.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnOK.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.btnOK.Location = new System.Drawing.Point(199, 310);
 			this.btnOK.Name = "btnOK";
@@ -110,7 +110,7 @@
 			// 
 			this.btnCancel.BackColor = System.Drawing.Color.Firebrick;
 			this.btnCancel.Dock = System.Windows.Forms.DockStyle.Left;
-			this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCancel.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.btnCancel.Location = new System.Drawing.Point(372, 310);
 			this.btnCancel.Name = "btnCancel";
@@ -124,7 +124,7 @@
 			// 
 			this.ClientSize = new System.Drawing.Size(739, 367);
 			this.Controls.Add(this.tableLayoutPanel1);
-			this.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "EditGhiChu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

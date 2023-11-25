@@ -39,7 +39,7 @@
 			// 
 			// tbTaiKhoan
 			// 
-			this.tbTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbTaiKhoan.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbTaiKhoan.Location = new System.Drawing.Point(87, 130);
 			this.tbTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
 			this.tbTaiKhoan.Name = "tbTaiKhoan";
@@ -49,7 +49,7 @@
 			// 
 			// tbMatKhau
 			// 
-			this.tbMatKhau.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbMatKhau.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbMatKhau.Location = new System.Drawing.Point(87, 248);
 			this.tbMatKhau.Margin = new System.Windows.Forms.Padding(4);
 			this.tbMatKhau.Name = "tbMatKhau";
@@ -61,7 +61,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("SimSun", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Brown;
 			this.label1.Location = new System.Drawing.Point(359, 29);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -73,7 +73,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.label2.Location = new System.Drawing.Point(80, 94);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -85,7 +85,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.label3.Location = new System.Drawing.Point(80, 210);
 			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -97,7 +97,7 @@
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.Color.DarkRed;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.button1.Location = new System.Drawing.Point(311, 330);
 			this.button1.Margin = new System.Windows.Forms.Padding(4);

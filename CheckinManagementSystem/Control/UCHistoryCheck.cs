@@ -96,7 +96,7 @@ namespace CheckinManagementSystem.Control
             var data = _recordBLL.GetAllDiemDanh().Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
                                                         && (IDPhong == null || t.IdPhong == IDPhong)
                                                         && t.ThoiGianRa.HasValue
-                                                        && t.IdPhong == int.Parse(idPhong)).ToList();
+                                                        && t.IdPhong == int.Parse(idPhong)).OrderByDescending(t => t.ThoiGianVao).ToList();
             grdCheckOut.DataSource = data;
         }
 

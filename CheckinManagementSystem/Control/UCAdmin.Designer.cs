@@ -69,7 +69,7 @@
 			this.btnCheck.BackColor = System.Drawing.Color.MistyRose;
 			this.btnCheck.FlatAppearance.BorderSize = 0;
 			this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCheck.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCheck.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnCheck.Image = global::CheckinManagementSystem.Properties.Resources.schedule;
 			this.btnCheck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -87,7 +87,7 @@
 			this.button3.BackColor = System.Drawing.Color.MistyRose;
 			this.button3.FlatAppearance.BorderSize = 0;
 			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.Image = global::CheckinManagementSystem.Properties.Resources.information;
 			this.button3.Location = new System.Drawing.Point(137, 221);
 			this.button3.Name = "button3";
@@ -101,7 +101,7 @@
 			this.button2.BackColor = System.Drawing.Color.MistyRose;
 			this.button2.FlatAppearance.BorderSize = 0;
 			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button2.Image = global::CheckinManagementSystem.Properties.Resources.key__1_;
 			this.button2.Location = new System.Drawing.Point(191, 221);
 			this.button2.Name = "button2";
@@ -115,7 +115,7 @@
 			this.btnDangXuat.BackColor = System.Drawing.Color.MistyRose;
 			this.btnDangXuat.FlatAppearance.BorderSize = 0;
 			this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDangXuat.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDangXuat.Image = global::CheckinManagementSystem.Properties.Resources.log_out;
 			this.btnDangXuat.Location = new System.Drawing.Point(245, 221);
 			this.btnDangXuat.Name = "btnDangXuat";
@@ -127,7 +127,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.label1.Location = new System.Drawing.Point(109, 182);
 			this.label1.Name = "label1";
@@ -149,7 +149,7 @@
 			this.BTNoiQuy.BackColor = System.Drawing.Color.MistyRose;
 			this.BTNoiQuy.FlatAppearance.BorderSize = 0;
 			this.BTNoiQuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.BTNoiQuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.BTNoiQuy.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BTNoiQuy.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.BTNoiQuy.Image = global::CheckinManagementSystem.Properties.Resources.corpora;
 			this.BTNoiQuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +167,7 @@
 			this.btnLoaiCICO.BackColor = System.Drawing.Color.MistyRose;
 			this.btnLoaiCICO.FlatAppearance.BorderSize = 0;
 			this.btnLoaiCICO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLoaiCICO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLoaiCICO.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLoaiCICO.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnLoaiCICO.Image = global::CheckinManagementSystem.Properties.Resources.check_in;
 			this.btnLoaiCICO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +186,7 @@
 			this.btnCICO.BackColor = System.Drawing.Color.MistyRose;
 			this.btnCICO.FlatAppearance.BorderSize = 0;
 			this.btnCICO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCICO.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCICO.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCICO.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnCICO.Image = global::CheckinManagementSystem.Properties.Resources.schedule;
 			this.btnCICO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +204,7 @@
 			this.btnNhanSu.BackColor = System.Drawing.Color.MistyRose;
 			this.btnNhanSu.FlatAppearance.BorderSize = 0;
 			this.btnNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnNhanSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnNhanSu.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnNhanSu.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnNhanSu.Image = global::CheckinManagementSystem.Properties.Resources.division;
 			this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,7 +224,7 @@
 			this.btnPhong.FlatAppearance.BorderColor = System.Drawing.Color.White;
 			this.btnPhong.FlatAppearance.BorderSize = 0;
 			this.btnPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPhong.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnPhong.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnPhong.Image = global::CheckinManagementSystem.Properties.Resources.department;
 			this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -87,6 +87,7 @@
     <Compile Include="BLL\NhanSuBLL.cs" />
     <Compile Include="BLL\NoiQuyBLL.cs" />
     <Compile Include="BLL\PhongBLL.cs" />
+    <Compile Include="Common\CommonMethod.cs" />
     <Compile Include="Control\UCAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -370,16 +371,14 @@
     </Compile>
     <EmbeddedResource Include="Resources\kaiu.ttf" />
     <EmbeddedResource Include="Resources\DFKai-SB Regular.ttf" />
-    <None Include="Word\formBaoCao_DiemDanh.xlsx" />
-    <None Include="Word\formBaoCao.xlsx" />
-    <None Include="Word\formImport.xlsx" />
+    <None Include="Report\报告.xlsx" />
+    <None Include="Report\上下班.xlsx" />
+    <None Include="Report\formImport.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

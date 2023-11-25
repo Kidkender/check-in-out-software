@@ -1,5 +1,6 @@
 ﻿using CheckinManagementSystem.BLL;
 using CheckinManagementSystem.DAL;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,24 +108,29 @@ namespace CheckinManagementSystem.Control
 
                     int startRow = 4;
                     int currentRow = startRow;
+                    string failImport = "";
+
                     List<string> result = new List<string>();
                     while (true)
                     {
                         // Đọc dữ liệu từ cột A (STT)
-                        double? STT = ((Excel.Range)worksheet.Cells[currentRow, 1]).Value;
-                        if (STT == null) break;
+                        string STT = getStringValue(((Excel.Range)worksheet.Cells[currentRow, 1]).Value);
+                        if (string.IsNullOrEmpty(STT)) break;
 
                         // Đọc dữ liệu từ cột B (họ tên)
-                        string hoTen = ((Excel.Range)worksheet.Cells[currentRow, 2]).Value;
+                        string hoTen = getStringValue(((Excel.Range)worksheet.Cells[currentRow, 2]).Value);
 
                         // Đọc dữ liệu từ cột C (mã nhân sự)
-                        string maNhanSu = ((Excel.Range)worksheet.Cells[currentRow, 3]).Value;
+                        string maNhanSu = getStringValue(((Excel.Range)worksheet.Cells[currentRow, 3]).Value);
 
                         // Đọc dữ liệu từ cột D (tên phòng)
-                        string tenPhong = ((Excel.Range)worksheet.Cells[currentRow, 4]).Value;
+                        string tenPhong = getStringValue(((Excel.Range)worksheet.Cells[currentRow, 4]).Value);
 
-
-                        result.Add(_nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null));
+                        try
+                        {
+                            result.Add(_nhansuBLL.AddEditNhanSu(hoTen, maNhanSu, tenPhong, null));
+                        }
+                        catch (Exception) { }
                         currentRow++;
                     }
                     result = result.Where(t => !string.IsNullOrEmpty(t)).ToList();
@@ -157,6 +163,16 @@ namespace CheckinManagementSystem.Control
                     Marshal.ReleaseComObject(excelApp);
                 }
             }
+        }
+
+        private string getStringValue(object cellValue)
+        {
+            string result = "";
+            if (cellValue != null)
+            {
+                result = cellValue.ToString();
+            }
+            return result;
         }
 
         private void grdNhanSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -215,13 +231,13 @@ namespace CheckinManagementSystem.Control
             string tuKhoa = txtTuKhoa.Text;
             int idP = 0;
 
-            if(cboPhong.SelectedValue != null)
-                idP =  int.Parse(cboPhong.SelectedValue.ToString());
+            if (cboPhong.SelectedValue != null)
+                idP = int.Parse(cboPhong.SelectedValue.ToString());
 
             var search = _nhansuBLL.GetAllNhanSu_Grid().Where(t => t.HoTen.ToLower().Contains(tuKhoa.ToLower()) || t.MaNhanSu.ToLower().Contains(tuKhoa.ToLower())).ToList();
-            
-            if(idP!=0)
-                search = search.Where(t => t.IdPhong ==  idP).ToList();
+
+            if (idP != 0)
+                search = search.Where(t => t.IdPhong == idP).ToList();
 
             grdNhanSu.DataSource = search;
         }

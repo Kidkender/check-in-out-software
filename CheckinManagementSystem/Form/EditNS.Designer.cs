@@ -44,7 +44,7 @@
 			// lbTitle
 			// 
 			this.lbTitle.AutoSize = true;
-			this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTitle.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTitle.Location = new System.Drawing.Point(12, 21);
 			this.lbTitle.Name = "lbTitle";
 			this.lbTitle.Size = new System.Drawing.Size(363, 37);
@@ -53,7 +53,7 @@
 			// 
 			// txtMa
 			// 
-			this.txtMa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMa.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtMa.Location = new System.Drawing.Point(21, 39);
 			this.txtMa.Name = "txtMa";
 			this.txtMa.Size = new System.Drawing.Size(435, 45);
@@ -62,7 +62,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(18, 9);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(50, 23);
@@ -72,7 +72,7 @@
 			// btnSave
 			// 
 			this.btnSave.BackColor = System.Drawing.Color.Firebrick;
-			this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.Color.White;
 			this.btnSave.Location = new System.Drawing.Point(780, 128);
 			this.btnSave.Name = "btnSave";
@@ -99,7 +99,7 @@
 			// 
 			// cboPhong
 			// 
-			this.cboPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cboPhong.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cboPhong.FormattingEnabled = true;
 			this.cboPhong.Location = new System.Drawing.Point(21, 134);
 			this.cboPhong.Name = "cboPhong";
@@ -110,7 +110,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(18, 102);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(67, 23);
@@ -119,7 +119,7 @@
 			// 
 			// txtTen
 			// 
-			this.txtTen.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTen.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTen.Location = new System.Drawing.Point(498, 39);
 			this.txtTen.Name = "txtTen";
 			this.txtTen.Size = new System.Drawing.Size(435, 45);
@@ -128,7 +128,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(495, 9);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(48, 23);

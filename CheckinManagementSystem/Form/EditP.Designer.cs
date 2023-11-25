@@ -50,7 +50,7 @@
 			// lbTitle
 			// 
 			this.lbTitle.AutoSize = true;
-			this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTitle.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTitle.Location = new System.Drawing.Point(12, 21);
 			this.lbTitle.Name = "lbTitle";
 			this.lbTitle.Size = new System.Drawing.Size(335, 37);
@@ -59,7 +59,7 @@
 			// 
 			// tbTenPhong
 			// 
-			this.tbTenPhong.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbTenPhong.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbTenPhong.Location = new System.Drawing.Point(21, 39);
 			this.tbTenPhong.Name = "tbTenPhong";
 			this.tbTenPhong.Size = new System.Drawing.Size(503, 45);
@@ -68,7 +68,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(18, 9);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(67, 23);
@@ -78,7 +78,7 @@
 			// btnSave
 			// 
 			this.btnSave.BackColor = System.Drawing.Color.Firebrick;
-			this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.Color.White;
 			this.btnSave.Location = new System.Drawing.Point(211, 448);
 			this.btnSave.Name = "btnSave";
@@ -111,7 +111,7 @@
 			// 
 			// txtMoTa
 			// 
-			this.txtMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMoTa.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtMoTa.Location = new System.Drawing.Point(21, 132);
 			this.txtMoTa.Multiline = true;
 			this.txtMoTa.Name = "txtMoTa";
@@ -121,7 +121,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.Location = new System.Drawing.Point(18, 102);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(48, 23);
@@ -131,7 +131,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.Location = new System.Drawing.Point(326, 362);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(86, 23);
@@ -141,7 +141,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(18, 362);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(86, 23);
@@ -151,7 +151,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(412, 391);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(23, 32);
@@ -160,7 +160,7 @@
 			// 
 			// tbPR
 			// 
-			this.tbPR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbPR.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbPR.Location = new System.Drawing.Point(441, 388);
 			this.tbPR.Name = "tbPR";
 			this.tbPR.Size = new System.Drawing.Size(76, 38);
@@ -168,7 +168,7 @@
 			// 
 			// tbHR
 			// 
-			this.tbHR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbHR.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbHR.Location = new System.Drawing.Point(330, 388);
 			this.tbHR.Name = "tbHR";
 			this.tbHR.Size = new System.Drawing.Size(76, 38);
@@ -177,7 +177,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(104, 391);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(23, 32);
@@ -186,7 +186,7 @@
 			// 
 			// tbPV
 			// 
-			this.tbPV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbPV.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbPV.Location = new System.Drawing.Point(133, 388);
 			this.tbPV.Name = "tbPV";
 			this.tbPV.Size = new System.Drawing.Size(76, 38);
@@ -194,7 +194,7 @@
 			// 
 			// tbGV
 			// 
-			this.tbGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbGV.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbGV.Location = new System.Drawing.Point(22, 388);
 			this.tbGV.Name = "tbGV";
 			this.tbGV.Size = new System.Drawing.Size(76, 38);

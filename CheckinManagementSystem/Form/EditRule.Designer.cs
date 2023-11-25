@@ -44,7 +44,7 @@
 			// lbTitle
 			// 
 			this.lbTitle.AutoSize = true;
-			this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTitle.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTitle.Location = new System.Drawing.Point(12, 21);
 			this.lbTitle.Name = "lbTitle";
 			this.lbTitle.Size = new System.Drawing.Size(358, 37);
@@ -53,7 +53,7 @@
 			// 
 			// tbNoiDung
 			// 
-			this.tbNoiDung.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbNoiDung.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbNoiDung.Location = new System.Drawing.Point(21, 329);
 			this.tbNoiDung.Name = "tbNoiDung";
 			this.tbNoiDung.Size = new System.Drawing.Size(912, 45);
@@ -62,7 +62,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(17, 303);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(48, 23);
@@ -72,7 +72,7 @@
 			// btnSave
 			// 
 			this.btnSave.BackColor = System.Drawing.Color.Firebrick;
-			this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.Color.White;
 			this.btnSave.Location = new System.Drawing.Point(780, 496);
 			this.btnSave.Name = "btnSave";
@@ -99,7 +99,7 @@
 			// 
 			// cboLoaiNoiQuy
 			// 
-			this.cboLoaiNoiQuy.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cboLoaiNoiQuy.Font = new System.Drawing.Font("SimSun", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cboLoaiNoiQuy.FormattingEnabled = true;
 			this.cboLoaiNoiQuy.Location = new System.Drawing.Point(21, 439);
 			this.cboLoaiNoiQuy.Name = "cboLoaiNoiQuy";
@@ -110,7 +110,7 @@
 			// tbMoTa
 			// 
 			this.tbMoTa.AcceptsReturn = true;
-			this.tbMoTa.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbMoTa.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbMoTa.Location = new System.Drawing.Point(20, 39);
 			this.tbMoTa.Multiline = true;
 			this.tbMoTa.Name = "tbMoTa";
@@ -121,7 +121,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(18, 404);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(43, 23);
@@ -131,7 +131,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(18, 13);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(48, 23);

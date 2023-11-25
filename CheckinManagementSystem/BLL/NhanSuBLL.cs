@@ -52,7 +52,7 @@ namespace CheckinManagementSystem.BLL
             _context = new CheckInEntities();
             int result = 0;
             var IdPhong = _context.Phong.FirstOrDefault(t => t.TenPhong == TenPhong)?.ID;
-            if (_context.NhanSu.Any(t => t.MaNhanSu == maNhanSu && t.ID != IDNhanSu))
+            if (_context.NhanSu.Any(t => t.MaNhanSu == maNhanSu && t.ID != IDNhanSu) || string.IsNullOrEmpty(maNhanSu))
             {
                 return maNhanSu;
             }

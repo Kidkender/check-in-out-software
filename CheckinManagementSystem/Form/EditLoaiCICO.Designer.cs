@@ -40,7 +40,7 @@
 			// lbTitle
 			// 
 			this.lbTitle.AutoSize = true;
-			this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTitle.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTitle.Location = new System.Drawing.Point(12, 21);
 			this.lbTitle.Name = "lbTitle";
 			this.lbTitle.Size = new System.Drawing.Size(668, 37);
@@ -50,7 +50,7 @@
 			// btnSave
 			// 
 			this.btnSave.BackColor = System.Drawing.Color.Firebrick;
-			this.btnSave.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSave.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSave.ForeColor = System.Drawing.Color.White;
 			this.btnSave.Location = new System.Drawing.Point(251, 148);
 			this.btnSave.Name = "btnSave";
@@ -74,7 +74,7 @@
 			// 
 			// tbThoigian
 			// 
-			this.tbThoigian.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbThoigian.Font = new System.Drawing.Font("SimSun", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tbThoigian.Location = new System.Drawing.Point(26, 66);
 			this.tbThoigian.Name = "tbThoigian";
 			this.tbThoigian.Size = new System.Drawing.Size(624, 45);
@@ -83,7 +83,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.Location = new System.Drawing.Point(22, 28);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(48, 23);
