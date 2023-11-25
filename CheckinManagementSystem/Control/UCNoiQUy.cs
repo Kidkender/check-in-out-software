@@ -105,7 +105,7 @@ namespace CheckinManagementSystem.Control
                         e.Value = "上班";
                         break;
                     case 1:
-                        e.Value = "工间";
+                        e.Value = "打卡";
                         break;
                         // Thêm các trường hợp khác nếu cần thiết
                 }

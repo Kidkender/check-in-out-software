@@ -125,7 +125,7 @@ namespace CheckinManagementSystem.Control
                 {
                     // Mở tệp Excel
                     string directory = AppDomain.CurrentDomain.BaseDirectory;
-                    workbook = excelApp.Workbooks.Open(directory + "\\Report\\报告.xlsx");
+                    workbook = excelApp.Workbooks.Open(directory + "\\Report\\签到表.xlsx");
 
                     // Chọn trang tính cụ thể (thay "Sheet1" bằng tên trang tính bạn muốn)
                     worksheet = (Excel.Worksheet)workbook.Sheets["Sheet1"];

@@ -371,9 +371,9 @@
     </Compile>
     <EmbeddedResource Include="Resources\kaiu.ttf" />
     <EmbeddedResource Include="Resources\DFKai-SB Regular.ttf" />
-    <None Include="Report\报告.xlsx" />
+    <None Include="Report\签到表.xlsx" />
     <None Include="Report\上下班.xlsx" />
-    <None Include="Report\formImport.xlsx" />
+    <None Include="Report\导入员工.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

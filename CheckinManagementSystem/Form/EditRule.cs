@@ -28,7 +28,7 @@ namespace CheckinManagementSystem
             this.tbMoTa.AutoSize = false;
             this.tbMoTa.Size = new System.Drawing.Size(912, 200);
             cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(0, "上下班"));
-            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(1, "工间"));
+            cboLoaiNoiQuy.Items.Add(new KeyValuePair<int, string>(1, "打卡"));
             cboLoaiNoiQuy.DisplayMember = "Value";
             cboLoaiNoiQuy.SelectedIndex = 0;
             if (lbl)

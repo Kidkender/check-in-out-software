@@ -83,17 +83,17 @@ namespace CheckinManagementSystem
             c.DefaultCellStyle.ForeColor = Color.White;
             c.DefaultCellStyle.BackColor = Color.Red;
             c.Width = 300;
+            c.DefaultCellStyle.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             grdCheckOut.RowTemplate.Height = 40;
             grdCheckOut.Columns["GhiChu"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
             sttColumn.Name = "序号";
             sttColumn.HeaderText = "序号";
             grdCheckOut.Columns.Insert(0, sttColumn);
             sttColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            sttColumn.Width = 50;
+            sttColumn.Width = 100;
 
             foreach (DataGridViewColumn col in grdCheckOut.Columns)
             {
@@ -230,7 +230,6 @@ namespace CheckinManagementSystem
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdCheckOut.AutoGenerateColumns = false;
-            this.grdCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grdCheckOut.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grdCheckOut.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -281,7 +280,7 @@ namespace CheckinManagementSystem
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("SimSun", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -300,7 +299,7 @@ namespace CheckinManagementSystem
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
-            this.ID.Width = 70;
+            this.ID.Width = 69;
             // 
             // IdNhanSu
             // 
@@ -310,7 +309,7 @@ namespace CheckinManagementSystem
             this.IdNhanSu.Name = "IdNhanSu";
             this.IdNhanSu.ReadOnly = true;
             this.IdNhanSu.Visible = false;
-            this.IdNhanSu.Width = 169;
+            this.IdNhanSu.Width = 153;
             // 
             // IdLoaiRecord
             // 
@@ -320,7 +319,7 @@ namespace CheckinManagementSystem
             this.IdLoaiRecord.Name = "IdLoaiRecord";
             this.IdLoaiRecord.ReadOnly = true;
             this.IdLoaiRecord.Visible = false;
-            this.IdLoaiRecord.Width = 212;
+            this.IdLoaiRecord.Width = 209;
             // 
             // MaNhanSu
             // 
@@ -416,7 +415,7 @@ namespace CheckinManagementSystem
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Visible = false;
-            this.iDDataGridViewTextBoxColumn.Width = 70;
+            this.iDDataGridViewTextBoxColumn.Width = 69;
             // 
             // idNhanSuDataGridViewTextBoxColumn
             // 
@@ -426,7 +425,7 @@ namespace CheckinManagementSystem
             this.idNhanSuDataGridViewTextBoxColumn.Name = "idNhanSuDataGridViewTextBoxColumn";
             this.idNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
             this.idNhanSuDataGridViewTextBoxColumn.Visible = false;
-            this.idNhanSuDataGridViewTextBoxColumn.Width = 169;
+            this.idNhanSuDataGridViewTextBoxColumn.Width = 153;
             // 
             // hoTenDataGridViewTextBoxColumn
             // 
@@ -436,7 +435,7 @@ namespace CheckinManagementSystem
             this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
             this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
             this.hoTenDataGridViewTextBoxColumn.Visible = false;
-            this.hoTenDataGridViewTextBoxColumn.Width = 128;
+            this.hoTenDataGridViewTextBoxColumn.Width = 111;
             // 
             // idLoaiRecordDataGridViewTextBoxColumn
             // 
@@ -446,7 +445,7 @@ namespace CheckinManagementSystem
             this.idLoaiRecordDataGridViewTextBoxColumn.Name = "idLoaiRecordDataGridViewTextBoxColumn";
             this.idLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
             this.idLoaiRecordDataGridViewTextBoxColumn.Visible = false;
-            this.idLoaiRecordDataGridViewTextBoxColumn.Width = 212;
+            this.idLoaiRecordDataGridViewTextBoxColumn.Width = 209;
             // 
             // tenLoaiRecordDataGridViewTextBoxColumn
             // 
@@ -456,7 +455,7 @@ namespace CheckinManagementSystem
             this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
             this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
             this.tenLoaiRecordDataGridViewTextBoxColumn.Visible = false;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Width = 238;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Width = 223;
             // 
             // thoiGianVaoDataGridViewTextBoxColumn
             // 
@@ -466,7 +465,7 @@ namespace CheckinManagementSystem
             this.thoiGianVaoDataGridViewTextBoxColumn.Name = "thoiGianVaoDataGridViewTextBoxColumn";
             this.thoiGianVaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.thoiGianVaoDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianVaoDataGridViewTextBoxColumn.Width = 211;
+            this.thoiGianVaoDataGridViewTextBoxColumn.Width = 195;
             // 
             // thoiGianRaDataGridViewTextBoxColumn
             // 
@@ -476,7 +475,7 @@ namespace CheckinManagementSystem
             this.thoiGianRaDataGridViewTextBoxColumn.Name = "thoiGianRaDataGridViewTextBoxColumn";
             this.thoiGianRaDataGridViewTextBoxColumn.ReadOnly = true;
             this.thoiGianRaDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianRaDataGridViewTextBoxColumn.Width = 196;
+            this.thoiGianRaDataGridViewTextBoxColumn.Width = 181;
             // 
             // idPhongDataGridViewTextBoxColumn
             // 
@@ -486,7 +485,7 @@ namespace CheckinManagementSystem
             this.idPhongDataGridViewTextBoxColumn.Name = "idPhongDataGridViewTextBoxColumn";
             this.idPhongDataGridViewTextBoxColumn.ReadOnly = true;
             this.idPhongDataGridViewTextBoxColumn.Visible = false;
-            this.idPhongDataGridViewTextBoxColumn.Width = 149;
+            this.idPhongDataGridViewTextBoxColumn.Width = 139;
             // 
             // maNhanSuDataGridViewTextBoxColumn
             // 
@@ -496,7 +495,7 @@ namespace CheckinManagementSystem
             this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
             this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
             this.maNhanSuDataGridViewTextBoxColumn.Visible = false;
-            this.maNhanSuDataGridViewTextBoxColumn.Width = 185;
+            this.maNhanSuDataGridViewTextBoxColumn.Width = 153;
             // 
             // thoiGianSuDungDataGridViewTextBoxColumn
             // 
@@ -506,7 +505,7 @@ namespace CheckinManagementSystem
             this.thoiGianSuDungDataGridViewTextBoxColumn.Name = "thoiGianSuDungDataGridViewTextBoxColumn";
             this.thoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
             this.thoiGianSuDungDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianSuDungDataGridViewTextBoxColumn.Width = 263;
+            this.thoiGianSuDungDataGridViewTextBoxColumn.Width = 237;
             // 
             // ghiChuDataGridViewTextBoxColumn
             // 
@@ -516,7 +515,7 @@ namespace CheckinManagementSystem
             this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
             this.ghiChuDataGridViewTextBoxColumn.ReadOnly = true;
             this.ghiChuDataGridViewTextBoxColumn.Visible = false;
-            this.ghiChuDataGridViewTextBoxColumn.Width = 140;
+            this.ghiChuDataGridViewTextBoxColumn.Width = 125;
             // 
             // sPGetAllDangKyResultBindingSource
             // 
@@ -597,7 +596,7 @@ namespace CheckinManagementSystem
             this.btnLamMoi.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnLamMoi.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(1237, 47);
+            this.btnLamMoi.Location = new System.Drawing.Point(1252, 39);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(126, 45);
             this.btnLamMoi.TabIndex = 8;
@@ -610,7 +609,7 @@ namespace CheckinManagementSystem
             this.btnSearch.BackColor = System.Drawing.Color.DarkCyan;
             this.btnSearch.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1105, 45);
+            this.btnSearch.Location = new System.Drawing.Point(1120, 40);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(126, 45);
             this.btnSearch.TabIndex = 7;
@@ -762,6 +761,14 @@ namespace CheckinManagementSystem
                                                                && t.ThoiGianVao.Value.Date >= txtTuNgay.Value.Date
                                                                && t.ThoiGianVao.Value.Date <= txtDenNgay.Value.Date).OrderByDescending(t => t.ThoiGianVao).ToList();
             grdCheckOut.DataSource = data;
+
+            foreach (DataGridViewColumn column in grdCheckOut.Columns)
+            {
+                if (column.Name != "Edit" && column.Name != "序号")
+                {
+                    column.Width = CalculatePreferredColumnWidth(column);
+                }
+            }
         }
 
         private List<NhanSu> getDataNhanSu()
@@ -965,6 +972,22 @@ namespace CheckinManagementSystem
                     cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
                 }
             }
+        }
+
+        private int CalculatePreferredColumnWidth(DataGridViewColumn column)
+        {
+            int maxWidth = 0;
+
+            foreach (DataGridViewRow row in grdCheckOut.Rows)
+            {
+                if (row.Cells[column.Index].Value != null)
+                {
+                    Size cellSize = TextRenderer.MeasureText(row.Cells[column.Index].Value.ToString(), new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+                    maxWidth = Math.Max(maxWidth, cellSize.Width);
+                }
+            }
+
+            return maxWidth + 10;
         }
     }
 }

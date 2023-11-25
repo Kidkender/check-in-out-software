@@ -14,16 +14,19 @@ namespace CheckinManagementSystem.BLL
 
         public List<LoaiRecord> GetAllLoaiRecord()
         {
+            _context = new CheckInEntities();
             return _context.LoaiRecord.ToList();
         }
 
         public List<LoaiRecord> GetAllLoaiRecord_Grid()
         {
+            _context = new CheckInEntities();
             return _context.LoaiRecord.ToList();
         }
 
         public List<LoaiRecord> GetAllLoaiRecord_Grid(string text)
         {
+            _context = new CheckInEntities();
             if (string.IsNullOrEmpty(text))
                 return _context.LoaiRecord.ToList();
             return _context.LoaiRecord.Where(t => t.TenLoaiRecord.Trim().ToLower().Contains(text.ToLower().Trim())).ToList();
@@ -31,11 +34,13 @@ namespace CheckinManagementSystem.BLL
 
         public LoaiRecord GetLoaiRecordById(int? Id)
         {
+            _context = new CheckInEntities();
             return _context.LoaiRecord.FirstOrDefault(t => t.ID == Id);
         }
 
         public void DeleteLoaiRecordById(int? Id)
         {
+            _context = new CheckInEntities();
             LoaiRecord p = _context.LoaiRecord.FirstOrDefault(t => t.ID == Id);
             _context.LoaiRecord.Remove(p);
             _context.SaveChanges();
@@ -43,6 +48,7 @@ namespace CheckinManagementSystem.BLL
 
         public void AddEditLoaiRecord(LoaiRecord model)
         {
+            _context = new CheckInEntities();
             int result = 0;
             LoaiRecord p = _context.LoaiRecord.FirstOrDefault(t => t.ID == model.ID);
             if (p == null)
