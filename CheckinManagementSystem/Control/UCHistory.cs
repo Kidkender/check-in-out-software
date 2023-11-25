@@ -143,18 +143,6 @@ namespace CheckinManagementSystem
             this.ThoiGianSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -168,12 +156,24 @@ namespace CheckinManagementSystem
             this.cboLoaiRecord = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -290,6 +290,7 @@ namespace CheckinManagementSystem
             this.grdCheckOut.RowTemplate.Height = 24;
             this.grdCheckOut.Size = new System.Drawing.Size(1402, 602);
             this.grdCheckOut.TabIndex = 8;
+            this.grdCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheckOut_CellContentClick);
             // 
             // ID
             // 
@@ -406,120 +407,6 @@ namespace CheckinManagementSystem
             this.Edit.Text = "备 注";
             this.Edit.UseColumnTextForButtonValue = true;
             this.Edit.Width = 6;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            this.iDDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // idNhanSuDataGridViewTextBoxColumn
-            // 
-            this.idNhanSuDataGridViewTextBoxColumn.DataPropertyName = "IdNhanSu";
-            this.idNhanSuDataGridViewTextBoxColumn.HeaderText = "IdNhanSu";
-            this.idNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idNhanSuDataGridViewTextBoxColumn.Name = "idNhanSuDataGridViewTextBoxColumn";
-            this.idNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idNhanSuDataGridViewTextBoxColumn.Visible = false;
-            this.idNhanSuDataGridViewTextBoxColumn.Width = 153;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hoTenDataGridViewTextBoxColumn.Visible = false;
-            this.hoTenDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // idLoaiRecordDataGridViewTextBoxColumn
-            // 
-            this.idLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "IdLoaiRecord";
-            this.idLoaiRecordDataGridViewTextBoxColumn.HeaderText = "IdLoaiRecord";
-            this.idLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idLoaiRecordDataGridViewTextBoxColumn.Name = "idLoaiRecordDataGridViewTextBoxColumn";
-            this.idLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLoaiRecordDataGridViewTextBoxColumn.Visible = false;
-            this.idLoaiRecordDataGridViewTextBoxColumn.Width = 209;
-            // 
-            // tenLoaiRecordDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "TenLoaiRecord";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Visible = false;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Width = 223;
-            // 
-            // thoiGianVaoDataGridViewTextBoxColumn
-            // 
-            this.thoiGianVaoDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianVao";
-            this.thoiGianVaoDataGridViewTextBoxColumn.HeaderText = "ThoiGianVao";
-            this.thoiGianVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thoiGianVaoDataGridViewTextBoxColumn.Name = "thoiGianVaoDataGridViewTextBoxColumn";
-            this.thoiGianVaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thoiGianVaoDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianVaoDataGridViewTextBoxColumn.Width = 195;
-            // 
-            // thoiGianRaDataGridViewTextBoxColumn
-            // 
-            this.thoiGianRaDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianRa";
-            this.thoiGianRaDataGridViewTextBoxColumn.HeaderText = "ThoiGianRa";
-            this.thoiGianRaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thoiGianRaDataGridViewTextBoxColumn.Name = "thoiGianRaDataGridViewTextBoxColumn";
-            this.thoiGianRaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thoiGianRaDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianRaDataGridViewTextBoxColumn.Width = 181;
-            // 
-            // idPhongDataGridViewTextBoxColumn
-            // 
-            this.idPhongDataGridViewTextBoxColumn.DataPropertyName = "IdPhong";
-            this.idPhongDataGridViewTextBoxColumn.HeaderText = "IdPhong";
-            this.idPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idPhongDataGridViewTextBoxColumn.Name = "idPhongDataGridViewTextBoxColumn";
-            this.idPhongDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPhongDataGridViewTextBoxColumn.Visible = false;
-            this.idPhongDataGridViewTextBoxColumn.Width = 139;
-            // 
-            // maNhanSuDataGridViewTextBoxColumn
-            // 
-            this.maNhanSuDataGridViewTextBoxColumn.DataPropertyName = "MaNhanSu";
-            this.maNhanSuDataGridViewTextBoxColumn.HeaderText = "MaNhanSu";
-            this.maNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
-            this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maNhanSuDataGridViewTextBoxColumn.Visible = false;
-            this.maNhanSuDataGridViewTextBoxColumn.Width = 153;
-            // 
-            // thoiGianSuDungDataGridViewTextBoxColumn
-            // 
-            this.thoiGianSuDungDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianSuDung";
-            this.thoiGianSuDungDataGridViewTextBoxColumn.HeaderText = "ThoiGianSuDung";
-            this.thoiGianSuDungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thoiGianSuDungDataGridViewTextBoxColumn.Name = "thoiGianSuDungDataGridViewTextBoxColumn";
-            this.thoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thoiGianSuDungDataGridViewTextBoxColumn.Visible = false;
-            this.thoiGianSuDungDataGridViewTextBoxColumn.Width = 237;
-            // 
-            // ghiChuDataGridViewTextBoxColumn
-            // 
-            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
-            this.ghiChuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ghiChuDataGridViewTextBoxColumn.Visible = false;
-            this.ghiChuDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sPGetAllDangKyResultBindingSource
-            // 
-            this.sPGetAllDangKyResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDangKy_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -692,6 +579,120 @@ namespace CheckinManagementSystem
             this.cboNhanSu.DropDownClosed += new System.EventHandler(this.cboNhanSu_DropDownClosed);
             this.cboNhanSu.Click += new System.EventHandler(this.cboNhanSu_Click);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // idNhanSuDataGridViewTextBoxColumn
+            // 
+            this.idNhanSuDataGridViewTextBoxColumn.DataPropertyName = "IdNhanSu";
+            this.idNhanSuDataGridViewTextBoxColumn.HeaderText = "IdNhanSu";
+            this.idNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idNhanSuDataGridViewTextBoxColumn.Name = "idNhanSuDataGridViewTextBoxColumn";
+            this.idNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idNhanSuDataGridViewTextBoxColumn.Visible = false;
+            this.idNhanSuDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoTenDataGridViewTextBoxColumn.Visible = false;
+            this.hoTenDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // idLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.idLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "IdLoaiRecord";
+            this.idLoaiRecordDataGridViewTextBoxColumn.HeaderText = "IdLoaiRecord";
+            this.idLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idLoaiRecordDataGridViewTextBoxColumn.Name = "idLoaiRecordDataGridViewTextBoxColumn";
+            this.idLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLoaiRecordDataGridViewTextBoxColumn.Visible = false;
+            this.idLoaiRecordDataGridViewTextBoxColumn.Width = 209;
+            // 
+            // tenLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Visible = false;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Width = 223;
+            // 
+            // thoiGianVaoDataGridViewTextBoxColumn
+            // 
+            this.thoiGianVaoDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianVao";
+            this.thoiGianVaoDataGridViewTextBoxColumn.HeaderText = "ThoiGianVao";
+            this.thoiGianVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thoiGianVaoDataGridViewTextBoxColumn.Name = "thoiGianVaoDataGridViewTextBoxColumn";
+            this.thoiGianVaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thoiGianVaoDataGridViewTextBoxColumn.Visible = false;
+            this.thoiGianVaoDataGridViewTextBoxColumn.Width = 195;
+            // 
+            // thoiGianRaDataGridViewTextBoxColumn
+            // 
+            this.thoiGianRaDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianRa";
+            this.thoiGianRaDataGridViewTextBoxColumn.HeaderText = "ThoiGianRa";
+            this.thoiGianRaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thoiGianRaDataGridViewTextBoxColumn.Name = "thoiGianRaDataGridViewTextBoxColumn";
+            this.thoiGianRaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thoiGianRaDataGridViewTextBoxColumn.Visible = false;
+            this.thoiGianRaDataGridViewTextBoxColumn.Width = 181;
+            // 
+            // idPhongDataGridViewTextBoxColumn
+            // 
+            this.idPhongDataGridViewTextBoxColumn.DataPropertyName = "IdPhong";
+            this.idPhongDataGridViewTextBoxColumn.HeaderText = "IdPhong";
+            this.idPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idPhongDataGridViewTextBoxColumn.Name = "idPhongDataGridViewTextBoxColumn";
+            this.idPhongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPhongDataGridViewTextBoxColumn.Visible = false;
+            this.idPhongDataGridViewTextBoxColumn.Width = 139;
+            // 
+            // maNhanSuDataGridViewTextBoxColumn
+            // 
+            this.maNhanSuDataGridViewTextBoxColumn.DataPropertyName = "MaNhanSu";
+            this.maNhanSuDataGridViewTextBoxColumn.HeaderText = "MaNhanSu";
+            this.maNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
+            this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maNhanSuDataGridViewTextBoxColumn.Visible = false;
+            this.maNhanSuDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // thoiGianSuDungDataGridViewTextBoxColumn
+            // 
+            this.thoiGianSuDungDataGridViewTextBoxColumn.DataPropertyName = "ThoiGianSuDung";
+            this.thoiGianSuDungDataGridViewTextBoxColumn.HeaderText = "ThoiGianSuDung";
+            this.thoiGianSuDungDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thoiGianSuDungDataGridViewTextBoxColumn.Name = "thoiGianSuDungDataGridViewTextBoxColumn";
+            this.thoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thoiGianSuDungDataGridViewTextBoxColumn.Visible = false;
+            this.thoiGianSuDungDataGridViewTextBoxColumn.Width = 237;
+            // 
+            // ghiChuDataGridViewTextBoxColumn
+            // 
+            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
+            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
+            this.ghiChuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
+            this.ghiChuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ghiChuDataGridViewTextBoxColumn.Visible = false;
+            this.ghiChuDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sPGetAllDangKyResultBindingSource
+            // 
+            this.sPGetAllDangKyResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDangKy_Result);
+            // 
             // UCHistory
             // 
             this.Controls.Add(this.tableLayoutPanel1);
@@ -702,10 +703,10 @@ namespace CheckinManagementSystem
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDangKyResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -764,7 +765,11 @@ namespace CheckinManagementSystem
 
             foreach (DataGridViewColumn column in grdCheckOut.Columns)
             {
-                if (column.Name != "Edit" && column.Name != "序号")
+                if(column.Name == "ThoiGianSuDung")
+                {
+                    column.Width = 100;
+                }
+                else if (column.Name != "Edit" && column.Name != "序号")
                 {
                     column.Width = CalculatePreferredColumnWidth(column);
                 }
