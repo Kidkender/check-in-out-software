@@ -130,6 +130,9 @@ namespace CheckinManagementSystem
             {
                 grdNoiQuy.Rows.Add(noiQuy.XuPhat, noiQuy.NoiDung);
             }
+
+            string idPhong = Properties.Settings.Default.IDPhong;
+            lblTenPhong.Text = _nhanSuBLL.GetAllPhong().FirstOrDefault(t => t.ID.ToString() == idPhong)?.TenPhong;
         }
 
         private List<NhanSu> getDataNhanSu()
