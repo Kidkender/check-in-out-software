@@ -147,7 +147,7 @@ namespace CheckinManagementSystem.Control
                         SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoPhutDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoPhutDiQua > 0);
                         SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_TongSoLanDi, XlHAlign.xlHAlignRight, false);
                         SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoLanDiQua, XlHAlign.xlHAlignRight, rowData.Re_SoLanDiQua > 0);
-                        SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_QuenCheckOut, XlHAlign.xlHAlignRight, rowData.Re_QuenCheckOut > 0);
+                        //SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_QuenCheckOut, XlHAlign.xlHAlignRight, rowData.Re_QuenCheckOut > 0);
                         SetValueCell(worksheet.Cells[startRow, col++], rowData.Re_SoLanGhiChu, XlHAlign.xlHAlignRight, rowData.Re_SoLanGhiChu > 0);
                         startRow++;
                     }
@@ -201,6 +201,10 @@ namespace CheckinManagementSystem.Control
             if (warning)
             {
                 cell.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+            }
+            else
+            {
+                cell.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             }
 
         }

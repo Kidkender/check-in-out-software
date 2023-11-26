@@ -65,13 +65,17 @@ namespace CheckinManagementSystem.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_QuanLyCheckIn_Result>("SP_QuanLyCheckIn", tuKhoaParameter, iDNhanSuParameter, iDPhongParameter, tuNgayParameter, denNgayParameter);
         }
     
-        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy(Nullable<bool> status)
+        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy(Nullable<bool> status, Nullable<int> idxSL)
         {
             var statusParameter = status.HasValue ?
                 new ObjectParameter("Status", status) :
                 new ObjectParameter("Status", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy", statusParameter);
+            var idxSLParameter = idxSL.HasValue ?
+                new ObjectParameter("idxSL", idxSL) :
+                new ObjectParameter("idxSL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy", statusParameter, idxSLParameter);
         }
     
         public virtual ObjectResult<GetAllNhanSu_Result> GetAllNhanSu()
@@ -84,9 +88,13 @@ namespace CheckinManagementSystem.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllNhanSu_Result>("SP_GetAllNhanSu");
         }
     
-        public virtual ObjectResult<SP_GetAllDiemDanh_Result> SP_GetAllDiemDanh()
+        public virtual ObjectResult<SP_GetAllDiemDanh_Result> SP_GetAllDiemDanh(Nullable<int> idxSL)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDiemDanh_Result>("SP_GetAllDiemDanh");
+            var idxSLParameter = idxSL.HasValue ?
+                new ObjectParameter("idxSL", idxSL) :
+                new ObjectParameter("idxSL", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDiemDanh_Result>("SP_GetAllDiemDanh", idxSLParameter);
         }
     }
 }

@@ -136,12 +136,17 @@ namespace CheckinManagementSystem.Control
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            if(nhanSu == null)
-				MessageBox.Show("请选择员工 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-			if (_recordBLL.GetAllDiemDanh().Where(t => /*t.ThoiGianVao.Value.Date == DateTime.Now.Date &&*/ t.IdNhanSu == nhanSu?.ID && t.ThoiGianRa == null).Any())
+            if (nhanSu == null)
+            {
+                MessageBox.Show("请选择员工 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (_recordBLL.GetAllDiemDanh().Where(t => t.IdNhanSu == nhanSu?.ID && t.ThoiGianRa == null).Any())
             {
                 MessageBox.Show("员工已上班！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (_recordBLL.checkNhanSuGanNhat(nhanSu.ID))
+            {
+                MessageBox.Show("- 员工已经下班 ！\n\n- 必须要用自己的ID和姓名来打卡 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -190,8 +195,13 @@ namespace CheckinManagementSystem.Control
                 if (grdCheckOut.Columns[e.ColumnIndex].Name == "CheckIn")
                 {
                     int IDRecord = (int)grdCheckOut["ID", e.RowIndex].Value;
+                    int IdNhanSu = (int)grdCheckOut["IdNhanSu", e.RowIndex].Value;
 
-                    if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
+                    if (_recordBLL.GetAllDangKy().Where(t => t.IdNhanSu == IdNhanSu && t.ThoiGianRa == null).Any())
+                    {
+                        MessageBox.Show("员工出去还没进入. 请先打进入 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
                     {
                         MessageBox.Show("操作成功！");
                         RefreshAll();
@@ -222,7 +232,7 @@ namespace CheckinManagementSystem.Control
             }
             else
             {
-                if(cboNhanSu.Text.Length > 0)
+                if (cboNhanSu.Text.Length > 0)
                 {
                     var lst = cboNhanSu.DataSource as List<NhanSu>;
                     cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;

@@ -119,8 +119,11 @@
         <Function Name="GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_GetAllDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="idxSL" Type="int" Mode="In" />
         </Function>
-        <Function Name="SP_GetAllDiemDanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GetAllDiemDanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idxSL" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_QuanLyCheckIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TuKhoa" Type="nvarchar" Mode="In" />
@@ -257,12 +260,15 @@
           </FunctionImport>
           <FunctionImport Name="SP_GetAllDangKy" ReturnType="Collection(CheckInModel.SP_GetAllDangKy_Result)" >
           <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="idxSL" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="Record" EntityType="CheckInModel.Record" />
           <FunctionImport Name="GetAllNhanSu" ReturnType="Collection(CheckInModel.GetAllNhanSu_Result)" />
           <FunctionImport Name="SP_GetAllNhanSu" ReturnType="Collection(CheckInModel.SP_GetAllNhanSu_Result)" />
           <EntitySet Name="NoiQuy" EntityType="CheckInModel.NoiQuy" />
-          <FunctionImport Name="SP_GetAllDiemDanh" ReturnType="Collection(CheckInModel.SP_GetAllDiemDanh_Result)" />
+          <FunctionImport Name="SP_GetAllDiemDanh" ReturnType="Collection(CheckInModel.SP_GetAllDiemDanh_Result)" >
+            <Parameter Name="idxSL" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SP_QuanLyCheckIn_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />

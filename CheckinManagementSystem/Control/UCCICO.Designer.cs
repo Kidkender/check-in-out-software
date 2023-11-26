@@ -47,22 +47,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.grdHistory = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reAnSangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reAnTruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reAnToiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reTieuTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reDaiTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reHutThuocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reDiKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reSoLanDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPQuanLyCheckInResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,6 +64,22 @@
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhanSuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reAnSangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reAnTruaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reAnToiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reTieuTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reDaiTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reHutThuocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reDiKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reSoLanDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).BeginInit();
@@ -185,175 +185,6 @@
             this.grdHistory.RowTemplate.Height = 24;
             this.grdHistory.Size = new System.Drawing.Size(1884, 756);
             this.grdHistory.TabIndex = 1;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            this.iDDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "姓名";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hoTenDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // maNhanSuDataGridViewTextBoxColumn
-            // 
-            this.maNhanSuDataGridViewTextBoxColumn.DataPropertyName = "MaNhanSu";
-            this.maNhanSuDataGridViewTextBoxColumn.HeaderText = "ID号";
-            this.maNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
-            this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maNhanSuDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // tenPhongDataGridViewTextBoxColumn
-            // 
-            this.tenPhongDataGridViewTextBoxColumn.DataPropertyName = "TenPhong";
-            this.tenPhongDataGridViewTextBoxColumn.HeaderText = "办公室";
-            this.tenPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenPhongDataGridViewTextBoxColumn.Name = "tenPhongDataGridViewTextBoxColumn";
-            this.tenPhongDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenPhongDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // reAnSangDataGridViewTextBoxColumn
-            // 
-            this.reAnSangDataGridViewTextBoxColumn.DataPropertyName = "Re_AnSang";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reAnSangDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.reAnSangDataGridViewTextBoxColumn.HeaderText = "早餐";
-            this.reAnSangDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reAnSangDataGridViewTextBoxColumn.Name = "reAnSangDataGridViewTextBoxColumn";
-            this.reAnSangDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reAnSangDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // reAnTruaDataGridViewTextBoxColumn
-            // 
-            this.reAnTruaDataGridViewTextBoxColumn.DataPropertyName = "Re_AnTrua";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reAnTruaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.reAnTruaDataGridViewTextBoxColumn.HeaderText = "午餐";
-            this.reAnTruaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reAnTruaDataGridViewTextBoxColumn.Name = "reAnTruaDataGridViewTextBoxColumn";
-            this.reAnTruaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reAnTruaDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // reAnToiDataGridViewTextBoxColumn
-            // 
-            this.reAnToiDataGridViewTextBoxColumn.DataPropertyName = "Re_AnToi";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reAnToiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.reAnToiDataGridViewTextBoxColumn.HeaderText = "晚餐";
-            this.reAnToiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reAnToiDataGridViewTextBoxColumn.Name = "reAnToiDataGridViewTextBoxColumn";
-            this.reAnToiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reAnToiDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // reTieuTienDataGridViewTextBoxColumn
-            // 
-            this.reTieuTienDataGridViewTextBoxColumn.DataPropertyName = "Re_TieuTien";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reTieuTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.reTieuTienDataGridViewTextBoxColumn.HeaderText = "厕所小";
-            this.reTieuTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reTieuTienDataGridViewTextBoxColumn.Name = "reTieuTienDataGridViewTextBoxColumn";
-            this.reTieuTienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reTieuTienDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // reDaiTienDataGridViewTextBoxColumn
-            // 
-            this.reDaiTienDataGridViewTextBoxColumn.DataPropertyName = "Re_DaiTien";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reDaiTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.reDaiTienDataGridViewTextBoxColumn.HeaderText = "厕所大";
-            this.reDaiTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reDaiTienDataGridViewTextBoxColumn.Name = "reDaiTienDataGridViewTextBoxColumn";
-            this.reDaiTienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reDaiTienDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // reHutThuocDataGridViewTextBoxColumn
-            // 
-            this.reHutThuocDataGridViewTextBoxColumn.DataPropertyName = "Re_HutThuoc";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reHutThuocDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.reHutThuocDataGridViewTextBoxColumn.HeaderText = "抽烟";
-            this.reHutThuocDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reHutThuocDataGridViewTextBoxColumn.Name = "reHutThuocDataGridViewTextBoxColumn";
-            this.reHutThuocDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reHutThuocDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // reDiKhacDataGridViewTextBoxColumn
-            // 
-            this.reDiKhacDataGridViewTextBoxColumn.DataPropertyName = "Re_DiKhac";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reDiKhacDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.reDiKhacDataGridViewTextBoxColumn.HeaderText = "其他";
-            this.reDiKhacDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reDiKhacDataGridViewTextBoxColumn.Name = "reDiKhacDataGridViewTextBoxColumn";
-            this.reDiKhacDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reDiKhacDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // Re_TongSoLanDi
-            // 
-            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Re_TongSoLanDi.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Re_TongSoLanDi.HeaderText = "总次";
-            this.Re_TongSoLanDi.MinimumWidth = 6;
-            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
-            this.Re_TongSoLanDi.ReadOnly = true;
-            this.Re_TongSoLanDi.Width = 85;
-            // 
-            // reSoLanDiQuaDataGridViewTextBoxColumn
-            // 
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoLanDiQua";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.HeaderText = "总次超时";
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.Name = "reSoLanDiQuaDataGridViewTextBoxColumn";
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reSoLanDiQuaDataGridViewTextBoxColumn.Width = 131;
-            // 
-            // reTongThoiGianSuDungDataGridViewTextBoxColumn
-            // 
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.DataPropertyName = "Re_TongThoiGianSuDung";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.HeaderText = "总时间";
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Name = "reTongThoiGianSuDungDataGridViewTextBoxColumn";
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // reSoPhutDiQuaDataGridViewTextBoxColumn
-            // 
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoPhutDiQua";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.HeaderText = "超过时间";
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Name = "reSoPhutDiQuaDataGridViewTextBoxColumn";
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Width = 131;
-            // 
-            // Re_QuenCheckOut
-            // 
-            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Re_QuenCheckOut.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Re_QuenCheckOut.HeaderText = "忘记签入";
-            this.Re_QuenCheckOut.MinimumWidth = 6;
-            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
-            this.Re_QuenCheckOut.ReadOnly = true;
-            this.Re_QuenCheckOut.Width = 131;
             // 
             // sPQuanLyCheckInResultBindingSource
             // 
@@ -568,6 +399,176 @@
             this.label1.Text = "签到管理";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.iDDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "姓名";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoTenDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // maNhanSuDataGridViewTextBoxColumn
+            // 
+            this.maNhanSuDataGridViewTextBoxColumn.DataPropertyName = "MaNhanSu";
+            this.maNhanSuDataGridViewTextBoxColumn.HeaderText = "ID号";
+            this.maNhanSuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNhanSuDataGridViewTextBoxColumn.Name = "maNhanSuDataGridViewTextBoxColumn";
+            this.maNhanSuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maNhanSuDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // tenPhongDataGridViewTextBoxColumn
+            // 
+            this.tenPhongDataGridViewTextBoxColumn.DataPropertyName = "TenPhong";
+            this.tenPhongDataGridViewTextBoxColumn.HeaderText = "办公室";
+            this.tenPhongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenPhongDataGridViewTextBoxColumn.Name = "tenPhongDataGridViewTextBoxColumn";
+            this.tenPhongDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenPhongDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // reAnSangDataGridViewTextBoxColumn
+            // 
+            this.reAnSangDataGridViewTextBoxColumn.DataPropertyName = "Re_AnSang";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reAnSangDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.reAnSangDataGridViewTextBoxColumn.HeaderText = "早餐";
+            this.reAnSangDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reAnSangDataGridViewTextBoxColumn.Name = "reAnSangDataGridViewTextBoxColumn";
+            this.reAnSangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnSangDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // reAnTruaDataGridViewTextBoxColumn
+            // 
+            this.reAnTruaDataGridViewTextBoxColumn.DataPropertyName = "Re_AnTrua";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reAnTruaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.reAnTruaDataGridViewTextBoxColumn.HeaderText = "午餐";
+            this.reAnTruaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reAnTruaDataGridViewTextBoxColumn.Name = "reAnTruaDataGridViewTextBoxColumn";
+            this.reAnTruaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnTruaDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // reAnToiDataGridViewTextBoxColumn
+            // 
+            this.reAnToiDataGridViewTextBoxColumn.DataPropertyName = "Re_AnToi";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reAnToiDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.reAnToiDataGridViewTextBoxColumn.HeaderText = "晚餐";
+            this.reAnToiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reAnToiDataGridViewTextBoxColumn.Name = "reAnToiDataGridViewTextBoxColumn";
+            this.reAnToiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reAnToiDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // reTieuTienDataGridViewTextBoxColumn
+            // 
+            this.reTieuTienDataGridViewTextBoxColumn.DataPropertyName = "Re_TieuTien";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reTieuTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.reTieuTienDataGridViewTextBoxColumn.HeaderText = "厕所小";
+            this.reTieuTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reTieuTienDataGridViewTextBoxColumn.Name = "reTieuTienDataGridViewTextBoxColumn";
+            this.reTieuTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reTieuTienDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // reDaiTienDataGridViewTextBoxColumn
+            // 
+            this.reDaiTienDataGridViewTextBoxColumn.DataPropertyName = "Re_DaiTien";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reDaiTienDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.reDaiTienDataGridViewTextBoxColumn.HeaderText = "厕所大";
+            this.reDaiTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reDaiTienDataGridViewTextBoxColumn.Name = "reDaiTienDataGridViewTextBoxColumn";
+            this.reDaiTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reDaiTienDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // reHutThuocDataGridViewTextBoxColumn
+            // 
+            this.reHutThuocDataGridViewTextBoxColumn.DataPropertyName = "Re_HutThuoc";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reHutThuocDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.reHutThuocDataGridViewTextBoxColumn.HeaderText = "抽烟";
+            this.reHutThuocDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reHutThuocDataGridViewTextBoxColumn.Name = "reHutThuocDataGridViewTextBoxColumn";
+            this.reHutThuocDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reHutThuocDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // reDiKhacDataGridViewTextBoxColumn
+            // 
+            this.reDiKhacDataGridViewTextBoxColumn.DataPropertyName = "Re_DiKhac";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reDiKhacDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.reDiKhacDataGridViewTextBoxColumn.HeaderText = "其他";
+            this.reDiKhacDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reDiKhacDataGridViewTextBoxColumn.Name = "reDiKhacDataGridViewTextBoxColumn";
+            this.reDiKhacDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reDiKhacDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // Re_TongSoLanDi
+            // 
+            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Re_TongSoLanDi.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Re_TongSoLanDi.HeaderText = "总次";
+            this.Re_TongSoLanDi.MinimumWidth = 6;
+            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
+            this.Re_TongSoLanDi.ReadOnly = true;
+            this.Re_TongSoLanDi.Width = 85;
+            // 
+            // reSoLanDiQuaDataGridViewTextBoxColumn
+            // 
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoLanDiQua";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.HeaderText = "总次超时";
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.Name = "reSoLanDiQuaDataGridViewTextBoxColumn";
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reSoLanDiQuaDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // reTongThoiGianSuDungDataGridViewTextBoxColumn
+            // 
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.DataPropertyName = "Re_TongThoiGianSuDung";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.HeaderText = "总时间";
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Name = "reTongThoiGianSuDungDataGridViewTextBoxColumn";
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reTongThoiGianSuDungDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // reSoPhutDiQuaDataGridViewTextBoxColumn
+            // 
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoPhutDiQua";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.HeaderText = "超过时间";
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Name = "reSoPhutDiQuaDataGridViewTextBoxColumn";
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reSoPhutDiQuaDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // Re_QuenCheckOut
+            // 
+            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Re_QuenCheckOut.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Re_QuenCheckOut.HeaderText = "忘记签入";
+            this.Re_QuenCheckOut.MinimumWidth = 6;
+            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
+            this.Re_QuenCheckOut.ReadOnly = true;
+            this.Re_QuenCheckOut.Visible = false;
+            this.Re_QuenCheckOut.Width = 131;
+            // 
             // UCCICO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -609,21 +610,21 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLamMoi;
-		private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn maNhanSuDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn tenPhongDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reAnSangDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reAnTruaDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reAnToiDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reTieuTienDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reDaiTienDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reHutThuocDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reDiKhacDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Re_TongSoLanDi;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reSoLanDiQuaDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reTongThoiGianSuDungDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn reSoPhutDiQuaDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Re_QuenCheckOut;
-	}
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanSuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenPhongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reAnSangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reAnTruaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reAnToiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reTieuTienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reDaiTienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reHutThuocDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reDiKhacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Re_TongSoLanDi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reSoLanDiQuaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reTongThoiGianSuDungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reSoPhutDiQuaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Re_QuenCheckOut;
+    }
 }

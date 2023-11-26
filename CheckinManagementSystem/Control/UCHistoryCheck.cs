@@ -38,6 +38,11 @@ namespace CheckinManagementSystem.Control
         public UCHistoryCheck()
         {
             InitializeComponent();
+
+            string[] dataSource = { "100", "200", "500", "1000", "ALL" };
+            cboSL.DataSource = dataSource;
+            cboSL.SelectedIndex = 0;
+
             RefreshAll();
             grdCheckOut.RowTemplate.Height = 40;
 
@@ -93,10 +98,10 @@ namespace CheckinManagementSystem.Control
         private void RefreshDataDiemDanh(int? IDNhanSu = null, int? IDPhong = null)
         {
             string idPhong = Properties.Settings.Default.IDPhong;
-            var data = _recordBLL.GetAllDiemDanh().Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
+            var data = _recordBLL.GetAllDiemDanh(Math.Max(cboSL.SelectedIndex, 0)).Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
                                                         && (IDPhong == null || t.IdPhong == IDPhong)
                                                         && t.ThoiGianRa.HasValue
-                                                        && t.IdPhong == int.Parse(idPhong)).OrderByDescending(t => t.ThoiGianVao).ToList();
+                                                        && t.IdPhong == int.Parse(idPhong)).ToList();
             grdCheckOut.DataSource = data;
         }
 
@@ -236,6 +241,11 @@ namespace CheckinManagementSystem.Control
                     cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
                 }
             }
+        }
+
+        private void cboSL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshDataDiemDanh();
         }
     }
 }

@@ -25,16 +25,31 @@ namespace CheckinManagementSystem.BLL
             return data;
         }
 
-        public List<SP_GetAllDangKy_Result> GetAllDangKy(bool status = false)
+        public List<SP_GetAllDangKy_Result> GetAllDangKy(bool status = false, int? idxSL = 4)
         {
             _context = new CheckInEntities();
-            return _context.SP_GetAllDangKy(status).ToList();
+            return _context.SP_GetAllDangKy(status, idxSL).OrderByDescending(t => t.ThoiGianVao).ToList();
         }
 
-        public List<SP_GetAllDiemDanh_Result> GetAllDiemDanh()
+        public List<SP_GetAllDiemDanh_Result> GetAllDiemDanh(int? idxSL = 4)
         {
             _context = new CheckInEntities();
-            return _context.SP_GetAllDiemDanh().ToList();
+            return _context.SP_GetAllDiemDanh(idxSL).OrderByDescending(t => t.ThoiGianVao).ToList();
+        }
+
+        public bool checkNhanSuGanNhat(int IdNhanSu)
+        {
+            var result = false;
+            _context = new CheckInEntities();
+            var re = _context.Record.Where(t => t.IdNhanSu == IdNhanSu).ToList().LastOrDefault();
+
+            if (re != null && re.ThoiGianRa.HasValue)
+            {
+                TimeSpan timeDifference = DateTime.Now - re.ThoiGianRa.Value;
+                return timeDifference.TotalHours < 5;
+            }
+
+            return result;
         }
 
         public List<SP_QuanLyCheckIn_Result> GetAllHistory(string tuKhoa, int? iDNhanSu, int? iDPhong, DateTime? tuNgay, DateTime? denNgay)
