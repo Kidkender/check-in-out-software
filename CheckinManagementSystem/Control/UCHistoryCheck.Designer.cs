@@ -43,9 +43,13 @@
             this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianRa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianLamViec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,15 +59,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cboNhanSu = new System.Windows.Forms.ComboBox();
             this.cboSL = new System.Windows.Forms.ComboBox();
-            this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPGetAllDiemDanhResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,9 +122,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdCheckOut.AutoGenerateColumns = false;
-            this.grdCheckOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdCheckOut.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -141,9 +141,10 @@
             this.tenLoaiRecordDataGridViewTextBoxColumn,
             this.ThoiGianVao,
             this.ThoiGianRa,
-            this.ThoiGianLamViec});
+            this.ThoiGianLamViec,
+            this.Delete});
             this.grdCheckOut.DataSource = this.sPGetAllDiemDanhResultBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -156,7 +157,7 @@
             this.grdCheckOut.Name = "grdCheckOut";
             this.grdCheckOut.ReadOnly = true;
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("SimSun", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -168,6 +169,7 @@
             this.grdCheckOut.RowTemplate.Height = 24;
             this.grdCheckOut.Size = new System.Drawing.Size(1303, 654);
             this.grdCheckOut.TabIndex = 7;
+            this.grdCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheckOut_CellContentClick);
             // 
             // ID
             // 
@@ -177,6 +179,7 @@
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
+            this.ID.Width = 69;
             // 
             // IdNhanSu
             // 
@@ -186,6 +189,7 @@
             this.IdNhanSu.Name = "IdNhanSu";
             this.IdNhanSu.ReadOnly = true;
             this.IdNhanSu.Visible = false;
+            this.IdNhanSu.Width = 153;
             // 
             // IdLoaiRecord
             // 
@@ -195,6 +199,7 @@
             this.IdLoaiRecord.Name = "IdLoaiRecord";
             this.IdLoaiRecord.ReadOnly = true;
             this.IdLoaiRecord.Visible = false;
+            this.IdLoaiRecord.Width = 209;
             // 
             // MaNhanSu
             // 
@@ -203,6 +208,26 @@
             this.MaNhanSu.MinimumWidth = 6;
             this.MaNhanSu.Name = "MaNhanSu";
             this.MaNhanSu.ReadOnly = true;
+            this.MaNhanSu.Width = 97;
+            // 
+            // hoTenDataGridViewTextBoxColumn
+            // 
+            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
+            this.hoTenDataGridViewTextBoxColumn.HeaderText = "姓名";
+            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
+            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoTenDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // tenLoaiRecordDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Loại";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
+            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Visible = false;
+            this.tenLoaiRecordDataGridViewTextBoxColumn.Width = 96;
             // 
             // ThoiGianVao
             // 
@@ -213,6 +238,7 @@
             this.ThoiGianVao.MinimumWidth = 6;
             this.ThoiGianVao.Name = "ThoiGianVao";
             this.ThoiGianVao.ReadOnly = true;
+            this.ThoiGianVao.Width = 153;
             // 
             // ThoiGianRa
             // 
@@ -223,6 +249,7 @@
             this.ThoiGianRa.MinimumWidth = 6;
             this.ThoiGianRa.Name = "ThoiGianRa";
             this.ThoiGianRa.ReadOnly = true;
+            this.ThoiGianRa.Width = 153;
             // 
             // ThoiGianLamViec
             // 
@@ -235,6 +262,20 @@
             this.ThoiGianLamViec.Name = "ThoiGianLamViec";
             this.ThoiGianLamViec.ReadOnly = true;
             this.ThoiGianLamViec.Width = 178;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "删除";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 6;
+            // 
+            // sPGetAllDiemDanhResultBindingSource
+            // 
+            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
             // 
             // tableLayoutPanel3
             // 
@@ -357,27 +398,6 @@
             this.cboSL.TabIndex = 7;
             this.cboSL.SelectedIndexChanged += new System.EventHandler(this.cboSL_SelectedIndexChanged);
             // 
-            // hoTenDataGridViewTextBoxColumn
-            // 
-            this.hoTenDataGridViewTextBoxColumn.DataPropertyName = "HoTen";
-            this.hoTenDataGridViewTextBoxColumn.HeaderText = "姓名";
-            this.hoTenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hoTenDataGridViewTextBoxColumn.Name = "hoTenDataGridViewTextBoxColumn";
-            this.hoTenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenLoaiRecordDataGridViewTextBoxColumn
-            // 
-            this.tenLoaiRecordDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiRecord";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.HeaderText = "Loại";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Name = "tenLoaiRecordDataGridViewTextBoxColumn";
-            this.tenLoaiRecordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenLoaiRecordDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sPGetAllDiemDanhResultBindingSource
-            // 
-            this.sPGetAllDiemDanhResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_GetAllDiemDanh_Result);
-            // 
             // UCHistoryCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,10 +409,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdCheckOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPGetAllDiemDanhResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,15 +432,16 @@
         private System.Windows.Forms.DataGridView grdCheckOut;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboPhong;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-		private System.Windows.Forms.DataGridViewTextBoxColumn IdNhanSu;
-		private System.Windows.Forms.DataGridViewTextBoxColumn IdLoaiRecord;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanSu;
-		private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiRecordDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianVao;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianRa;
-		private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianLamViec;
         private System.Windows.Forms.ComboBox cboSL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdLoaiRecord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanSu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoTenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiRecordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianVao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianRa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianLamViec;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

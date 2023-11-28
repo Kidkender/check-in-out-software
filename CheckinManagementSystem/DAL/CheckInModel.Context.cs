@@ -65,7 +65,7 @@ namespace CheckinManagementSystem.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_QuanLyCheckIn_Result>("SP_QuanLyCheckIn", tuKhoaParameter, iDNhanSuParameter, iDPhongParameter, tuNgayParameter, denNgayParameter);
         }
     
-        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy(Nullable<bool> status, Nullable<int> idxSL)
+        public virtual ObjectResult<SP_GetAllDangKy_Result> SP_GetAllDangKy(Nullable<bool> status, Nullable<int> idxSL, Nullable<int> idNhanSu, Nullable<int> idLoaiRecord, Nullable<int> idPhong, Nullable<int> idPhongMacDinh, Nullable<bool> isThoiGianRa, Nullable<System.DateTime> tuNgay, Nullable<System.DateTime> denNgay)
         {
             var statusParameter = status.HasValue ?
                 new ObjectParameter("Status", status) :
@@ -75,7 +75,35 @@ namespace CheckinManagementSystem.DAL
                 new ObjectParameter("idxSL", idxSL) :
                 new ObjectParameter("idxSL", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy", statusParameter, idxSLParameter);
+            var idNhanSuParameter = idNhanSu.HasValue ?
+                new ObjectParameter("IdNhanSu", idNhanSu) :
+                new ObjectParameter("IdNhanSu", typeof(int));
+    
+            var idLoaiRecordParameter = idLoaiRecord.HasValue ?
+                new ObjectParameter("IdLoaiRecord", idLoaiRecord) :
+                new ObjectParameter("IdLoaiRecord", typeof(int));
+    
+            var idPhongParameter = idPhong.HasValue ?
+                new ObjectParameter("IdPhong", idPhong) :
+                new ObjectParameter("IdPhong", typeof(int));
+    
+            var idPhongMacDinhParameter = idPhongMacDinh.HasValue ?
+                new ObjectParameter("IdPhongMacDinh", idPhongMacDinh) :
+                new ObjectParameter("IdPhongMacDinh", typeof(int));
+    
+            var isThoiGianRaParameter = isThoiGianRa.HasValue ?
+                new ObjectParameter("IsThoiGianRa", isThoiGianRa) :
+                new ObjectParameter("IsThoiGianRa", typeof(bool));
+    
+            var tuNgayParameter = tuNgay.HasValue ?
+                new ObjectParameter("TuNgay", tuNgay) :
+                new ObjectParameter("TuNgay", typeof(System.DateTime));
+    
+            var denNgayParameter = denNgay.HasValue ?
+                new ObjectParameter("DenNgay", denNgay) :
+                new ObjectParameter("DenNgay", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDangKy_Result>("SP_GetAllDangKy", statusParameter, idxSLParameter, idNhanSuParameter, idLoaiRecordParameter, idPhongParameter, idPhongMacDinhParameter, isThoiGianRaParameter, tuNgayParameter, denNgayParameter);
         }
     
         public virtual ObjectResult<GetAllNhanSu_Result> GetAllNhanSu()
@@ -88,13 +116,29 @@ namespace CheckinManagementSystem.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllNhanSu_Result>("SP_GetAllNhanSu");
         }
     
-        public virtual ObjectResult<SP_GetAllDiemDanh_Result> SP_GetAllDiemDanh(Nullable<int> idxSL)
+        public virtual ObjectResult<SP_GetAllDiemDanh_Result> SP_GetAllDiemDanh(Nullable<int> idxSL, Nullable<int> idNhanSu, Nullable<int> idPhong, Nullable<int> idPhongMacDinh, Nullable<bool> isThoiGianRa)
         {
             var idxSLParameter = idxSL.HasValue ?
                 new ObjectParameter("idxSL", idxSL) :
                 new ObjectParameter("idxSL", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDiemDanh_Result>("SP_GetAllDiemDanh", idxSLParameter);
+            var idNhanSuParameter = idNhanSu.HasValue ?
+                new ObjectParameter("IdNhanSu", idNhanSu) :
+                new ObjectParameter("IdNhanSu", typeof(int));
+    
+            var idPhongParameter = idPhong.HasValue ?
+                new ObjectParameter("IdPhong", idPhong) :
+                new ObjectParameter("IdPhong", typeof(int));
+    
+            var idPhongMacDinhParameter = idPhongMacDinh.HasValue ?
+                new ObjectParameter("IdPhongMacDinh", idPhongMacDinh) :
+                new ObjectParameter("IdPhongMacDinh", typeof(int));
+    
+            var isThoiGianRaParameter = isThoiGianRa.HasValue ?
+                new ObjectParameter("IsThoiGianRa", isThoiGianRa) :
+                new ObjectParameter("IsThoiGianRa", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDiemDanh_Result>("SP_GetAllDiemDanh", idxSLParameter, idNhanSuParameter, idPhongParameter, idPhongMacDinhParameter, isThoiGianRaParameter);
         }
     }
 }

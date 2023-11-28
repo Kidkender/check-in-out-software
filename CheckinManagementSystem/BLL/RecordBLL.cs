@@ -25,23 +25,23 @@ namespace CheckinManagementSystem.BLL
             return data;
         }
 
-        public List<SP_GetAllDangKy_Result> GetAllDangKy(bool status = false, int? idxSL = 4)
+        public List<SP_GetAllDangKy_Result> GetAllDangKy(bool status = false, int? idxSL = 4, int? idNhanSu = null, int? idLoaiRecord = null, int? idPhong = null, int? idPhongMacDinh = null, bool? isThoiGianRa = null, DateTime? tuNgay = null, DateTime? denNgay = null)
         {
             _context = new CheckInEntities();
-            return _context.SP_GetAllDangKy(status, idxSL).OrderByDescending(t => t.ThoiGianVao).ToList();
+            return _context.SP_GetAllDangKy(status, idxSL, idNhanSu, idLoaiRecord, idPhong, idPhongMacDinh, isThoiGianRa, tuNgay, denNgay).OrderByDescending(t => t.ThoiGianVao).ToList();
         }
 
-        public List<SP_GetAllDiemDanh_Result> GetAllDiemDanh(int? idxSL = 4)
+        public List<SP_GetAllDiemDanh_Result> GetAllDiemDanh(int? idxSL = 4, int? idNhanSu = null, int? idPhong = null, int? idPhongMacDinh = null, bool? isThoiGianRa = null)
         {
             _context = new CheckInEntities();
-            return _context.SP_GetAllDiemDanh(idxSL).OrderByDescending(t => t.ThoiGianVao).ToList();
+            return _context.SP_GetAllDiemDanh(idxSL, idNhanSu, idPhong, idPhongMacDinh, isThoiGianRa).OrderByDescending(t => t.ThoiGianVao).ToList();
         }
 
         public bool checkNhanSuGanNhat(int IdNhanSu)
         {
             var result = false;
             _context = new CheckInEntities();
-            var re = _context.Record.Where(t => t.IdNhanSu == IdNhanSu).ToList().LastOrDefault();
+            var re = _context.Record.Where(t => t.IdNhanSu == IdNhanSu && t.IdLoaiRecord == 0).ToList().LastOrDefault();
 
             if (re != null && re.ThoiGianRa.HasValue)
             {
@@ -67,6 +67,20 @@ namespace CheckinManagementSystem.BLL
                 p.GhiChu = GhiChu;
                 _context.SaveChanges();
             }
+        }
+
+        public int DeleteRecordDiemDanh(int ID)
+        {
+            _context = new CheckInEntities();
+            var result = 0;
+            try
+            {
+                var re = _context.Record.FirstOrDefault(t => t.ID == ID);
+                _context.Record.Remove(re);
+                result = _context.SaveChanges();
+            }
+            catch (Exception) { }
+            return result;
         }
     }
 }

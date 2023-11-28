@@ -111,6 +111,13 @@
     <FunctionImport Name="SP_GetAllDangKy" ReturnType="Collection(CheckInModel.SP_GetAllDangKy_Result)">
       <Parameter Name="Status" Mode="In" Type="Boolean" />
       <Parameter Name="idxSL" Mode="In" Type="Int32" />
+      <Parameter Name="IdNhanSu" Mode="In" Type="Int32" />
+      <Parameter Name="IdLoaiRecord" Mode="In" Type="Int32" />
+      <Parameter Name="IdPhong" Mode="In" Type="Int32" />
+      <Parameter Name="IdPhongMacDinh" Mode="In" Type="Int32" />
+      <Parameter Name="IsThoiGianRa" Mode="In" Type="Boolean" />
+      <Parameter Name="TuNgay" Mode="In" Type="DateTime" />
+      <Parameter Name="DenNgay" Mode="In" Type="DateTime" />
     </FunctionImport>
     <EntitySet Name="Record" EntityType="CheckInModel.Record" />
     <FunctionImport Name="GetAllNhanSu" ReturnType="Collection(CheckInModel.GetAllNhanSu_Result)" />
@@ -118,6 +125,10 @@
     <EntitySet Name="NoiQuy" EntityType="CheckInModel.NoiQuy" />
     <FunctionImport Name="SP_GetAllDiemDanh" ReturnType="Collection(CheckInModel.SP_GetAllDiemDanh_Result)">
       <Parameter Name="idxSL" Mode="In" Type="Int32" />
+      <Parameter Name="IdNhanSu" Mode="In" Type="Int32" />
+      <Parameter Name="IdPhong" Mode="In" Type="Int32" />
+      <Parameter Name="IdPhongMacDinh" Mode="In" Type="Int32" />
+      <Parameter Name="IsThoiGianRa" Mode="In" Type="Boolean" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SP_QuanLyCheckIn_Result">

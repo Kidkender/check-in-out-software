@@ -36,6 +36,7 @@ namespace CheckinManagementSystem
         private DateTimePicker txtDenNgay;
         private DateTimePicker txtTuNgay;
         private DataGridView grdCheckOut;
+        private ComboBox cboSL;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn IdNhanSu;
         private DataGridViewTextBoxColumn IdLoaiRecord;
@@ -58,7 +59,6 @@ namespace CheckinManagementSystem
         private DataGridViewTextBoxColumn maNhanSuDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn thoiGianSuDungDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn ghiChuDataGridViewTextBoxColumn;
-        private ComboBox cboSL;
         private static UCHistory _instance;
         public static UCHistory Instance
         {
@@ -253,7 +253,7 @@ namespace CheckinManagementSystem
             this.grdCheckOut.AutoGenerateColumns = false;
             this.grdCheckOut.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grdCheckOut.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -286,7 +286,7 @@ namespace CheckinManagementSystem
             this.thoiGianSuDungDataGridViewTextBoxColumn,
             this.ghiChuDataGridViewTextBoxColumn});
             this.grdCheckOut.DataSource = this.sPGetAllDangKyResultBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
@@ -299,7 +299,7 @@ namespace CheckinManagementSystem
             this.grdCheckOut.Name = "grdCheckOut";
             this.grdCheckOut.ReadOnly = true;
             this.grdCheckOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -773,15 +773,8 @@ namespace CheckinManagementSystem
 
         private void RefreshDataDiemDanh(int? IDNhanSu = null, int? IDLoaiRecord = null, int? IDPhong = null)
         {
-            string idPhong = Properties.Settings.Default.IDPhong;
-            var data = _recordBLL.GetAllDangKy(true, Math.Max(cboSL.SelectedIndex, 0)).Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
-                                                               && (IDLoaiRecord == null || IDLoaiRecord == t.IdLoaiRecord)
-                                                               && (IDPhong == null || t.IdPhong == IDPhong)
-                                                               && t.ThoiGianRa.HasValue
-                                                               && t.IdLoaiRecord != 0
-                                                               && t.IdPhong == int.Parse(idPhong)
-                                                               && t.ThoiGianVao.Value.Date >= txtTuNgay.Value.Date
-                                                               && t.ThoiGianVao.Value.Date <= txtDenNgay.Value.Date).ToList();
+            string idPhongMacDinh = Properties.Settings.Default.IDPhong;
+            var data = _recordBLL.GetAllDangKy(true, Math.Max(cboSL.SelectedIndex, 0), IDNhanSu, IDLoaiRecord, IDPhong, int.Parse(idPhongMacDinh), true, txtTuNgay.Value, txtDenNgay.Value).ToList();
             grdCheckOut.DataSource = data;
 
             foreach (DataGridViewColumn column in grdCheckOut.Columns)
@@ -789,6 +782,10 @@ namespace CheckinManagementSystem
                 if (column.Name == "ThoiGianSuDung")
                 {
                     column.Width = 100;
+                }
+                else if (column.Name == "ThoiGianVao" || column.Name== "ThoiGianRa")
+                {
+                    column.Width = 300;
                 }
                 else if (column.Name != "Edit" && column.Name != "序号")
                 {
@@ -931,6 +928,15 @@ namespace CheckinManagementSystem
                             RefreshAll();
                         }
                     }
+                }
+
+                if (grdCheckOut.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    if (_recordBLL.DeleteRecordDiemDanh(Id ?? 0) > 0)
+                        MessageBox.Show("已删除上下班 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("删除上下班失败 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    RefreshDataDiemDanh();
                 }
             }
         }

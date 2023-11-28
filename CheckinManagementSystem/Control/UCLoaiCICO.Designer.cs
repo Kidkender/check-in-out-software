@@ -109,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.grdLoaiCICO.AutoGenerateColumns = false;
 			this.grdLoaiCICO.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -127,7 +127,7 @@
             this.Edit,
             this.Delete});
 			this.grdLoaiCICO.DataSource = this.loaiRecordBindingSource;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

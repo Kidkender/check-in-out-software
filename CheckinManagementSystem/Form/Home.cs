@@ -186,6 +186,7 @@ namespace CheckinManagementSystem
             }
             else
                 UCHistoryCheck.Instance.BringToFront();
+            UCHistoryCheck.Instance.SetVisibleGrid(Login.Instance.check);
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)

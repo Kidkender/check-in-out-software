@@ -44,6 +44,14 @@ namespace CheckinManagementSystem.Control
             cboSL.SelectedIndex = 0;
 
             RefreshAll();
+
+            DataGridViewButtonColumn d = (DataGridViewButtonColumn)grdCheckOut.Columns["Delete"];
+            d.FlatStyle = FlatStyle.Popup;
+            d.DefaultCellStyle.ForeColor = Color.White;
+            d.DefaultCellStyle.BackColor = Color.Red;
+            d.Width = 300;
+            d.DefaultCellStyle.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             grdCheckOut.RowTemplate.Height = 40;
 
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
@@ -66,7 +74,12 @@ namespace CheckinManagementSystem.Control
 
         #endregion
 
-        #region Private
+        #region Method
+
+        public void SetVisibleGrid(bool isMaster)
+        {
+            grdCheckOut.Columns["Delete"].Visible = isMaster;
+        }
 
         public void RefreshAll()
         {
@@ -97,12 +110,41 @@ namespace CheckinManagementSystem.Control
 
         private void RefreshDataDiemDanh(int? IDNhanSu = null, int? IDPhong = null)
         {
-            string idPhong = Properties.Settings.Default.IDPhong;
-            var data = _recordBLL.GetAllDiemDanh(Math.Max(cboSL.SelectedIndex, 0)).Where(t => (IDNhanSu == null || IDNhanSu == t.IdNhanSu)
-                                                        && (IDPhong == null || t.IdPhong == IDPhong)
-                                                        && t.ThoiGianRa.HasValue
-                                                        && t.IdPhong == int.Parse(idPhong)).ToList();
+            string idPhongMacDinh = Properties.Settings.Default.IDPhong;
+            var data = _recordBLL.GetAllDiemDanh(Math.Max(cboSL.SelectedIndex, 0), IDNhanSu, IDPhong, int.Parse(idPhongMacDinh), true).ToList();
             grdCheckOut.DataSource = data;
+
+            foreach (DataGridViewColumn column in grdCheckOut.Columns)
+            {
+                if (column.Name == "ThoiGianVao" || column.Name == "ThoiGianRa")
+                {
+                    column.Width = 300;
+                }
+                else if(column.Name == "ThoiGianLamViec")
+                {
+                    column.Width = 130;
+                }
+                else if (column.Name != "Delete" && column.Name != "序号")
+                {
+                    column.Width = CalculatePreferredColumnWidth(column);
+                }
+            }
+        }
+
+        private int CalculatePreferredColumnWidth(DataGridViewColumn column)
+        {
+            int maxWidth = 0;
+
+            foreach (DataGridViewRow row in grdCheckOut.Rows)
+            {
+                if (row.Cells[column.Index].Value != null)
+                {
+                    Size cellSize = TextRenderer.MeasureText(row.Cells[column.Index].Value.ToString(), new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+                    maxWidth = Math.Max(maxWidth, cellSize.Width);
+                }
+            }
+
+            return maxWidth + 10;
         }
 
         private List<NhanSu> getDataNhanSu()
@@ -246,6 +288,23 @@ namespace CheckinManagementSystem.Control
         private void cboSL_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshDataDiemDanh();
+        }
+
+        private void grdCheckOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int? Id = (int)grdCheckOut["ID", e.RowIndex].Value;
+
+                if (grdCheckOut.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    if (_recordBLL.DeleteRecordDiemDanh(Id ?? 0) > 0)
+                        MessageBox.Show("已删除上下班 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("删除上下班失败 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    RefreshDataDiemDanh();
+                }
+            }
         }
     }
 }

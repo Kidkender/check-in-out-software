@@ -115,9 +115,20 @@
   <Function Name="SP_GetAllDangKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Status" Type="bit" Mode="In" />
     <Parameter Name="idxSL" Type="int" Mode="In" />
+    <Parameter Name="IdNhanSu" Type="int" Mode="In" />
+    <Parameter Name="IdLoaiRecord" Type="int" Mode="In" />
+    <Parameter Name="IdPhong" Type="int" Mode="In" />
+    <Parameter Name="IdPhongMacDinh" Type="int" Mode="In" />
+    <Parameter Name="IsThoiGianRa" Type="bit" Mode="In" />
+    <Parameter Name="TuNgay" Type="datetime" Mode="In" />
+    <Parameter Name="DenNgay" Type="datetime" Mode="In" />
   </Function>
   <Function Name="SP_GetAllDiemDanh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idxSL" Type="int" Mode="In" />
+    <Parameter Name="IdNhanSu" Type="int" Mode="In" />
+    <Parameter Name="IdPhong" Type="int" Mode="In" />
+    <Parameter Name="IdPhongMacDinh" Type="int" Mode="In" />
+    <Parameter Name="IsThoiGianRa" Type="bit" Mode="In" />
   </Function>
   <Function Name="SP_GetAllNhanSu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SP_QuanLyCheckIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
