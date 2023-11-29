@@ -58,7 +58,7 @@ namespace CheckinManagementSystem
             }
             else
             {
-                MessageBox.Show("Đăng nhập không thành công!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("登录失败 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

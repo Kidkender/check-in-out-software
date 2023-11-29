@@ -67,45 +67,45 @@ namespace CheckinManagementSystem
                 {
                     MessageBox.Show("办公室已存在 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == "")
+                else if (/*tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == ""*/ false)
                 {
                     MessageBox.Show("请输入出入时间 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != "")
+                else if (/*tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != ""*/ true)
                 {
                     try
                     {
-                        gv = int.Parse(tbGV.Text.Trim());
-                        pv = int.Parse(tbPV.Text.Trim());
-                        hr = int.Parse(tbHR.Text.Trim());
-                        pr = int.Parse(tbPR.Text.Trim());
+                        //gv = int.Parse(tbGV.Text.Trim());
+                        //pv = int.Parse(tbPV.Text.Trim());
+                        //hr = int.Parse(tbHR.Text.Trim());
+                        //pr = int.Parse(tbPR.Text.Trim());
 
-                        if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
+                        //if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
+                        //{
+                        //    MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
+                        //{
+                        //    MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else if (gv * 60 + pv >= hr * 60 + pr)
+                        //{
+                        //    MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else
+                        //{
+                        //}
+                        Phong p = new Phong()
                         {
-                            MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
-                        {
-                            MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else if (gv * 60 + pv >= hr * 60 + pr)
-                        {
-                            MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            Phong p = new Phong()
-                            {
-                                ID = 0,
-                                MoTa = "",
-                                TenPhong = tbTenPhong.Text,
-                                ThoiGianRa = hr.ToString() + ":" + pr.ToString(),
-                                ThoiGianVao = gv.ToString() + ":" + pv.ToString(),
-                            };
+                            ID = 0,
+                            MoTa = txtMoTa.Text,
+                            TenPhong = tbTenPhong.Text,
+                            ThoiGianRa = hr.ToString() + ":" + pr.ToString(),
+                            ThoiGianVao = gv.ToString() + ":" + pv.ToString(),
+                        };
 
-                            _phongBLL.AddEditPhong(p);
-                            this.Close();
-                        }
+                        _phongBLL.AddEditPhong(p);
+                        this.Close();
                     }
                     catch
                     {
@@ -126,45 +126,45 @@ namespace CheckinManagementSystem
                 {
                     MessageBox.Show("办公室已存在 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == "")
+                else if (/*tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == ""*/ false)
                 {
                     MessageBox.Show("请输入出入时间 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else if (tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != "")
+                else if (/*tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != ""*/ true)
                 {
                     try
                     {
-                        gv = int.Parse(tbGV.Text.Trim());
-                        pv = int.Parse(tbPV.Text.Trim());
-                        hr = int.Parse(tbHR.Text.Trim());
-                        pr = int.Parse(tbPR.Text.Trim());
+                        //gv = int.Parse(tbGV.Text.Trim());
+                        //pv = int.Parse(tbPV.Text.Trim());
+                        //hr = int.Parse(tbHR.Text.Trim());
+                        //pr = int.Parse(tbPR.Text.Trim());
 
-                        if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
+                        //if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
+                        //{
+                        //    MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
+                        //{
+                        //    MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else if (gv * 60 + pv >= hr * 60 + pr)
+                        //{
+                        //    MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //}
+                        //else
+                        //{
+                        //}
+                        Phong p = new Phong()
                         {
-                            MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
-                        {
-                            MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else if (gv * 60 + pv >= hr * 60 + pr)
-                        {
-                            MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            Phong p = new Phong()
-                            {
-                                ID = Id,
-                                TenPhong = tbTenPhong.Text,
-                                MoTa = txtMoTa.Text,
-                                ThoiGianRa = hr.ToString() + ":" + pr.ToString(),
-                                ThoiGianVao = gv.ToString() + ":" + pv.ToString(),
-                            };
+                            ID = Id,
+                            TenPhong = tbTenPhong.Text,
+                            MoTa = txtMoTa.Text,
+                            ThoiGianRa = hr.ToString() + ":" + pr.ToString(),
+                            ThoiGianVao = gv.ToString() + ":" + pv.ToString(),
+                        };
 
-                            _phongBLL.AddEditPhong(p);
-                            this.Close();
-                        }
+                        _phongBLL.AddEditPhong(p);
+                        this.Close();
                     }
                     catch
                     {
