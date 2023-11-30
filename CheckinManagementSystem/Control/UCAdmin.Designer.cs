@@ -60,8 +60,9 @@
 			this.panel1.Controls.Add(this.btnPhong);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(470, 931);
+			this.panel1.Size = new System.Drawing.Size(255, 756);
 			this.panel1.TabIndex = 0;
 			// 
 			// btnCheck
@@ -73,9 +74,10 @@
 			this.btnCheck.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnCheck.Image = global::CheckinManagementSystem.Properties.Resources.schedule;
 			this.btnCheck.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCheck.Location = new System.Drawing.Point(0, 604);
+			this.btnCheck.Location = new System.Drawing.Point(0, 491);
+			this.btnCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnCheck.Name = "btnCheck";
-			this.btnCheck.Size = new System.Drawing.Size(469, 76);
+			this.btnCheck.Size = new System.Drawing.Size(255, 62);
 			this.btnCheck.TabIndex = 10;
 			this.btnCheck.Text = "上下班管理";
 			this.btnCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -89,9 +91,10 @@
 			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button3.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.Image = global::CheckinManagementSystem.Properties.Resources.information;
-			this.button3.Location = new System.Drawing.Point(137, 221);
+			this.button3.Location = new System.Drawing.Point(64, 181);
+			this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(48, 41);
+			this.button3.Size = new System.Drawing.Size(36, 33);
 			this.button3.TabIndex = 9;
 			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -103,9 +106,10 @@
 			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button2.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button2.Image = global::CheckinManagementSystem.Properties.Resources.key__1_;
-			this.button2.Location = new System.Drawing.Point(191, 221);
+			this.button2.Location = new System.Drawing.Point(104, 181);
+			this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(48, 41);
+			this.button2.Size = new System.Drawing.Size(36, 33);
 			this.button2.TabIndex = 8;
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -117,9 +121,10 @@
 			this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnDangXuat.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDangXuat.Image = global::CheckinManagementSystem.Properties.Resources.log_out;
-			this.btnDangXuat.Location = new System.Drawing.Point(245, 221);
+			this.btnDangXuat.Location = new System.Drawing.Point(145, 181);
+			this.btnDangXuat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnDangXuat.Name = "btnDangXuat";
-			this.btnDangXuat.Size = new System.Drawing.Size(48, 41);
+			this.btnDangXuat.Size = new System.Drawing.Size(36, 33);
 			this.btnDangXuat.TabIndex = 7;
 			this.btnDangXuat.UseVisualStyleBackColor = false;
 			this.btnDangXuat.Click += new System.EventHandler(this.button1_Click);
@@ -129,9 +134,10 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-			this.label1.Location = new System.Drawing.Point(109, 182);
+			this.label1.Location = new System.Drawing.Point(43, 149);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(204, 36);
+			this.label1.Size = new System.Drawing.Size(179, 24);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Administrator";
 			// 
@@ -139,9 +145,10 @@
 			// 
 			this.panel2.BackgroundImage = global::CheckinManagementSystem.Properties.Resources.user;
 			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.panel2.Location = new System.Drawing.Point(115, 13);
+			this.panel2.Location = new System.Drawing.Point(47, 12);
+			this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(200, 166);
+			this.panel2.Size = new System.Drawing.Size(150, 135);
 			this.panel2.TabIndex = 5;
 			// 
 			// BTNoiQuy
@@ -153,9 +160,10 @@
 			this.BTNoiQuy.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.BTNoiQuy.Image = global::CheckinManagementSystem.Properties.Resources.corpora;
 			this.BTNoiQuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.BTNoiQuy.Location = new System.Drawing.Point(0, 686);
+			this.BTNoiQuy.Location = new System.Drawing.Point(0, 557);
+			this.BTNoiQuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.BTNoiQuy.Name = "BTNoiQuy";
-			this.BTNoiQuy.Size = new System.Drawing.Size(469, 76);
+			this.BTNoiQuy.Size = new System.Drawing.Size(255, 62);
 			this.BTNoiQuy.TabIndex = 4;
 			this.BTNoiQuy.Text = "规定管理";
 			this.BTNoiQuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -171,9 +179,10 @@
 			this.btnLoaiCICO.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnLoaiCICO.Image = global::CheckinManagementSystem.Properties.Resources.check_in;
 			this.btnLoaiCICO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnLoaiCICO.Location = new System.Drawing.Point(0, 440);
+			this.btnLoaiCICO.Location = new System.Drawing.Point(0, 358);
+			this.btnLoaiCICO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnLoaiCICO.Name = "btnLoaiCICO";
-			this.btnLoaiCICO.Size = new System.Drawing.Size(469, 76);
+			this.btnLoaiCICO.Size = new System.Drawing.Size(255, 62);
 			this.btnLoaiCICO.TabIndex = 3;
 			this.btnLoaiCICO.Text = "签到类型管理";
 			this.btnLoaiCICO.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,9 +199,10 @@
 			this.btnCICO.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnCICO.Image = global::CheckinManagementSystem.Properties.Resources.schedule;
 			this.btnCICO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCICO.Location = new System.Drawing.Point(0, 522);
+			this.btnCICO.Location = new System.Drawing.Point(2, 425);
+			this.btnCICO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnCICO.Name = "btnCICO";
-			this.btnCICO.Size = new System.Drawing.Size(469, 76);
+			this.btnCICO.Size = new System.Drawing.Size(253, 62);
 			this.btnCICO.TabIndex = 2;
 			this.btnCICO.Text = "签到管理";
 			this.btnCICO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -208,9 +218,10 @@
 			this.btnNhanSu.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnNhanSu.Image = global::CheckinManagementSystem.Properties.Resources.division;
 			this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnNhanSu.Location = new System.Drawing.Point(0, 358);
+			this.btnNhanSu.Location = new System.Drawing.Point(0, 291);
+			this.btnNhanSu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnNhanSu.Name = "btnNhanSu";
-			this.btnNhanSu.Size = new System.Drawing.Size(469, 76);
+			this.btnNhanSu.Size = new System.Drawing.Size(255, 62);
 			this.btnNhanSu.TabIndex = 1;
 			this.btnNhanSu.Text = "人事管理";
 			this.btnNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,10 +239,11 @@
 			this.btnPhong.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.btnPhong.Image = global::CheckinManagementSystem.Properties.Resources.department;
 			this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnPhong.Location = new System.Drawing.Point(0, 276);
+			this.btnPhong.Location = new System.Drawing.Point(0, 224);
+			this.btnPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.btnPhong.Name = "btnPhong";
 			this.btnPhong.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.btnPhong.Size = new System.Drawing.Size(469, 76);
+			this.btnPhong.Size = new System.Drawing.Size(255, 62);
 			this.btnPhong.TabIndex = 0;
 			this.btnPhong.Text = "办公室管理";
 			this.btnPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,19 +255,21 @@
 			// 
 			this.panelContainer.BackColor = System.Drawing.SystemColors.HighlightText;
 			this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelContainer.Location = new System.Drawing.Point(470, 0);
+			this.panelContainer.Location = new System.Drawing.Point(255, 0);
+			this.panelContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panelContainer.Name = "panelContainer";
-			this.panelContainer.Size = new System.Drawing.Size(1209, 931);
+			this.panelContainer.Size = new System.Drawing.Size(1004, 756);
 			this.panelContainer.TabIndex = 1;
 			// 
 			// UCAdmin
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.panelContainer);
 			this.Controls.Add(this.panel1);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "UCAdmin";
-			this.Size = new System.Drawing.Size(1679, 931);
+			this.Size = new System.Drawing.Size(1259, 756);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
