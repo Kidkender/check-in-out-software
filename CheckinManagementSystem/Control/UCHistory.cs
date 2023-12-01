@@ -247,8 +247,8 @@ namespace CheckinManagementSystem
             // 
             this.grdCheckOut.AllowUserToAddRows = false;
             this.grdCheckOut.AllowUserToDeleteRows = false;
-            this.grdCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grdCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdCheckOut.AutoGenerateColumns = false;
             this.grdCheckOut.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -561,7 +561,7 @@ namespace CheckinManagementSystem
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label5);
@@ -783,7 +783,7 @@ namespace CheckinManagementSystem
                 {
                     column.Width = 100;
                 }
-                else if (column.Name == "ThoiGianVao" || column.Name== "ThoiGianRa")
+                else if (column.Name == "ThoiGianVao" || column.Name == "ThoiGianRa")
                 {
                     column.Width = 300;
                 }
@@ -966,10 +966,13 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (cboNhanSu.Text.Length > 0)
+                if (cboNhanSu.SelectedIndex >= 0)
                 {
-                    var lst = cboNhanSu.DataSource as List<NhanSu>;
-                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    if (cboNhanSu.Text.Length > 0)
+                    {
+                        var lst = cboNhanSu.DataSource as List<NhanSu>;
+                        cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    }
                 }
             }
         }
@@ -982,10 +985,13 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (cboLoaiRecord.Text.Length > 0)
+                if (cboLoaiRecord.SelectedIndex >= 0)
                 {
-                    var lst = cboLoaiRecord.DataSource as List<LoaiRecord>;
-                    cboLoaiRecord.Text = lst[cboLoaiRecord.SelectedIndex].TenLoaiRecord;
+                    if (cboLoaiRecord.Text.Length > 0)
+                    {
+                        var lst = cboLoaiRecord.DataSource as List<LoaiRecord>;
+                        cboLoaiRecord.Text = lst[cboLoaiRecord.SelectedIndex].TenLoaiRecord;
+                    }
                 }
             }
         }
@@ -998,10 +1004,13 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (cboPhong.Text.Length > 0)
+                if (cboPhong.SelectedIndex >= 0)
                 {
-                    var lst = cboPhong.DataSource as List<Phong>;
-                    cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    if (cboPhong.Text.Length > 0)
+                    {
+                        var lst = cboPhong.DataSource as List<Phong>;
+                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    }
                 }
             }
         }

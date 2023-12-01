@@ -262,10 +262,13 @@ namespace CheckinManagementSystem.Control
             }
             else
             {
-                if (cboPhong.Text.Length > 0)
+                if (cboPhong.SelectedIndex >= 0)
                 {
-                    var lst = cboPhong.DataSource as List<Phong>;
-                    cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    if (cboPhong.Text.Length > 0)
+                    {
+                        var lst = cboPhong.DataSource as List<Phong>;
+                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    }
                 }
             }
         }

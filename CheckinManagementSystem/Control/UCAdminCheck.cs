@@ -285,10 +285,13 @@ namespace CheckinManagementSystem.Control
             }
             else
             {
-                if (cboPhong.Text.Length > 0)
+                if (cboPhong.SelectedIndex >= 0)
                 {
-                    var lst = cboPhong.DataSource as List<Phong>;
-                    cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    if (cboPhong.Text.Length > 0)
+                    {
+                        var lst = cboPhong.DataSource as List<Phong>;
+                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
+                    }
                 }
             }
         }
@@ -301,10 +304,13 @@ namespace CheckinManagementSystem.Control
             }
             else
             {
-                if (cboNhanSu.Text.Length > 0)
+                if (cboNhanSu.SelectedIndex >= 0)
                 {
-                    var lst = cboNhanSu.DataSource as List<NhanSu>;
-                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    if (cboNhanSu.Text.Length > 0)
+                    {
+                        var lst = cboNhanSu.DataSource as List<NhanSu>;
+                        cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    }
                 }
             }
         }

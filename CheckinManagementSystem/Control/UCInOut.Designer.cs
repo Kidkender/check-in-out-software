@@ -32,14 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.grdCheckOut = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CheckIn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -52,12 +58,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.grdNoiQuy = new System.Windows.Forms.DataGridView();
             this.lblTenPhong = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdLoaiRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNhanSu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianVao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CheckIn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.hoTenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLoaiRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPGetAllDangKyResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -165,6 +165,63 @@
             this.grdCheckOut.TabIndex = 6;
             this.grdCheckOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheckOut_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // IdNhanSu
+            // 
+            this.IdNhanSu.DataPropertyName = "IdNhanSu";
+            this.IdNhanSu.HeaderText = "IdNhanSu";
+            this.IdNhanSu.MinimumWidth = 6;
+            this.IdNhanSu.Name = "IdNhanSu";
+            this.IdNhanSu.ReadOnly = true;
+            this.IdNhanSu.Visible = false;
+            // 
+            // IdLoaiRecord
+            // 
+            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
+            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
+            this.IdLoaiRecord.MinimumWidth = 6;
+            this.IdLoaiRecord.Name = "IdLoaiRecord";
+            this.IdLoaiRecord.ReadOnly = true;
+            this.IdLoaiRecord.Visible = false;
+            // 
+            // MaNhanSu
+            // 
+            this.MaNhanSu.DataPropertyName = "MaNhanSu";
+            this.MaNhanSu.HeaderText = "ID号";
+            this.MaNhanSu.MinimumWidth = 6;
+            this.MaNhanSu.Name = "MaNhanSu";
+            this.MaNhanSu.ReadOnly = true;
+            // 
+            // ThoiGianVao
+            // 
+            this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianVao.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ThoiGianVao.HeaderText = "出去时间";
+            this.ThoiGianVao.MinimumWidth = 6;
+            this.ThoiGianVao.Name = "ThoiGianVao";
+            this.ThoiGianVao.ReadOnly = true;
+            // 
+            // CheckIn
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckIn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CheckIn.HeaderText = "打卡";
+            this.CheckIn.MinimumWidth = 6;
+            this.CheckIn.Name = "CheckIn";
+            this.CheckIn.ReadOnly = true;
+            this.CheckIn.Text = "进入 Punch-in";
+            this.CheckIn.UseColumnTextForButtonValue = true;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnLamMoi);
@@ -266,8 +323,10 @@
             this.cboNhanSu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboNhanSu.Font = new System.Drawing.Font("SimSun", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboNhanSu.FormattingEnabled = true;
+            this.cboNhanSu.IntegralHeight = false;
             this.cboNhanSu.Location = new System.Drawing.Point(100, 55);
             this.cboNhanSu.Margin = new System.Windows.Forms.Padding(4);
+            this.cboNhanSu.MaxDropDownItems = 5;
             this.cboNhanSu.Name = "cboNhanSu";
             this.cboNhanSu.Size = new System.Drawing.Size(1075, 48);
             this.cboNhanSu.TabIndex = 2;
@@ -373,63 +432,6 @@
             this.lblTenPhong.Size = new System.Drawing.Size(418, 100);
             this.lblTenPhong.TabIndex = 3;
             this.lblTenPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // IdNhanSu
-            // 
-            this.IdNhanSu.DataPropertyName = "IdNhanSu";
-            this.IdNhanSu.HeaderText = "IdNhanSu";
-            this.IdNhanSu.MinimumWidth = 6;
-            this.IdNhanSu.Name = "IdNhanSu";
-            this.IdNhanSu.ReadOnly = true;
-            this.IdNhanSu.Visible = false;
-            // 
-            // IdLoaiRecord
-            // 
-            this.IdLoaiRecord.DataPropertyName = "IdLoaiRecord";
-            this.IdLoaiRecord.HeaderText = "IdLoaiRecord";
-            this.IdLoaiRecord.MinimumWidth = 6;
-            this.IdLoaiRecord.Name = "IdLoaiRecord";
-            this.IdLoaiRecord.ReadOnly = true;
-            this.IdLoaiRecord.Visible = false;
-            // 
-            // MaNhanSu
-            // 
-            this.MaNhanSu.DataPropertyName = "MaNhanSu";
-            this.MaNhanSu.HeaderText = "ID号";
-            this.MaNhanSu.MinimumWidth = 6;
-            this.MaNhanSu.Name = "MaNhanSu";
-            this.MaNhanSu.ReadOnly = true;
-            // 
-            // ThoiGianVao
-            // 
-            this.ThoiGianVao.DataPropertyName = "ThoiGianVao";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ThoiGianVao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ThoiGianVao.HeaderText = "出去时间";
-            this.ThoiGianVao.MinimumWidth = 6;
-            this.ThoiGianVao.Name = "ThoiGianVao";
-            this.ThoiGianVao.ReadOnly = true;
-            // 
-            // CheckIn
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckIn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CheckIn.HeaderText = "打卡";
-            this.CheckIn.MinimumWidth = 6;
-            this.CheckIn.Name = "CheckIn";
-            this.CheckIn.ReadOnly = true;
-            this.CheckIn.Text = "进入 Punch-in";
-            this.CheckIn.UseColumnTextForButtonValue = true;
             // 
             // hoTenDataGridViewTextBoxColumn
             // 

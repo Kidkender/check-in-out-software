@@ -232,10 +232,13 @@ namespace CheckinManagementSystem.Control
             }
             else
             {
-                if (cboNhanSu.Text.Length > 0)
+                if (cboNhanSu.SelectedIndex >= 0)
                 {
-                    var lst = cboNhanSu.DataSource as List<NhanSu>;
-                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    if (cboNhanSu.Text.Length > 0)
+                    {
+                        var lst = cboNhanSu.DataSource as List<NhanSu>;
+                        cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    }
                 }
             }
         }

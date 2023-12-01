@@ -276,10 +276,13 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (cboNhanSu.Text.Length > 0)
+                if (cboNhanSu.SelectedIndex >= 0)
                 {
-                    var lst = cboNhanSu.DataSource as List<NhanSu>;
-                    cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    if (cboNhanSu.Text.Length > 0)
+                    {
+                        var lst = cboNhanSu.DataSource as List<NhanSu>;
+                        cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
+                    }
                 }
             }
         }
@@ -292,10 +295,13 @@ namespace CheckinManagementSystem
             }
             else
             {
-                if (cboLoaiRecord.Text.Length > 0)
+                if (cboLoaiRecord.SelectedIndex >= 0)
                 {
-                    var lst = cboLoaiRecord.DataSource as List<LoaiRecord>;
-                    cboLoaiRecord.Text = lst[cboLoaiRecord.SelectedIndex].TenLoaiRecord;
+                    if (cboLoaiRecord.Text.Length > 0)
+                    {
+                        var lst = cboLoaiRecord.DataSource as List<LoaiRecord>;
+                        cboLoaiRecord.Text = lst[cboLoaiRecord.SelectedIndex].TenLoaiRecord;
+                    }
                 }
             }
         }
