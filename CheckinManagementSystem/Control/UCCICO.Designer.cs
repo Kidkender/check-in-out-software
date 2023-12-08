@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,15 +41,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.grdHistory = new System.Windows.Forms.DataGridView();
-            this.sPQuanLyCheckInResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -75,18 +76,17 @@
             this.reDaiTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reHutThuocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reDiKhacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_TongSoLanDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reSoLanDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reTongThoiGianSuDungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reSoPhutDiQuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Re_QuenCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPQuanLyCheckInResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -133,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdHistory.AutoGenerateColumns = false;
-            this.grdHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.grdHistory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,13 +182,32 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.grdHistory.RowHeadersWidth = 51;
-            this.grdHistory.RowTemplate.Height = 24;
+            this.grdHistory.RowTemplate.Height = 30;
             this.grdHistory.Size = new System.Drawing.Size(1884, 756);
             this.grdHistory.TabIndex = 1;
             // 
-            // sPQuanLyCheckInResultBindingSource
+            // Re_TongSoLanDi
             // 
-            this.sPQuanLyCheckInResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result);
+            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Re_TongSoLanDi.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Re_TongSoLanDi.HeaderText = "总次";
+            this.Re_TongSoLanDi.MinimumWidth = 6;
+            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
+            this.Re_TongSoLanDi.ReadOnly = true;
+            this.Re_TongSoLanDi.Width = 85;
+            // 
+            // Re_QuenCheckOut
+            // 
+            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Re_QuenCheckOut.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Re_QuenCheckOut.HeaderText = "忘记签入";
+            this.Re_QuenCheckOut.MinimumWidth = 6;
+            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
+            this.Re_QuenCheckOut.ReadOnly = true;
+            this.Re_QuenCheckOut.Visible = false;
+            this.Re_QuenCheckOut.Width = 131;
             // 
             // tableLayoutPanel3
             // 
@@ -513,17 +532,6 @@
             this.reDiKhacDataGridViewTextBoxColumn.ReadOnly = true;
             this.reDiKhacDataGridViewTextBoxColumn.Width = 85;
             // 
-            // Re_TongSoLanDi
-            // 
-            this.Re_TongSoLanDi.DataPropertyName = "Re_TongSoLanDi";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Re_TongSoLanDi.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Re_TongSoLanDi.HeaderText = "总次";
-            this.Re_TongSoLanDi.MinimumWidth = 6;
-            this.Re_TongSoLanDi.Name = "Re_TongSoLanDi";
-            this.Re_TongSoLanDi.ReadOnly = true;
-            this.Re_TongSoLanDi.Width = 85;
-            // 
             // reSoLanDiQuaDataGridViewTextBoxColumn
             // 
             this.reSoLanDiQuaDataGridViewTextBoxColumn.DataPropertyName = "Re_SoLanDiQua";
@@ -557,17 +565,9 @@
             this.reSoPhutDiQuaDataGridViewTextBoxColumn.ReadOnly = true;
             this.reSoPhutDiQuaDataGridViewTextBoxColumn.Width = 131;
             // 
-            // Re_QuenCheckOut
+            // sPQuanLyCheckInResultBindingSource
             // 
-            this.Re_QuenCheckOut.DataPropertyName = "Re_QuenCheckOut";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Re_QuenCheckOut.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Re_QuenCheckOut.HeaderText = "忘记签入";
-            this.Re_QuenCheckOut.MinimumWidth = 6;
-            this.Re_QuenCheckOut.Name = "Re_QuenCheckOut";
-            this.Re_QuenCheckOut.ReadOnly = true;
-            this.Re_QuenCheckOut.Visible = false;
-            this.Re_QuenCheckOut.Width = 131;
+            this.sPQuanLyCheckInResultBindingSource.DataSource = typeof(CheckinManagementSystem.DAL.SP_QuanLyCheckIn_Result);
             // 
             // UCCICO
             // 
@@ -579,12 +579,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPQuanLyCheckInResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

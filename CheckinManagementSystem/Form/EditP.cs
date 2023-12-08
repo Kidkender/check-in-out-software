@@ -61,15 +61,15 @@ namespace CheckinManagementSystem
             {
                 if (tbTenPhong.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入办公室！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入办公室！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (_phongBLL.checkExists(tbTenPhong.Text))
                 {
-                    MessageBox.Show("办公室已存在 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("办公室已存在 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (/*tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == ""*/ false)
                 {
-                    MessageBox.Show("请输入出入时间 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入出入时间 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (/*tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != ""*/ true)
                 {
@@ -82,15 +82,15 @@ namespace CheckinManagementSystem
 
                         //if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
                         //{
-                        //    MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
                         //{
-                        //    MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else if (gv * 60 + pv >= hr * 60 + pr)
                         //{
-                        //    MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("进入时间必须小于出去时间", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else
                         //{
@@ -109,7 +109,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        new FromThongBao("时间格式不正确，一定是数字 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                     }
                 }
             }
@@ -120,15 +120,15 @@ namespace CheckinManagementSystem
                 var check = _phongBLL.GetPhongById(Id);
                 if (tbTenPhong.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入办公室 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入办公室 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (tbTenPhong.Text.Trim().ToLower() != check.TenPhong.Trim().ToLower() && _phongBLL.checkExists(tbTenPhong.Text))
                 {
-                    MessageBox.Show("办公室已存在 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("办公室已存在 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (/*tbGV.Text.Trim() == "" || tbPV.Text.Trim() == "" || tbHR.Text.Trim() == "" || tbPR.Text.Trim() == ""*/ false)
                 {
-                    MessageBox.Show("请输入出入时间 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入出入时间 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (/*tbGV.Text.Trim() != "" && tbPV.Text.Trim() != "" && tbHR.Text.Trim() != "" && tbPR.Text.Trim() != ""*/ true)
                 {
@@ -141,15 +141,15 @@ namespace CheckinManagementSystem
 
                         //if (gv < 0 || gv > 23 || hr < 0 || hr > 23)
                         //{
-                        //    MessageBox.Show("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("小时必须大于或等于 0 且小于或等于 23", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else if (pv < 0 || pv > 59 || pr < 0 || pr > 59)
                         //{
-                        //    MessageBox.Show("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("分钟必须大于或等于 0 且小于或等于 59", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else if (gv * 60 + pv >= hr * 60 + pr)
                         //{
-                        //    MessageBox.Show("进入时间必须小于出去时间", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //    new FromThongBao("进入时间必须小于出去时间", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         //}
                         //else
                         //{
@@ -168,7 +168,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        new FromThongBao("时间格式不正确，一定是数字 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                     }
                 }
             }

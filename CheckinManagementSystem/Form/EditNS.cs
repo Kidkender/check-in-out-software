@@ -63,22 +63,22 @@ namespace CheckinManagementSystem
 
             if (maNhanSu == "")
             {
-                MessageBox.Show("请输入ID号，姓名，办公室！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("请输入ID号，姓名，办公室！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else if (ten == null)
             {
-                MessageBox.Show("请输入姓名 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("请输入姓名 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else if (phong == null)
             {
-                MessageBox.Show("请选择办公室 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("请选择办公室 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else
             {
                 string result = _nhanSuBLL.AddEditNhanSu(ten, maNhanSu, phong.TenPhong, _ns?.ID);
                 if (!string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show($"ID号 {result} 已存在!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new FromThongBao($"ID号 {result} 已存在!", "通知", MessageBoxIcon.Information).ShowDialog();
                 }
                 else
                 {

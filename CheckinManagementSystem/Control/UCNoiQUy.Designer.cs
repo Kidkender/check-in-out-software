@@ -137,7 +137,7 @@
 			this.grdNoiQuy.Name = "grdNoiQuy";
 			this.grdNoiQuy.ReadOnly = true;
 			this.grdNoiQuy.RowHeadersWidth = 51;
-			this.grdNoiQuy.RowTemplate.Height = 24;
+			this.grdNoiQuy.RowTemplate.Height = 30;
 			this.grdNoiQuy.Size = new System.Drawing.Size(1505, 636);
 			this.grdNoiQuy.TabIndex = 14;
 			this.grdNoiQuy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNoiQuy_CellContentClick);

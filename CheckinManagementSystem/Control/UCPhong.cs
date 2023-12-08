@@ -28,7 +28,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
-            grdPhong.RowTemplate.Height = 40;
+            grdPhong.RowTemplate.Height = 60;
 
             grdPhong.RowPrePaint += grdPhong_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();

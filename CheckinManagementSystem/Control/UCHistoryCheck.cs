@@ -52,7 +52,7 @@ namespace CheckinManagementSystem.Control
             d.Width = 300;
             d.DefaultCellStyle.Font = new System.Drawing.Font("SimSun", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            grdCheckOut.RowTemplate.Height = 40;
+            grdCheckOut.RowTemplate.Height = 60;
 
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
@@ -305,9 +305,9 @@ namespace CheckinManagementSystem.Control
                 if (grdCheckOut.Columns[e.ColumnIndex].Name == "Delete")
                 {
                     if (_recordBLL.DeleteRecordDiemDanh(Id ?? 0) > 0)
-                        MessageBox.Show("已删除上下班 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        new FromThongBao("已删除上下班 !", "通知", MessageBoxIcon.Information).ShowDialog();
                     else
-                        MessageBox.Show("删除上下班失败 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        new FromThongBao("删除上下班失败 !", "通知", MessageBoxIcon.Warning).ShowDialog();
                     RefreshDataDiemDanh();
                 }
             }

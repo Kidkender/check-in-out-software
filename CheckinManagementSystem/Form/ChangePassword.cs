@@ -34,7 +34,7 @@ namespace CheckinManagementSystem
         {
             if(tbMKM.Text != tbNLMK.Text)
             {
-                MessageBox.Show("密码不相同 !", "警报", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new FromThongBao("密码不相同 !", "警报", MessageBoxIcon.Information).ShowDialog();
                 return;
             }
             else

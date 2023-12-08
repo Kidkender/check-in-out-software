@@ -45,7 +45,7 @@ namespace CheckinManagementSystem.Control
 
             RefreshAll();
             RefreshDataNoiQuy();
-            grdCheckOut.RowTemplate.Height = 40;
+            grdCheckOut.RowTemplate.Height = 60;
             DataGridViewButtonColumn c = (DataGridViewButtonColumn)grdCheckOut.Columns["Checkin"];
             c.FlatStyle = FlatStyle.Popup;
             c.DefaultCellStyle.ForeColor = Color.White;
@@ -116,10 +116,14 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.SelectedIndex = -1;
         }
 
-        private void RefreshDataDiemDanh()
+        private void RefreshDataDiemDanh(int? IDNhanSu = null)
         {
             string idPhong = Properties.Settings.Default.IDPhong;
             var data = _recordBLL.GetAllDiemDanh().Where(t => /*t.ThoiGianVao.Value.Date == DateTime.Now.Date &&*/ t.ThoiGianRa == null && t.IdPhong == int.Parse(idPhong)).ToList();
+            if (IDNhanSu != null)
+            {
+                data = data.Where(t => t.IdNhanSu == IDNhanSu).ToList();
+            }
             grdCheckOut.DataSource = data;
         }
 
@@ -138,25 +142,25 @@ namespace CheckinManagementSystem.Control
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
             if (nhanSu == null)
             {
-                MessageBox.Show("请选择员工 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new FromThongBao("请选择员工 ！", "通知", MessageBoxIcon.Warning).ShowDialog();
             }
             else if (_recordBLL.GetAllDiemDanh().Where(t => t.IdNhanSu == nhanSu?.ID && t.ThoiGianRa == null).Any())
             {
-                MessageBox.Show("员工已上班！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("员工已上班！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else if (_recordBLL.checkNhanSuGanNhat(nhanSu.ID))
             {
-                MessageBox.Show("- 员工已经下班 ！\n\n- 必须要用自己的ID和姓名来打卡 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("- 员工已经下班 ！\n\n- 必须要用自己的ID和姓名来打卡 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else
             {
                 if (_checkInOutBLL.AddRecord(nhanSu.ID, 0))
                 {
-                    MessageBox.Show("操作成功！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new FromThongBao("操作成功！", "通知", MessageBoxIcon.Information).ShowDialog();
                     RefreshAll();
                 }
                 else
-                    MessageBox.Show("操作失败!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    new FromThongBao("操作失败!", "通知", MessageBoxIcon.Warning).ShowDialog();
             }
         }
 
@@ -199,11 +203,11 @@ namespace CheckinManagementSystem.Control
 
                     if (_recordBLL.GetAllDangKy().Where(t => t.IdNhanSu == IdNhanSu && t.ThoiGianRa == null).Any())
                     {
-                        MessageBox.Show("员工出去还没进入. 请先打进入 !", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        new FromThongBao("员工出去还没进入. 请先打进入 !", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                     }
                     else if (_checkInOutBLL.AddRecord(null, null, 1, IDRecord))
                     {
-                        MessageBox.Show("操作成功！");
+                        new FromThongBao("操作成功！", "通知").ShowDialog();
                         RefreshAll();
                     }
                 }
@@ -244,5 +248,25 @@ namespace CheckinManagementSystem.Control
         }
 
         #endregion
+
+        private void cboNhanSu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNhanSu.SelectedIndex >= 0 && cboNhanSu.Text != "")
+            {
+                try
+                {
+                    RefreshDataDiemDanh((int)cboNhanSu.SelectedValue);
+                }
+                catch (Exception)
+                {
+
+                    RefreshDataDiemDanh(null);
+                }
+            }
+            else
+            {
+                RefreshDataDiemDanh(null);
+            }
+        }
     }
 }

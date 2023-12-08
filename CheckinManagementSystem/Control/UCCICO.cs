@@ -40,7 +40,7 @@ namespace CheckinManagementSystem.Control
         }
         private void UCCICO_Load(object sender, EventArgs e)
         {
-            grdHistory.RowTemplate.Height = 40;
+            grdHistory.RowTemplate.Height = 60;
             grdHistory.RowPrePaint += grdHistory_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
             sttColumn.Name = "序号";
@@ -63,6 +63,15 @@ namespace CheckinManagementSystem.Control
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
             Phong p = (Phong)cboPhong.SelectedItem;
             grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
+
+            foreach (DataGridViewColumn column in grdHistory.Columns)
+            {
+                if (column.Name != "序号")
+                {
+                    column.Width = CalculatePreferredColumnWidth(column);
+                    if(column.Width < 120) column.Width = 120;
+                }
+            }
         }
 
         #endregion
@@ -269,6 +278,7 @@ namespace CheckinManagementSystem.Control
             {
                 DataGridViewRow row = grdHistory.Rows[e.RowIndex];
                 row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
+                row.MinimumHeight = 60;
             }
         }
 
@@ -327,6 +337,22 @@ namespace CheckinManagementSystem.Control
                     }
                 }
             }
+        }
+
+        private int CalculatePreferredColumnWidth(DataGridViewColumn column)
+        {
+            int maxWidth = 0;
+
+            foreach (DataGridViewRow row in grdHistory.Rows)
+            {
+                if (row.Cells[column.Index].Value != null)
+                {
+                    Size cellSize = TextRenderer.MeasureText(row.Cells[column.Index].Value.ToString(), new System.Drawing.Font("SimSun", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
+                    maxWidth = Math.Max(maxWidth, cellSize.Width);
+                }
+            }
+
+            return maxWidth + 10;
         }
     }
 }

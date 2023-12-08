@@ -58,7 +58,7 @@ namespace CheckinManagementSystem
             }
             else
             {
-                MessageBox.Show("登录失败 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new FromThongBao("登录失败 ！", "通知", MessageBoxIcon.Information).ShowDialog();
             }
         }
 

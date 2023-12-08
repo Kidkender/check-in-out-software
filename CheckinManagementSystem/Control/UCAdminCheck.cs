@@ -66,7 +66,7 @@ namespace CheckinManagementSystem.Control
 
         private void UCAdminCheck_Load(object sender, EventArgs e)
         {
-            grdCheckOut.RowTemplate.Height = 40;
+            grdCheckOut.RowTemplate.Height = 60;
             RefreshAll();
 
             grdCheckOut.RowPrePaint += grdCheckOut_RowPrePaint;

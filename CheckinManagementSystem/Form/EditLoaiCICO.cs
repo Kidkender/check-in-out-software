@@ -48,11 +48,11 @@ namespace CheckinManagementSystem
             {
                 //if (tbSoLan.Text.Trim() == "")
                 //{
-                //    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    new FromThongBao("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxIcon.Exclamation).ShowDialog();
                 //}
                 if (tbThoigian.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入可用时间!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入可用时间!", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace CheckinManagementSystem
 
                         if (sl <= 0 || tg <= 0)
                         {
-                            MessageBox.Show("时间和次数必须大于0!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            new FromThongBao("时间和次数必须大于0!", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         }
                         else
                         {
@@ -79,7 +79,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        new FromThongBao("时间格式不正确，一定是数字 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                     }
                 }
             }
@@ -87,11 +87,11 @@ namespace CheckinManagementSystem
             {
                 //if (tbSoLan.Text.Trim() == "")
                 //{
-                //    MessageBox.Show("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    new FromThongBao("Vui lòng nhập số lần tối đa!", "Thông báo", MessageBoxIcon.Exclamation).ShowDialog();
                 //}
                 if (tbThoigian.Text.Trim() == "")
                 {
-                    MessageBox.Show("请输入可用时间!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入可用时间!", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace CheckinManagementSystem
 
                         if (sl <= 0 || tg <= 0)
                         {
-                            MessageBox.Show("时间和次数必须大于0!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            new FromThongBao("时间和次数必须大于0!", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                         }
                         else
                         {
@@ -118,7 +118,7 @@ namespace CheckinManagementSystem
                     }
                     catch
                     {
-                        MessageBox.Show("时间格式不正确，一定是数字 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        new FromThongBao("时间格式不正确，一定是数字 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                     }
                 }
             }

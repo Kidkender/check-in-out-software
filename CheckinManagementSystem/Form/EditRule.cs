@@ -56,15 +56,15 @@ namespace CheckinManagementSystem
             {
                 if(tbNoiDung.Text == "")
                 {
-                    MessageBox.Show("请输入规定 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入规定 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if(tbMoTa.Text == "")
                 {
-                    MessageBox.Show("请输入扣分 ！", "T通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入扣分 ！", "T通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (cboLoaiNoiQuy.SelectedIndex == -1)
                 {
-                    MessageBox.Show("请选择规定类型 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请选择规定类型 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else
                 {
@@ -86,15 +86,15 @@ namespace CheckinManagementSystem
 
                 if (tbNoiDung.Text == "")
                 {
-                    MessageBox.Show("请输入规定 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入规定 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (tbMoTa.Text == "")
                 {
-                    MessageBox.Show("请输入扣分 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请输入扣分 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else if (cboLoaiNoiQuy.SelectedIndex == -1)
                 {
-                    MessageBox.Show("请选择规定类型 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new FromThongBao("请选择规定类型 ！", "通知", MessageBoxIcon.Exclamation).ShowDialog();
                 }
                 else
                 {

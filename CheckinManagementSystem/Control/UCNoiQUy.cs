@@ -22,7 +22,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
-            grdNoiQuy.RowTemplate.Height = 40;
+            grdNoiQuy.RowTemplate.Height = 60;
             grdNoiQuy.CellFormatting += grdNoiQuy_CellFormatting;
 
             grdNoiQuy.RowPrePaint += grdNoiQuy_RowPrePaint;
@@ -55,6 +55,7 @@ namespace CheckinManagementSystem.Control
             {
                 DataGridViewRow row = grdNoiQuy.Rows[e.RowIndex];
                 row.Cells["序号"].Value = (e.RowIndex + 1).ToString();
+                row.MinimumHeight = 60;
             }
         }
 

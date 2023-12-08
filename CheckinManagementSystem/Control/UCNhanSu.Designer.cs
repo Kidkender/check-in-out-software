@@ -149,7 +149,7 @@
             this.grdNhanSu.Name = "grdNhanSu";
             this.grdNhanSu.ReadOnly = true;
             this.grdNhanSu.RowHeadersWidth = 51;
-            this.grdNhanSu.RowTemplate.Height = 24;
+            this.grdNhanSu.RowTemplate.Height = 30;
             this.grdNhanSu.Size = new System.Drawing.Size(1423, 634);
             this.grdNhanSu.TabIndex = 1;
             this.grdNhanSu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNhanSu_CellContentClick);

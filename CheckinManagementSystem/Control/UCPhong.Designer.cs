@@ -236,7 +236,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdPhong.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdPhong.RowHeadersWidth = 51;
-            this.grdPhong.RowTemplate.Height = 24;
+            this.grdPhong.RowTemplate.Height = 30;
             this.grdPhong.Size = new System.Drawing.Size(1359, 677);
             this.grdPhong.TabIndex = 0;
             this.grdPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPhong_CellContentClick);

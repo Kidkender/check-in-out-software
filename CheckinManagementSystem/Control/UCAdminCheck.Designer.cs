@@ -172,7 +172,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdCheckOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grdCheckOut.RowHeadersWidth = 51;
-            this.grdCheckOut.RowTemplate.Height = 24;
+            this.grdCheckOut.RowTemplate.Height = 30;
             this.grdCheckOut.Size = new System.Drawing.Size(1650, 557);
             this.grdCheckOut.TabIndex = 8;
             // 

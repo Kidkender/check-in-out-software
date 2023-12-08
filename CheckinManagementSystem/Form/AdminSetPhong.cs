@@ -40,13 +40,13 @@ namespace CheckinManagementSystem
             Phong p = (Phong)cboPhong.SelectedItem;
             if (p == null)
             {
-                MessageBox.Show("选择要设置的办公室!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new FromThongBao("选择要设置的办公室!", "通知", MessageBoxIcon.Exclamation).ShowDialog();
             }
             else
             {
                 Properties.Settings.Default.IDPhong = p.ID.ToString();
                 Properties.Settings.Default.Save();
-                MessageBox.Show("设置成功 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new FromThongBao("设置成功 ！", "通知", MessageBoxIcon.Information).ShowDialog();
                 UCCheck.Instance.RefreshAll();
                 UCInOut.Instance.RefreshAll();
                 UCHistory.Instance.RefreshAll();

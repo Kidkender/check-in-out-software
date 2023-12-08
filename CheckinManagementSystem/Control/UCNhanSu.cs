@@ -32,7 +32,7 @@ namespace CheckinManagementSystem.Control
         {
             InitializeComponent();
             LoadData();
-            grdNhanSu.RowTemplate.Height = 40;
+            grdNhanSu.RowTemplate.Height = 60;
 
             grdNhanSu.RowPrePaint += grdNhanSu_RowPrePaint;
             DataGridViewTextBoxColumn sttColumn = new DataGridViewTextBoxColumn();
@@ -136,11 +136,11 @@ namespace CheckinManagementSystem.Control
                     result = result.Where(t => !string.IsNullOrEmpty(t)).ToList();
                     if (result.Count > 0)
                     {
-                        MessageBox.Show($"导入失败 ！\nID号{string.Join(", ", result)}已存在!", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        new FromThongBao($"导入失败 ！\nID号{string.Join(", ", result)}已存在!", "通知", MessageBoxIcon.Information).ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show($"导入成功 ！", "通知", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        new FromThongBao($"导入成功 ！", "通知", MessageBoxIcon.Information).ShowDialog();
                     }
 
                     LoadData();
@@ -154,7 +154,7 @@ namespace CheckinManagementSystem.Control
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"导入时有错误 ！\n{ex}", "通知", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    new FromThongBao($"导入时有错误 ！\n{ex}", "通知", MessageBoxIcon.Warning).ShowDialog();
                 }
                 finally
                 {

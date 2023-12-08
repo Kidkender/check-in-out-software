@@ -147,7 +147,7 @@
 			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.grdLoaiCICO.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.grdLoaiCICO.RowHeadersWidth = 51;
-			this.grdLoaiCICO.RowTemplate.Height = 24;
+			this.grdLoaiCICO.RowTemplate.Height = 30;
 			this.grdLoaiCICO.Size = new System.Drawing.Size(1434, 716);
 			this.grdLoaiCICO.TabIndex = 1;
 			this.grdLoaiCICO.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLoaiCICO_CellContentClick);
