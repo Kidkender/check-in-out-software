@@ -85,7 +85,6 @@ namespace CheckinManagementSystem.Control
         {
             RefreshDataNhanSu();
             RefreshDataDiemDanh();
-            RefreshDataPhong();
         }
 
         private void RefreshDataNhanSu()
@@ -97,15 +96,6 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.DisplayMember = "HoTen";
             cboNhanSu.SelectedIndex = -1;
             cboNhanSu.Text = "";
-        }
-
-        private void RefreshDataPhong()
-        {
-            cboPhong.DataSource = getDataPhong();
-            cboPhong.ValueMember = "ID";
-            cboPhong.DisplayMember = "TenPhong";
-            cboPhong.SelectedIndex = -1;
-            cboPhong.Text = "";
         }
 
         private void RefreshDataDiemDanh(int? IDNhanSu = null, int? IDPhong = null)
@@ -182,8 +172,7 @@ namespace CheckinManagementSystem.Control
         private void btnSearch_Click(object sender, EventArgs e)
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            Phong p = (Phong)cboPhong.SelectedItem;
-            RefreshDataDiemDanh(nhanSu?.ID, p?.ID);
+            RefreshDataDiemDanh(nhanSu?.ID, null);
         }
 
         private void cboNhanSu_TextUpdate(object sender, EventArgs e)
@@ -212,30 +201,6 @@ namespace CheckinManagementSystem.Control
             }
         }
 
-        private void cboPhong_TextUpdate(object sender, EventArgs e)
-        {
-            if (cboPhong.Text == string.Empty)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                string tempStr = cboPhong.Text;
-                List<Phong> data = getDataPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
-
-                cboPhong.DataSource = data;
-                cboPhong.ValueMember = "ID";
-                cboPhong.DisplayMember = "TenPhong";
-                cboPhong.DroppedDown = true;
-                cboPhong.MaxDropDownItems = 5;
-                Cursor.Current = Cursors.Default;
-                cboPhong.SelectedIndex = -1;
-
-                cboPhong.Text = tempStr;
-                cboPhong.Select(cboPhong.Text.Length, 0);
-            }
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             RefreshAll();
@@ -246,11 +211,6 @@ namespace CheckinManagementSystem.Control
         private void cboNhanSu_Click(object sender, EventArgs e)
         {
             cboNhanSu.DroppedDown = true;
-        }
-
-        private void cboPhong_Click(object sender, EventArgs e)
-        {
-            cboPhong.DroppedDown = true;
         }
 
         private void cboNhanSu_DropDownClosed(object sender, EventArgs e)
@@ -267,25 +227,6 @@ namespace CheckinManagementSystem.Control
                     {
                         var lst = cboNhanSu.DataSource as List<NhanSu>;
                         cboNhanSu.Text = lst[cboNhanSu.SelectedIndex].HoTen;
-                    }
-                }
-            }
-        }
-
-        private void cboPhong_DropDownClosed(object sender, EventArgs e)
-        {
-            if (cboPhong.Items.Count == 0)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                if (cboPhong.SelectedIndex >= 0)
-                {
-                    if (cboPhong.Text.Length > 0)
-                    {
-                        var lst = cboPhong.DataSource as List<Phong>;
-                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
                     }
                 }
             }

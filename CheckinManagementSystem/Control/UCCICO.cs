@@ -61,8 +61,7 @@ namespace CheckinManagementSystem.Control
         public void LoadData()
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            Phong p = (Phong)cboPhong.SelectedItem;
-            grdHistory.DataSource = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
+            grdHistory.DataSource = recordBLL.GetAllHistory("", nhanSu?.ID, null, txtTuNgay.Value.Date, txtDenNgay.Value.Date);
 
             foreach (DataGridViewColumn column in grdHistory.Columns)
             {
@@ -81,7 +80,6 @@ namespace CheckinManagementSystem.Control
         private void RefreshAll()
         {
             RefreshDataNhanSu();
-            RefreshDataPhong();
             txtTuNgay.Text = "";
             txtDenNgay.Value = DateTime.Now;
             txtTuNgay.Value = DateTime.Now.AddDays(-30);
@@ -99,15 +97,6 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.Text = "";
         }
 
-        private void RefreshDataPhong()
-        {
-            cboPhong.DataSource = _nhanSuBLL.GetAllPhong();
-            cboPhong.ValueMember = "ID";
-            cboPhong.DisplayMember = "TenPhong";
-            cboPhong.SelectedIndex = -1;
-            cboPhong.Text = "";
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -122,8 +111,7 @@ namespace CheckinManagementSystem.Control
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-                Phong p = (Phong)cboPhong.SelectedItem;
-                var data = recordBLL.GetAllHistory(txtTuKhoa.Text, nhanSu?.ID, p?.ID, txtTuNgay.Value, txtDenNgay.Value);
+                var data = recordBLL.GetAllHistory("", nhanSu?.ID, null, txtTuNgay.Value, txtDenNgay.Value);
                 string filePath = saveFileDialog.FileName;
 
                 Excel.Application excelApp = new Excel.Application();
@@ -243,30 +231,6 @@ namespace CheckinManagementSystem.Control
             }
         }
 
-        private void cboPhong_TextUpdate(object sender, EventArgs e)
-        {
-            if (cboPhong.Text == string.Empty)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                string tempStr = cboPhong.Text;
-                List<Phong> data = _nhanSuBLL.GetAllPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
-
-                cboPhong.DataSource = data;
-                cboPhong.ValueMember = "ID";
-                cboPhong.DisplayMember = "TenPhong";
-                cboPhong.DroppedDown = true;
-                cboPhong.MaxDropDownItems = 5;
-                Cursor.Current = Cursors.Default;
-                cboPhong.SelectedIndex = -1;
-
-                cboPhong.Text = tempStr;
-                cboPhong.Select(cboPhong.Text.Length, 0);
-            }
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             RefreshAll();
@@ -291,33 +255,9 @@ namespace CheckinManagementSystem.Control
 
         #endregion
 
-        private void cboPhong_Click(object sender, EventArgs e)
-        {
-            cboPhong.DroppedDown = true;
-        }
-
         private void cboNhanSu_Click(object sender, EventArgs e)
         {
             cboNhanSu.DroppedDown = true;
-        }
-
-        private void cboPhong_DropDownClosed(object sender, EventArgs e)
-        {
-            if (cboPhong.Items.Count == 0)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                if (cboPhong.SelectedIndex >= 0)
-                {
-                    if (cboPhong.Text.Length > 0)
-                    {
-                        var lst = cboPhong.DataSource as List<Phong>;
-                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
-                    }
-                }
-            }
         }
 
         private void cboNhanSu_DropDownClosed(object sender, EventArgs e)

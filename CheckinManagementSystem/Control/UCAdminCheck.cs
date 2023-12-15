@@ -47,16 +47,10 @@ namespace CheckinManagementSystem.Control
         public List<SP_GetAllDiemDanh_Result> getData()
         {
             NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-            Phong p = (Phong)cboPhong.SelectedItem;
             var data = _recordBLL.GetAllDiemDanh().Where(t => (nhanSu == null || nhanSu.ID == t.IdNhanSu)
-                                                            && (p == null || t.IdPhong == p.ID)
                                                             && t.ThoiGianRa.HasValue
                                                             && t.ThoiGianVao.Value.Date >= txtTuNgay.Value.Date
                                                             && t.ThoiGianVao.Value.Date <= txtDenNgay.Value.Date).ToList();
-            if (!string.IsNullOrEmpty(txtTuKhoa.Text))
-            {
-                data = data.Where(t => t.MaNhanSu.ToLower().Contains(txtTuKhoa.Text.ToLower()) || t.HoTen.ToLower().Contains(txtTuKhoa.Text.ToLower())).ToList();
-            }
             return data;
         }
 
@@ -95,7 +89,6 @@ namespace CheckinManagementSystem.Control
         private void RefreshAll()
         {
             RefreshDataNhanSu();
-            RefreshDataPhong();
             txtTuNgay.Text = "";
             txtDenNgay.Value = DateTime.Now;
             txtTuNgay.Value = DateTime.Now.AddDays(-30);
@@ -113,15 +106,6 @@ namespace CheckinManagementSystem.Control
             cboNhanSu.Text = "";
         }
 
-        private void RefreshDataPhong()
-        {
-            cboPhong.DataSource = _nhanSuBLL.GetAllPhong();
-            cboPhong.ValueMember = "ID";
-            cboPhong.DisplayMember = "TenPhong";
-            cboPhong.SelectedIndex = -1;
-            cboPhong.Text = "";
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -136,7 +120,6 @@ namespace CheckinManagementSystem.Control
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 NhanSu nhanSu = (NhanSu)cboNhanSu.SelectedItem;
-                Phong p = (Phong)cboPhong.SelectedItem;
                 var data = getData();
                 string filePath = saveFileDialog.FileName;
 
@@ -238,29 +221,6 @@ namespace CheckinManagementSystem.Control
             }
         }
 
-        private void cboPhong_TextUpdate(object sender, EventArgs e)
-        {
-            if (cboPhong.Text == string.Empty)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                string tempStr = cboPhong.Text;
-                List<Phong> data = _nhanSuBLL.GetAllPhong().Where(t => t.TenPhong.ToLower().Contains(tempStr.ToLower())).ToList();
-
-                cboPhong.DataSource = data;
-                cboPhong.ValueMember = "ID";
-                cboPhong.DisplayMember = "TenPhong";
-                cboPhong.MaxDropDownItems = 5;
-                Cursor.Current = Cursors.Default;
-                cboPhong.SelectedIndex = -1;
-
-                cboPhong.Text = tempStr;
-                cboPhong.Select(cboPhong.Text.Length, 0);
-            }
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             RefreshAll();
@@ -276,25 +236,6 @@ namespace CheckinManagementSystem.Control
         }
 
         #endregion
-
-        private void cboPhong_DropDownClosed(object sender, EventArgs e)
-        {
-            if (cboPhong.Items.Count == 0)
-            {
-                RefreshDataPhong();
-            }
-            else
-            {
-                if (cboPhong.SelectedIndex >= 0)
-                {
-                    if (cboPhong.Text.Length > 0)
-                    {
-                        var lst = cboPhong.DataSource as List<Phong>;
-                        cboPhong.Text = lst[cboPhong.SelectedIndex].TenPhong;
-                    }
-                }
-            }
-        }
 
         private void cboNhanSu_DropDownClosed(object sender, EventArgs e)
         {
